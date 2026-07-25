@@ -1,0 +1,23 @@
+# Data never goes in git. Not the raw CSVs, not the intermediates,
+# not the tiles. Git LFS is not the answer either - you will hit the
+# quota and the bandwidth billing fast.
+data/
+*.csv
+*.geojsonl
+*.pmtiles
+*.mbtiles
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# OS
+.DS_Store
+@eaDir/
+Thumbs.db

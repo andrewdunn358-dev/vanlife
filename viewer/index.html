@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vanlife — signal layer</title>
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+  html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; }
+  #map { position: absolute; inset: 0; }
+  #panel {
+    position: absolute; top: 10px; left: 10px; z-index: 1;
+    background: #fff; padding: 10px 12px; border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.3); font-size: 13px; max-width: 260px;
+  }
+  #panel h1 { font-size: 14px; margin: 0 0 6px; }
+  #panel p { margin: 4px 0; color: #444; }
+  .swatch { display: inline-block; width: 12px; height: 12px;
+            border-radius: 2px; vertical-align: -2px; margin-right: 5px; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="panel">
+  <h1>Ofcom 4G drive-test</h1>
+  <p id="status">Loading…</p>
+  <p>
+    <span class="swatch" style="background:#d73027"></span>weak (&lt; −110 dBm)<br>
+    <span class="swatch" style="background:#fee08b"></span>fair<br>
+    <span class="swatch" style="background:#1a9850"></span>strong (&gt; −85 dBm)
+  </p>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+<script>
+// Point this at your R2 URL once uploaded. For a local look, serve this
+// directory and the .pmtiles file together:
+//   python3 -m http.server 8000
+const PMTILES_URL = "signal-4g.pmtiles";
+
+// The signal field name comes from your CSV. Change to match whatever
+// inspect_csv.py showed you - RSRP is the usual 4G one.
+const SIGNAL_FIELD = "RSRP";
+
+const protocol = new pmtiles.Protocol();
+maplibregl.addProtocol("pmtiles", protocol.tile);
+
+const map = new maplibregl.Map({
+  container: "map",
+  center: [-3.5, 54.5],
+  zoom: 5,
+  style: {
+    version: 8,
+    sources: {
+      osm: {
+        type: "raster",
+        tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+        tileSize: 256,
+        attribution: "© OpenStreetMap contributors"
+      }
+    },
+    layers: [{ id: "osm", type: "raster", source: "osm" }]
+  }
+});
+
+map.on("load", () => {
+  map.addSource("signal", { type: "vector", url: "pmtiles://" + PMTILES_URL });
+  map.addLayer({
+    id: "signal-points",
+    type: "circle",
+    source: "signal",
+    "source-layer": "signal",
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1.5, 12, 4],
+      "circle-opacity": 0.75,
+      "circle-color": [
+        "interpolate", ["linear"], ["to-number", ["get", SIGNAL_FIELD], -120],
+        -120, "#d73027",
+        -105, "#fc8d59",
+         -95, "#fee08b",
+         -85, "#1a9850"
+      ]
+    }
+  });
+  document.getElementById("status").textContent =
+    "Pan to rural Wales and the Highlands — that is the real test.";
+});
+
+map.on("error", (e) => {
+  document.getElementById("status").textContent = "Error: " + (e.error?.message || e.type);
+});
+
+map.on("click", "signal-points", (e) => {
+  const p = e.features[0].properties;
+  new maplibregl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML("<pre style='margin:0;font-size:12px'>" +
+             JSON.stringify(p, null, 1) + "</pre>")
+    .addTo(map);
+});
+</script>
+</body>
+</html>

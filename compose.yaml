@@ -1,0 +1,27 @@
+# Phase 1 needs exactly one container: somewhere to run Tippecanoe.
+# No database yet - that arrives with Phase 2 (D-TRO).
+#
+#   docker compose build
+#   docker compose run --rm etl
+#
+# Then inside the container:
+#   python3 scripts/inspect_csv.py data/raw/ofcom_4g.csv
+#   python3 scripts/csv_to_geojsonl.py data/raw/ofcom_4g.csv data/interim/4g.geojsonl --keep ...
+#   ./scripts/build_tiles.sh data/interim/4g.geojsonl data/out/signal-4g.pmtiles
+
+services:
+  etl:
+    build:
+      context: .
+      dockerfile: docker/etl/Dockerfile
+    volumes:
+      # Bind-mount rather than a named volume so the big files live on a
+      # DSM shared folder you can see, back up and snapshot.
+      - ${DATA_DIR:-./data}:/work/data
+      - ./scripts:/work/scripts:ro
+    working_dir: /work
+    # Two cores total on the ML110 - leave DSM some headroom.
+    cpus: 1.5
+    mem_limit: 5g
+    stdin_open: true
+    tty: true
