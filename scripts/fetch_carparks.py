@@ -28,12 +28,13 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+# Global-coverage instances only. Several public Overpass servers hold
+# just their own country - overpass.osm.ch will cheerfully report zero
+# car parks in Northumberland because Switzerland is all it has.
 ENDPOINTS = [
     "https://overpass.kumi.systems/api/interpreter",
     "https://overpass-api.de/api/interpreter",
-    "https://overpass.osm.ch/api/interpreter",
-    "https://overpass.openstreetmap.ru/api/interpreter",
-    "https://overpass.osm.jp/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter",
 ]
 UA = "vanlife-dev/0.1 (github.com/andrewdunn358-dev/vanlife)"
 
@@ -176,6 +177,16 @@ def main():
     data = run_query(q)
     els = data.get("elements", [])
     parks = tidy(els, args.operator)
+
+    if not parks:
+        raise SystemExit(
+            "\nZero car parks returned, which for any populated part of the UK\n"
+            "means something is wrong rather than that there are none.\n\n"
+            "  - Check the bounding box order: south,west,north,east.\n"
+            "    Northumberland coast is roughly 55.2,-1.8,55.7,-1.4\n"
+            "  - Check the area name matches an OSM administrative boundary.\n"
+            "  - The mirror that answered may hold only its own country.\n\n"
+            "Nothing was cached, so just fix and re-run.")
 
     named = sum(1 for p in parks if p.get("name"))
     os.makedirs(args.out_dir, exist_ok=True)
