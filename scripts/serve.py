@@ -5,7 +5,7 @@ Serve the site and rebuild it whenever something changes.
 Saves the build-then-serve-then-stop-then-rebuild loop. Edit a record or
 a stylesheet, reload the browser, see it.
 
-    python3 scripts/serve.py            # http://localhost:24712
+    python3 scripts/serve.py            # http://localhost:24721
     python3 scripts/serve.py --port 0   # any free port
 
 Watches data/sites, scripts and site-assets. Stdlib only, so it runs on
@@ -92,8 +92,8 @@ class Quiet(http.server.SimpleHTTPRequestHandler):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--port", type=int, default=24712,
-                    help="default 24712. Use 0 to let the OS pick a free one.")
+    ap.add_argument("--port", type=int, default=24721,
+                    help="default 24721. Use 0 to let the OS pick a free one.")
     ap.add_argument("--dir", default="site")
     ap.add_argument("--interval", type=float, default=1.0)
     args = ap.parse_args()
