@@ -1,0 +1,59 @@
+{
+  "authority": "Westmorland and Furness Council",
+  "authority_type": "unitary",
+  "nation": "England",
+  "researched_on": "2026-07-26",
+  "researched_by": "local press reporting of March 2026 enforcement",
+  "source_format": "unknown",
+  "sources": [],
+  "policy_summary": "Twelve new orders came into force in March 2026 covering 13.6 million square feet - described as almost the area of Windermere lake - with HUNDREDS more already in place on council land. Joint patrols with Cumbria Police, aimed at anti-social behaviour linked to camping and what the council calls the inappropriate use of motorhomes, along with littering, fires and barbecues.\n\nSeparately, Penrith's Sandgate and Bluebell Lane car parks allow motorhomes for 24 hours but explicitly no overnight sleeping or camping, with a ticket required for every bay used and a 3,500kg weight limit.",
+  "notes": "The scale here is unlike anywhere else recorded: hundreds of orders on council land, twelve more added in one go. If any of them are PSPOs this would be the first in the dataset - the type is not stated in the reporting and must not be assumed.\n\nThe 3,500kg limit at Penrith is the first weight restriction encountered, and it excludes most coachbuilt motorhomes and every A-class.",
+  "open_questions": [
+    "WHAT KIND of orders? Twelve new plus hundreds existing, type unstated. This is the most important open question in the dataset - if they are PSPOs, the original scoping assumption is partly revived.",
+    "Where are they? 13.6 million square feet is named as an area but no locations are given.",
+    "Is the 3,500kg limit at Penrith common across their car parks?"
+  ],
+  "sites": [
+    {
+      "name": "Sandgate Car Park, Penrith",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "restricts": "sleeping",
+      "max_weight_kg": 3500,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Sandgate car park, Penrith",
+      "notes": "Motorhomes may stay 24 hours but no overnight sleeping or camping. A ticket per bay used, and a 3,500kg weight limit which rules out most coachbuilts."
+    },
+    {
+      "name": "Bluebell Lane Car Park, Penrith",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "restricts": "sleeping",
+      "max_weight_kg": 3500,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Bluebell Lane car park, Penrith",
+      "notes": "Same terms as Sandgate: 24 hours, no sleeping, ticket per bay, 3,500kg limit."
+    },
+    {
+      "name": "Twelve new orders, March 2026, plus hundreds existing on council land",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "applies_to": "unknown",
+      "restricts": "parking",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Covering 13.6 million square feet, enforced by joint patrols with Cumbria Police, aimed partly at the inappropriate use of motorhomes. Neither the type of order nor the locations have been published in what has been found. HIGH PRIORITY: this is the largest single block of restriction in the dataset and almost nothing is known about it."
+    }
+  ]
+}

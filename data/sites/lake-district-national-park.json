@@ -1,0 +1,45 @@
+{
+  "authority": "Lake District National Park Authority",
+  "authority_type": "national_park",
+  "nation": "England",
+  "researched_on": "2026-07-26",
+  "researched_by": "the Authority's own campervan guidance",
+  "source_format": "html",
+  "sources": [
+    "https://www.lakedistrict.gov.uk/visiting/where-to-stay/campervans-and-where-to-park"
+  ],
+  "policy_summary": "No designated overnight provision found. Motorhomes may park in Authority car parks but must pay for every space they occupy - a long van across two bays pays twice.\n\nThe Authority is unusually direct about the legal position: nobody has a right to wild camp in the Lake District, or anywhere in England. What has happened for years is TOLERATION by landowners of quiet, unobtrusive tent camping on open fell, moving on after a night or two.\n\nAnd it states plainly that this toleration does not extend to vehicles: 'the places where wild camping has traditionally taken place do not apply to campervans, caravans or large static camps'. Overnight camping in vans is described as a problem in parts of the park, and referred to as fly camping.",
+  "notes": "The important distinction for a van user. In the Lakes, tent wild camping is tolerated but not lawful; van overnighting is neither tolerated nor lawful. Two different things, and the second does not inherit from the first.\n\nAlso worth knowing that a great deal of Lake District land is not the Authority's - much belongs to the National Trust or private owners - so the Authority's position is only one of several that apply in the same valley.",
+  "open_questions": [
+    "Does the Authority operate ANY designated overnight bays? Secondary sources mention Honister Pass and Miller Bridge; Honister is a private slate mine, so that needs untangling.",
+    "What instrument backs the prohibition - byelaw, parking order, or conditions of entry?",
+    "How is 'fly camping' enforced in practice?"
+  ],
+  "sites": [
+    {
+      "name": "Lake District National Park Authority car parks",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "restricts": "sleeping",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Motorhomes may park, but must pay for each space occupied - a long van over two bays pays for two. Daytime use. The Authority directs overnight users to campsites."
+    },
+    {
+      "name": "Overnight camping in vehicles across the National Park",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "The Authority describes van overnighting as a problem and calls it fly camping. Nobody has a right to wild camp in England; the toleration extended to quiet tent camping on the fells explicitly does not apply to campervans, caravans or static camps. Legal instrument not yet established - flagged as unknown rather than assumed."
+    }
+  ]
+}

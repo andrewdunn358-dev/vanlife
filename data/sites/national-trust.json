@@ -6,9 +6,10 @@
   "researched_by": "secondary sources reporting the Trust's stated policy",
   "source_format": "unknown",
   "sources": [],
-  "policy_summary": "A single national policy: no overnight parking in National Trust car parks. The Trust cites litter, fires and human waste as the reasons. That covers thousands of car parks, many of them in exactly the coastal and upland places vans want to be - including a large share of the Northumberland coast.\n\nOne policy, one line, national coverage. The landowner tier keeps proving less work than the councils, even when the answer is no.",
+  "policy_summary": "A single national policy: no overnight parking in National Trust car parks, which the Trust attributes to litter, fires and human waste. That covers thousands of car parks, many in exactly the coastal and upland places vans want to be.\n\nNUANCE, from staff conversations reported by visitors: leaving a VEHICLE overnight in a Trust car park is often treated as acceptable; it is overnight OCCUPATION that is objected to. So the practical position may be the parking-versus-sleeping split again rather than a flat ban on presence. Not confirmed from the Trust's own wording, and it would not be safe to rely on.",
   "notes": "A blanket no is still valuable data. Knowing the National Trust is never an option removes a large number of tempting-looking car parks from consideration, which is worth as much to a user as finding a yes.",
   "open_questions": [
+    "Find the Trust's own published wording. Everything here is second-hand, and the parking-versus-sleeping distinction changes the answer materially.",
     "Find the Trust's own published statement rather than forum reporting.",
     "Are there any exceptions - member events, campsite-adjacent car parks, Trust-run campsites?",
     "Does National Trust for Scotland have the same policy?"
@@ -21,11 +22,11 @@
       "lon": null,
       "instrument": "landowner_policy",
       "applies_to": "all_vehicles",
-      "restricts": "parking",
+      "restricts": "sleeping",
       "status": "in_force",
       "last_verified": "2026-07-26",
-      "confidence": "medium",
-      "notes": "Stated national policy of no overnight parking. Not law - a condition of entry - so no penalty charge notice, but they can require you to leave. Covers a large share of the Northumberland coast including the Farne Islands landings and Lindisfarne approaches."
+      "confidence": "low",
+      "notes": "Stated national policy of no overnight parking, though reported practice suggests the objection is to sleeping rather than to leaving a vehicle. Not law - a condition of entry - so no penalty charge notice, but they can require you to leave. NEEDS the Trust's own published wording, which has not yet been found."
     }
   ],
   "areas": [
