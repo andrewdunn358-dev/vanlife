@@ -28,6 +28,7 @@ import os
 import re
 import sqlite3
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -36,8 +37,11 @@ CELL = 0.01  # must match build_sqlite.py
 POSTCODE_RE = re.compile(r"^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$", re.I)
 UA = "vanlife-dev/0.1 (github.com/andrewdunn358-dev/vanlife)"
 
-# Ofcom's numeric coverage scale.
+# Ofcom's numeric coverage scale. 1 and 2 are retired per the API spec.
 OFCOM_SCALE = {4: "likely", 3: "limited", 0: "none"}
+
+# Ofcom uses carrier codes, not brand names.
+OFCOM_OPS = {"EE": "ee", "TF": "o2", "VO": "vodafone", "H3": "three"}
 
 # RSRP bands, dBm. Rough but defensible for 4G.
 def band(rsrp):
@@ -158,12 +162,66 @@ def median(vals):
     return vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) // 2
 
 
+def nearest_postcode(lat, lon):
+    """Reverse-geocode. Returns (postcode, distance_km) or (None, None).
+
+    Needed because the Ofcom API is keyed on postcodes and UPRNs, and the
+    places this app cares about - lay-bys, forest tracks, passes - have
+    neither. The distance matters: a postcode 3km away in Snowdonia says
+    little about where you are parked, so it gets reported, not hidden.
+    """
+    try:
+        d = get_json(
+            f"https://api.postcodes.io/postcodes?lon={lon}&lat={lat}&limit=1"
+        )
+        res = d.get("result")
+        if not res:
+            return None, None
+        pc = res[0]
+        return pc["postcode"], haversine_km(
+            lat, lon, pc["latitude"], pc["longitude"]
+        )
+    except Exception:  # noqa: BLE001
+        return None, None
+
+
 def predicted(postcode, key):
     url = (
         "https://api-proxy.ofcom.org.uk/mobile/coverage/"
         + urllib.parse.quote(postcode.replace(" ", ""))
     )
     return get_json(url, {"Ocp-Apim-Subscription-Key": key})
+
+
+def summarise_prediction(payload):
+    """Collapse per-address results into one worst/best view per operator.
+
+    The API returns a MobileProvision per UPRN in the postcode. Addresses
+    within one postcode can differ, so report the range rather than
+    picking one arbitrarily.
+    """
+    if isinstance(payload, dict):
+        payload = [payload]
+    addresses = []
+    for entry in payload or []:
+        addresses.extend(entry.get("Availability") or [])
+    if not addresses:
+        return None, 0
+
+    out = {}
+    for code, name in OFCOM_OPS.items():
+        for service in ("Data", "Voice"):
+            for place in ("Outdoor", "Indoor"):
+                field = f"{code}{service}{place}"
+                vals = [
+                    a[field] for a in addresses
+                    if isinstance(a.get(field), int)
+                ]
+                if vals:
+                    out.setdefault(name, {})[(service, place)] = (
+                        min(vals), max(vals)
+                    )
+    return out, len(addresses)
 
 
 def main():
@@ -242,31 +300,101 @@ def main():
 
     # ---- predicted ----
     key = os.environ.get("OFCOM_MOBILE_KEY")
-    print("\nPREDICTED  (Ofcom model, 50m grid, whole UK)")
+    print("\nPREDICTED  (Ofcom model, per address)")
     if not key:
         print("  OFCOM_MOBILE_KEY not set - skipping.")
-        print("  Register free at api.ofcom.org.uk for the Mobile product.")
-    elif not postcode:
-        print("  Needs a postcode. Re-run with one for predicted coverage.")
-    else:
-        try:
-            data = predicted(postcode, key)
-            entries = data if isinstance(data, list) else data.get("Availability", [])
-            if not entries:
-                print("  no data returned")
+        print("  Register free at api.ofcom.org.uk, request the Mobile product.")
+        print()
+        return
+
+    if not postcode:
+        postcode, pc_dist = nearest_postcode(lat, lon)
+        if not postcode:
+            print("  No postcode found nearby - cannot query.")
+            print()
+            return
+        print(f"  nearest postcode {postcode}, {pc_dist*1000:.0f} m away")
+        if pc_dist > 0.5:
+            print("  CAUTION: that is far enough away to mean little here.")
+
+    try:
+        data = predicted(postcode, key)
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            print(f"  {postcode}: not found in Ofcom's data.")
+        elif exc.code in (401, 403):
+            print("  Auth failed. Check the key and that Mobile is enabled.")
+        else:
+            print(f"  HTTP {exc.code}: {exc.reason}")
+        print()
+        return
+    except Exception as exc:  # noqa: BLE001
+        print(f"  request failed: {exc}")
+        print()
+        return
+
+    summary, n_addr = summarise_prediction(data)
+    if not summary:
+        print("  no availability data returned")
+        print()
+        return
+
+    print(f"  {n_addr} address(es) in {postcode}")
+    print()
+    W = 17
+    print(f"    {'operator':<10}{'data out':<{W}}{'data in':<{W}}"
+          f"{'voice out':<{W}}{'voice in':<{W}}")
+    print("    " + "-" * (10 + W * 4))
+    for name in ("ee", "o2", "vodafone", "three"):
+        cells = summary.get(name)
+        if not cells:
+            continue
+        parts = []
+        for service, place in (
+            ("Data", "Outdoor"), ("Data", "Indoor"),
+            ("Voice", "Outdoor"), ("Voice", "Indoor"),
+        ):
+            rng = cells.get((service, place))
+            if rng is None:
+                parts.append("-")
+            elif rng[0] == rng[1]:
+                parts.append(OFCOM_SCALE.get(rng[0], str(rng[0])))
             else:
-                e = entries[0]
-                print(f"  {len(entries)} address(es) in postcode; showing first")
-                for k, v in sorted(e.items()):
-                    if not isinstance(v, (int, str)):
-                        continue
-                    if isinstance(v, int) and v in OFCOM_SCALE:
-                        print(f"    {k:<34} {OFCOM_SCALE[v]}")
-                    elif "Address" in k or "Post" in k:
-                        print(f"    {k:<34} {v}")
-        except Exception as exc:  # noqa: BLE001
-            print(f"  API call failed: {exc}")
-            print("  Check the key, and that the Mobile product is enabled.")
+                parts.append(
+                    f"{OFCOM_SCALE.get(rng[0], rng[0])}/"
+                    f"{OFCOM_SCALE.get(rng[1], rng[1])}"
+                )
+        print(f"    {name:<10}" + "".join(f"{p:<{W}}" for p in parts))
+
+    print()
+    print("    A van is a metal box, so 'indoor' is the better guide to what")
+    print("    you will get sitting inside it. 'Outdoor' is standing beside it.")
+
+    # ---- do the two sources agree? ----
+    if hits:
+        print("\nAGREEMENT")
+        for name in ("ee", "o2", "vodafone", "three"):
+            vals = [r[name] for _d, r in hits if r[name] is not None]
+            cells = summary.get(name) or {}
+            pred = cells.get(("Data", "Outdoor"))
+            if not vals or pred is None:
+                continue
+            med = median(vals)
+            pred_txt = OFCOM_SCALE.get(pred[1], str(pred[1]))
+            # Rough correspondence: 'likely' should mean better than -100.
+            if pred[1] == 4 and med < -105:
+                verdict = "MODEL OPTIMISTIC"
+            elif pred[1] == 0 and med > -100:
+                verdict = "MODEL PESSIMISTIC"
+            else:
+                verdict = "consistent"
+            print(
+                f"    {name:<10} model says {pred_txt:<9} "
+                f"measured median {med:>5} dBm   -> {verdict}"
+            )
+        print()
+        print("    Disagreement is the interesting case, and the thing no")
+        print("    other coverage checker can show you.")
 
     print()
 

@@ -99,8 +99,28 @@ product (100 calls/min, 50,000/month), then:
 export OFCOM_MOBILE_KEY=your_key_here
 ```
 
-Ofcom's scale is numeric: 4 likely, 3 limited, 0 none, reported per
-operator for voice and data, indoor and outdoor.
+Ofcom's scale is numeric: 4 likely, 3 limited, 0 none (1 and 2 are
+retired), reported per operator for voice and data, indoor and outdoor.
+Carrier codes rather than brands: `EE`, `H3` = Three, `TF` = Telefonica
+= O2, `VO` = Vodafone.
+
+**The API is keyed on postcodes and UPRNs, not coordinates.** That is a
+real limitation for this app: lay-bys, forest tracks and mountain passes
+have neither. Given a coordinate, the lookup reverse-geocodes to the
+nearest postcode via postcodes.io and reports how far away it is - which
+in the Highlands may be kilometres, and is shown rather than hidden.
+
+**Read the indoor column, not the outdoor one.** A van is a metal box, so
+Ofcom's indoor prediction is the better guide to what you will get sitting
+inside it. Outdoor is what you get standing next to it.
+
+### Agreement is the product
+
+When both sources have data for a location, the lookup compares them and
+flags MODEL OPTIMISTIC or MODEL PESSIMISTIC. Every coverage checker in
+existence shows you the prediction and stops. Being able to say "the model
+claims likely coverage here and 1,200 real measurements nearby disagree"
+requires both datasets, which is why nobody else has it.
 
 ## The Ofcom schema
 
