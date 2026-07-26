@@ -1,11 +1,13 @@
 # Bulk data never goes in git. Not the raw CSVs, not the intermediates,
 # not the tiles. Git LFS is not the answer either - you will hit the
 # quota and the bandwidth billing fast.
-data/
+# Note: 'data/' would stop git descending into the directory at all, so a
+# negation below it could never match. Ignore the contents instead.
+data/*
 *.csv
 
 # Exception: small hand-maintained reference data belongs in version
-# control. It is the research itself, not a build artefact.
+# control. It is research, not a build artefact.
 !data/authorities-priority.csv
 *.geojsonl
 *.pmtiles
