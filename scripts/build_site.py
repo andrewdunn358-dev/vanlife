@@ -110,6 +110,21 @@ body {
 .terms .k { display: inline-block; min-width: 12ch; color: var(--ink-soft); }
 .notice p.note { font-size: 0.92rem; color: var(--ink-soft); margin: 0.7rem 0 0; max-width: var(--measure); }
 
+.explain {
+  font-size: 0.86rem; color: var(--ink-soft); margin: 0.6rem 0 0;
+  padding-left: 0.75rem; border-left: 2px solid var(--rule);
+  max-width: var(--measure);
+}
+.howto { border: 1px solid var(--ink); padding: 1.25rem 1.4rem; margin: 0 0 2.5rem; }
+.howto h4 { font-family: Overpass, Arial, sans-serif; font-size: 0.95rem;
+            margin: 0 0 0.75rem; font-weight: 700; }
+.howto dl { margin: 0; font-size: 0.92rem; }
+.howto dt { font-family: "Overpass Mono", monospace; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            color: var(--ink); margin-top: 0.9rem; }
+.howto dt:first-child { margin-top: 0; }
+.howto dd { margin: 0.2rem 0 0; color: var(--ink-soft); max-width: var(--measure); }
+
 .goto { font-family: "Overpass Mono", monospace; font-size: 0.72rem;
         margin: 0.7rem 0 0; display: flex; flex-wrap: wrap; gap: 0 1rem; align-items: baseline; }
 .goto a { color: var(--sign); }
@@ -228,6 +243,8 @@ MAP_JS = """<script>
 })();
 </script>"""
 
+HOWTO = '<div class="howto">\n<h4>How to read this</h4>\n<dl>\n<dt>You can stay / you cannot stay</dt>\n<dd>Green edges mark places an authority has set aside for overnight stays.\nAmber marks places it has restricted. Neither is advice &mdash; both report\nwhat was published, and the rules change.</dd>\n<dt>Restricts sleeping, or restricts parking?</dt>\n<dd>These are different offences and councils use both. Gwynedd lets you park\nanywhere and sleep almost nowhere. Cornwall has fined people for leaving a\nmotorhome overnight without sleeping in it at all.</dd>\n<dt>Self-contained</dt>\n<dd>Usually a fixed toilet plus sealed containers for waste water and sewage.\nDefinitions vary by authority and there is no UK certification scheme, so it\nis a claim rather than a standard. A converted van with a portable loo often\ndoes not qualify.</dd>\n<dt>The line under each record</dt>\n<dd>Where the information came from, when it was last checked, and what legal\npower it sits under. If it says the location has not been checked, the pin is\na rough lookup rather than the car park entrance.</dd>\n<dt>What this is not</dt>\n<dd>Not complete, not current, and not advice. It covers a handful of\nauthorities so far. Check with the authority before relying on anything here.</dd>\n</dl>\n</div>'
+
 FOOT = """<footer>
 <p>Compiled from published sources. Informational only &mdash; never advice.
 Every record shows where it came from and when it was last checked.
@@ -235,6 +252,47 @@ Rules change; verify before you rely on this.</p>
 <p>Generated {when} &middot; <a href="https://github.com/andrewdunn358-dev/vanlife">source and data</a></p>
 </footer>
 </div></body></html>"""
+
+
+# Plain English for the schema vocabulary. The site should be readable by
+# someone who has never seen the data model.
+INSTRUMENT_PLAIN = {
+    "off_street_parking_order": ("a parking order",
+        "The rules for a council car park. Breaking one gets you a "
+        "penalty charge notice, the same as overstaying."),
+    "on_street_tro": ("a traffic order",
+        "A traffic regulation order covering a road or lay-by rather than "
+        "a car park. Also enforced by penalty charge notice."),
+    "etro": ("an experimental traffic order",
+        "A trial version of a traffic order, usually 18 months, which the "
+        "council can then make permanent, change or drop."),
+    "pspo": ("a public spaces protection order",
+        "An anti-social behaviour power. Breaking one is a criminal "
+        "offence with a fixed penalty, and it can reach a court fine. "
+        "These run for up to three years and must be renewed."),
+    "byelaw": ("a byelaw",
+        "A local law, often old, common on beaches and commons."),
+    "opening_hours": ("the car park's opening hours",
+        "No order at all - the car park is simply shut. You are not "
+        "banned from sleeping, you are banned from being there."),
+    "landowner_policy": ("the landowner's own rules",
+        "Not a law. A condition of entry set by whoever owns the land - a "
+        "water company, forestry body or trust. No penalty charge, but "
+        "they can require you to leave, and private parking charges may "
+        "apply."),
+    "policy_only": ("a stated policy",
+        "Published guidance rather than a legal instrument. How it would "
+        "be enforced is unclear."),
+    "unknown": ("an unidentified power",
+        "We have not yet established what legal power this sits under."),
+}
+
+CONFIDENCE_PLAIN = {
+    "high": "from the authority's own published pages",
+    "medium": "from a reliable source, but not the authority itself",
+    "low": "from news reporting or a third party - treat as a lead, not a fact",
+    "very_low": "uncertain, possibly out of date - do not rely on this",
+}
 
 
 def esc(v):
@@ -415,6 +473,12 @@ def notice_html(s, parent):
             out.append(f'<li><span class="k">{esc(k)}</span>{esc(v)}</li>')
         out.append("</ul>")
 
+    inst = s.get("instrument", "unknown")
+    if inst in INSTRUMENT_PLAIN and inst != "unknown":
+        _p, why = INSTRUMENT_PLAIN[inst]
+        if why:
+            out.append(f'<p class="explain">{esc(why)}</p>')
+
     if s.get("notes"):
         out.append(f'<p class="note">{esc(s["notes"])}</p>')
 
@@ -440,11 +504,12 @@ def notice_html(s, parent):
     lv = s.get("last_verified")
     bits.append(f"checked {esc(lv)}" if lv else '<span class="gap">never checked</span>')
     conf = s.get("confidence", "unknown")
-    bits.append(f"confidence {esc(conf)}")
+    bits.append(esc(CONFIDENCE_PLAIN.get(conf, f"confidence {conf}")))
     st = s.get("status", "unknown")
-    bits.append(f"status {esc(st)}")
+    bits.append("status " + esc(st.replace("_", " ")))
     inst = s.get("instrument", "unknown")
-    bits.append(f"under {esc(inst.replace('_', ' '))}")
+    plain, _why = INSTRUMENT_PLAIN.get(inst, (inst.replace("_", " "), ""))
+    bits.append(f"under {esc(plain)}")
     if s.get("lat") is None:
         bits.append('<span class="gap">location not yet recorded</span>')
     elif s.get("geocode_checked") is False:
@@ -552,6 +617,7 @@ def index_page(records, out_dir):
                 "recorded yet, the record says so rather than leaving you to guess.</p>")
 
     body.append(mapping)
+    body.append(HOWTO)
     body.append('<ul class="roll">')
     for d in sorted(records, key=lambda x: x["authority"]):
         p = sum(1 for s in d["sites"] if s.get("kind") == "provision")

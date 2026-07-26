@@ -3,33 +3,286 @@
   "authority_type": "unitary",
   "nation": "Scotland",
   "researched_on": "2026-07-26",
-  "researched_by": "council news releases",
+  "researched_by": "council news releases plus press reporting",
   "source_format": "html",
   "sources": [
-    "https://www.highland.gov.uk/news/article/14590/overnight_short_stay_parking_for_motorhomes_in_designated_highland_council_carparks_to_be_piloted",
-    "https://www.highland.gov.uk/news/article/13720/overnight_parking_for_motorhome_users_in_designated_highland_council_car_parks_to_be_considered"
+    "https://www.highland.gov.uk/news/article/16130/the_highland_campervan_and_motorhome_scheme",
+    "https://www.highland.gov.uk/news/article/14590/overnight_short_stay_parking_for_motorhomes_in_designated_highland_council_carparks_to_be_piloted"
   ],
-  "policy_summary": "Twelve designated council car parks piloted from summer 2022 for self-contained overnight stays, max 24 hours, in allocated bays. Areas: Inverness, Nairn, Caithness, Wick, Sutherland, Wester Ross. Reported at around GBP10 a night or GBP40 a week. Explicitly framed as relieving lay-by pressure on the road network rather than as enforcement - the council notes lay-by overnight parking is not illegal.",
+  "policy_summary": "The Highland Campervan and Motorhome Scheme. A voluntary GBP40 seven-day pass covering overnight parking in designated council car parks, rather than a per-night charge. Began as a 2022 pilot at 12 car parks charging around GBP10 a night; now a regional pass. Marked Overnight Stay Bays are being painted, starting at Ullapool.\n\nThe council's own framing is notable: lay-by overnight parking is 'not illegal' but restricts access for safety-related use, so the scheme exists to draw people into car parks rather than to punish them for stopping. That is the opposite posture from Cornwall's GBP70 PCN.",
+  "scheme": {
+    "name": "Highland Campervan and Motorhome Scheme",
+    "price": 40.0,
+    "currency": "GBP",
+    "covers_days": 7,
+    "voluntary": true,
+    "guarantees_space": false,
+    "hours": "22:00 to 08:00",
+    "no_return_hours": 72,
+    "day_charges_extra": true,
+    "includes": [
+      "overnight parking in designated car parks",
+      "leisure centre access including showers",
+      "waste disposal at official points"
+    ],
+    "conditions": [
+      "all activity contained within the vehicle",
+      "no awnings, tables or equipment outside",
+      "use allocated bays where available",
+      "first come, first served"
+    ]
+  },
   "open_questions": [
-    "Which twelve car parks? Areas named, sites not.",
-    "Did the pilot become permanent, and has it expanded since 2022?",
-    "Sutherland area committee separately moved for a blanket ban in council car parks - what happened to that?"
+    "Full list of car parks in the current scheme - eight are named below, twelve were in the pilot.",
+    "Does the GBP10 per night option still exist alongside the pass, or has the pass replaced it?",
+    "Sutherland Area Committee separately moved for a blanket ban in council car parks. What became of that?",
+    "The British Holiday and Home Parks Association objected on competition grounds. Any change since?"
   ],
   "sites": [
     {
-      "name": "Twelve pilot car parks (Inverness, Nairn, Caithness, Wick, Sutherland, Wester Ross)",
+      "name": "Torvean Car Park, Inverness",
       "kind": "provision",
       "lat": null,
       "lon": null,
       "instrument": "off_street_parking_order",
-      "status": "unknown",
-      "price_per_night": 10.0,
-      "currency": "GBP",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "Covered by the GBP40 seven-day regional pass. Day charges still apply on top.",
+      "arrival_from": "22:00",
+      "departure_by": "08:00",
       "max_nights": 1,
+      "return_gap_hours": 72,
       "requires_self_contained": true,
+      "booking": "none_required",
+      "prohibits": [
+        "awnings",
+        "tables",
+        "equipment outside vehicle"
+      ],
+      "facilities": [
+        "waste disposal at official points",
+        "leisure centre showers with pass"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Torvean Car Park, Inverness, Scotland",
+      "notes": "Named in the council's pilot announcement. First come, first served - the pass does not reserve a space."
+    },
+    {
+      "name": "Nairn Harbour, Nairn",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "Covered by the GBP40 seven-day regional pass. Day charges still apply on top.",
+      "arrival_from": "22:00",
+      "departure_by": "08:00",
+      "max_nights": 1,
+      "return_gap_hours": 72,
+      "requires_self_contained": true,
+      "booking": "none_required",
+      "prohibits": [
+        "awnings",
+        "tables",
+        "equipment outside vehicle"
+      ],
+      "facilities": [
+        "waste disposal at official points",
+        "leisure centre showers with pass"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Nairn Harbour, Nairn, Scotland",
+      "notes": "Named in the council's pilot announcement. First come, first served - the pass does not reserve a space."
+    },
+    {
+      "name": "Dunnet Head Car Park, Caithness",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "Covered by the GBP40 seven-day regional pass. Day charges still apply on top.",
+      "arrival_from": "22:00",
+      "departure_by": "08:00",
+      "max_nights": 1,
+      "return_gap_hours": 72,
+      "requires_self_contained": true,
+      "booking": "none_required",
+      "prohibits": [
+        "awnings",
+        "tables",
+        "equipment outside vehicle"
+      ],
+      "facilities": [
+        "waste disposal at official points",
+        "leisure centre showers with pass"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Dunnet Head Car Park, Caithness, Scotland",
+      "notes": "Named in the council's pilot announcement. First come, first served - the pass does not reserve a space."
+    },
+    {
+      "name": "Dunnet Seadrift Car Park, Caithness",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "Covered by the GBP40 seven-day regional pass. Day charges still apply on top.",
+      "arrival_from": "22:00",
+      "departure_by": "08:00",
+      "max_nights": 1,
+      "return_gap_hours": 72,
+      "requires_self_contained": true,
+      "booking": "none_required",
+      "prohibits": [
+        "awnings",
+        "tables",
+        "equipment outside vehicle"
+      ],
+      "facilities": [
+        "waste disposal at official points",
+        "leisure centre showers with pass"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Dunnet Seadrift Car Park, Caithness, Scotland",
+      "notes": "Named in the council's pilot announcement. First come, first served - the pass does not reserve a space."
+    },
+    {
+      "name": "Noss Head Car Park, Caithness",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "Covered by the GBP40 seven-day regional pass. Day charges still apply on top.",
+      "arrival_from": "22:00",
+      "departure_by": "08:00",
+      "max_nights": 1,
+      "return_gap_hours": 72,
+      "requires_self_contained": true,
+      "booking": "none_required",
+      "prohibits": [
+        "awnings",
+        "tables",
+        "equipment outside vehicle"
+      ],
+      "facilities": [
+        "waste disposal at official points",
+        "leisure centre showers with pass"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Noss Head Car Park, Caithness, Scotland",
+      "notes": "Named in the council's pilot announcement. First come, first served - the pass does not reserve a space."
+    },
+    {
+      "name": "Reiss Beach Car Park, Caithness",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "Covered by the GBP40 seven-day regional pass. Day charges still apply on top.",
+      "arrival_from": "22:00",
+      "departure_by": "08:00",
+      "max_nights": 1,
+      "return_gap_hours": 72,
+      "requires_self_contained": true,
+      "booking": "none_required",
+      "prohibits": [
+        "awnings",
+        "tables",
+        "equipment outside vehicle"
+      ],
+      "facilities": [
+        "waste disposal at official points",
+        "leisure centre showers with pass"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Reiss Beach Car Park, Caithness, Scotland",
+      "notes": "Named in the council's pilot announcement. First come, first served - the pass does not reserve a space."
+    },
+    {
+      "name": "Riverside Car Park, Wick",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "Covered by the GBP40 seven-day regional pass. Day charges still apply on top.",
+      "arrival_from": "22:00",
+      "departure_by": "08:00",
+      "max_nights": 1,
+      "return_gap_hours": 72,
+      "requires_self_contained": true,
+      "booking": "none_required",
+      "prohibits": [
+        "awnings",
+        "tables",
+        "equipment outside vehicle"
+      ],
+      "facilities": [
+        "waste disposal at official points",
+        "leisure centre showers with pass"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Riverside Car Park, Wick, Scotland",
+      "notes": "Named in the council's pilot announcement. First come, first served - the pass does not reserve a space."
+    },
+    {
+      "name": "Durness Village Tourist Info Car Park, Sutherland",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "Covered by the GBP40 seven-day regional pass. Day charges still apply on top.",
+      "arrival_from": "22:00",
+      "departure_by": "08:00",
+      "max_nights": 1,
+      "return_gap_hours": 72,
+      "requires_self_contained": true,
+      "booking": "none_required",
+      "prohibits": [
+        "awnings",
+        "tables",
+        "equipment outside vehicle"
+      ],
+      "facilities": [
+        "waste disposal at official points",
+        "leisure centre showers with pass"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Durness Village Tourist Info Car Park, Sutherland, Scotland",
+      "notes": "Named in the council's pilot announcement. First come, first served - the pass does not reserve a space."
+    },
+    {
+      "name": "Highland lay-bys generally",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "applies_to": "unknown",
+      "restricts": "parking",
+      "status": "in_force",
       "last_verified": "2026-07-26",
       "confidence": "low",
-      "notes": "Max stay 24 hours. Price from secondary reporting - around GBP10/night or GBP40/week. Individual sites not yet identified."
+      "notes": "The council states overnight lay-by parking is NOT illegal, but discourages it and reports many lay-bys carrying 'No Overnight Parking' signs. Signs may or may not be backed by an order - that distinction matters and is not yet established."
     }
   ]
 }
