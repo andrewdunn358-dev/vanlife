@@ -125,6 +125,32 @@ body {
 .howto dt:first-child { margin-top: 0; }
 .howto dd { margin: 0.2rem 0 0; color: var(--ink-soft); max-width: var(--measure); }
 
+.vehicle { border: 1px solid var(--ink); padding: 1.25rem 1.4rem; margin: 0 0 2.5rem; }
+.vehicle h4 { font-family: Overpass, Arial, sans-serif; font-size: 0.95rem;
+              margin: 0 0 0.5rem; font-weight: 700; }
+.vehicle p { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 1rem; max-width: var(--measure); }
+.vrow { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: flex-end; }
+.vrow label { font-family: "Overpass Mono", monospace; font-size: 0.7rem;
+              text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft);
+              display: flex; flex-direction: column; gap: 0.25rem; }
+.vrow input[type=number], .vrow select {
+  font-family: "Source Serif 4", serif; font-size: 0.92rem; text-transform: none;
+  letter-spacing: 0; padding: 0.3rem 0.4rem; border: 1px solid var(--rule);
+  background: #fff; color: var(--ink); min-width: 7rem;
+}
+.vchecks { margin-top: 0.9rem; }
+.vchecks label { flex-direction: row; align-items: center; gap: 0.4rem; }
+.vsum { font-family: "Overpass Mono", monospace; font-size: 0.75rem;
+        margin: 1rem 0 0; color: var(--ink); }
+.yours { font-size: 0.88rem; margin: 0.7rem 0 0; padding: 0.5rem 0.7rem;
+         border-left: 3px solid var(--rule); max-width: var(--measure); }
+.yours b { font-family: Overpass, Arial, sans-serif; font-size: 0.76rem;
+           text-transform: uppercase; letter-spacing: 0.05em; display: block;
+           margin-bottom: 0.15rem; }
+.y-ok { border-left-color: var(--permit); color: var(--permit); }
+.y-blocks { border-left-color: var(--restrict); color: var(--restrict); }
+.y-check { border-left-color: var(--unknown); color: var(--ink-soft); }
+
 .goto { font-family: "Overpass Mono", monospace; font-size: 0.72rem;
         margin: 0.7rem 0 0; display: flex; flex-wrap: wrap; gap: 0 1rem; align-items: baseline; }
 .goto a { color: var(--sign); }
@@ -295,6 +321,14 @@ CONFIDENCE_PLAIN = {
 }
 
 
+
+ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
+
+
+def asset(name):
+    return open(os.path.join(ASSETS, name), encoding="utf-8").read()
+
+
 def esc(v):
     return html.escape(str(v)) if v is not None else ""
 
@@ -462,7 +496,22 @@ def notice_html(s, parent):
     cls = "is-provision" if kind == "provision" else "is-restriction"
     label = "You can stay" if kind == "provision" else "You cannot stay"
 
-    out = [f'<article class="notice {cls}">',
+    rule = {"kind": kind}
+    if s.get("requires_self_contained"):
+        rule["self_contained"] = True
+    if s.get("applies_to"):
+        rule["applies_to"] = s["applies_to"]
+    if s.get("restricts"):
+        rule["restricts"] = s["restricts"]
+    for src in ("max_height_m", "osm_maxheight"):
+        if s.get(src):
+            try:
+                rule["max_height"] = float(str(s[src]).replace("m", "").strip())
+            except ValueError:
+                pass
+    attr = html.escape(json.dumps(rule), quote=True)
+
+    out = [f'<article class="notice {cls}" data-rec="{attr}">',
            f'<span class="kind">{label}</span>',
            f'<h3>{esc(s.get("name"))}</h3>']
 
@@ -528,6 +577,7 @@ def notice_html(s, parent):
     else:
         bits.append('<span class="gap">no source recorded</span>')
     out.append('<p class="provenance">' + " &middot; ".join(bits) + "</p>")
+    out.append('<div class="yours"></div>')
     out.append("</article>")
     return "\n".join(out)
 
@@ -555,6 +605,7 @@ def authority_page(d, out_dir, root="../"):
     body.append("</div>")
 
     body.append(mapping)
+    body.append(asset("vehicle-form.html"))
     body.append('<section class="authority">')
     body.append('<div class="authority-head">')
     body.append(f"<h2>{esc(name)}</h2>")
@@ -577,6 +628,7 @@ def authority_page(d, out_dir, root="../"):
         body.append("</ul>")
 
     body.append("</section>")
+    body.append("<script>" + asset("vehicle.js") + "</script>")
     body.append(f'<a class="back" href="{root}index.html">&larr; All authorities</a>')
     body.append(FOOT.format(when=date.today().isoformat()))
 
