@@ -93,18 +93,35 @@
       "notes": "Forestry England state plainly that overnight campervan or motorhome stays are not permitted in any car park outside the scheme. Landowner policy, so no PCN - but they can require you to leave. Needs the full car park list to be mappable; that list may itself be a useful dataset."
     },
     {
-      "name": "Tower Knowe / Hawkhope / Elf Kirk (Kielder Water)",
+      "name": "Elf Kirk Viewpoint, Kielder",
       "kind": "provision",
       "instrument": "landowner_policy",
-      "status": "unknown",
+      "status": "in_force",
       "price_per_night": null,
       "requires_self_contained": true,
       "last_verified": "2026-07-26",
-      "confidence": "very_low",
-      "notes": "Older sources (2018-2021) describe overnight parking at around GBP10 at several Kielder Water car parks. These sit within Kielder Water & Forest Park, a partnership between Forestry England, Northumbrian Water and others - so responsibility per car park is unclear and may not be Forestry England's. NOT CURRENT: verify before any use.",
-      "search_hint": "Tower Knowe Visitor Centre, Kielder Water",
+      "confidence": "medium",
+      "notes": "Approved for overnight campervan stays by Forestry England and Northumbrian Water jointly. Coin-only on site: ten pound coins, and there is no cash machine in Kielder - the nearest are in Bellingham. Pay by card at Kielder Castle instead, ten miles away, if you have not got the coins.",
+      "search_hint": "Elf Kirk viewpoint, Kielder Water",
       "lat": null,
-      "lon": null
+      "lon": null,
+      "price_note": "Payable at Elf Kirk in GBP1 coins only - ten of them - or by card at Kielder Castle, which is about ten miles away.",
+      "payment_methods": [
+        "coins at site (10 x GBP1)",
+        "card at Kielder Castle"
+      ]
+    },
+    {
+      "name": "Anglers Arms rear car park, Kielder village",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Anglers Arms, Kielder village",
+      "notes": "Named alongside Kielder Castle and Elf Kirk as approved for overnight campervan stays. This one is a PUB car park, so it belongs to the hospitality category rather than to Forestry England - worth splitting out once the landowner is confirmed. Terms and price unknown."
     }
   ],
   "areas": [
@@ -114,5 +131,6 @@
     "Kent",
     "Suffolk",
     "Lancashire"
-  ]
+  ],
+  "notes": "Kielder Castle is due to reopen in summer 2026 after redevelopment, coinciding with Kielder Forest's centenary. Overnight parking has continued during the works."
 }

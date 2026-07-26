@@ -7,6 +7,8 @@
   "source_format": "html",
   "sources": [
     "https://www.kielderwaterside.com/whats-on/car-parking-options/",
+    "https://www.kielderwaterside.com/northumbrian-water-and-kielder-waterside/",
+    "https://www.visitkielder.com/visit/plan-your-visit/",
     "https://www.visitkielder.com/faqs"
   ],
   "policy_summary": "A company-wide scheme, not a site arrangement. Overnight parking is permitted and charged at reservoirs across the north east, with a shared booking system covering Balderhead, Derwent, Fontburn, Selset, Grassholme, Scaling Dam and Kielder. Typically GBP10 a night with no facilities - no hook-up, no waste disposal - and rangers check tickets in the evening.\n\nThis is the answer to whether water companies are a per-site or per-company research job. Per company. One operator, one scheme, seven reservoirs. If United Utilities and Yorkshire Water work the same way, the landowner tier is far smaller work than the councils.",
@@ -107,7 +109,7 @@
       "lat": null,
       "lon": null,
       "instrument": "landowner_policy",
-      "status": "unknown",
+      "status": "in_force",
       "price_per_night": 10.0,
       "currency": "GBP",
       "facilities": [
@@ -120,25 +122,40 @@
       ],
       "booking": "online_or_on_site",
       "last_verified": "2026-07-26",
-      "confidence": "low",
+      "confidence": "high",
       "search_hint": "Tower Knowe Visitor Centre, Kielder Water",
-      "notes": "Advertised for motorhomes, campervans and caravans at GBP10 a night. BUT see the Kielder warning - visitor reports conflict sharply, with one party moved on by a ranger at 21:00 from Hawkhope after paying, and told overnight stays are not allowed anywhere at Kielder. Verify before relying on this."
+      "notes": "Approved for overnight stays. GBP10 a night and unusually it accepts caravans as well as motorhomes and campervans - most sites do not. No electric hook-up, no waste disposal. Pre-pay at bookwhen.com/car-parking. Visitor centre and cafe on site.",
+      "excludes_vehicle_types": []
     },
     {
-      "name": "Other Kielder Water car parks (Hawkhope, South Abutment, Matthew's Linn, Bakethin)",
+      "name": "Hawkhope, South Abutment, Matthew's Linn, Bakethin and Skyspace Lower",
       "kind": "restriction",
       "lat": null,
       "lon": null,
       "instrument": "landowner_policy",
       "applies_to": "adapted_for_sleeping",
       "restricts": "sleeping",
-      "status": "unknown",
+      "status": "in_force",
       "last_verified": "2026-07-26",
-      "confidence": "very_low",
-      "notes": "CONFLICTING EVIDENCE. Some visitors report paying GBP10 for overnight at Hawkhope with a friendly ranger checking tickets; another was moved on at 21:00 and told overnight stays are not permitted anywhere at Kielder. Day parking is GBP5, transferable across car parks, with a stargazing option until 03:00 which is not the same as staying the night. Do not publish a verdict for these until checked directly."
+      "confidence": "high",
+      "notes": "NOT approved for overnight stays, whatever the day ticket implies. This is where visitor reports went wrong: the GBP6.50 day ticket runs until 03:00 for stargazing and is transferable across every car park, so it reads as though it covers the night. It does not. Rangers patrol and CCTV covers the car parks. One party paid the day fee plus GBP10 at Hawkhope and were still moved on at 21:00."
+    },
+    {
+      "name": "Kielder day parking (all car parks)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": null,
+      "price_note": "GBP6.50 full day until 03:00, GBP2.50 for one hour. Transferable across every Kielder car park.",
+      "restricts": "sleeping",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "Included because the day ticket is the single most misleading thing at Kielder. It lasts until 3am for stargazing and works in every car park, which reads like permission to stay the night. It is not. Only four car parks are approved for overnight: Tower Knowe, Kielder Castle, Elf Kirk and the Anglers Arms rear car park."
     }
   ],
-  "kielder_note": "Kielder Water & Forest Park is run by a development trust whose members include Northumbrian Water, the Forestry Commission, Northumberland County Council, Calvert Trust and Kielder Observatory. Responsibility therefore varies by car park: Kielder Castle is Forestry England's at GBP15, Tower Knowe is Northumbrian Water's at GBP10, and several others sit under the shared GBP5 day-parking scheme with unclear overnight status. A single destination with at least three regimes - and the strongest argument yet that the data model must key on the car park, never on the destination.",
+  "kielder_note": "RESOLVED. Kielder Waterside is owned and operated by Northumbrian Water. The wider park is run by the Kielder Water & Forest Park Development Trust, whose members include Northumbrian Water, the Forestry Commission, Northumberland County Council, Calvert Trust Kielder and Kielder Observatory.\n\nThe contradiction in visitor reports is explained. Overnight stays are approved at FOUR places only: Tower Knowe (Northumbrian Water, GBP10), Kielder Castle (Forestry England, GBP15), Elf Kirk viewpoint, and the Anglers Arms rear car park in Kielder village. Hawkhope is NOT one of them.\n\nThe trap is the day ticket. GBP6.50 buys a full day until 03:00 for stargazing and is transferable across every car park in the park - Hawkhope, South Abutment, Tower Knowe, Kielder Waterside, Matthew's Linn, Bakethin, Kielder Castle, Skyspace Lower and Elf Kirk. Being transferable, and running until 3am, it reads like it covers staying the night. It does not. The party who paid GBP5 for the day and GBP10 for the night at Hawkhope had bought something that does not apply there, and were moved on at 21:00. Correctly, as it turns out.",
   "areas": [
     "Northumberland",
     "County Durham",
