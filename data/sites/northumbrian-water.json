@@ -138,5 +138,10 @@
       "notes": "CONFLICTING EVIDENCE. Some visitors report paying GBP10 for overnight at Hawkhope with a friendly ranger checking tickets; another was moved on at 21:00 and told overnight stays are not permitted anywhere at Kielder. Day parking is GBP5, transferable across car parks, with a stargazing option until 03:00 which is not the same as staying the night. Do not publish a verdict for these until checked directly."
     }
   ],
-  "kielder_note": "Kielder Water & Forest Park is run by a development trust whose members include Northumbrian Water, the Forestry Commission, Northumberland County Council, Calvert Trust and Kielder Observatory. Responsibility therefore varies by car park: Kielder Castle is Forestry England's at GBP15, Tower Knowe is Northumbrian Water's at GBP10, and several others sit under the shared GBP5 day-parking scheme with unclear overnight status. A single destination with at least three regimes - and the strongest argument yet that the data model must key on the car park, never on the destination."
+  "kielder_note": "Kielder Water & Forest Park is run by a development trust whose members include Northumbrian Water, the Forestry Commission, Northumberland County Council, Calvert Trust and Kielder Observatory. Responsibility therefore varies by car park: Kielder Castle is Forestry England's at GBP15, Tower Knowe is Northumbrian Water's at GBP10, and several others sit under the shared GBP5 day-parking scheme with unclear overnight status. A single destination with at least three regimes - and the strongest argument yet that the data model must key on the car park, never on the destination.",
+  "areas": [
+    "Northumberland",
+    "County Durham",
+    "North Yorkshire"
+  ]
 }

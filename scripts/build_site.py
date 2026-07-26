@@ -254,6 +254,86 @@ def term_rows(s):
     return rows
 
 
+def by_area(records):
+    """Group authorities under the places they operate in.
+
+    Landowners span several counties and a council spans one, so this is
+    many-to-many rather than a tree. An authority appears under every area
+    it covers.
+    """
+    nations = json.load(open(os.path.join(ASSETS, "areas.json"), encoding="utf-8"))
+    areas = {}
+    for d in records:
+        for a in d.get("areas") or ["Unassigned"]:
+            areas.setdefault(a, []).append(d)
+
+    grouped = {}
+    for area, docs in areas.items():
+        nation = nations.get(area, "Elsewhere")
+        grouped.setdefault(nation, {})[area] = sorted(
+            docs, key=lambda x: x["authority"])
+    return grouped
+
+
+def area_page(area, docs, out_dir):
+    """Everything that governs one place, whoever owns it.
+
+    The most useful page on the site: a council, a national park, a water
+    company and a forestry body all set rules in Northumberland, and no
+    one publishes them together.
+    """
+    sites = []
+    for d in docs:
+        for s in d["sites"]:
+            sites.append((d, s))
+    prov = sum(1 for _d, s in sites if s.get("kind") == "provision")
+    gj, awaiting = site_geojson(docs)
+    mapping, has_map = map_block(gj, awaiting)
+
+    body = [HEAD.format(
+        title=f"Staying overnight in {html.escape(area)} in a van",
+        desc=f"Overnight parking and sleeping rules across {html.escape(area)} - "
+             "councils, national parks, water companies and landowners in one place.",
+        css=asset("site.css"), root="../", mapassets=MAP_ASSETS if has_map else "")]
+
+    body.append('<div class="state">')
+    body.append(f"<span><b>{len(docs)}</b> bodies set rules here</span>")
+    body.append(f"<span><b>{len(sites)}</b> records</span>")
+    body.append(f"<span><b>{prov}</b> where you can stay</span>")
+    body.append("</div>")
+
+    body.append(f'<div class="authority-head"><h2>{esc(area)}</h2>'
+                f'<p class="meta">{len(docs)} authorities and landowners</p></div>')
+    body.append('<p class="vstrip" id="vstrip" data-home="../index.html"></p>')
+    body.append(mapping)
+
+    body.append("<p class=\"summary\">Different bodies own different land here, and "
+                "they do not follow the same rules. A council car park, a national park "
+                "car park and a reservoir car park a mile apart can each have a "
+                "different answer.</p>")
+
+    body.append('<ul class="roll">')
+    for d in docs:
+        p = sum(1 for s in d["sites"] if s.get("kind") == "provision")
+        r = len(d["sites"]) - p
+        kind = d.get("authority_type", "")
+        body.append(
+            f'<li><a href="../authority/{slug(d["authority"])}.html">'
+            f'{esc(d["authority"])}'
+            f'<span class="rollsub">{esc(kind)}</span></a>'
+            f'<span class="tally">{p} permitted &middot; {r} restricted</span></li>')
+    body.append("</ul>")
+
+    body.append("<script>" + asset("vehicle.js") + "</script>")
+    body.append(f'<a class="back" href="../index.html">&larr; All areas</a>')
+    body.append(FOOT.format(when=date.today().isoformat()))
+
+    path = os.path.join(out_dir, "area", f"{slug(area)}.html")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w", encoding="utf-8").write("\n".join(body))
+    return path
+
+
 def site_geojson(records):
     """Only sites with real coordinates. Nothing is invented to fill the map."""
     feats, awaiting = [], []
@@ -539,14 +619,24 @@ def index_page(records, out_dir):
     body.append(vehicle_picker())
     body.append(mapping)
     body.append(HOWTO)
-    body.append('<ul class="roll">')
-    for d in sorted(records, key=lambda x: x["authority"]):
-        p = sum(1 for s in d["sites"] if s.get("kind") == "provision")
-        r = len(d["sites"]) - p
-        body.append(
-            f'<li><a href="authority/{slug(d["authority"])}.html">{esc(d["authority"])}</a>'
-            f'<span class="tally">{p} permitted &middot; {r} restricted</span></li>')
-    body.append("</ul>")
+    grouped = by_area(records)
+    for nation in ("England", "Wales", "Scotland", "Northern Ireland", "Elsewhere"):
+        if nation not in grouped:
+            continue
+        body.append(f'<h3 class="nation">{esc(nation)}</h3>')
+        body.append('<ul class="roll">')
+        for area in sorted(grouped[nation]):
+            docs = grouped[nation][area]
+            n = sum(len(d["sites"]) for d in docs)
+            p = sum(1 for d in docs for s in d["sites"] if s.get("kind") == "provision")
+            body.append(
+                f'<li><a href="area/{slug(area)}.html">{esc(area)}'
+                f'<span class="rollsub">'
+                + ", ".join(esc(d["authority"]) for d in docs[:3])
+                + (f" and {len(docs) - 3} more" if len(docs) > 3 else "")
+                + "</span></a>"
+                f'<span class="tally">{p} of {n} permitted</span></li>')
+        body.append("</ul>")
     body.append("<script>" + asset("vehicle.js") + "</script>")
     body.append(FOOT.format(when=date.today().isoformat()))
 
@@ -579,13 +669,21 @@ def main():
         n = len([f for f in os.listdir(dst) if not f.startswith(".")])
         print(f"copied {n} vehicle image(s) into {dst}")
 
+    grouped = by_area(records)
+    areas = 0
+    for nation in grouped:
+        for area, docs in grouped[nation].items():
+            area_page(area, docs, args.out)
+            areas += 1
+
     for d in records:
         authority_page(d, args.out)
     index_page(records, args.out)
 
     n = sum(len(d["sites"]) for d in records)
     mapped = sum(1 for d in records for s in d["sites"] if s.get("lat") is not None)
-    print(f"built {len(records) + 1} pages in {args.out}/")
+    print(f"built {len(records) + areas + 1} pages in {args.out}/ "
+          f"({areas} areas, {len(records)} authorities)")
     print(f"  {len(records)} authorities, {n} records, {mapped} with coordinates")
     if mapped < n:
         print(f"  {n - mapped} records cannot be mapped until coordinates are added")

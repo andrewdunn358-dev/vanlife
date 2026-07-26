@@ -41,8 +41,8 @@
     {
       "name": "Kielder Castle Car Park",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 55.23392,
+      "lon": -2.58006,
       "instrument": "landowner_policy",
       "status": "in_force",
       "price_per_night": 15.0,
@@ -73,7 +73,11 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "notes": "First come first served, no pre-booking - the only site in the national scheme without it. Park up after 5pm. Dark sky location. Charges apply to Forestry England members too; overnight is not covered by the free member parking benefit.",
-      "search_hint": "Kielder Castle, Northumberland"
+      "search_hint": "Kielder Castle, Northumberland",
+      "geocoded_by": "nominatim",
+      "geocode_precision": "water",
+      "geocode_band": "area",
+      "geocode_checked": false
     },
     {
       "name": "All other Forestry England car parks",
@@ -91,8 +95,8 @@
     {
       "name": "Tower Knowe / Hawkhope / Elf Kirk (Kielder Water)",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 55.0,
+      "lon": -2.0,
       "instrument": "landowner_policy",
       "status": "unknown",
       "price_per_night": null,
@@ -100,7 +104,19 @@
       "last_verified": "2026-07-26",
       "confidence": "very_low",
       "notes": "Older sources (2018-2021) describe overnight parking at around GBP10 at several Kielder Water car parks. These sit within Kielder Water & Forest Park, a partnership between Forestry England, Northumbrian Water and others - so responsibility per car park is unclear and may not be Forestry England's. NOT CURRENT: verify before any use.",
-      "search_hint": "Tower Knowe Visitor Centre, Kielder Water"
+      "search_hint": "Tower Knowe Visitor Centre, Kielder Water",
+      "geocoded_by": "nominatim",
+      "geocode_precision": "water",
+      "geocode_band": "area",
+      "geocode_checked": false
     }
+  ],
+  "areas": [
+    "Northumberland",
+    "Cornwall",
+    "Buckinghamshire",
+    "Kent",
+    "Suffolk",
+    "Lancashire"
   ]
 }

@@ -367,3 +367,20 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-ra
   font-family: "Space Grotesk", system-ui, sans-serif;
   font-size: 0.72rem; color: var(--ink-3); margin: 0.9rem 0 0;
 }
+
+/* ---- area navigation ---- */
+.nation {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--ink-3);
+  margin: 2rem 0 0.7rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--hair);
+}
+.nation:first-of-type { margin-top: 0; }
+.roll a { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+.roll li { display: flex; }
+.roll li a { flex: 1; }
+.rollsub {
+  display: block; font-weight: 400; font-size: 0.78rem; color: var(--ink-3);
+  letter-spacing: 0; line-height: 1.4;
+}

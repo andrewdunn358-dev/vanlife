@@ -12,8 +12,8 @@
     {
       "name": "Knockcushan Street Car Park, Girvan",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 55.24339,
+      "lon": -4.85921,
       "instrument": "policy_only",
       "status": "unknown",
       "bays": 20,
@@ -33,13 +33,17 @@
       "last_verified": "2026-07-26",
       "confidence": "low",
       "notes": "Announced as a trial; start date was TBC in the source. Verify whether it ran and is still running.",
-      "search_hint": "Knockcushan Street, Girvan"
+      "search_hint": "Knockcushan Street, Girvan",
+      "geocoded_by": "nominatim",
+      "geocode_precision": "water",
+      "geocode_band": "area",
+      "geocode_checked": false
     },
     {
       "name": "Blackburn Road Car Park, Ayr",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 55.0,
+      "lon": -2.0,
       "instrument": "policy_only",
       "status": "unknown",
       "bays": 20,
@@ -58,7 +62,14 @@
       ],
       "last_verified": "2026-07-26",
       "confidence": "low",
-      "search_hint": "Blackburn Road, Ayr"
+      "search_hint": "Blackburn Road, Ayr",
+      "geocoded_by": "nominatim",
+      "geocode_precision": "water",
+      "geocode_band": "area",
+      "geocode_checked": false
     }
+  ],
+  "areas": [
+    "South Ayrshire"
   ]
 }
