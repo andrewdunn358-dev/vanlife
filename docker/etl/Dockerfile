@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libsqlite3-dev \
         python3 \
         python3-pip \
+        unzip \
         zlib1g-dev \
     && git clone --depth 1 --branch ${TIPPECANOE_VERSION} \
         https://github.com/felt/tippecanoe.git /tmp/tippecanoe \

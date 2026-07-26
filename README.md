@@ -20,8 +20,45 @@ out, and a web page draws it.
 
 ```
 Ofcom CSV  →  GeoJSONL  →  Tippecanoe  →  PMTiles  →  MapLibre
-   14GB        stream        overnight      ~1-3GB      viewer
+  zipped/yr      stream        overnight      ~1-3GB      viewer
 ```
+
+## Getting the data
+
+Ofcom publishes this **annually, around early March**, split by year and
+technology, as ZIP archives. There is no single 14GB file — that figure
+is the whole archive back to 2020.
+
+Source page: [mobile signal strength measurement data](https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/mobile-signal-strength-measurement-data)
+
+Take the most recent 4G year to begin with. Note the archive expands to
+several times its download size.
+
+```bash
+cd data/raw
+nohup wget -c '<url from the page>' -O ofcom_4g_2025.zip > wget.log 2>&1 &
+# then, once complete:
+unzip -o ofcom_4g_2025.zip -d .
+ls -lh
+```
+
+Do **not** take the "yellow trains" dataset from the same site. That is
+signal measured along the railway network from Network Rail engineering
+trains — interesting, but the wrong geometry for a van.
+
+### Combining years
+
+The converter emits line-delimited GeoJSON, so merging years needs no
+extra code:
+
+```bash
+cat data/interim/*.geojsonl > data/interim/all.geojsonl
+```
+
+Be clear which question you are answering. "Has a vehicle ever driven
+this road" wants every year. "What signal will I get today" wants the
+latest only — masts change, and the 3G switch-off shifted things during
+2025.
 
 ## Running it
 
