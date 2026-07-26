@@ -3,15 +3,18 @@
   "authority_type": "landowner (water)",
   "nation": "England",
   "researched_on": "2026-07-26",
-  "researched_by": "user report from direct visit (Fontburn); not yet verified against published policy",
-  "source_format": "unknown",
-  "sources": [],
-  "policy_summary": "Overnight parking is PERMITTED and CHARGED at Fontburn, £10. This is provision, not restriction - a materially different posture from the councils researched so far. Unknown whether this is a Fontburn arrangement or a Northumbrian Water tariff applying across Derwent, Kielder and other sites. That distinction decides whether water companies are a per-site job or a per-company one.",
+  "researched_by": "user report from a visit (Fontburn), plus operator pages and user forums for the rest",
+  "source_format": "html",
+  "sources": [
+    "https://www.kielderwaterside.com/whats-on/car-parking-options/",
+    "https://www.visitkielder.com/faqs"
+  ],
+  "policy_summary": "A company-wide scheme, not a site arrangement. Overnight parking is permitted and charged at reservoirs across the north east, with a shared booking system covering Balderhead, Derwent, Fontburn, Selset, Grassholme, Scaling Dam and Kielder. Typically GBP10 a night with no facilities - no hook-up, no waste disposal - and rangers check tickets in the evening.\n\nThis is the answer to whether water companies are a per-site or per-company research job. Per company. One operator, one scheme, seven reservoirs. If United Utilities and Yorkshire Water work the same way, the landowner tier is far smaller work than the councils.",
+  "notes": "Kielder is the exception and needs care - see the Kielder note below. Elsewhere the pattern looks consistent: pay at the visitor centre or online, ranger checks in the evening, gates close overnight.",
   "open_questions": [
-    "Is the £10 signed at the car park, or published online only? Decides scrapeability.",
-    "Any conditions - self-containment, max nights, arrival/departure times, awnings?",
-    "Site-specific or company-wide tariff?",
-    "Does the same apply at Derwent and Kielder Water?"
+    "Confirm the current price at each reservoir - GBP10 is reported at Fontburn and Derwent.",
+    "Which reservoirs have gates that lock, and at what time? Derwent reported as closing with reopening at 08:00.",
+    "Do other water companies run equivalent schemes? That decides the size of the whole landowner tier."
   ],
   "sites": [
     {
@@ -28,16 +31,112 @@
         "on_site_hut",
         "online"
       ],
-      "payment_notes": "Machine is not always on. Hut only when staffed. Online otherwise.",
-      "payment_requires_signal": true,
-      "requires_self_contained": null,
-      "max_nights": null,
-      "arrival_from": null,
-      "departure_by": null,
+      "payment_notes": "Machine is not always on. Hut only when staffed. Online otherwise - and if there is no signal, payment can be settled the next day.",
+      "payment_deferrable": true,
+      "payment_grace": "next day",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "search_hint": "Fontburn Reservoir, Northumberland",
+      "notes": "Confirmed by a regular visitor. The deferred payment arrangement is unusual and worth knowing - no signal does not prevent staying."
+    },
+    {
+      "name": "Derwent Reservoir",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 10.0,
+      "currency": "GBP",
       "last_verified": "2026-07-26",
       "confidence": "medium",
-      "notes": "Reported by a regular visitor, so the £10 and the payment routes are reliable. Everything else unknown. NOTE the signal dependency: if the machine is off and the hut is shut, paying needs data coverage - in a Northumberland reservoir valley that is not a safe assumption. Cross-reference against the coverage layer.",
-      "search_hint": "Fontburn Reservoir, Northumberland"
+      "search_hint": "Derwent Reservoir, County Durham",
+      "notes": "Reported as gated, closing overnight and reopening at 08:00, with a ranger checking payment around 21:00. No facilities."
+    },
+    {
+      "name": "Balderhead Reservoir",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Balderhead Reservoir, County Durham",
+      "notes": "Listed on the shared booking system. Price and terms not confirmed."
+    },
+    {
+      "name": "Selset Reservoir",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Selset Reservoir, County Durham",
+      "notes": "Listed on the shared booking system. Price and terms not confirmed."
+    },
+    {
+      "name": "Grassholme Reservoir",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Grassholme Reservoir, Teesdale",
+      "notes": "Listed on the shared booking system. Price and terms not confirmed."
+    },
+    {
+      "name": "Scaling Dam Reservoir",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Scaling Dam Reservoir, North Yorkshire",
+      "notes": "Listed on the shared booking system. Price and terms not confirmed."
+    },
+    {
+      "name": "Tower Knowe, Kielder Water",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "unknown",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "facilities": [
+        "public toilets",
+        "cafe"
+      ],
+      "prohibits": [
+        "electric hook-up unavailable",
+        "no waste disposal"
+      ],
+      "booking": "online_or_on_site",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Tower Knowe Visitor Centre, Kielder Water",
+      "notes": "Advertised for motorhomes, campervans and caravans at GBP10 a night. BUT see the Kielder warning - visitor reports conflict sharply, with one party moved on by a ranger at 21:00 from Hawkhope after paying, and told overnight stays are not allowed anywhere at Kielder. Verify before relying on this."
+    },
+    {
+      "name": "Other Kielder Water car parks (Hawkhope, South Abutment, Matthew's Linn, Bakethin)",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "very_low",
+      "notes": "CONFLICTING EVIDENCE. Some visitors report paying GBP10 for overnight at Hawkhope with a friendly ranger checking tickets; another was moved on at 21:00 and told overnight stays are not permitted anywhere at Kielder. Day parking is GBP5, transferable across car parks, with a stargazing option until 03:00 which is not the same as staying the night. Do not publish a verdict for these until checked directly."
     }
-  ]
+  ],
+  "kielder_note": "Kielder Water & Forest Park is run by a development trust whose members include Northumbrian Water, the Forestry Commission, Northumberland County Council, Calvert Trust and Kielder Observatory. Responsibility therefore varies by car park: Kielder Castle is Forestry England's at GBP15, Tower Knowe is Northumbrian Water's at GBP10, and several others sit under the shared GBP5 day-parking scheme with unclear overnight status. A single destination with at least three regimes - and the strongest argument yet that the data model must key on the car park, never on the destination."
 }
