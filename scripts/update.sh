@@ -22,8 +22,10 @@ trap 'rm -rf "$TMP"' EXIT
 echo "fetching..."
 curl -sSL "$REPO" | tar xz -C "$TMP" --strip-components=1
 
-# Code: always refresh.
-for dir in scripts docs; do
+# Code and source assets: always refresh. site-assets holds the vehicle
+# images, which are source rather than build output - site/ is wiped on
+# every rebuild, so they cannot live there.
+for dir in scripts docs site-assets; do
     if [ -d "$TMP/$dir" ]; then
         mkdir -p "$ROOT/$dir"
         cp -r "$TMP/$dir/." "$ROOT/$dir/"
