@@ -293,26 +293,41 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-ra
 /* ---- vehicle picker ---- */
 .vgrid {
   display: grid; gap: 0.7rem;
-  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
 }
 .vcard {
-  display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
-  padding: 1rem 0.65rem 0.85rem; cursor: pointer; text-align: center;
-  background: var(--paper); color: var(--ink-3);
-  border: 1px solid var(--hair); border-radius: 10px;
-  font: inherit; transition: border-color .12s ease, color .12s ease, background .12s ease;
+  display: flex; flex-direction: column; align-items: center; gap: 0.1rem;
+  padding: 0.9rem 0.7rem 0.85rem; cursor: pointer; text-align: center;
+  background: var(--paper); border: 1px solid var(--hair); border-radius: 10px;
+  font: inherit; transition: border-color .12s ease, background .12s ease;
 }
-.vcard svg { width: 100%; max-width: 5.5rem; height: auto; margin-bottom: 0.35rem; }
-.vcard:hover { border-color: var(--ink-3); color: var(--ink-2); }
-.vcard.is-on {
-  border-color: var(--permit); background: var(--permit-bg); color: var(--permit);
-}
+.vcard svg { width: 100%; height: auto; display: block; margin-bottom: 0.4rem; }
+.vcard .bod  { fill: #B8B2A6; }
+.vcard .win  { fill: var(--paper); }
+.vcard .tyre { fill: #6E685E; }
+.vcard .hub  { fill: var(--paper); }
+.vcard .line  { stroke: var(--paper); stroke-width: 2.2; fill: none; stroke-linecap: round; }
+.vcard .hitch { stroke: #B8B2A6; stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.vcard:hover { border-color: var(--ink-3); }
+.vcard:hover .bod { fill: #8E887C; }
+.vcard:hover .hitch { stroke: #8E887C; }
+.vcard.is-on { border-color: var(--permit); background: var(--permit-bg); }
+.vcard.is-on .bod  { fill: var(--permit); }
+.vcard.is-on .win  { fill: var(--permit-bg); }
+.vcard.is-on .tyre { fill: #204B35; }
+.vcard.is-on .hub  { fill: var(--permit-bg); }
+.vcard.is-on .line { stroke: var(--permit-bg); }
+.vcard.is-on .hitch { stroke: var(--permit); }
 .vname {
   font-family: "Space Grotesk", system-ui, sans-serif;
   font-size: 0.86rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink);
 }
 .vcard.is-on .vname { color: var(--permit); }
-.vdim { font-family: "Space Grotesk", system-ui, sans-serif; font-size: 0.72rem; color: var(--ink-3); }
+.vdim {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.72rem; color: var(--ink-3); font-variant-numeric: tabular-nums;
+}
+.vcard.is-on .vdim { color: var(--permit); }
 .vcard:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
 .vfollow { margin-top: 1.5rem; padding-top: 1.4rem; border-top: 1px solid var(--hair); }
