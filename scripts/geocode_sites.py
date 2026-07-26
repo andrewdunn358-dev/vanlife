@@ -27,6 +27,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -72,13 +73,59 @@ def by_name(query):
         return None
 
 
-def searchable(site, authority):
+BLANKET = ("all other", "various", "county-wide", "elsewhere")
+
+# Words that make an authority name useless as geographic context.
+ORG_WORDS = re.compile(
+    r"\b(county|borough|city|district|council|authority|national park|"
+    r"water|forestry|england|scotland|wales|trust|comhairle|cyngor|nan)\b",
+    re.I)
+
+
+def queries(site, d):
+    """Progressively looser searches, best first.
+
+    The authority is only useful as context when it is named after a place -
+    'Gwynedd' helps, 'Northumbrian Water' does not. A landowner's name tells
+    Nominatim nothing, so fall back to the region instead.
+    """
+    name = (site.get("name") or "").strip()
+    base = re.sub(r"\s*\([^)]*\)", "", name).strip()
+    region = d.get("region") or d.get("nation") or "UK"
+    out = []
+
+    if site.get("search_hint"):
+        out.append((site["search_hint"], "hint"))
+
+    place = ORG_WORDS.sub("", d["authority"]).strip(" ,-")
+    if len(place) > 3:
+        out.append((f"{base}, {place}", "named"))
+
+    out.append((f"{base}, {region}", "named"))
+    out.append((base, "named"))
+
+    # "Links Road Car Park, Bamburgh" -> try the settlement with the feature,
+    # then the settlement alone. The latter is a village centre, not a car
+    # park, so it is marked as such.
+    if "," in base:
+        head, tail = base.rsplit(",", 1)
+        head, tail = head.strip(), tail.strip()
+        out.append((f"{head}, {tail}, {region}", "named"))
+        out.append((tail, "settlement_only"))
+
+    seen, uniq = set(), []
+    for q, prec in out:
+        k = q.lower()
+        if k not in seen and len(q) > 3:
+            seen.add(k)
+            uniq.append((q, prec))
+    return uniq
+
+
+def searchable(site):
     """Blanket restrictions have no single location and must not get a pin."""
     name = (site.get("name") or "").lower()
-    for phrase in ("all other", "various", "county-wide", "elsewhere"):
-        if phrase in name:
-            return None
-    return f"{site['name']}, {authority}, UK"
+    return not any(p in name for p in BLANKET)
 
 
 def main():
@@ -102,8 +149,7 @@ def main():
                 continue
             total += 1
 
-            q = searchable(s, d["authority"])
-            if q is None:
+            if not searchable(s):
                 print(f"  --  {s['name'][:52]:<54} blanket - no single location")
                 skipped += 1
                 continue
@@ -112,14 +158,23 @@ def main():
             if s.get("postcode"):
                 hit = by_postcode(s["postcode"])
                 if hit:
-                    print(f"  OK  {s['name'][:52]:<54} {hit[0]:.5f},{hit[1]:.5f}  "
-                          f"via postcode {s['postcode']}")
+                    print(f"  OK  {s['name'][:52]:<54} {hit[0]:.5f},{hit[1]:.5f}"
+                          f"  postcode {s['postcode']}")
+
             if not hit:
-                hit = by_name(q)
-                time.sleep(NOMINATIM_DELAY)
-                if hit:
-                    print(f"  OK  {s['name'][:52]:<54} {hit[0]:.5f},{hit[1]:.5f}  "
-                          f"via nominatim ({hit[3]})")
+                for q, prec in queries(s, d):
+                    r = by_name(q)
+                    time.sleep(NOMINATIM_DELAY)
+                    if r:
+                        hit = (r[0], r[1], "nominatim",
+                               prec if prec == "settlement_only" else r[3])
+                        flag = "??" if prec == "settlement_only" else "OK"
+                        print(f"  {flag}  {s['name'][:52]:<54} "
+                              f"{hit[0]:.5f},{hit[1]:.5f}  {hit[3]}")
+                        if prec == "settlement_only":
+                            print(f"      {'':<54} matched \"{q}\" - village "
+                                  "centre, not the car park")
+                        break
 
             if not hit:
                 print(f"  --  {s['name'][:52]:<54} not found")

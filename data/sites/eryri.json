@@ -11,7 +11,8 @@
     {
       "name": "Betws-y-Coed long stay car park",
       "kind": "restriction",
-      "lat": null, "lon": null,
+      "lat": null,
+      "lon": null,
       "instrument": "opening_hours",
       "applies_to": "all_vehicles",
       "restricts": "parking",
@@ -21,12 +22,14 @@
       "enforcement": "anpr",
       "last_verified": "2026-07-26",
       "confidence": "very_low",
-      "notes": "Introduced 1 Apr 2026, reversal proposed by Jun 2026. MUST verify current status before any use."
+      "notes": "Introduced 1 Apr 2026, reversal proposed by Jun 2026. MUST verify current status before any use.",
+      "search_hint": "Betws-y-Coed, Conwy"
     },
     {
       "name": "Llyn Tegid car park",
       "kind": "restriction",
-      "lat": null, "lon": null,
+      "lat": null,
+      "lon": null,
       "instrument": "opening_hours",
       "applies_to": "all_vehicles",
       "restricts": "parking",
@@ -34,7 +37,8 @@
       "enforcement": "anpr",
       "last_verified": "2026-07-26",
       "confidence": "very_low",
-      "notes": "ANPR trialled here. Proposal to replace full closure with a 01:00-03:00 window only - a two-hour closure designed to prevent overnight stays while preserving dawn access."
+      "notes": "ANPR trialled here. Proposal to replace full closure with a 01:00-03:00 window only - a two-hour closure designed to prevent overnight stays while preserving dawn access.",
+      "search_hint": "Llyn Tegid, Bala, Gwynedd"
     }
   ]
 }

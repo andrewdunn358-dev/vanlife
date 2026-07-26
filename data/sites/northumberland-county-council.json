@@ -76,7 +76,8 @@
       "confidence": "high",
       "notes": "Off Links Road (B1340) on the southerly approach into Bamburgh, in direct view of Bamburgh Castle. Bays 1-5. CORRECTED from 6 - the council's own page says five.",
       "price_confidence": "disputed",
-      "price_note": "GBP12 from 2022-2023 sources; a 2026 listing says GBP15. Verify."
+      "price_note": "GBP12 from 2022-2023 sources; a 2026 listing says GBP15. Verify.",
+      "search_hint": "Links Road, Bamburgh, Northumberland"
     },
     {
       "name": "Beadnell Overflow Car Park, Beadnell",
@@ -107,7 +108,8 @@
       "confidence": "high",
       "notes": "Off Harbour Road next to Beadnell Bay Beach. Also referred to as Benthall. Reported to have a toilet block at the end of the car park - verify.",
       "price_confidence": "disputed",
-      "price_note": "GBP12 from 2022-2023 sources; a 2026 listing says GBP15. Verify."
+      "price_note": "GBP12 from 2022-2023 sources; a 2026 listing says GBP15. Verify.",
+      "search_hint": "Harbour Road, Beadnell, Northumberland"
     },
     {
       "name": "All other Northumberland County Council car parks",

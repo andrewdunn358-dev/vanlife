@@ -6,7 +6,7 @@
   "researched_by": "user report from direct visit (Fontburn); not yet verified against published policy",
   "source_format": "unknown",
   "sources": [],
-  "policy_summary": "Overnight parking is PERMITTED and CHARGED at Fontburn, GBP10, with payment deferrable to the next day where the machine is off and there is no signal. This is provision with a permissive posture - a materially different stance from the councils researched so far, and the far end of the spectrum from Cornwall's GBP70 PCN for leaving a motorhome overnight. Unknown whether this is a Fontburn arrangement or a Northumbrian Water tariff across Derwent, Kielder and other sites. That distinction decides whether water companies are a per-site job or a per-company one.",
+  "policy_summary": "Overnight parking is PERMITTED and CHARGED at Fontburn, £10. This is provision, not restriction - a materially different posture from the councils researched so far. Unknown whether this is a Fontburn arrangement or a Northumbrian Water tariff applying across Derwent, Kielder and other sites. That distinction decides whether water companies are a per-site job or a per-company one.",
   "open_questions": [
     "Is the £10 signed at the car park, or published online only? Decides scrapeability.",
     "Any conditions - self-containment, max nights, arrival/departure times, awnings?",
@@ -28,16 +28,16 @@
         "on_site_hut",
         "online"
       ],
-      "payment_notes": "Machine is not always on. Hut only when staffed. Online otherwise - and if there is no signal, payment can be settled the next day.",
+      "payment_notes": "Machine is not always on. Hut only when staffed. Online otherwise.",
+      "payment_requires_signal": true,
       "requires_self_contained": null,
       "max_nights": null,
       "arrival_from": null,
       "departure_by": null,
       "last_verified": "2026-07-26",
       "confidence": "medium",
-      "notes": "Reported by a regular visitor, so price, payment routes and the next-day grace are reliable. Conditions and hours still unknown. The deferred-payment arrangement matters: it means no signal does not prevent staying, which is the opposite of how a strict enforcement regime would handle it.",
-      "payment_deferrable": true,
-      "payment_grace": "next day"
+      "notes": "Reported by a regular visitor, so the £10 and the payment routes are reliable. Everything else unknown. NOTE the signal dependency: if the machine is off and the hut is shut, paying needs data coverage - in a Northumberland reservoir valley that is not a safe assumption. Cross-reference against the coverage layer.",
+      "search_hint": "Fontburn Reservoir, Northumberland"
     }
   ]
 }
