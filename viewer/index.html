@@ -14,6 +14,25 @@
     box-shadow: 0 1px 5px rgba(0,0,0,.3); font-size: 13px; width: 220px;
   }
   #panel h1 { font-size: 14px; margin: 0 0 8px; }
+  #search { display: flex; gap: 4px; margin-bottom: 10px; }
+  #q {
+    flex: 1; min-width: 0; padding: 5px 6px; font-size: 12px;
+    border: 1px solid #bbb; border-radius: 4px;
+  }
+  #go {
+    padding: 5px 9px; font-size: 12px; cursor: pointer;
+    border: 1px solid #2b2b2b; background: #2b2b2b; color: #fff;
+    border-radius: 4px;
+  }
+  #results {
+    list-style: none; margin: 0 0 10px; padding: 0;
+    max-height: 150px; overflow-y: auto; font-size: 12px;
+  }
+  #results li {
+    padding: 5px 6px; cursor: pointer; border-radius: 3px;
+    border-bottom: 1px solid #eee;
+  }
+  #results li:hover { background: #f0f0f0; }
   .ops { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
   .ops button {
     flex: 1 1 45%; padding: 5px 4px; font-size: 12px; cursor: pointer;
@@ -30,6 +49,11 @@
 <div id="map"></div>
 <div id="panel">
   <h1>Ofcom 4G drive-test</h1>
+  <div id="search">
+    <input id="q" placeholder="Postcode or place" autocomplete="off">
+    <button id="go">Go</button>
+  </div>
+  <ul id="results"></ul>
   <div class="ops">
     <button data-f="best" class="on">Best of all</button>
     <button data-f="ee">EE</button>
@@ -146,6 +170,113 @@ map.on("error", function (e) {
   document.getElementById("status").textContent =
     "Error: " + ((e.error && e.error.message) || e.type);
 });
+
+// ---- Search -------------------------------------------------------------
+// Two geocoders, because neither alone is right:
+//   postcodes.io  - UK-specific, open, unlimited, exact on postcodes
+//   Nominatim     - everything else, but ~1 req/sec and no partial postcodes
+// Swap Nominatim for OS Places before this ever faces real users.
+
+var POSTCODE_RE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+var q = document.getElementById("q");
+var results = document.getElementById("results");
+var marker = null;
+
+function clearResults() { results.innerHTML = ""; }
+
+function goTo(lon, lat, label, zoom) {
+  if (marker) marker.remove();
+  marker = new maplibregl.Marker({ color: "#2b2b2b" })
+    .setLngLat([lon, lat])
+    .setPopup(new maplibregl.Popup().setText(label))
+    .addTo(map);
+  map.flyTo({ center: [lon, lat], zoom: zoom || 12, duration: 1200 });
+  clearResults();
+  document.getElementById("status").textContent = label;
+}
+
+function showOptions(items) {
+  clearResults();
+  if (!items.length) {
+    document.getElementById("status").textContent = "Nothing found.";
+    return;
+  }
+  items.slice(0, 6).forEach(function (it) {
+    var li = document.createElement("li");
+    li.textContent = it.label;
+    li.addEventListener("click", function () {
+      goTo(it.lon, it.lat, it.label, it.zoom);
+    });
+    results.appendChild(li);
+  });
+}
+
+function search() {
+  var term = q.value.trim();
+  if (!term) return;
+  document.getElementById("status").textContent = "Searching…";
+  clearResults();
+
+  if (POSTCODE_RE.test(term)) {
+    fetch("https://api.postcodes.io/postcodes/" + encodeURIComponent(term))
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.status !== 200 || !d.result) throw new Error("not found");
+        var res = d.result;
+        goTo(res.longitude, res.latitude,
+             res.postcode + " — " + (res.admin_district || ""), 13);
+      })
+      .catch(function () {
+        document.getElementById("status").textContent =
+          "Postcode not found. Try a place name.";
+      });
+    return;
+  }
+
+  fetch("https://nominatim.openstreetmap.org/search?format=json&limit=6" +
+        "&countrycodes=gb&q=" + encodeURIComponent(term))
+    .then(function (r) { return r.json(); })
+    .then(function (arr) {
+      showOptions(arr.map(function (a) {
+        return {
+          lon: parseFloat(a.lon),
+          lat: parseFloat(a.lat),
+          label: a.display_name.split(",").slice(0, 3).join(","),
+          zoom: 12
+        };
+      }));
+    })
+    .catch(function () {
+      document.getElementById("status").textContent = "Search failed.";
+    });
+}
+
+document.getElementById("go").addEventListener("click", search);
+q.addEventListener("keydown", function (e) { if (e.key === "Enter") search(); });
+
+// Shortcuts to the places that actually test this data.
+var PROBES = [
+  ["Cambrian Mtns", -3.75, 52.35],
+  ["Applecross", -5.80, 57.43],
+  ["Upper Teesdale", -2.16, 54.65],
+  ["Rannoch Moor", -4.66, 56.62]
+];
+var probeBar = document.createElement("div");
+probeBar.style.cssText = "margin-top:8px;font-size:11px;line-height:1.7";
+probeBar.innerHTML = "<b>Test notspots:</b><br>";
+PROBES.forEach(function (p, i) {
+  var a = document.createElement("a");
+  a.href = "#";
+  a.textContent = p[0];
+  a.style.cssText = "color:#0645ad;margin-right:8px";
+  a.addEventListener("click", function (ev) {
+    ev.preventDefault();
+    goTo(p[1], p[2], p[0], 11);
+  });
+  probeBar.appendChild(a);
+  if (i % 2 === 1) probeBar.appendChild(document.createElement("br"));
+});
+document.getElementById("panel").appendChild(probeBar);
 </script>
 </body>
 </html>
