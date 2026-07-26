@@ -87,6 +87,44 @@ def best_match(site, parks, radius_km):
     return ranked
 
 
+def nearest_mode(args, parks):
+    """Names are too sparse in OSM to match on - only 8% of UK car parks
+    carry one. But geometry is there for all of them, and a rough pin plus
+    a shortlist is a ten-second decision for a person.
+    """
+    print(f"Nearest {args.nearest} car parks to each rough pin.\n"
+          "Pick one and set it with:\n"
+          "  python3 scripts/set_coords.py \"part of name\" LAT LON\n")
+
+    for path in sorted(glob.glob(os.path.join(args.dir, "*.json"))):
+        d = json.load(open(path, encoding="utf-8"))
+        for s in d["sites"]:
+            nm = (s.get("name") or "").lower()
+            if any(p in nm for p in ("all other", "various", "county-wide")):
+                continue
+            if s.get("geocode_checked") is True or s.get("lat") is None:
+                continue
+
+            near = sorted(
+                ((km(s["lat"], s["lon"], c["lat"], c["lon"]), c) for c in parks),
+                key=lambda x: x[0])[: args.nearest]
+            if not near or near[0][0] > 15:
+                continue
+
+            print(f"{s['name']}")
+            print(f"  {d['authority']}  -  pin is {s.get('geocode_band', '?')}")
+            for dist, c in near:
+                nm2 = c.get("name") or "(unnamed)"
+                extra = []
+                for t in ("operator", "fee", "maxheight", "capacity"):
+                    if c.get(t):
+                        extra.append(f"{t}={c[t]}")
+                tail = ("  " + " ".join(extra)) if extra else ""
+                print(f"    {dist*1000:>6.0f}m  {c['lat']:.5f} {c['lon']:.5f}  "
+                      f"{nm2[:34]:<36}{tail}")
+            print()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", default="data/sites")
@@ -95,6 +133,9 @@ def main():
                     help="km around an existing rough pin to search")
     ap.add_argument("--min-score", type=float, default=0.55)
     ap.add_argument("--write", action="store_true")
+    ap.add_argument("--nearest", type=int, metavar="N",
+                    help="ignore names: list the N nearest car parks to each "
+                    "rough pin, named or not, for you to pick from")
     args = ap.parse_args()
 
     parks = load_carparks(args.ref)
@@ -102,6 +143,10 @@ def main():
         sys.exit("No car park data. Run fetch_carparks.py --area <name> first.")
     named = [p for p in parks if p.get("name")]
     print(f"{len(parks):,} car parks loaded, {len(named):,} named\n")
+
+    if args.nearest:
+        nearest_mode(args, parks)
+        return
 
     files = sorted(glob.glob(os.path.join(args.dir, "*.json")))
     matched = weak = none = 0
