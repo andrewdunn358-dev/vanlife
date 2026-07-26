@@ -200,6 +200,17 @@ python3 scripts/ofcom_to_geojsonl.py \
 ./scripts/build_tiles.sh data/interim/4g-2025.geojsonl data/out/signal-4g.pmtiles
 ```
 
+### Working on the site
+
+```bash
+python3 scripts/serve.py
+```
+
+Builds, serves, and rebuilds whenever anything in `data/sites`, `scripts`
+or `site-assets` changes. Edit a record, reload the browser, see it. Picks
+a free port by default; `--port 8000` to fix one. Stdlib only, so it runs
+on DSM without installing anything.
+
 Then copy `signal-4g.pmtiles` next to `viewer/index.html`, serve the
 directory with `python3 -m http.server 8000`, and look at it.
 

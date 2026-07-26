@@ -34,6 +34,9 @@ HEAD = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<link rel="icon" href="{root}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{root}favicon.svg">
+<meta name="theme-color" content="#2F6A4B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -789,6 +792,9 @@ def main():
     if os.path.isdir(args.out):
         shutil.rmtree(args.out)
     os.makedirs(args.out, exist_ok=True)
+
+    shutil.copy(os.path.join(ASSETS, "favicon.svg"),
+                os.path.join(args.out, "favicon.svg"))
 
     src = os.path.join(os.path.dirname(ASSETS), "..", "site-assets", "vehicles")
     src = os.path.normpath(src)
