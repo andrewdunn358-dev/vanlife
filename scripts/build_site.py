@@ -21,6 +21,7 @@ import html
 import json
 import os
 import shutil
+import urllib.parse
 from collections import Counter
 from datetime import date
 
@@ -108,6 +109,11 @@ body {
 .terms li { padding: 0.15rem 0; }
 .terms .k { display: inline-block; min-width: 12ch; color: var(--ink-soft); }
 .notice p.note { font-size: 0.92rem; color: var(--ink-soft); margin: 0.7rem 0 0; max-width: var(--measure); }
+
+.goto { font-family: "Overpass Mono", monospace; font-size: 0.72rem;
+        margin: 0.7rem 0 0; display: flex; flex-wrap: wrap; gap: 0 1rem; align-items: baseline; }
+.goto a { color: var(--sign); }
+.goto .coords { color: var(--ink-soft); }
 
 .provenance {
   font-family: "Overpass Mono", monospace; font-size: 0.7rem;
@@ -251,7 +257,10 @@ def term_rows(s):
     rows = []
     p = money(s.get("price_per_night"), s.get("currency", "GBP"))
     if p:
-        rows.append(("price", f"{p} per night"))
+        label = f"{p} per night"
+        if s.get("price_confidence") == "disputed":
+            label += "  (disputed)"
+        rows.append(("price", label))
     elif s.get("kind") == "provision":
         rows.append(("price", "not recorded"))
     if s.get("arrival_from") or s.get("departure_by"):
@@ -283,6 +292,8 @@ def term_rows(s):
         rows.append(("facilities", ", ".join(s["facilities"])))
     if s.get("enforcement") and s["enforcement"] != "unknown":
         rows.append(("enforced by", s["enforcement"].upper()))
+    if s.get("postcode"):
+        rows.append(("postcode", s["postcode"]))
     return rows
 
 
@@ -360,6 +371,23 @@ def notice_html(s, parent):
     if s.get("notes"):
         out.append(f'<p class="note">{esc(s["notes"])}</p>')
 
+    # Getting there. Deep links, not an embedded map - no keys, no tracking,
+    # and it opens in whatever the person already uses.
+    if s.get("lat") is not None:
+        ll = f"{s['lat']},{s['lon']}"
+        out.append(
+            '<p class="goto">'
+            f'<a href="https://www.google.com/maps/search/?api=1&amp;query={ll}">Google Maps</a>'
+            f'<a href="https://maps.apple.com/?ll={ll}&amp;q={urllib.parse.quote(s.get("name",""))}">Apple Maps</a>'
+            f'<a href="https://www.openstreetmap.org/?mlat={s["lat"]}&amp;mlon={s["lon"]}#map=17/{s["lat"]}/{s["lon"]}">OpenStreetMap</a>'
+            f'<span class="coords">{ll}</span>'
+            "</p>")
+    elif s.get("postcode"):
+        out.append(
+            '<p class="goto"><a href="https://www.google.com/maps/search/?api=1&amp;query='
+            f'{urllib.parse.quote(s["postcode"])}">Google Maps (postcode only)</a>'
+            '<span class="coords gap">exact location not yet recorded</span></p>')
+
     # Provenance block - the signature. Never hidden, never softened.
     bits = []
     lv = s.get("last_verified")
@@ -372,6 +400,10 @@ def notice_html(s, parent):
     bits.append(f"under {esc(inst.replace('_', ' '))}")
     if s.get("lat") is None:
         bits.append('<span class="gap">location not yet recorded</span>')
+    elif s.get("geocode_checked") is False:
+        bits.append('<span class="gap">location from '
+                    + esc(s.get("geocode_precision", "lookup"))
+                    + ", not eyeballed</span>")
     srcs = parent.get("sources") or []
     if srcs:
         host = srcs[0].split("/")[2] if "//" in srcs[0] else srcs[0]

@@ -16,11 +16,12 @@
     {
       "name": "Amble Braid Car Park, Amble",
       "kind": "provision",
-      "lat": null, "lon": null,
+      "lat": null,
+      "lon": null,
       "instrument": "off_street_parking_order",
       "status": "in_force",
       "bays": 3,
-      "price_per_night": 12.00,
+      "price_per_night": 12.0,
       "currency": "GBP",
       "arrival_from": "18:00",
       "departure_by": "08:00",
@@ -30,21 +31,31 @@
       "booking": "online_only",
       "booking_url": "https://nccform.northumberland.gov.uk/form/motorhome",
       "payment_deferrable": false,
-      "prohibits": ["tents", "chairs", "tables", "awnings", "equipment outside vehicle"],
+      "prohibits": [
+        "tents",
+        "chairs",
+        "tables",
+        "awnings",
+        "equipment outside vehicle"
+      ],
       "facilities": [],
       "enforcement": "pcn",
       "last_verified": "2026-07-26",
       "confidence": "high",
-      "notes": "On the River Coquet off the A1068 near Amble Marina. Restaurants and cafes within walking distance. Must park in the numbered bay booked; if unavailable, any other numbered motorhome bay at that site."
+      "notes": "On the River Coquet off the A1068 near Amble Marina and the Coquet Yacht Club. Bays 1-3 are the overnight ones, with 6 further bays for daytime parking. Restaurants and cafes within walking distance. Postcode conflict in sources: NE65 0GZ and NE65 0WU both appear - verify.",
+      "postcode": "NE65 0GZ",
+      "price_confidence": "disputed",
+      "price_note": "GBP12 from 2022-2023 sources; a 2026 listing says GBP15. Verify."
     },
     {
       "name": "Links Road Car Park, Bamburgh",
       "kind": "provision",
-      "lat": null, "lon": null,
+      "lat": null,
+      "lon": null,
       "instrument": "off_street_parking_order",
       "status": "in_force",
-      "bays": 6,
-      "price_per_night": 12.00,
+      "bays": 5,
+      "price_per_night": 12.0,
       "currency": "GBP",
       "arrival_from": "18:00",
       "departure_by": "08:00",
@@ -53,20 +64,29 @@
       "self_contained_definition": "toilet, sink and waste storage facilities on board",
       "booking": "online_only",
       "booking_url": "https://nccform.northumberland.gov.uk/form/motorhome",
-      "prohibits": ["tents", "chairs", "tables", "awnings", "equipment outside vehicle"],
+      "prohibits": [
+        "tents",
+        "chairs",
+        "tables",
+        "awnings",
+        "equipment outside vehicle"
+      ],
       "enforcement": "pcn",
       "last_verified": "2026-07-26",
       "confidence": "high",
-      "notes": "Bay count from Visit Bamburgh and press reports; verify against the booking system."
+      "notes": "Off Links Road (B1340) on the southerly approach into Bamburgh, in direct view of Bamburgh Castle. Bays 1-5. CORRECTED from 6 - the council's own page says five.",
+      "price_confidence": "disputed",
+      "price_note": "GBP12 from 2022-2023 sources; a 2026 listing says GBP15. Verify."
     },
     {
       "name": "Beadnell Overflow Car Park, Beadnell",
       "kind": "provision",
-      "lat": null, "lon": null,
+      "lat": null,
+      "lon": null,
       "instrument": "off_street_parking_order",
       "status": "in_force",
       "bays": 8,
-      "price_per_night": 12.00,
+      "price_per_night": 12.0,
       "currency": "GBP",
       "arrival_from": "18:00",
       "departure_by": "08:00",
@@ -75,16 +95,25 @@
       "self_contained_definition": "toilet, sink and waste storage facilities on board",
       "booking": "online_only",
       "booking_url": "https://nccform.northumberland.gov.uk/form/motorhome",
-      "prohibits": ["tents", "chairs", "tables", "awnings", "equipment outside vehicle"],
+      "prohibits": [
+        "tents",
+        "chairs",
+        "tables",
+        "awnings",
+        "equipment outside vehicle"
+      ],
       "enforcement": "pcn",
       "last_verified": "2026-07-26",
       "confidence": "high",
-      "notes": "Largest of the three at 8 bays."
+      "notes": "Off Harbour Road next to Beadnell Bay Beach. Also referred to as Benthall. Reported to have a toilet block at the end of the car park - verify.",
+      "price_confidence": "disputed",
+      "price_note": "GBP12 from 2022-2023 sources; a 2026 listing says GBP15. Verify."
     },
     {
       "name": "All other Northumberland County Council car parks",
       "kind": "restriction",
-      "lat": null, "lon": null,
+      "lat": null,
+      "lon": null,
       "instrument": "off_street_parking_order",
       "applies_to": "all_vehicles",
       "restricts": "sleeping",
@@ -94,5 +123,6 @@
       "confidence": "high",
       "notes": "Council wording: sleeping in ANY TYPE OF VEHICLE is not allowed elsewhere in the pilot car parks or in any other council car park. Cooking and camping likewise. Broadest definition found so far - catches car campers, not just motorhomes. Needs the full council car park list and geometry to be mappable."
     }
-  ]
+  ],
+  "price_warning": "Sources conflict on price. GBP12 appears throughout 2022-2023 reporting and user reviews; a 2026 listing quotes GBP15 for the overnight permit. Check the council booking system before publishing either figure."
 }
