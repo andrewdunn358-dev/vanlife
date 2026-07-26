@@ -84,9 +84,12 @@ python3 scripts/coverage_lookup.py "Applecross" --radius 5
 python3 scripts/coverage_lookup.py 57.4321 -5.8012
 ```
 
-SQLite's built-in R*Tree does the spatial indexing — no PostGIS, no
-server, no extensions to compile, and it runs unchanged on a phone,
-which is where this has to end up.
+Spatial indexing is a plain integer grid, not SQLite's R*Tree. R*Tree is
+a compile-time module and DSM's Python is built without it, so avoiding
+it means this works on any SQLite anywhere — including whatever ships on
+a phone. For radius queries a grid is just as fast: 12M rows index in
+about two minutes into roughly 0.7GB, and lookups return in under a
+tenth of a second.
 
 For predicted coverage, register free at
 [api.ofcom.org.uk](https://api.ofcom.org.uk) and request the Mobile

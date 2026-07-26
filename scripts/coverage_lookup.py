@@ -31,6 +31,8 @@ import sys
 import urllib.parse
 import urllib.request
 
+CELL = 0.01  # must match build_sqlite.py
+
 POSTCODE_RE = re.compile(r"^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$", re.I)
 UA = "vanlife-dev/0.1 (github.com/andrewdunn358-dev/vanlife)"
 
@@ -97,19 +99,25 @@ def measured(db_path, lat, lon, radius_km, tech):
     con = sqlite3.connect(db_path)
     con.row_factory = sqlite3.Row
 
-    # Degrees of padding for the R*Tree box, then filter precisely.
+    # Grid-cell prefilter, then exact haversine. Cell size must match
+    # build_sqlite.py.
     dlat = radius_km / 110.574
     dlon = radius_km / (111.320 * max(math.cos(math.radians(lat)), 0.01))
 
     rows = con.execute(
         """
-        SELECT m.* FROM measurement m
-        JOIN measurement_idx i ON i.id = m.id
-        WHERE i.min_lat >= ? AND i.max_lat <= ?
-          AND i.min_lon >= ? AND i.max_lon <= ?
-          AND m.tech = ?
+        SELECT * FROM measurement
+        WHERE tech = ?
+          AND cell_lat BETWEEN ? AND ?
+          AND cell_lon BETWEEN ? AND ?
         """,
-        (lat - dlat, lat + dlat, lon - dlon, lon + dlon, tech),
+        (
+            tech,
+            int(math.floor((lat - dlat) / CELL)),
+            int(math.floor((lat + dlat) / CELL)),
+            int(math.floor((lon - dlon) / CELL)),
+            int(math.floor((lon + dlon) / CELL)),
+        ),
     ).fetchall()
     con.close()
 

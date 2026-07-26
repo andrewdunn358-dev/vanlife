@@ -2,9 +2,14 @@
 """
 Build a spatially-indexed SQLite database from the measurement GeoJSONL.
 
-SQLite's built-in R*Tree gives proper nearest-neighbour queries with no
-PostGIS, no server and no extensions to compile. It also runs unchanged
-on a phone, which is where this has to end up.
+Uses a plain integer grid index rather than SQLite's R*Tree. R*Tree is a
+compile-time module and plenty of builds lack it - Synology DSM's Python
+being one - so avoiding it means this works on any SQLite anywhere,
+including whatever ships on a phone. For radius queries a grid is just
+as fast.
+
+Cells are 0.01 degrees, roughly 1.1km north-south and 0.65km east-west
+at UK latitudes.
 
     python3 scripts/build_sqlite.py \
         data/interim/4g-2025.geojsonl \
@@ -14,12 +19,15 @@ Run again with --tech 5g on the 5G file to add it to the same database.
 """
 import argparse
 import json
+import math
 import os
 import sqlite3
 import sys
 
 BATCH = 50_000
 OPERATORS = ("ee", "o2", "vodafone", "three")
+
+CELL = 0.01  # degrees; keep in step with coverage_lookup.py
 
 SCHEMA = """
 PRAGMA journal_mode = OFF;
@@ -31,6 +39,8 @@ CREATE TABLE IF NOT EXISTS measurement (
     tech     TEXT NOT NULL,
     lat      REAL NOT NULL,
     lon      REAL NOT NULL,
+    cell_lat INTEGER NOT NULL,
+    cell_lon INTEGER NOT NULL,
     ee       INTEGER,
     o2       INTEGER,
     vodafone INTEGER,
@@ -39,9 +49,6 @@ CREATE TABLE IF NOT EXISTS measurement (
     best     INTEGER,
     best_op  TEXT
 );
-
-CREATE VIRTUAL TABLE IF NOT EXISTS measurement_idx
-    USING rtree(id, min_lat, max_lat, min_lon, max_lon);
 """
 
 
@@ -73,23 +80,20 @@ def main():
         "SELECT COALESCE(MAX(id), 0) FROM measurement"
     ).fetchone()[0]
 
-    rows, idx_rows = [], []
+    rows = []
     n = 0
     next_id = start_id + 1
 
     def flush():
         con.executemany(
             "INSERT INTO measurement "
-            "(id, tech, lat, lon, ee, o2, vodafone, three, n_ops, best, best_op) "
-            "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+            "(id, tech, lat, lon, cell_lat, cell_lon, "
+            " ee, o2, vodafone, three, n_ops, best, best_op) "
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
             rows,
-        )
-        con.executemany(
-            "INSERT INTO measurement_idx VALUES (?,?,?,?,?)", idx_rows
         )
         con.commit()
         rows.clear()
-        idx_rows.clear()
 
     with open(args.geojsonl, encoding="utf-8") as fh:
         for line in fh:
@@ -105,6 +109,8 @@ def main():
                     args.tech,
                     lat,
                     lon,
+                    int(math.floor(lat / CELL)),
+                    int(math.floor(lon / CELL)),
                     p.get("ee"),
                     p.get("o2"),
                     p.get("vodafone"),
@@ -114,8 +120,6 @@ def main():
                     p.get("best_op"),
                 )
             )
-            # Points, so min and max are the same value.
-            idx_rows.append((next_id, lat, lat, lon, lon))
             next_id += 1
             n += 1
 
@@ -128,7 +132,10 @@ def main():
         flush()
 
     print("\nindexing…", file=sys.stderr)
-    con.execute("CREATE INDEX IF NOT EXISTS ix_tech ON measurement(tech)")
+    con.execute(
+        "CREATE INDEX IF NOT EXISTS ix_cell "
+        "ON measurement(tech, cell_lat, cell_lon)"
+    )
     con.execute("PRAGMA optimize")
     con.commit()
 
