@@ -147,6 +147,19 @@ genuine no-service, or simply that Ofcom did not upload that measurement
 — they publish a targeted subset rather than everything captured. Same
 provenance-not-verdict principle as the legality layer.
 
+## Updating
+
+```bash
+./scripts/update.sh
+```
+
+Refreshes scripts and docs, and **leaves `data/` alone**. Only genuinely
+new data files are added.
+
+Do not use `curl ... | tar xz --strip-components=1` once you have started
+correcting data — it overwrites everything, including coordinates you have
+verified by hand.
+
 ## Running it
 
 Everything runs in one container so the host is disposable. Currently a
