@@ -47,8 +47,8 @@ Secondary differentiator: **offline-first**. Vans live in signal blackspots. Ful
 | Traffic orders | DfT D-TRO service | Free API, GitHub auth | Public beta since Sept 2025; v4.0.0 production from end May 2026. Coverage patchy — authorities still retro-digitising. England only. |
 | Overnight bans | Council PSPOs | Manual scrape, per-council | The real differentiator. Not centralised anywhere. Start with coastal + national park councils. Manifesto Club FOI surveys are a useful seed. |
 | Off-street parking orders | Council parking orders (RTRA 1984) | Manual, per-council | **Gap in original scoping.** Many "no overnight sleeping" signs in council car parks are parking place orders, not PSPOs. Resolve instrument scope before Phase 3. |
-| Mobile signal | Ofcom drive-test open data | Free bulk CSV | **Tested and rejected — see section 8.** Published annually per year, not one file: 2025 4G is a 250MB zip expanding to 7.1GB. Covers ~13% of UK land area at best, effectively far less. |
-| Mobile coverage | Ofcom Connected Nations Mobile API | Free, registration required | Per-operator fields. Postcode granularity — too coarse to replace drive-test, useful as online supplement. |
+| Mobile signal | Ofcom drive-test open data | Free bulk CSV | **Tested and rejected as a primary layer — see section 8.** Retained as a validation overlay. 12M rows = 1.38M places = ~4% of UK roads. Published annually per year, not one file: 2025 4G is a 250MB zip expanding to 7.1GB. Covers ~13% of UK land area at best, effectively far less. |
+| Mobile coverage | Ofcom Mobile Coverage API | Free, 50k calls/month | **Promoted to primary signal source.** Not merely postcode-level: predictions are modelled on a 50m grid over the entire UK land mass. Per-operator, voice and data, indoor and outdoor. Scale is 4 likely / 3 limited / 0 none. Register at api.ofcom.org.uk. |
 | Solar irradiance | Open-Meteo | Free API | Shortwave radiation forecast. |
 | Terrain / shading | EA LIDAR composite DSM (1m) | Free, open licence | **Revised from OS Terrain 50.** A 50m DTM cannot see trees, which dominate shading at van-parking scale. DSM includes vegetation and buildings. England coverage good; NRW has 1m for Wales. |
 | Base map | OpenStreetMap | Free | Also source for `maxheight` tags. |
@@ -166,6 +166,29 @@ Grid analysis: 427 cells at 0.1° ≈ 12–13% of UK land area. And that oversta
 **Cost of finding this out:** one afternoon and £0. This is what Phase 1 was for, and it worked exactly as intended — the plan was right even though the answer was no.
 
 **Retained value:** the ETL pipeline, tile build, viewer and repo discipline all transfer unchanged to the legality layer. Nothing built is wasted.
+
+### 2026-07-26 (later) — structural analysis: 12M rows is 1.38M places
+
+Followed up on odd patterns in a Bristol lookup. Three findings, each of which made the dataset smaller than the last.
+
+**Coordinates are raw GPS, not snapped.** 6dp dominant, gaps down to 0.000001 deg. So distances are genuine.
+
+**Massive stationary-logging bias.** At 6dp there appear to be 8,682,915 distinct locations. Rounded to 4dp (~11m) that collapses to **1,381,229** — 8.74 rows per real place. Centimetre GPS jitter from parked vehicles was reading as distinct places. The eight busiest single locations account for 1.42% of all 12M rows; they are Ofcom depots and offices, not survey coverage.
+
+A Bristol postcode query returned 23,489 raw rows within 2km, of which only 1,816 were distinct spots. 92% were repeat logs.
+
+**The notspot artefact, resolved.** Rate by row is 31.7%. By location at 6dp it is also 31.6% — which initially killed the time-bin hypothesis. But by location at 11m it is **5.2%**. Jitter had been splitting each place into dozens of pseudo-locations, hiding the pattern. Blank rows are indeed missing measurements at places that recorded fine at other times. 5.2% is a plausible genuine figure.
+
+**Revised scale.** 1.38M places at ~11m spacing is on the order of 15,000 km of road, against a UK network of roughly 420,000 km — about **4% of UK roads**. That supersedes the earlier 13%-of-land-area figure, which was generous.
+
+**Where this leaves the data.** Trustworthy where it exists, and where it exists is ~4% of the network, concentrated in cities. Even central Bristol's nearest reading to a city-centre postcode is 386m away.
+
+**Consequences carried forward:**
+- Any statistic over these rows must dedupe to ~11m first, or it measures where vans parked. `coverage_lookup.py` does this; the effect on Bristol medians was 1-3 dB.
+- Absent readings are missing data. Never render as "no signal".
+- Signal, if it ships at all, comes from Ofcom's Mobile Coverage API — modelled, 50m grid, whole UK, free to 50k calls/month. The drive-test data becomes a *validation* overlay: "the model says likely here, and N real measurements nearby agree/disagree". That is a defensible position nobody else occupies, and it needs both datasets.
+
+**Method note.** Three hypotheses died in sequence here (genuine notspots, then time bins, then time bins again at the wrong resolution). Each check cost minutes and each one changed the answer. Worth remembering before trusting a headline number from a new dataset.
 
 ## 9. Risks
 
