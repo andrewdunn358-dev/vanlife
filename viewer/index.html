@@ -3,45 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vanlife — signal layer</title>
+<title>Vanlife — 4G signal layer</title>
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
 <style>
   html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; }
   #map { position: absolute; inset: 0; }
   #panel {
     position: absolute; top: 10px; left: 10px; z-index: 1;
-    background: #fff; padding: 10px 12px; border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,.3); font-size: 13px; max-width: 260px;
+    background: #fff; padding: 12px; border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.3); font-size: 13px; width: 220px;
   }
-  #panel h1 { font-size: 14px; margin: 0 0 6px; }
-  #panel p { margin: 4px 0; color: #444; }
-  .swatch { display: inline-block; width: 12px; height: 12px;
-            border-radius: 2px; vertical-align: -2px; margin-right: 5px; }
+  #panel h1 { font-size: 14px; margin: 0 0 8px; }
+  .ops { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .ops button {
+    flex: 1 1 45%; padding: 5px 4px; font-size: 12px; cursor: pointer;
+    border: 1px solid #bbb; background: #f4f4f4; border-radius: 4px;
+  }
+  .ops button.on { background: #2b2b2b; color: #fff; border-color: #2b2b2b; }
+  .key { font-size: 12px; color: #444; line-height: 1.6; }
+  .sw { display: inline-block; width: 11px; height: 11px;
+        border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+  #status { font-size: 12px; color: #666; margin: 8px 0 0; }
 </style>
 </head>
 <body>
 <div id="map"></div>
 <div id="panel">
   <h1>Ofcom 4G drive-test</h1>
+  <div class="ops">
+    <button data-f="best" class="on">Best of all</button>
+    <button data-f="ee">EE</button>
+    <button data-f="o2">O2</button>
+    <button data-f="vodafone">Vodafone</button>
+    <button data-f="three">Three</button>
+    <button data-f="n_ops">Operator count</button>
+  </div>
+  <div class="key" id="key"></div>
   <p id="status">Loading…</p>
-  <p>
-    <span class="swatch" style="background:#d73027"></span>weak (&lt; −110 dBm)<br>
-    <span class="swatch" style="background:#fee08b"></span>fair<br>
-    <span class="swatch" style="background:#1a9850"></span>strong (&gt; −85 dBm)
-  </p>
 </div>
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
 <script>
-// Point this at your R2 URL once uploaded. For a local look, serve this
-// directory and the .pmtiles file together:
-//   python3 -m http.server 8000
 const PMTILES_URL = "signal-4g.pmtiles";
 
-// The signal field name comes from your CSV. Change to match whatever
-// inspect_csv.py showed you - RSRP is the usual 4G one.
-const SIGNAL_FIELD = "RSRP";
+const RSRP_RAMP = [
+  -125, "#8c0303",
+  -110, "#d73027",
+  -100, "#fc8d59",
+   -90, "#fee08b",
+   -80, "#1a9850"
+];
+
+const COUNT_RAMP = [0, "#8c0303", 1, "#d73027", 2, "#fc8d59", 3, "#fee08b", 4, "#1a9850"];
+
+const KEYS = {
+  rsrp: '<span class="sw" style="background:#8c0303"></span>no signal / notspot<br>' +
+        '<span class="sw" style="background:#d73027"></span>very weak (&minus;110)<br>' +
+        '<span class="sw" style="background:#fc8d59"></span>weak (&minus;100)<br>' +
+        '<span class="sw" style="background:#fee08b"></span>usable (&minus;90)<br>' +
+        '<span class="sw" style="background:#1a9850"></span>strong (&minus;80+)',
+  count: '<span class="sw" style="background:#8c0303"></span>none &mdash; total notspot<br>' +
+         '<span class="sw" style="background:#d73027"></span>one operator<br>' +
+         '<span class="sw" style="background:#fc8d59"></span>two<br>' +
+         '<span class="sw" style="background:#fee08b"></span>three<br>' +
+         '<span class="sw" style="background:#1a9850"></span>all four'
+};
 
 const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
@@ -57,47 +84,67 @@ const map = new maplibregl.Map({
         type: "raster",
         tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
         tileSize: 256,
-        attribution: "© OpenStreetMap contributors"
+        attribution: "© OpenStreetMap contributors | Signal data © Ofcom"
       }
     },
     layers: [{ id: "osm", type: "raster", source: "osm" }]
   }
 });
 
-map.on("load", () => {
-  map.addSource("signal", { type: "vector", url: "pmtiles://" + PMTILES_URL });
+function paintFor(field) {
+  if (field === "n_ops") {
+    return ["interpolate", ["linear"], ["coalesce", ["get", "n_ops"], 0]].concat(COUNT_RAMP);
+  }
+  // A missing value for an operator means no reading there. Show it as
+  // dead rather than hiding it - that absence is the useful signal.
+  return ["interpolate", ["linear"], ["coalesce", ["get", field], -125]].concat(RSRP_RAMP);
+}
+
+function setField(field) {
+  map.setPaintProperty("signal", "circle-color", paintFor(field));
+  document.getElementById("key").innerHTML =
+    field === "n_ops" ? KEYS.count : KEYS.rsrp;
+  document.querySelectorAll(".ops button").forEach(function (b) {
+    b.classList.toggle("on", b.dataset.f === field);
+  });
+}
+
+map.on("load", function () {
+  map.addSource("sig", { type: "vector", url: "pmtiles://" + PMTILES_URL });
   map.addLayer({
-    id: "signal-points",
+    id: "signal",
     type: "circle",
-    source: "signal",
+    source: "sig",
     "source-layer": "signal",
     paint: {
-      "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1.5, 12, 4],
-      "circle-opacity": 0.75,
-      "circle-color": [
-        "interpolate", ["linear"], ["to-number", ["get", SIGNAL_FIELD], -120],
-        -120, "#d73027",
-        -105, "#fc8d59",
-         -95, "#fee08b",
-         -85, "#1a9850"
-      ]
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1.4, 9, 2.5, 12, 4.5],
+      "circle-opacity": 0.8,
+      "circle-color": paintFor("best")
     }
   });
+  setField("best");
   document.getElementById("status").textContent =
-    "Pan to rural Wales and the Highlands — that is the real test.";
+    "Pan to rural Wales and NW Scotland - that is the real test.";
 });
 
-map.on("error", (e) => {
-  document.getElementById("status").textContent = "Error: " + (e.error?.message || e.type);
+document.querySelectorAll(".ops button").forEach(function (b) {
+  b.addEventListener("click", function () { setField(b.dataset.f); });
 });
 
-map.on("click", "signal-points", (e) => {
-  const p = e.features[0].properties;
+map.on("click", "signal", function (e) {
+  var p = e.features[0].properties;
+  var rows = Object.keys(p).map(function (k) {
+    return "<tr><td style='padding-right:8px'>" + k + "</td><td><b>" + p[k] + "</b></td></tr>";
+  }).join("");
   new maplibregl.Popup()
     .setLngLat(e.lngLat)
-    .setHTML("<pre style='margin:0;font-size:12px'>" +
-             JSON.stringify(p, null, 1) + "</pre>")
+    .setHTML("<table style='font-size:12px;border-collapse:collapse'>" + rows + "</table>")
     .addTo(map);
+});
+
+map.on("error", function (e) {
+  document.getElementById("status").textContent =
+    "Error: " + ((e.error && e.error.message) || e.type);
 });
 </script>
 </body>
