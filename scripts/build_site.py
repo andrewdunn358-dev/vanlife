@@ -401,9 +401,14 @@ def notice_html(s, parent):
     if s.get("lat") is None:
         bits.append('<span class="gap">location not yet recorded</span>')
     elif s.get("geocode_checked") is False:
-        bits.append('<span class="gap">location from '
-                    + esc(s.get("geocode_precision", "lookup"))
-                    + ", not eyeballed</span>")
+        band = s.get("geocode_band", "unknown")
+        wording = {
+            "precise": "location auto-matched, not yet checked",
+            "nearby": "location approximate, near not at",
+            "road": "location is a point on the road, not the car park",
+            "area": "location is an area centroid - likely wrong",
+        }.get(band, "location auto-matched, not yet checked")
+        bits.append(f'<span class="gap">{wording}</span>')
     srcs = parent.get("sources") or []
     if srcs:
         host = srcs[0].split("/")[2] if "//" in srcs[0] else srcs[0]

@@ -75,6 +75,37 @@ def by_name(query):
 
 BLANKET = ("all other", "various", "county-wide", "elsewhere")
 
+# What Nominatim says it matched tells you how much to trust the pin.
+# A car park is a small thing; most OSM features are not.
+PRECISION = {
+    "parking": ("precise", "a car park"),
+    "car_park": ("precise", "a car park"),
+    "parking_space": ("precise", "a parking space"),
+    "castle": ("nearby", "the castle itself"),
+    "attraction": ("nearby", "the attraction"),
+    "building": ("nearby", "a building"),
+    "picnic_site": ("nearby", "a picnic site"),
+    "secondary": ("road", "a point on the road"),
+    "tertiary": ("road", "a point on the road"),
+    "residential": ("road", "a point on the road"),
+    "unclassified": ("road", "a point on the road"),
+    "service": ("road", "a service road"),
+    "track": ("road", "a track"),
+    "water": ("area", "the middle of the water"),
+    "reservoir": ("area", "the middle of the reservoir"),
+    "administrative": ("area", "a boundary centroid"),
+    "town": ("area", "the town centre"),
+    "village": ("area", "the village centre"),
+    "hamlet": ("area", "the hamlet centre"),
+    "suburb": ("area", "the suburb centre"),
+    "proposed": ("area", "something marked proposed in OSM"),
+    "postcode_centroid": ("nearby", "the postcode centroid"),
+}
+
+
+def grade(osm_type):
+    return PRECISION.get(osm_type, ("unknown", f"OSM type {osm_type}"))
+
 # Words that make an authority name useless as geographic context.
 ORG_WORDS = re.compile(
     r"\b(county|borough|city|district|council|authority|national park|"
@@ -158,22 +189,22 @@ def main():
             if s.get("postcode"):
                 hit = by_postcode(s["postcode"])
                 if hit:
-                    print(f"  OK  {s['name'][:52]:<54} {hit[0]:.5f},{hit[1]:.5f}"
-                          f"  postcode {s['postcode']}")
+                    hit = (hit[0], hit[1], hit[2], "postcode_centroid", "nearby")
+                    print(f"  ~   {s['name'][:52]:<54} {hit[0]:.5f},{hit[1]:.5f}"
+                          f"  nearby - postcode {s['postcode']} centroid")
 
             if not hit:
                 for q, prec in queries(s, d):
                     r = by_name(q)
                     time.sleep(NOMINATIM_DELAY)
                     if r:
-                        hit = (r[0], r[1], "nominatim",
-                               prec if prec == "settlement_only" else r[3])
-                        flag = "??" if prec == "settlement_only" else "OK"
+                        osm_type = r[3]
+                        band, what = grade(osm_type)
+                        hit = (r[0], r[1], "nominatim", osm_type, band)
+                        flag = {"precise": "OK", "nearby": "~ ",
+                                "road": "~ ", "area": "!!"}.get(band, "??")
                         print(f"  {flag}  {s['name'][:52]:<54} "
-                              f"{hit[0]:.5f},{hit[1]:.5f}  {hit[3]}")
-                        if prec == "settlement_only":
-                            print(f"      {'':<54} matched \"{q}\" - village "
-                                  "centre, not the car park")
+                              f"{hit[0]:.5f},{hit[1]:.5f}  {band} - {what}")
                         break
 
             if not hit:
@@ -186,6 +217,7 @@ def main():
                 s["lon"] = round(hit[1], 6)
                 s["geocoded_by"] = hit[2]
                 s["geocode_precision"] = hit[3]
+                s["geocode_band"] = hit[4]
                 s["geocode_checked"] = False
                 changed = True
 
@@ -198,9 +230,11 @@ def main():
     if found and not args.write:
         print("\nNothing written. Re-run with --write to save these.")
     elif found:
-        print("\nWritten. Every one is marked geocode_checked: false - a postcode")
-        print("centroid is not a car park entrance. Open each on satellite imagery,")
-        print("correct the pin, and set geocode_checked to true.")
+        print("\nWritten, all marked geocode_checked: false.")
+        print("\nKey:  OK precise   ~ close but not the car park   !! wrong kind of thing")
+        print("\nNothing here is a car park entrance. Open each on satellite imagery,")
+        print("drag the pin to the actual entrance, and set geocode_checked to true.")
+        print("The !! ones are worst - a reservoir centroid is in the middle of the water.")
 
 
 if __name__ == "__main__":
