@@ -278,15 +278,60 @@ def by_area(records):
     if unmapped:
         print("  no area mapped for: " + ", ".join(unmapped))
 
+    regions = cfg.get("regions", {})
     grouped = {}
     for area, docs in areas.items():
-        nation = nations.get(area, "Elsewhere")
-        grouped.setdefault(nation, {})[area] = sorted(
+        region = regions.get(area) or nations.get(area, "Elsewhere")
+        grouped.setdefault(region, {})[area] = sorted(
             docs, key=lambda x: x["authority"])
     return grouped
 
 
-def area_page(area, docs, out_dir):
+def region_page(region, counties, out_dir, blurb=""):
+    """Counties within a region. One step down from the front page."""
+    n_auth = len({d["authority"] for docs in counties.values() for d in docs})
+    n_rec = sum(len(d["sites"]) for docs in counties.values() for d in docs)
+
+    body = [HEAD.format(
+        title=f"Staying overnight in the {html.escape(region)} in a van",
+        desc=f"Overnight parking and sleeping rules across the {html.escape(region)}, "
+             "county by county, from councils, national parks and landowners.",
+        css=asset("site.css"), root="../", mapassets="")]
+
+    body.append('<div class="state">')
+    body.append(f"<span><b>{len(counties)}</b> counties</span>")
+    body.append(f"<span><b>{n_auth}</b> bodies</span>")
+    body.append(f"<span><b>{n_rec}</b> records</span>")
+    body.append("</div>")
+
+    body.append(f'<div class="authority-head"><h2>{esc(region)}</h2></div>')
+    if blurb:
+        body.append(f'<p class="summary">{esc(blurb)}</p>')
+
+    body.append('<ul class="roll">')
+    for county in sorted(counties):
+        docs = counties[county]
+        recs = sum(len(d["sites"]) for d in docs)
+        prov = sum(1 for d in docs for s in d["sites"] if s.get("kind") == "provision")
+        body.append(
+            f'<li><a href="../area/{slug(county)}.html">{esc(county)}'
+            f'<span class="rollsub">'
+            + ", ".join(esc(d["authority"]) for d in docs[:3])
+            + (f" and {len(docs) - 3} more" if len(docs) > 3 else "")
+            + "</span></a>"
+            f'<span class="tally">{prov} of {recs} permitted</span></li>')
+    body.append("</ul>")
+
+    body.append('<a class="back" href="../index.html">&larr; All regions</a>')
+    body.append(FOOT.format(when=date.today().isoformat()))
+
+    path = os.path.join(out_dir, "region", f"{slug(region)}.html")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w", encoding="utf-8").write("\n".join(body))
+    return path
+
+
+def area_page(area, docs, out_dir, region=None):
     """Everything that governs one place, whoever owns it.
 
     The most useful page on the site: a council, a national park, a water
@@ -336,7 +381,11 @@ def area_page(area, docs, out_dir):
     body.append("</ul>")
 
     body.append("<script>" + asset("vehicle.js") + "</script>")
-    body.append(f'<a class="back" href="../index.html">&larr; All areas</a>')
+    if region:
+        body.append(f'<a class="back" href="../region/{slug(region)}.html">'
+                    f'&larr; {esc(region)}</a>')
+    else:
+        body.append('<a class="back" href="../index.html">&larr; All regions</a>')
     body.append(FOOT.format(when=date.today().isoformat()))
 
     path = os.path.join(out_dir, "area", f"{slug(area)}.html")
@@ -630,24 +679,28 @@ def index_page(records, out_dir):
     body.append(vehicle_picker())
     body.append(mapping)
     body.append(HOWTO)
+    cfg = json.load(open(os.path.join(ASSETS, "areas.json"), encoding="utf-8"))
+    order = cfg.get("region_order", [])
+    blurbs = cfg.get("region_blurb", {})
     grouped = by_area(records)
-    for nation in ("England", "Wales", "Scotland", "Northern Ireland", "Elsewhere"):
-        if nation not in grouped:
-            continue
-        body.append(f'<h3 class="nation">{esc(nation)}</h3>')
-        body.append('<ul class="roll">')
-        for area in sorted(grouped[nation]):
-            docs = grouped[nation][area]
-            n = sum(len(d["sites"]) for d in docs)
-            p = sum(1 for d in docs for s in d["sites"] if s.get("kind") == "provision")
-            body.append(
-                f'<li><a href="area/{slug(area)}.html">{esc(area)}'
-                f'<span class="rollsub">'
-                + ", ".join(esc(d["authority"]) for d in docs[:3])
-                + (f" and {len(docs) - 3} more" if len(docs) > 3 else "")
-                + "</span></a>"
-                f'<span class="tally">{p} of {n} permitted</span></li>')
-        body.append("</ul>")
+
+    body.append('<h3 class="nation">Where are you going?</h3>')
+    body.append('<ul class="roll">')
+    seen = [r for r in order if r in grouped] + \
+           [r for r in sorted(grouped) if r not in order]
+    for region in seen:
+        counties = grouped[region]
+        recs = sum(len(d["sites"]) for docs in counties.values() for d in docs)
+        prov = sum(1 for docs in counties.values() for d in docs
+                   for s in d["sites"] if s.get("kind") == "provision")
+        sub = blurbs.get(region) or ", ".join(sorted(counties)[:4])
+        body.append(
+            f'<li><a href="region/{slug(region)}.html">{esc(region)}'
+            f'<span class="rollsub">{esc(sub)}</span></a>'
+            f'<span class="tally">{len(counties)} '
+            + ("county" if len(counties) == 1 else "counties")
+            + f" &middot; {prov} of {recs} permitted</span></li>")
+    body.append("</ul>")
     body.append("<script>" + asset("vehicle.js") + "</script>")
     body.append(FOOT.format(when=date.today().isoformat()))
 
@@ -680,11 +733,15 @@ def main():
         n = len([f for f in os.listdir(dst) if not f.startswith(".")])
         print(f"copied {n} vehicle image(s) into {dst}")
 
+    cfg = json.load(open(os.path.join(ASSETS, "areas.json"), encoding="utf-8"))
+    blurbs = cfg.get("region_blurb", {})
     grouped = by_area(records)
-    areas = 0
-    for nation in grouped:
-        for area, docs in grouped[nation].items():
-            area_page(area, docs, args.out)
+    areas = regions = 0
+    for region, counties in grouped.items():
+        region_page(region, counties, args.out, blurbs.get(region, ""))
+        regions += 1
+        for area, docs in counties.items():
+            area_page(area, docs, args.out, region)
             areas += 1
 
     for d in records:
@@ -693,8 +750,8 @@ def main():
 
     n = sum(len(d["sites"]) for d in records)
     mapped = sum(1 for d in records for s in d["sites"] if s.get("lat") is not None)
-    print(f"built {len(records) + areas + 1} pages in {args.out}/ "
-          f"({areas} areas, {len(records)} authorities)")
+    print(f"built {len(records) + areas + regions + 1} pages in {args.out}/ "
+          f"({regions} regions, {areas} counties, {len(records)} authorities)")
     print(f"  {len(records)} authorities, {n} records, {mapped} with coordinates")
     if mapped < n:
         print(f"  {n - mapped} records cannot be mapped until coordinates are added")

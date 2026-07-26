@@ -1,5 +1,5 @@
 {
- "_note": "Which places each body operates in, and which nation each place sits in. Kept here rather than in data/sites/*.json because update.sh deliberately never overwrites research data - so anything stored there cannot be changed from the repo once a local copy exists.",
+ "_note": "Which places each body operates in, which region each place sits in, and the order regions are listed. Kept here rather than in data/sites/*.json because update.sh deliberately never overwrites research data.",
  "nations": {
   "Northumberland": "England",
   "County Durham": "England",
@@ -66,5 +66,53 @@
   "North East Lincolnshire Council": [
    "Lincolnshire"
   ]
+ },
+ "regions": {
+  "Northumberland": "North East",
+  "County Durham": "North East",
+  "North Yorkshire": "Yorkshire and the Humber",
+  "Lancashire": "North West",
+  "Lincolnshire": "East Midlands",
+  "Suffolk": "East of England",
+  "Buckinghamshire": "South East",
+  "Kent": "South East",
+  "Cornwall": "South West",
+  "Gwynedd": "Wales",
+  "Conwy": "Wales",
+  "Denbighshire": "Wales",
+  "Pembrokeshire": "Wales",
+  "Highland": "Scotland",
+  "South Ayrshire": "Scotland",
+  "England-wide": "Nationwide"
+ },
+ "region_order": [
+  "South West",
+  "South East",
+  "London",
+  "East of England",
+  "West Midlands",
+  "East Midlands",
+  "North West",
+  "Yorkshire and the Humber",
+  "North East",
+  "Wales",
+  "Scotland",
+  "Northern Ireland",
+  "Nationwide"
+ ],
+ "region_blurb": {
+  "North East": "Northumberland coast, the Cheviots, Kielder and the Durham dales.",
+  "North West": "The Lake District, Lancashire coast and the Forest of Bowland.",
+  "Yorkshire and the Humber": "The Dales, the North York Moors and the Yorkshire coast.",
+  "East Midlands": "The Peak District fringe and the Lincolnshire coast.",
+  "West Midlands": "Shropshire hills and the Welsh border.",
+  "East of England": "The Broads, the Norfolk and Suffolk coasts.",
+  "South East": "The South Downs, the New Forest and the Kent coast.",
+  "South West": "Cornwall, Devon, Exmoor, Dartmoor and the Jurassic Coast.",
+  "London": "Little for a van, but the rules still apply.",
+  "Wales": "Eryri, the Pembrokeshire coast and the Cambrian mountains.",
+  "Scotland": "The Highlands, the NC500, the west coast and the islands.",
+  "Northern Ireland": "The Causeway coast, the Mournes and the Sperrins.",
+  "Nationwide": "Bodies that set the same rules across the whole country."
  }
 }
