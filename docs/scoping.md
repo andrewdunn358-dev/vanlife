@@ -1,6 +1,6 @@
 # Vanlife App — Scoping & Architecture
 
-**Status:** Phase 1 complete — signal layer tested and rejected. See section 9.
+**Status:** Phase 1 complete — signal layer tested and rejected. See section 8.
 **Date:** July 2026
 **Working name:** TBD
 **Repo:** https://github.com/andrewdunn358-dev/vanlife
@@ -15,7 +15,7 @@ A campervan and vanlife app for the UK that answers three questions no existing 
 
 1. **Can I legally stay here overnight?** — sourced from actual traffic orders and PSPOs, not anecdote.
 2. ~~**Will I have signal here?** — from real measured drive-test data, not operator marketing maps.~~
-   **Withdrawn.** Ofcom's drive-test data does not cover the places vans go. See section 9.
+   **Withdrawn.** Ofcom's drive-test data does not cover the places vans go. See section 8.
    If signal returns, it must come from modelled national coverage, honestly labelled as modelled.
 3. **Will my solar keep up?** — yield forecast for a specific spot and a specific electrical system.
 
@@ -47,7 +47,7 @@ Secondary differentiator: **offline-first**. Vans live in signal blackspots. Ful
 | Traffic orders | DfT D-TRO service | Free API, GitHub auth | Public beta since Sept 2025; v4.0.0 production from end May 2026. Coverage patchy — authorities still retro-digitising. England only. |
 | Overnight bans | Council PSPOs | Manual scrape, per-council | The real differentiator. Not centralised anywhere. Start with coastal + national park councils. Manifesto Club FOI surveys are a useful seed. |
 | Off-street parking orders | Council parking orders (RTRA 1984) | Manual, per-council | **Gap in original scoping.** Many "no overnight sleeping" signs in council car parks are parking place orders, not PSPOs. Resolve instrument scope before Phase 3. |
-| Mobile signal | Ofcom drive-test open data | Free bulk CSV | **Tested and rejected — see section 9.** Published annually per year, not one file: 2025 4G is a 250MB zip expanding to 7.1GB. Covers ~13% of UK land area at best, effectively far less. |
+| Mobile signal | Ofcom drive-test open data | Free bulk CSV | **Tested and rejected — see section 8.** Published annually per year, not one file: 2025 4G is a 250MB zip expanding to 7.1GB. Covers ~13% of UK land area at best, effectively far less. |
 | Mobile coverage | Ofcom Connected Nations Mobile API | Free, registration required | Per-operator fields. Postcode granularity — too coarse to replace drive-test, useful as online supplement. |
 | Solar irradiance | Open-Meteo | Free API | Shortwave radiation forecast. |
 | Terrain / shading | EA LIDAR composite DSM (1m) | Free, open licence | **Revised from OS Terrain 50.** A 50m DTM cannot see trees, which dominate shading at van-parking scale. DSM includes vegetation and buildings. England coverage good; NRW has 1m for Wales. |
@@ -97,7 +97,7 @@ The host has changed four times during scoping. These make the next change cheap
 ## 6. Phases
 
 **Phase 1 — Signal layer — COMPLETE, NEGATIVE RESULT**
-Built, ran, answered its question. The drive-test data is not dense enough off the trunk network. See section 9. Pipeline retained: it is the same shape every later layer needs.
+Built, ran, answered its question. The drive-test data is not dense enough off the trunk network. See section 8. Pipeline retained: it is the same shape every later layer needs.
 
 **Phase 1b — Legality layer is now the first product phase.**
 Formerly phases 2 and 3. This is the only remaining differentiator and should be built next, before solar and before POIs.
