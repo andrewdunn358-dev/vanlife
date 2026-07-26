@@ -336,13 +336,56 @@ def region_page(region, counties, out_dir, blurb="", all_counties=None):
                     'there &mdash; assume there are.</p>')
         body.append('<ul class="todo">')
         for c in todo:
-            body.append(f"<li>{esc(c)}</li>")
+            body.append(f'<li><a href="../area/{slug(c)}.html">{esc(c)}</a></li>')
         body.append("</ul>")
 
     body.append('<a class="back" href="../index.html">&larr; All regions</a>')
     body.append(FOOT.format(when=date.today().isoformat()))
 
     path = os.path.join(out_dir, "region", f"{slug(region)}.html")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w", encoding="utf-8").write("\n".join(body))
+    return path
+
+
+def empty_area_page(area, out_dir, region=None):
+    """A county nobody has researched yet.
+
+    Generated for every county so the URL exists from the start and the
+    gap is visible rather than implied. It says plainly that silence here
+    means nobody has looked, not that there are no rules.
+    """
+    body = [HEAD.format(
+        title=f"Staying overnight in {html.escape(area)} in a van",
+        desc=f"Overnight parking and sleeping rules in {html.escape(area)}. "
+             "Not yet researched.",
+        css=asset("site.css"), root="../", mapassets="")]
+
+    body.append('<div class="state">')
+    body.append('<span class="warn"><b>0</b> records</span>')
+    body.append("<span>not researched yet</span>")
+    body.append("</div>")
+
+    body.append(f'<div class="authority-head"><h2>{esc(area)}</h2>'
+                f'<p class="meta">nothing recorded</p></div>')
+
+    body.append('<div class="awaiting"><h4>Nobody has looked here yet</h4>'
+                "<p>There is no information about " + esc(area) + " on this site. "
+                "That is a gap in the research, not a finding &mdash; assume there "
+                "are rules and check with the authority before you rely on "
+                "anything.</p>"
+                "<p>Somewhere like this will usually have a council setting rules "
+                "for its own car parks, possibly a national park authority with its "
+                "own, and landowners such as water companies, Forestry England or "
+                "the National Trust, each with a different position. They rarely "
+                "agree.</p></div>")
+
+    if region:
+        body.append(f'<a class="back" href="../region/{slug(region)}.html">'
+                    f'&larr; {esc(region)}</a>')
+    body.append(FOOT.format(when=date.today().isoformat()))
+
+    path = os.path.join(out_dir, "area", f"{slug(area)}.html")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     open(path, "w", encoding="utf-8").write("\n".join(body))
     return path
@@ -768,6 +811,10 @@ def main():
         for area, docs in counties.items():
             area_page(area, docs, args.out, region)
             areas += 1
+        for area in all_counties.get(region, []):
+            if area not in counties:
+                empty_area_page(area, args.out, region)
+                areas += 1
 
     for d in records:
         authority_page(d, args.out)
