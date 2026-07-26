@@ -311,7 +311,8 @@ def region_page(region, counties, out_dir, blurb="", all_counties=None):
     body.append('<div class="state">')
     body.append(f"<span><b>{len(counties)}</b> of {total} counties covered</span>")
     body.append(f"<span><b>{n_auth}</b> bodies</span>")
-    body.append(f"<span><b>{n_rec}</b> records</span>")
+    body.append(f"<span><b>{n_rec}</b> "
+                + ("record" if n_rec == 1 else "records") + "</span>")
     body.append("</div>")
 
     body.append(f'<div class="authority-head"><h2>{esc(region)}</h2></div>')
@@ -394,6 +395,23 @@ def empty_area_page(area, out_dir, region=None):
     return path
 
 
+def records_for(area, doc, cfg):
+    """The records that actually belong in this county.
+
+    A body operating in one area owns all of them there. A body spanning
+    several needs its records placed individually, or Cornwall shows
+    Kielder. Records with no placing are treated as applying across the
+    body's whole estate, which is correct for blanket rules like 'all other
+    Forestry England car parks'.
+    """
+    covers = cfg.get("authorities", {}).get(doc["authority"]) or doc.get("areas") or []
+    if len(covers) <= 1:
+        return doc["sites"]
+    placed = cfg.get("site_areas", {}).get(doc["authority"], {})
+    return [s for s in doc["sites"]
+            if placed.get(s.get("name"), area) == area]
+
+
 def area_page(area, docs, out_dir, region=None):
     """Everything that governs one place, whoever owns it.
 
@@ -401,10 +419,15 @@ def area_page(area, docs, out_dir, region=None):
     company and a forestry body all set rules in Northumberland, and no
     one publishes them together.
     """
-    sites = []
+    cfg = json.load(open(os.path.join(ASSETS, "areas.json"), encoding="utf-8"))
+    local = []
     for d in docs:
-        for s in d["sites"]:
-            sites.append((d, s))
+        mine = records_for(area, d, cfg)
+        if mine:
+            local.append(dict(d, sites=mine))
+    docs = local
+
+    sites = [(d, s) for d in docs for s in d["sites"]]
     prov = sum(1 for _d, s in sites if s.get("kind") == "provision")
     gj, awaiting = site_geojson(docs)
     mapping, has_map = map_block(gj, awaiting)
@@ -416,13 +439,18 @@ def area_page(area, docs, out_dir, region=None):
         css=asset("site.css"), root="../", mapassets=MAP_ASSETS if has_map else "")]
 
     body.append('<div class="state">')
-    body.append(f"<span><b>{len(docs)}</b> bodies set rules here</span>")
-    body.append(f"<span><b>{len(sites)}</b> records</span>")
+    body.append(f"<span><b>{len(docs)}</b> "
+                + ("body sets" if len(docs) == 1 else "bodies set")
+                + " rules here</span>")
+    body.append(f"<span><b>{len(sites)}</b> "
+                + ("record" if len(sites) == 1 else "records") + "</span>")
     body.append(f"<span><b>{prov}</b> where you can stay</span>")
     body.append("</div>")
 
     body.append(f'<div class="authority-head"><h2>{esc(area)}</h2>'
-                f'<p class="meta">{len(docs)} authorities and landowners</p></div>')
+                f'<p class="meta">{len(docs)} '
+                + ("authority or landowner" if len(docs) == 1
+                   else "authorities and landowners") + "</p></div>")
     body.append('<p class="vstrip" id="vstrip" data-home="../index.html"></p>')
     body.append(mapping)
 
@@ -669,7 +697,8 @@ def authority_page(d, out_dir, root="../"):
         css=asset("site.css"), root=root, mapassets=MAP_ASSETS if has_map else "")]
 
     body.append('<div class="state">')
-    body.append(f"<span><b>{len(sites)}</b> records</span>")
+    body.append(f"<span><b>{len(sites)}</b> "
+                + ("record" if len(sites) == 1 else "records") + "</span>")
     body.append(f"<span><b>{prov}</b> permitted &middot; <b>{rest}</b> restricted</span>")
     cls = "" if mappable == len(sites) else ' class="warn"'
     body.append(f"<span{cls}><b>{mappable}</b> of {len(sites)} mapped</span>")
@@ -726,7 +755,8 @@ def index_page(records, out_dir):
 
     body.append('<div class="state">')
     body.append(f"<span><b>{len(records)}</b> authorities</span>")
-    body.append(f"<span><b>{total}</b> records</span>")
+    body.append(f"<span><b>{total}</b> "
+                + ("record" if total == 1 else "records") + "</span>")
     body.append(f"<span><b>{prov}</b> where you can stay</span>")
     cls = "" if mapped == total else ' class="warn"'
     body.append(f"<span{cls}><b>{mapped}</b> of {total} mapped</span>")

@@ -1,5 +1,5 @@
 {
- "_note": "Which places each body operates in, which region each place sits in, and the order regions are listed. Kept here rather than in data/sites/*.json because update.sh deliberately never overwrites research data.",
+ "_note": "Which places each body operates in, which region each place sits in, and the order regions are listed. Kept here rather than in data/sites/*.json because update.sh deliberately never overwrites research data. site_areas places individual records for bodies that span several counties; without it a county page shows the body's whole estate.",
  "nations": {
   "Northumberland": "England",
   "County Durham": "England",
@@ -336,5 +336,25 @@
   "Nationwide": [
    "England-wide"
   ]
+ },
+ "site_areas": {
+  "Forestry England": {
+   "Kielder Castle Car Park": "Northumberland",
+   "Tower Knowe / Hawkhope / Elf Kirk (Kielder Water)": "Northumberland"
+  },
+  "Northumbrian Water": {
+   "Fontburn Reservoir": "Northumberland",
+   "Tower Knowe, Kielder Water": "Northumberland",
+   "Other Kielder Water car parks (Hawkhope, South Abutment, Matthew's Linn, Bakethin)": "Northumberland",
+   "Derwent Reservoir": "County Durham",
+   "Balderhead Reservoir": "County Durham",
+   "Selset Reservoir": "County Durham",
+   "Grassholme Reservoir": "County Durham",
+   "Scaling Dam Reservoir": "North Yorkshire"
+  },
+  "Eryri National Park Authority": {
+   "Betws-y-Coed long stay car park": "Conwy",
+   "Llyn Tegid car park, Bala": "Gwynedd"
+  }
  }
 }

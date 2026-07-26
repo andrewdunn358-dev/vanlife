@@ -42,8 +42,6 @@
     {
       "name": "Blackburn Road Car Park, Ayr",
       "kind": "provision",
-      "lat": 55.0,
-      "lon": -2.0,
       "instrument": "policy_only",
       "status": "unknown",
       "bays": 20,
@@ -63,10 +61,8 @@
       "last_verified": "2026-07-26",
       "confidence": "low",
       "search_hint": "Blackburn Road, Ayr",
-      "geocoded_by": "nominatim",
-      "geocode_precision": "water",
-      "geocode_band": "area",
-      "geocode_checked": false
+      "lat": null,
+      "lon": null
     }
   ],
   "areas": [
