@@ -6,12 +6,13 @@
   "researched_by": "local press coverage of council decisions through 2024",
   "source_format": "unknown",
   "sources": [],
-  "policy_summary": "Parking is allowed in council car parks; sleeping overnight is prohibited. A 'Pembs Stop' trial was approved in February 2024 for four car parks at GBP10 a night, up to two nights, year-round for 18 months - then overwhelmingly rejected by scrutiny in April after objections from Visit Pembrokeshire and local campsite operators, one of whom said one and two-night stays were 25-30% of his turnover. By September Cabinet had cut it to a single site at Goodwick Moor, chosen for its ferry-port traffic, with Western Way Pembroke Dock to be considered after a three-month review.",
-  "notes": "The clearest case yet of provision being blocked by the campsite industry rather than by residents. Worth carrying into the hostility index: opposition comes from competitors as often as from communities.",
+  "policy_summary": "Parking is allowed in council car parks; sleeping overnight is prohibited. The four-site 'Pembs Stop' scheme approved in February 2024 was rejected at scrutiny in April after objections from Visit Pembrokeshire and local campsite operators, and cut to a single site by September.\n\nUPDATED: a two-year trial launched in late April 2026, concentrating overnight parking at heavily monitored ferry-linked sites, principally Goodwick Moor. GBP10 a night, capped at ONE night - not the two nights in the original proposal.",
+  "notes": "The clearest case of provision blocked by the campsite industry rather than by residents. Worth carrying into the hostility index: opposition comes from competitors as often as from communities. Note also the trial got smaller and stricter each time it was revised - four sites to one, two nights to one.",
   "open_questions": [
-    "Did the Goodwick Moor trial actually start? Aimed for March 2025, pending a traffic order.",
-    "Was Western Way added after the three-month review?",
-    "Are the on-street restrictions at Manorbier and Newgale still in force?"
+    "Which sites beyond Goodwick Moor are in the two-year trial? Tenby and Fishguard are mentioned as target areas.",
+    "Was Western Way Pembroke Dock added after the three-month review?",
+    "What does 'heavily monitored' mean - ANPR, wardens, or booking?",
+    "Are the Manorbier and Newgale on-street restrictions still in force?"
   ],
   "sites": [
     {
@@ -20,19 +21,19 @@
       "lat": null,
       "lon": null,
       "instrument": "off_street_parking_order",
-      "status": "unknown",
+      "status": "in_force",
       "price_per_night": 10.0,
       "currency": "GBP",
-      "max_nights": 2,
+      "max_nights": 1,
       "prohibits": [
         "LPG bottles outside",
         "furniture outside"
       ],
       "facilities": [],
       "last_verified": "2026-07-26",
-      "confidence": "low",
+      "confidence": "medium",
       "search_hint": "Goodwick Moor car park, Goodwick, Pembrokeshire",
-      "notes": "The only survivor of the four-site scheme. Chosen for its link to the Fishguard ferry port. Aimed to start March 2025, subject to a traffic order."
+      "notes": "Two-year trial launched late April 2026 at GBP10 a night, one night maximum, described as heavily monitored. Ferry-linked, which is why it survived when the other three sites did not."
     },
     {
       "name": "Western Way Car Park, Pembroke Dock",
@@ -43,11 +44,11 @@
       "status": "draft",
       "price_per_night": 10.0,
       "currency": "GBP",
-      "max_nights": 2,
+      "max_nights": 1,
       "last_verified": "2026-07-26",
       "confidence": "very_low",
       "search_hint": "Western Way car park, Pembroke Dock",
-      "notes": "To be considered only after a three-month review of Goodwick Moor. Also ferry-linked."
+      "notes": "Was to be considered after a three-month review of Goodwick Moor. Status in the two-year trial unconfirmed."
     },
     {
       "name": "North Beach, Tenby and Townsmoor, Narberth",

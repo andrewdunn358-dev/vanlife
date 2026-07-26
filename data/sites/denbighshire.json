@@ -3,43 +3,108 @@
   "authority_type": "unitary",
   "nation": "Wales",
   "researched_on": "2026-07-26",
-  "researched_by": "news reporting, May 2026",
+  "researched_by": "local press reporting of the council's April 2026 proposals",
   "source_format": "unknown",
   "sources": [],
-  "policy_summary": "May 2026: plans announced for six new short-stay motorhome parking sites, intended to consolidate parking and reduce wild camping in residential areas. Restrictions focused on Marine Drive in Rhyl where motorhomes previously parked freely. Short-stay bays proposed in Ruthin, Corwen and Llangollen. Provision-and-restriction together, same pattern as Northumberland.",
+  "policy_summary": "The 'Motorhome Aire' scheme: six short-stay overnight sites across the county, deliberately sited at what the council calls known hot-spots for unauthorised overnight stays. Explicitly modelled on French aires - low-cost stopping places with limited facilities.\n\nThe council's own framing is worth quoting: in Denbighshire there is no legal right to sleep overnight in a vehicle. The aires exist to give the displaced traffic somewhere legitimate, not to grant a right that did not exist.\n\nMarine Drive in Rhyl drew the strongest local opposition of the six.",
+  "notes": "Provision-led rather than enforcement-led, and unusually well documented - all six locations are named down to which part of each car park. Compare Conwy next door, which prohibits overnight camping everywhere.",
   "open_questions": [
-    "Are the six sites live yet, or still proposed? Announced May 2026.",
-    "Which six, and at what price?",
-    "What instrument covers the Marine Drive restriction?"
+    "Are any of the six actually open? Reported as progressing in April 2026.",
+    "Price and maximum stay - 'short stay' is all that has been said.",
+    "What instrument covers them, and what covers the Marine Drive restriction?",
+    "Did the Marine Drive opposition change anything?"
   ],
   "sites": [
     {
-      "name": "Marine Drive, Rhyl",
-      "kind": "restriction",
-      "lat": null,
-      "lon": null,
-      "instrument": "unknown",
-      "applies_to": "unknown",
-      "restricts": "parking",
-      "status": "unknown",
-      "last_verified": "2026-07-26",
-      "confidence": "low",
-      "search_hint": "Marine Drive, Rhyl, Denbighshire",
-      "notes": "Previously free overnight motorhome parking; restricted as of the May 2026 announcement."
-    },
-    {
-      "name": "Short-stay motorhome bays, Ruthin / Corwen / Llangollen",
+      "name": "Quay Street, Rhyl",
       "kind": "provision",
       "lat": null,
       "lon": null,
       "instrument": "unknown",
       "status": "draft",
+      "max_nights": 1,
       "last_verified": "2026-07-26",
-      "confidence": "very_low",
-      "notes": "Six sites announced May 2026. Locations partially named, terms unknown. Needs the council source."
+      "confidence": "low",
+      "search_hint": "Quay Street car park, Rhyl",
+      "notes": "Corner section of a currently closed car park, with the rest allocated to coach parking. Part of the six-site Motorhome Aire scheme, reported as progressing April 2026. Price and terms not yet published."
+    },
+    {
+      "name": "Marine Drive (East Parade), Rhyl",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "draft",
+      "max_nights": 1,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Marine Drive, East Parade, Rhyl",
+      "notes": "Small area close to the Pavilion. The most contested of the six - residents objected strongly. Part of the six-site Motorhome Aire scheme, reported as progressing April 2026. Price and terms not yet published."
+    },
+    {
+      "name": "Barkby Beach, Prestatyn",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "draft",
+      "max_nights": 1,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Barkby Beach car park, Prestatyn",
+      "notes": "Lower car park, next to the public toilets. Part of the six-site Motorhome Aire scheme, reported as progressing April 2026. Price and terms not yet published."
+    },
+    {
+      "name": "Park Street, Ruthin",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "draft",
+      "max_nights": 1,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Park Street car park, Ruthin",
+      "notes": "Small section of the existing car park. Part of the six-site Motorhome Aire scheme, reported as progressing April 2026. Price and terms not yet published."
+    },
+    {
+      "name": "Green Lane, Corwen",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "draft",
+      "max_nights": 1,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Green Lane car park, Corwen",
+      "notes": "A small number of bays along the car park exit road. Part of the six-site Motorhome Aire scheme, reported as progressing April 2026. Price and terms not yet published."
+    },
+    {
+      "name": "Mill Street, Llangollen",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "draft",
+      "max_nights": 1,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Mill Street car park, Llangollen",
+      "notes": "Small section of the lower car park, along the retaining wall up to the upper car park. Part of the six-site Motorhome Aire scheme, reported as progressing April 2026. Price and terms not yet published."
+    },
+    {
+      "name": "Overnight sleeping in a vehicle, county-wide",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Council position as reported: there is no legal right to sleep overnight in a vehicle in Denbighshire. The aires are the exception being created, not a relaxation of the rule."
     }
-  ],
-  "areas": [
-    "Denbighshire"
   ]
 }
