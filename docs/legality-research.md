@@ -161,6 +161,47 @@ Land Scotland, Natural Resources Wales, National Trust, National Trust
 for Scotland, Crown Estate, harbour and trust ports, and some town and
 parish councils.
 
+## 6c. Locating sites at scale
+
+Hand-entering coordinates does not scale past one county, and the app
+cannot ask users to do it either. The first attempt used a geocoder,
+which was the wrong tool: Nominatim guesses what a name means and
+returned village centres, road segments, and for Fontburn Reservoir, the
+middle of the water.
+
+**Feature extraction, not geocoding.** OpenStreetMap tags car parks as
+`amenity=parking` with good UK coverage. Overpass returns every one in an
+area with real geometry; records are then matched against that list by
+name and proximity.
+
+Tested on the Northumberland records: Fontburn went from the middle of
+the reservoir to Fontburn Reservoir Car Park 415m away at 0.98
+confidence. Kielder matched at 1.00. Ambiguous cases are reported rather
+than written — Bamburgh scored 0.59 with Bamburgh Castle Car Park a close
+second, and Llanberis scored 0.50 because OSM names it *Maes Parcio*.
+
+    python3 scripts/fetch_carparks.py --area Northumberland --operator
+    python3 scripts/match_carparks.py
+    python3 scripts/match_carparks.py --write
+
+One Overpass query per county, then confirmation of the weak matches.
+That scales; typing coordinates does not.
+
+### It also solves the blanket restrictions
+
+"All other Northumberland County Council car parks" cannot be mapped
+today because it is not a place. With the full car park list for the
+county — and OSM's `operator` tag to identify council-run ones — it
+becomes every parking area minus the three permitted bays. That converts
+the largest unmappable category in the dataset into ordinary geometry.
+
+OSM also carries `maxheight`, `capacity`, `fee` and `access` tags, which
+feed straight into the vehicle matcher. The height barriers Gwynedd
+mentions but does not list are partly already in OSM.
+
+Licence: OSM data is ODbL. Attribution is required on anything derived
+from it.
+
 ## 7. Per-authority research checklist
 
 For each authority, capture:
