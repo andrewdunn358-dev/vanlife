@@ -22,6 +22,11 @@ services:
     working_dir: /work
     # Two cores total on the ML110 - leave DSM some headroom.
     cpus: 1.5
-    mem_limit: 5g
+    # DSM 7.2.2 leaves roughly 3.2GB available on an 8GB box. This cap is
+    # a safety net: it kills a runaway process here rather than letting
+    # the OOM killer pick a DSM service. Neither script needs much - the
+    # converter streams one row at a time and Tippecanoe spills to disk -
+    # so the real constraint is TMPDIR space, not RAM.
+    mem_limit: 3g
     stdin_open: true
     tty: true
