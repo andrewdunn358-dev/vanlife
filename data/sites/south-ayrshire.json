@@ -1,0 +1,46 @@
+{
+  "authority": "South Ayrshire Council",
+  "nation": "Scotland",
+  "researched_on": "2026-07-26",
+  "researched_by": "desk research, not verified",
+  "source_format": "html",
+  "sources": ["https://www.south-ayrshire.gov.uk/article/28078/Council-to-trial-overnight-parking-for-campervans"],
+  "policy_summary": "Trial scheme providing designated overnight campervan bays to encourage tourism. Provision-first example - useful contrast with Cornwall and Conwy.",
+  "sites": [
+    {
+      "name": "Knockcushan Street Car Park, Girvan",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "instrument": "policy_only",
+      "status": "unknown",
+      "bays": 20,
+      "price_per_night": 5.00,
+      "currency": "GBP",
+      "max_nights": 1,
+      "return_gap_hours": 24,
+      "requires_self_contained": false,
+      "prohibits": ["tents", "awnings", "generators"],
+      "excludes_vehicle_types": ["caravan"],
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Announced as a trial; start date was TBC in the source. Verify whether it ran and is still running."
+    },
+    {
+      "name": "Blackburn Road Car Park, Ayr",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "instrument": "policy_only",
+      "status": "unknown",
+      "bays": 20,
+      "price_per_night": 5.00,
+      "currency": "GBP",
+      "max_nights": 1,
+      "return_gap_hours": 24,
+      "requires_self_contained": false,
+      "prohibits": ["tents", "awnings", "generators"],
+      "excludes_vehicle_types": ["caravan"],
+      "last_verified": "2026-07-26",
+      "confidence": "low"
+    }
+  ]
+}

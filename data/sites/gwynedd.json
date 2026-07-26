@@ -1,0 +1,97 @@
+{
+  "authority": "Cyngor Gwynedd",
+  "nation": "Wales",
+  "researched_on": "2026-07-26",
+  "researched_by": "desk research, not verified against source documents",
+  "source_format": "html",
+  "sources": [
+    "https://www.gwynedd.llyw.cymru/en/Residents/Parking-roads-and-travel/Parking-and-permits/Motorhomes-Arosfan.aspx"
+  ],
+  "policy_summary": "Motorhomes may park in any council car park during the day. Sleeping overnight is not permitted in any car park except the designated Arosfan sites. Separate orders prevent overnight motorhome parking in lay-bys at various locations.",
+  "sites": [
+    {
+      "name": "Arosfan Llanberis",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "price_per_night": 16.50,
+      "currency": "GBP",
+      "arrival_from": "16:00",
+      "departure_by": "10:00",
+      "max_nights": null,
+      "requires_self_contained": false,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Coordinates not yet captured. Price and hours from council page."
+    },
+    {
+      "name": "Arosfan Caernarfon (Doc Fictoria, old Shell site)",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "postcode": "LL55 1SQ",
+      "instrument": "policy_only",
+      "status": "in_force",
+      "price_per_night": 16.50,
+      "currency": "GBP",
+      "arrival_from": "16:00",
+      "departure_by": "10:00",
+      "requires_self_contained": false,
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Postcode published by council."
+    },
+    {
+      "name": "Arosfan Criccieth",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "price_per_night": 16.50,
+      "currency": "GBP",
+      "arrival_from": "16:00",
+      "departure_by": "10:00",
+      "requires_self_contained": false,
+      "last_verified": "2026-07-26",
+      "confidence": "low"
+    },
+    {
+      "name": "Arosfan Pwllheli",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "price_per_night": 16.50,
+      "currency": "GBP",
+      "arrival_from": "16:00",
+      "departure_by": "10:00",
+      "requires_self_contained": false,
+      "last_verified": "2026-07-26",
+      "confidence": "low"
+    },
+    {
+      "name": "All other Gwynedd council car parks",
+      "kind": "restriction",
+      "lat": null, "lon": null,
+      "instrument": "policy_only",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Blanket policy, not per-site. Parking permitted, sleeping not. Needs the individual car park list and geometry. Height barriers noted at some car parks - list not yet captured."
+    },
+    {
+      "name": "Various lay-bys, county-wide",
+      "kind": "restriction",
+      "lat": null, "lon": null,
+      "instrument": "unknown",
+      "applies_to": "unknown",
+      "restricts": "parking",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Council states 'specific orders' exist preventing overnight motorhome parking in lay-bys. Locations and instrument type not yet identified. HIGH PRIORITY - lay-bys are where vans actually stop."
+    }
+  ]
+}

@@ -9,6 +9,8 @@ data/*
 # Exception: small hand-maintained reference data belongs in version
 # control. It is research, not a build artefact.
 !data/authorities-priority.csv
+!data/sites/
+!data/sites/*.json
 *.geojsonl
 *.pmtiles
 *.mbtiles

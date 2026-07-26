@@ -1,0 +1,40 @@
+{
+  "authority": "Eryri National Park Authority",
+  "nation": "Wales",
+  "researched_on": "2026-07-26",
+  "researched_by": "desk research from news reporting, NOT from authority sources",
+  "source_format": "unknown",
+  "sources": [],
+  "policy_summary": "Restricted overnight parking at 11 car parks from 1 April 2026 by shortening operational hours rather than making an order. Faced significant backlash; a reversal was reported as likely with a decision due 10 June 2026. Current status unknown.",
+  "warning": "DO NOT PUBLISH. Status genuinely uncertain - this is the volatility case study, not usable data.",
+  "sites": [
+    {
+      "name": "Betws-y-Coed long stay car park",
+      "kind": "restriction",
+      "lat": null, "lon": null,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "parking",
+      "time_from": "22:00",
+      "time_to": "03:00",
+      "status": "unknown",
+      "enforcement": "anpr",
+      "last_verified": "2026-07-26",
+      "confidence": "very_low",
+      "notes": "Introduced 1 Apr 2026, reversal proposed by Jun 2026. MUST verify current status before any use."
+    },
+    {
+      "name": "Llyn Tegid car park",
+      "kind": "restriction",
+      "lat": null, "lon": null,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "parking",
+      "status": "unknown",
+      "enforcement": "anpr",
+      "last_verified": "2026-07-26",
+      "confidence": "very_low",
+      "notes": "ANPR trialled here. Proposal to replace full closure with a 01:00-03:00 window only - a two-hour closure designed to prevent overnight stays while preserving dawn access."
+    }
+  ]
+}
