@@ -1,0 +1,31 @@
+{
+  "authority": "National Trust",
+  "authority_type": "landowner (conservation)",
+  "nation": "England",
+  "researched_on": "2026-07-26",
+  "researched_by": "secondary sources reporting the Trust's stated policy",
+  "source_format": "unknown",
+  "sources": [],
+  "policy_summary": "A single national policy: no overnight parking in National Trust car parks. The Trust cites litter, fires and human waste as the reasons. That covers thousands of car parks, many of them in exactly the coastal and upland places vans want to be - including a large share of the Northumberland coast.\n\nOne policy, one line, national coverage. The landowner tier keeps proving less work than the councils, even when the answer is no.",
+  "notes": "A blanket no is still valuable data. Knowing the National Trust is never an option removes a large number of tempting-looking car parks from consideration, which is worth as much to a user as finding a yes.",
+  "open_questions": [
+    "Find the Trust's own published statement rather than forum reporting.",
+    "Are there any exceptions - member events, campsite-adjacent car parks, Trust-run campsites?",
+    "Does National Trust for Scotland have the same policy?"
+  ],
+  "sites": [
+    {
+      "name": "All National Trust car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "all_vehicles",
+      "restricts": "parking",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Stated national policy of no overnight parking. Not law - a condition of entry - so no penalty charge notice, but they can require you to leave. Covers a large share of the Northumberland coast including the Farne Islands landings and Lindisfarne approaches."
+    }
+  ]
+}

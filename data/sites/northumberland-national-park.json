@@ -1,0 +1,60 @@
+{
+  "authority": "Northumberland National Park Authority",
+  "authority_type": "national_park",
+  "nation": "England",
+  "researched_on": "2026-07-26",
+  "researched_by": "the Authority's own car parks page",
+  "source_format": "html",
+  "sources": [
+    "https://www.northumberlandnationalpark.org.uk/discover-explore/visitor-info/car-parks/"
+  ],
+  "policy_summary": "The clearest split between parking and sleeping found anywhere so far. At car parks on the higher tariff, GBP10 buys you an overnight stay for the VEHICLE - cars and motorhomes may be parked and left overnight - but camping and overnighting IN a motorhome is explicitly not allowed. Other car parks carry a flat 'no overnight parking'.\n\nSo a walker doing the Pennine Way or the Cheviots can legitimately leave a van for GBP10 a night. Someone wanting to sleep in it cannot, at any price. Two different products from the same tariff board, and the distinction is invisible on any competitor's map.",
+  "notes": "This is the strongest argument yet for the restricts field carrying 'parking' and 'sleeping' separately. A yes/no overnight flag would get this exactly wrong in both directions.",
+  "open_questions": [
+    "Which of the named car parks are on the GBP10 tariff and which carry no overnight parking at all?",
+    "Is the sleeping prohibition backed by a byelaw or is it a condition of entry?",
+    "Overnight tariff hours - from when to when?"
+  ],
+  "sites": [
+    {
+      "name": "Higher-tariff Northumberland NP car parks",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "restricts": "sleeping",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "GBP10 overnight lets you PARK AND LEAVE a car or motorhome. Sleeping in it is not permitted. Useful for multi-day walks. Day rate is GBP2 per hour to a GBP10 maximum."
+    },
+    {
+      "name": "Overnighting or camping in a vehicle, anywhere in the National Park's car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "The Authority's wording: camping and overnighting in motorhomes is not allowed. Applies even where the vehicle itself may legitimately be left overnight."
+    },
+    {
+      "name": "Lower-tariff and no-overnight car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "all_vehicles",
+      "restricts": "parking",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Several car parks carry a flat 'no overnight parking'. Day rate GBP1 per hour to a GBP6 maximum. The Authority lists car parks including Billsmoor Foot, Buckhams Bridge, Bulby's Wood, College Valley Hillforts, Harehaugh, Hareshaw Linn, Ingram Bridge, Ingram Visitor Centre and Lordenshaws - but does not map tariff to car park in a way that has been captured yet."
+    }
+  ]
+}
