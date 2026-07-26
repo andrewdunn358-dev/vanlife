@@ -1,5 +1,5 @@
 {
-  "_note": "Drop images in site-assets/vehicles/ and set 'image'. Falls back to the drawn silhouette while empty. Use side or 3/4 front, white or transparent background, roughly 1200x800, and record where each came from.",
+  "_note": "Put images in site-assets/vehicles/ and set 'image' to the filename. Falls back to the drawn silhouette while empty, so they can be added one at a time. Generate each vehicle separately at about 1200x800 - slicing a grid screenshot gives roughly 100px per vehicle, which the picker then upscales 2.5x and it shows. Record credit and licence for every image.",
   "vehicles": [
     {
       "key": "vw",
@@ -57,5 +57,6 @@
       "credit": "",
       "licence": ""
     }
-  ]
+  ],
+  "_prompt": "Consistency across the seven matters more than any single image. Vary only the vehicle: 'photorealistic <vehicle type>, three-quarter front view from slightly above, pure white background, vehicle centred and fully in frame, soft even studio lighting, no shadow, no text, no badges, no people'."
 }
