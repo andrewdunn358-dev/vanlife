@@ -130,6 +130,26 @@ def measured(db_path, lat, lon, radius_km, tech):
     return hits
 
 
+DEDUP_DP = 4  # ~11m; collapses GPS jitter from stationary vehicles
+
+
+def dedupe(hits):
+    """One reading per ~11m cell, nearest kept.
+
+    The raw data logs at 6dp (~0.1m), so a van parked beside a mast for an
+    afternoon contributes hundreds of rows from one spot. Left in, those
+    drag any median toward wherever the survey vehicles happened to sit
+    still. The top 8 such spots account for a measurable share of the
+    whole file.
+    """
+    seen = {}
+    for d, r in hits:  # already sorted nearest-first
+        key = (round(r["lat"], DEDUP_DP), round(r["lon"], DEDUP_DP))
+        if key not in seen:
+            seen[key] = (d, r)
+    return sorted(seen.values(), key=lambda x: x[0])
+
+
 def median(vals):
     vals = sorted(v for v in vals if v is not None)
     if not vals:
@@ -178,7 +198,8 @@ def main():
 
     # ---- measured ----
     print(f"\nMEASURED  (Ofcom drive-test, within {args.radius:g} km)")
-    hits = measured(args.db, lat, lon, args.radius, args.tech)
+    raw_hits = measured(args.db, lat, lon, args.radius, args.tech)
+    hits = dedupe(raw_hits) if raw_hits else raw_hits
     if hits is None:
         print(f"  no database at {args.db} - run build_sqlite.py first")
     elif not hits:
@@ -186,7 +207,16 @@ def main():
         print("  This means nobody drove here, NOT that there is no signal.")
     else:
         n_notspot = sum(1 for _d, r in hits if r["n_ops"] == 0)
-        print(f"  {len(hits):,} readings, nearest {hits[0][0]*1000:.0f} m away")
+        print(
+            f"  {len(hits):,} distinct spots (~{111000*10**-DEDUP_DP:.0f}m "
+            f"apart), nearest {hits[0][0]*1000:.0f} m away"
+        )
+        if len(raw_hits) > len(hits):
+            print(
+                f"  from {len(raw_hits):,} raw rows - "
+                f"{len(raw_hits)-len(hits):,} were repeat logs at the same "
+                "spot (parked vehicles) and are excluded from the medians"
+            )
         if n_notspot:
             print(
                 f"  {n_notspot:,} ({100.0*n_notspot/len(hits):.0f}%) recorded "

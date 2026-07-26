@@ -26,6 +26,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("sqlite_path")
     ap.add_argument("--tech", default="4g")
+    ap.add_argument(
+        "--snap",
+        type=int,
+        default=4,
+        help="decimal places to round coordinates to when counting "
+        "distinct locations. 6dp is raw GPS and treats centimetre jitter "
+        "from a parked vehicle as separate places; 4dp is ~11m and "
+        "reflects physical locations (default 4).",
+    )
     args = ap.parse_args()
 
     con = sqlite3.connect(args.sqlite_path)
@@ -39,14 +48,27 @@ def main():
     print(f"\nrows                 {total:,}")
 
     print("counting distinct locations (a minute or two)…", file=sys.stderr)
-    distinct = con.execute(
+    raw = con.execute(
         "SELECT COUNT(*) FROM (SELECT 1 FROM measurement WHERE tech=? "
         "GROUP BY lat, lon)",
         (args.tech,),
     ).fetchone()[0]
+    distinct = con.execute(
+        "SELECT COUNT(*) FROM (SELECT 1 FROM measurement WHERE tech=? "
+        "GROUP BY ROUND(lat,?), ROUND(lon,?))",
+        (args.tech, args.snap, args.snap),
+    ).fetchone()[0]
 
-    print(f"distinct locations   {distinct:,}")
-    print(f"rows per location    {total/distinct:.2f} average")
+    step_m = 111000 * 10 ** -args.snap
+    print(f"distinct at 6dp      {raw:,}   (raw GPS, ~0.1m)")
+    print(f"distinct at {args.snap}dp      {distinct:,}   (~{step_m:.0f}m)")
+    print(f"rows per location    {total/distinct:.2f} average at {args.snap}dp")
+    if raw > distinct * 1.3:
+        print(
+            f"\n  -> {raw-distinct:,} of the 6dp 'locations' collapse at "
+            f"{args.snap}dp.\n     That is GPS jitter from stationary "
+            "vehicles, not distinct places."
+        )
 
     if total / distinct > 1.2:
         print("\n  -> Rows ARE duplicated per location. Any median computed")
@@ -57,13 +79,17 @@ def main():
 
     # How many rows at the busiest single location?
     top = con.execute(
-        "SELECT lat, lon, COUNT(*) c FROM measurement WHERE tech=? "
-        "GROUP BY lat, lon ORDER BY c DESC LIMIT 5",
-        (args.tech,),
+        "SELECT ROUND(lat,?) la, ROUND(lon,?) lo, COUNT(*) c "
+        "FROM measurement WHERE tech=? GROUP BY la, lo "
+        "ORDER BY c DESC LIMIT 8",
+        (args.snap, args.snap, args.tech),
     ).fetchall()
-    print("\nbusiest locations:")
+    print(f"\nbusiest locations (rounded to {args.snap}dp):")
     for lat, lon, c in top:
-        print(f"  {lat:.6f}, {lon:.6f}   {c:,} rows")
+        print(f"  {lat:.4f}, {lon:.4f}   {c:,} rows   {100.0*c/total:.2f}% of file")
+    hog = sum(c for _a, _b, c in top)
+    print(f"  top 8 alone account for {100.0*hog/total:.2f}% of all rows")
+    print("  -> almost certainly parked vehicles, not survey coverage")
 
     # ---- coordinate snapping ----
     print("\ncoordinate precision:")
@@ -99,9 +125,9 @@ def main():
         (args.tech,),
     ).fetchone()[0]
     ns_locs = con.execute(
-        "SELECT COUNT(*) FROM (SELECT lat, lon FROM measurement WHERE tech=? "
-        "GROUP BY lat, lon HAVING MAX(n_ops)=0)",
-        (args.tech,),
+        "SELECT COUNT(*) FROM (SELECT 1 FROM measurement WHERE tech=? "
+        "GROUP BY ROUND(lat,?), ROUND(lon,?) HAVING MAX(n_ops)=0)",
+        (args.tech, args.snap, args.snap),
     ).fetchone()[0]
     print(f"  by row       {ns_rows:,} / {total:,}  ({100.0*ns_rows/total:.1f}%)")
     print(
