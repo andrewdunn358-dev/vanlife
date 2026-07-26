@@ -127,6 +127,33 @@ body {
 .roll .tally { font-family: "Overpass Mono", monospace; font-size: 0.72rem;
                color: var(--ink-soft); white-space: nowrap; }
 
+/* map ------------------------------------------------------------------ */
+.map-wrap { margin: 0 0 2.5rem; }
+#map { height: 380px; border: 1px solid var(--ink); background: var(--rule); }
+.map-key {
+  font-family: "Overpass Mono", monospace; font-size: 0.7rem;
+  color: var(--ink-soft); margin: 0.5rem 0 0;
+  display: flex; flex-wrap: wrap; gap: 0 1.25rem;
+}
+.map-key .dot { display: inline-block; width: 9px; height: 9px; margin-right: 5px; }
+.dot.p { background: var(--permit); }
+.dot.r { background: var(--restrict); }
+.awaiting {
+  border: 1px dashed var(--rule); padding: 1.25rem; margin: 0 0 2.5rem;
+}
+.awaiting h4 {
+  font-family: Overpass, Arial, sans-serif; font-size: 0.9rem;
+  margin: 0 0 0.5rem; font-weight: 700;
+}
+.awaiting p { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 0.75rem; max-width: var(--measure); }
+.awaiting ul { font-family: "Overpass Mono", monospace; font-size: 0.76rem;
+               margin: 0; padding-left: 1.2rem; color: var(--ink-soft); }
+.maplibregl-popup-content {
+  font-family: "Overpass Mono", monospace !important; font-size: 0.72rem !important;
+  border-radius: 0 !important; border: 1px solid var(--ink); padding: 0.6rem 0.75rem !important;
+}
+.maplibregl-popup-content b { font-family: Overpass, Arial, sans-serif; font-size: 0.85rem; }
+
 .back { font-family: "Overpass Mono", monospace; font-size: 0.75rem;
         display: inline-block; margin: 2rem 0 0; color: var(--sign); }
 footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1rem;
@@ -144,13 +171,53 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<style>{css}</style>
+{mapassets}<style>{css}</style>
 </head><body><div class="wrap">
 <header class="masthead">
   <h1 class="wordmark"><a href="{root}index.html">Overnight</a></h1>
   <p class="standfirst">Where you can stay in a van, and who says so</p>
 </header>
 """
+
+MAP_ASSETS = (
+    '<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">\n'
+    '<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>\n'
+)
+
+MAP_JS = """<script>
+(function () {
+  var data = %s;
+  if (!data.features.length || typeof maplibregl === "undefined") return;
+  var map = new maplibregl.Map({
+    container: "map",
+    style: { version: 8, sources: { osm: {
+      type: "raster",
+      tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+      tileSize: 256, attribution: "&copy; OpenStreetMap contributors" } },
+      layers: [{ id: "osm", type: "raster", source: "osm" }] },
+    center: %s, zoom: %s, attributionControl: { compact: true }
+  });
+  map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+  map.on("load", function () {
+    data.features.forEach(function (f) {
+      var el = document.createElement("div");
+      var permit = f.properties.kind === "provision";
+      el.style.cssText = "width:15px;height:15px;border:2px solid #FBFAF8;cursor:pointer;"
+        + "background:" + (permit ? "#1F5C3D" : "#A8620F");
+      new maplibregl.Marker({ element: el })
+        .setLngLat(f.geometry.coordinates)
+        .setPopup(new maplibregl.Popup({ offset: 14, closeButton: false })
+          .setHTML(f.properties.popup))
+        .addTo(map);
+    });
+    if (data.features.length > 1) {
+      var b = new maplibregl.LngLatBounds();
+      data.features.forEach(function (f) { b.extend(f.geometry.coordinates); });
+      map.fitBounds(b, { padding: 55, maxZoom: 13 });
+    }
+  });
+})();
+</script>"""
 
 FOOT = """<footer>
 <p>Compiled from published sources. Informational only &mdash; never advice.
@@ -219,6 +286,61 @@ def term_rows(s):
     return rows
 
 
+def site_geojson(records):
+    """Only sites with real coordinates. Nothing is invented to fill the map."""
+    feats, awaiting = [], []
+    for d in records:
+        for s in d["sites"]:
+            if s.get("lat") is None or s.get("lon") is None:
+                awaiting.append((d["authority"], s.get("name", "?")))
+                continue
+            p = money(s.get("price_per_night"), s.get("currency", "GBP"))
+            lines = [f"<b>{esc(s.get('name'))}</b>",
+                     esc(d["authority"])]
+            if s.get("kind") == "provision":
+                lines.append(f"{p} per night" if p else "price not recorded")
+            else:
+                lines.append("no overnight " + esc(s.get("restricts", "stays")))
+            lines.append(f"checked {esc(s.get('last_verified', 'never'))}")
+            feats.append({
+                "type": "Feature",
+                "geometry": {"type": "Point", "coordinates": [s["lon"], s["lat"]]},
+                "properties": {"kind": s.get("kind"), "popup": "<br>".join(lines)},
+            })
+    return {"type": "FeatureCollection", "features": feats}, awaiting
+
+
+def map_block(gj, awaiting):
+    """A map when there is something to map, an honest to-do list when not."""
+    if gj["features"]:
+        n = len(gj["features"])
+        centre = gj["features"][0]["geometry"]["coordinates"] if n == 1 else [-3.2, 54.6]
+        zoom = 12 if n == 1 else 5
+        out = ['<div class="map-wrap"><div id="map"></div>',
+               '<p class="map-key">',
+               '<span><span class="dot p"></span>you can stay</span>',
+               '<span><span class="dot r"></span>you cannot stay</span>']
+        if awaiting:
+            out.append(f'<span class="gap">{len(awaiting)} more not yet located</span>')
+        out.append("</p></div>")
+        out.append(MAP_JS % (json.dumps(gj), json.dumps(centre), zoom))
+        return "\n".join(out), True
+
+    out = ['<div class="awaiting">',
+           "<h4>No map yet</h4>",
+           "<p>None of these records has coordinates, so there is nothing to plot. "
+           "Rather than guess at where these car parks are, the map stays off until "
+           "the locations have been looked up and checked.</p>",
+           f"<p>{len(awaiting)} record" + ("s" if len(awaiting) != 1 else "") +
+           " waiting on a location:</p><ul>"]
+    for auth, name in awaiting[:12]:
+        out.append(f"<li>{esc(name)}</li>")
+    if len(awaiting) > 12:
+        out.append(f"<li>and {len(awaiting) - 12} more</li>")
+    out.append("</ul></div>")
+    return "\n".join(out), False
+
+
 def notice_html(s, parent):
     kind = s.get("kind", "unknown")
     cls = "is-provision" if kind == "provision" else "is-restriction"
@@ -268,10 +390,13 @@ def authority_page(d, out_dir, root="../"):
     rest = len(sites) - prov
     mappable = sum(1 for s in sites if s.get("lat") is not None)
 
+    gj, awaiting = site_geojson([d])
+    mapping, has_map = map_block(gj, awaiting)
+
     body = [HEAD.format(
         title=f"{html.escape(name)} - overnight parking rules",
         desc=f"Published overnight parking and sleeping rules for {html.escape(name)}, with sources and dates.",
-        css=CSS, root=root)]
+        css=CSS, root=root, mapassets=MAP_ASSETS if has_map else "")]
 
     body.append('<div class="state">')
     body.append(f"<span><b>{len(sites)}</b> records</span>")
@@ -280,6 +405,7 @@ def authority_page(d, out_dir, root="../"):
     body.append(f"<span{cls}><b>{mappable}</b> of {len(sites)} mapped</span>")
     body.append("</div>")
 
+    body.append(mapping)
     body.append('<section class="authority">')
     body.append('<div class="authority-head">')
     body.append(f"<h2>{esc(name)}</h2>")
@@ -316,11 +442,14 @@ def index_page(records, out_dir):
     prov = sum(1 for d in records for s in d["sites"] if s.get("kind") == "provision")
     mapped = sum(1 for d in records for s in d["sites"] if s.get("lat") is not None)
 
+    gj, awaiting = site_geojson(records)
+    mapping, has_map = map_block(gj, awaiting)
+
     body = [HEAD.format(
         title="Overnight - where you can stay in a van in the UK",
         desc="Published overnight parking and sleeping rules for UK councils, "
              "national parks and landowners. Every record shows its source and date.",
-        css=CSS, root="")]
+        css=CSS, root="", mapassets=MAP_ASSETS if has_map else "")]
 
     body.append('<div class="state">')
     body.append(f"<span><b>{len(records)}</b> authorities</span>")
@@ -337,6 +466,7 @@ def index_page(records, out_dir):
     body.append("<p class=\"summary\">Where something has not been checked, or the location has not been "
                 "recorded yet, the record says so rather than leaving you to guess.</p>")
 
+    body.append(mapping)
     body.append('<ul class="roll">')
     for d in sorted(records, key=lambda x: x["authority"]):
         p = sum(1 for s in d["sites"] if s.get("kind") == "provision")
