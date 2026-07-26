@@ -566,6 +566,14 @@ def main():
         shutil.rmtree(args.out)
     os.makedirs(args.out, exist_ok=True)
 
+    src = os.path.join(os.path.dirname(ASSETS), "..", "site-assets", "vehicles")
+    src = os.path.normpath(src)
+    if os.path.isdir(src):
+        dst = os.path.join(args.out, "vehicles")
+        shutil.copytree(src, dst)
+        n = len([f for f in os.listdir(dst) if not f.startswith(".")])
+        print(f"copied {n} vehicle image(s) into {dst}")
+
     for d in records:
         authority_page(d, args.out)
     index_page(records, args.out)

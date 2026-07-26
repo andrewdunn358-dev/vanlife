@@ -35,3 +35,7 @@ Thumbs.db
 
 # Generated site output - rebuild with scripts/build_site.py
 site/
+
+# Vehicle images are source, not build output - site/ is wiped each rebuild
+!site-assets/
+!site-assets/vehicles/*.png

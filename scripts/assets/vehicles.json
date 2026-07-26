@@ -1,62 +1,61 @@
 {
-  "_note": "Put images in site-assets/vehicles/ and set 'image' to the filename. Falls back to the drawn silhouette while empty, so they can be added one at a time. Generate each vehicle separately at about 1200x800 - slicing a grid screenshot gives roughly 100px per vehicle, which the picker then upscales 2.5x and it shows. Record credit and licence for every image.",
+  "_note": "Drop images in site-assets/vehicles/ and set 'image'. Falls back to the drawn silhouette while empty. Use side or 3/4 front, white or transparent background, roughly 1200x800, and record where each came from.",
   "vehicles": [
     {
       "key": "vw",
       "name": "VW / small camper",
       "dims": "2.0m &middot; 4.9m",
-      "image": "",
-      "credit": "",
-      "licence": ""
+      "image": "vw.png",
+      "credit": "generated",
+      "licence": "own work"
     },
     {
       "key": "panel",
       "name": "Panel van conversion",
       "dims": "2.6m &middot; 5.9m",
-      "image": "",
-      "credit": "",
-      "licence": ""
+      "image": "panel.png",
+      "credit": "generated",
+      "licence": "own work"
     },
     {
       "key": "coachbuilt",
       "name": "Coachbuilt motorhome",
       "dims": "3.1m &middot; 7.0m",
-      "image": "",
-      "credit": "",
-      "licence": ""
+      "image": "coachbuilt.png",
+      "credit": "generated",
+      "licence": "own work"
     },
     {
       "key": "aclass",
       "name": "A-class motorhome",
       "dims": "3.3m &middot; 8.0m",
-      "image": "",
-      "credit": "",
-      "licence": ""
+      "image": "aclass.png",
+      "credit": "generated",
+      "licence": "own work"
     },
     {
       "key": "caravan",
       "name": "Touring caravan",
       "dims": "2.6m &middot; 6.5m",
-      "image": "",
-      "credit": "",
-      "licence": ""
+      "image": "caravan.png",
+      "credit": "generated",
+      "licence": "own work"
     },
     {
       "key": "twinaxle",
       "name": "Twin axle caravan",
       "dims": "2.7m &middot; 8.2m",
-      "image": "",
-      "credit": "",
-      "licence": ""
+      "image": "twinaxle.png",
+      "credit": "generated",
+      "licence": "own work"
     },
     {
       "key": "car",
       "name": "Car or estate",
       "dims": "not for sleeping",
-      "image": "",
-      "credit": "",
-      "licence": ""
+      "image": "car.png",
+      "credit": "generated",
+      "licence": "own work"
     }
-  ],
-  "_prompt": "Consistency across the seven matters more than any single image. Vary only the vehicle: 'photorealistic <vehicle type>, three-quarter front view from slightly above, pure white background, vehicle centred and fully in frame, soft even studio lighting, no shadow, no text, no badges, no people'."
+  ]
 }

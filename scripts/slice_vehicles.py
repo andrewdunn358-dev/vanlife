@@ -7,8 +7,8 @@ Finds the cards by looking for the near-white panels against the page
 background, crops each, trims the surrounding whitespace and writes them
 out in reading order.
 
-    python3 scripts/slice_vehicles.py /volume1/data/veh_picker.png
-    python3 scripts/slice_vehicles.py /volume1/data/veh_picker.png --write
+    python3 scripts/slice_vehicles.py source.png --grid 4x2 --top 0.2
+    python3 scripts/slice_vehicles.py source.png --grid 4x2 --top 0.2 --write
 
 Without --write it only reports what it found, so you can check the count
 and the sizes before anything is created.
@@ -185,6 +185,12 @@ def main():
                     help="with --grid, skip this fraction from the top (page heading)")
     ap.add_argument("--bottom", type=float, default=1.0,
                     help="with --grid, stop at this fraction down")
+    ap.add_argument("--cell-bottom", type=float, default=0.6,
+                    help="keep this fraction of each cell's height. Source cards "
+                         "carry their own captions and the picker writes its own "
+                         "labels, so the text has to go. 0.6 works for a card with "
+                         "a name and a dimension line; verified against a "
+                         "1536x1024 seven-card grid.")
     args = ap.parse_args()
 
     if not os.path.exists(args.source):
@@ -214,7 +220,8 @@ def main():
 
     kept = 0
     for b in boxes:
-        crop = trim(img.crop((b[0], b[1], b[2] + 1, b[3] + 1)))
+        cy1 = b[1] + int((b[3] - b[1]) * args.cell_bottom)
+        crop = trim(img.crop((b[0], b[1], b[2] + 1, cy1 + 1)))
         if crop.size[0] < 40 or crop.size[1] < 25:
             continue  # empty cell
         name = ORDER[kept] if kept < len(ORDER) else f"extra{kept}"
