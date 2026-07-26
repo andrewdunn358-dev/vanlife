@@ -12,8 +12,8 @@
     {
       "name": "Arosfan Llanberis",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 53.12128,
+      "lon": -4.12775,
       "instrument": "policy_only",
       "status": "in_force",
       "price_per_night": 16.5,
@@ -24,14 +24,18 @@
       "requires_self_contained": false,
       "last_verified": "2026-07-26",
       "confidence": "low",
-      "notes": "Coordinates not yet captured. Price and hours from council page.",
-      "search_hint": "Llanberis, Gwynedd"
+      "notes": "A 2023 planning application described nine motorhome bays at the Y Glyn car park beside Llyn Padarn, Llanberis - almost certainly this site. Use that name when locating it.",
+      "search_hint": "Y Glyn car park, Llyn Padarn, Llanberis",
+      "geocoded_by": "nominatim",
+      "geocode_precision": "water",
+      "geocode_band": "area",
+      "geocode_checked": false
     },
     {
       "name": "Arosfan Caernarfon (Doc Fictoria, old Shell site)",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 55.0,
+      "lon": -2.0,
       "postcode": "LL55 1SQ",
       "instrument": "policy_only",
       "status": "in_force",
@@ -42,13 +46,17 @@
       "requires_self_contained": false,
       "last_verified": "2026-07-26",
       "confidence": "medium",
-      "notes": "Postcode published by council."
+      "notes": "Postcode published by council.",
+      "geocoded_by": "nominatim",
+      "geocode_precision": "water",
+      "geocode_band": "area",
+      "geocode_checked": false
     },
     {
       "name": "Arosfan Criccieth",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 55.0,
+      "lon": -2.0,
       "instrument": "policy_only",
       "status": "in_force",
       "price_per_night": 16.5,
@@ -58,13 +66,17 @@
       "requires_self_contained": false,
       "last_verified": "2026-07-26",
       "confidence": "low",
-      "search_hint": "Criccieth, Gwynedd"
+      "search_hint": "Criccieth, Gwynedd",
+      "geocoded_by": "nominatim",
+      "geocode_precision": "water",
+      "geocode_band": "area",
+      "geocode_checked": false
     },
     {
       "name": "Arosfan Pwllheli",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 55.0,
+      "lon": -2.0,
       "instrument": "policy_only",
       "status": "in_force",
       "price_per_night": 16.5,
@@ -74,7 +86,11 @@
       "requires_self_contained": false,
       "last_verified": "2026-07-26",
       "confidence": "low",
-      "search_hint": "Pwllheli, Gwynedd"
+      "search_hint": "Pwllheli, Gwynedd",
+      "geocoded_by": "nominatim",
+      "geocode_precision": "water",
+      "geocode_band": "area",
+      "geocode_checked": false
     },
     {
       "name": "All other Gwynedd council car parks",

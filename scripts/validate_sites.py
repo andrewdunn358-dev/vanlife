@@ -22,7 +22,7 @@ REQUIRED_SITE = ("name", "kind", "instrument", "status", "last_verified", "confi
 VALID_KIND = {"provision", "restriction"}
 VALID_INSTRUMENT = {
     "off_street_parking_order", "on_street_tro", "etro", "pspo",
-    "byelaw", "opening_hours", "policy_only", "unknown",
+    "byelaw", "opening_hours", "policy_only", "landowner_policy", "unknown",
 }
 VALID_STATUS = {
     "in_force", "draft", "consultation", "experimental", "revoked", "unknown",

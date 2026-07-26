@@ -1,0 +1,47 @@
+{
+  "authority": "Conwy County Borough Council",
+  "authority_type": "unitary",
+  "nation": "Wales",
+  "researched_on": "2026-07-26",
+  "researched_by": "third-party motorhome directory - NOT a council source. Verify.",
+  "source_format": "unknown",
+  "sources": [],
+  "policy_summary": "Designated motorhome bays reported at Betws-y-Coed village car park (overnight/24hr GBP5, toilets free during evening hours) and at Morfa Bach car park in Conwy. Wider reporting describes Conwy as restricting overnight parking in most other locations, which would make it the restrictive end of the north Wales spectrum against Gwynedd, Anglesey and Denbighshire.",
+  "open_questions": [
+    "Find the council's own parking pages - all of this is third-party.",
+    "Confirm the GBP5 rate and whether it is still current.",
+    "Is there a blanket restriction elsewhere, and under what instrument?"
+  ],
+  "sites": [
+    {
+      "name": "Betws-y-Coed village car park",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "unknown",
+      "price_per_night": 5.0,
+      "currency": "GBP",
+      "max_nights": 1,
+      "facilities": [
+        "toilets (evening hours)"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Betws-y-Coed, Conwy",
+      "notes": "Reported as overnight or 24hr for GBP5, with daytime charges also applying. Third-party source."
+    },
+    {
+      "name": "Morfa Bach car park, Conwy",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Morfa Bach car park, Conwy",
+      "notes": "Designated campervan and motorhome bays reported. Price and terms unknown."
+    }
+  ]
+}

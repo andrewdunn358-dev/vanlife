@@ -1,0 +1,42 @@
+{
+  "authority": "Denbighshire County Council",
+  "authority_type": "unitary",
+  "nation": "Wales",
+  "researched_on": "2026-07-26",
+  "researched_by": "news reporting, May 2026",
+  "source_format": "unknown",
+  "sources": [],
+  "policy_summary": "May 2026: plans announced for six new short-stay motorhome parking sites, intended to consolidate parking and reduce wild camping in residential areas. Restrictions focused on Marine Drive in Rhyl where motorhomes previously parked freely. Short-stay bays proposed in Ruthin, Corwen and Llangollen. Provision-and-restriction together, same pattern as Northumberland.",
+  "open_questions": [
+    "Are the six sites live yet, or still proposed? Announced May 2026.",
+    "Which six, and at what price?",
+    "What instrument covers the Marine Drive restriction?"
+  ],
+  "sites": [
+    {
+      "name": "Marine Drive, Rhyl",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "applies_to": "unknown",
+      "restricts": "parking",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Marine Drive, Rhyl, Denbighshire",
+      "notes": "Previously free overnight motorhome parking; restricted as of the May 2026 announcement."
+    },
+    {
+      "name": "Short-stay motorhome bays, Ruthin / Corwen / Llangollen",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "draft",
+      "last_verified": "2026-07-26",
+      "confidence": "very_low",
+      "notes": "Six sites announced May 2026. Locations partially named, terms unknown. Needs the council source."
+    }
+  ]
+}

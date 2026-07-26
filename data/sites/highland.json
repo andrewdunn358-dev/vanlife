@@ -1,0 +1,35 @@
+{
+  "authority": "The Highland Council",
+  "authority_type": "unitary",
+  "nation": "Scotland",
+  "researched_on": "2026-07-26",
+  "researched_by": "council news releases",
+  "source_format": "html",
+  "sources": [
+    "https://www.highland.gov.uk/news/article/14590/overnight_short_stay_parking_for_motorhomes_in_designated_highland_council_carparks_to_be_piloted",
+    "https://www.highland.gov.uk/news/article/13720/overnight_parking_for_motorhome_users_in_designated_highland_council_car_parks_to_be_considered"
+  ],
+  "policy_summary": "Twelve designated council car parks piloted from summer 2022 for self-contained overnight stays, max 24 hours, in allocated bays. Areas: Inverness, Nairn, Caithness, Wick, Sutherland, Wester Ross. Reported at around GBP10 a night or GBP40 a week. Explicitly framed as relieving lay-by pressure on the road network rather than as enforcement - the council notes lay-by overnight parking is not illegal.",
+  "open_questions": [
+    "Which twelve car parks? Areas named, sites not.",
+    "Did the pilot become permanent, and has it expanded since 2022?",
+    "Sutherland area committee separately moved for a blanket ban in council car parks - what happened to that?"
+  ],
+  "sites": [
+    {
+      "name": "Twelve pilot car parks (Inverness, Nairn, Caithness, Wick, Sutherland, Wester Ross)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "unknown",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "max_nights": 1,
+      "requires_self_contained": true,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Max stay 24 hours. Price from secondary reporting - around GBP10/night or GBP40/week. Individual sites not yet identified."
+    }
+  ]
+}

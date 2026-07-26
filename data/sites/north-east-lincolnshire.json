@@ -1,0 +1,47 @@
+{
+  "authority": "North East Lincolnshire Council",
+  "authority_type": "unitary",
+  "nation": "England",
+  "researched_on": "2026-07-26",
+  "researched_by": "council news release, April 2023",
+  "source_format": "html",
+  "sources": [
+    "https://www.nelincs.gov.uk/north-east-lincolnshire-council-to-trial-12-month-designated-parking-provision-for-overnight-campers"
+  ],
+  "policy_summary": "Overnight motorhome parking prohibited in all council car parks, with a 12-month trial of 10 designated spaces at Thrunscoe Lane car park, Cleethorpes, at GBP12 per 24 hours and a 48-hour maximum. Required a change to the Parking Order - a clear example of the instrument being an off-street parking order rather than a PSPO. A height restrictor was installed at Marine Walk to deter unauthorised use.",
+  "open_questions": [
+    "Did the 12-month trial from 2023 continue?",
+    "Is the blanket prohibition still in force?"
+  ],
+  "sites": [
+    {
+      "name": "Thrunscoe Lane Car Park, Cleethorpes",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "unknown",
+      "bays": 10,
+      "price_per_night": 12.0,
+      "currency": "GBP",
+      "max_nights": 2,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Thrunscoe Lane car park, Cleethorpes",
+      "notes": "GBP12 per 24 hours, 48-hour maximum. Hard standing near the Cleethorpes Coast Light Railway. Trial approved April 2023."
+    },
+    {
+      "name": "All other North East Lincolnshire council car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "unknown",
+      "restricts": "parking",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Council stated overnight motorhome parking is prohibited in all council car parks. Height restrictor installed at Marine Walk car park."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "authority": "Pembrokeshire County Council",
+  "authority_type": "unitary",
+  "nation": "Wales",
+  "researched_on": "2026-07-26",
+  "researched_by": "news reporting of a Feb 2024 cabinet decision",
+  "source_format": "unknown",
+  "sources": [],
+  "policy_summary": "Cabinet approved a trial in February 2024 allowing overnight parking AND sleeping at four car parks. Note the wording - sleeping explicitly permitted, which is rarer than permitting parking.",
+  "open_questions": [
+    "Which four car parks? Only Tenby is hinted at in reporting.",
+    "Did the trial continue past its first season?",
+    "Price, hours, self-containment requirement all unknown."
+  ],
+  "sites": [
+    {
+      "name": "Four trial car parks (locations to confirm)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "very_low",
+      "notes": "Approved 12 Feb 2024. Castle Beach Tenby appears in reporting but may be illustrative rather than one of the four."
+    }
+  ]
+}
