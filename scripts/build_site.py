@@ -261,11 +261,22 @@ def by_area(records):
     many-to-many rather than a tree. An authority appears under every area
     it covers.
     """
-    nations = json.load(open(os.path.join(ASSETS, "areas.json"), encoding="utf-8"))
+    cfg = json.load(open(os.path.join(ASSETS, "areas.json"), encoding="utf-8"))
+    nations = cfg["nations"]
+    lookup = cfg["authorities"]
+
     areas = {}
+    unmapped = []
     for d in records:
-        for a in d.get("areas") or ["Unassigned"]:
-            areas.setdefault(a, []).append(d)
+        # config first, then any areas set on the record itself
+        a = lookup.get(d["authority"]) or d.get("areas")
+        if not a:
+            unmapped.append(d["authority"])
+            a = ["Unassigned"]
+        for area in a:
+            areas.setdefault(area, []).append(d)
+    if unmapped:
+        print("  no area mapped for: " + ", ".join(unmapped))
 
     grouped = {}
     for area, docs in areas.items():

@@ -1,18 +1,70 @@
 {
- "Buckinghamshire": "England",
- "Conwy": "Wales",
- "Cornwall": "England",
- "County Durham": "England",
- "Denbighshire": "Wales",
- "England-wide": "England",
- "Gwynedd": "Wales",
- "Highland": "Scotland",
- "Kent": "England",
- "Lancashire": "England",
- "Lincolnshire": "England",
- "North Yorkshire": "England",
- "Northumberland": "England",
- "Pembrokeshire": "Wales",
- "South Ayrshire": "Scotland",
- "Suffolk": "England"
+ "_note": "Which places each body operates in, and which nation each place sits in. Kept here rather than in data/sites/*.json because update.sh deliberately never overwrites research data - so anything stored there cannot be changed from the repo once a local copy exists.",
+ "nations": {
+  "Northumberland": "England",
+  "County Durham": "England",
+  "North Yorkshire": "England",
+  "Cornwall": "England",
+  "Buckinghamshire": "England",
+  "Kent": "England",
+  "Suffolk": "England",
+  "Lancashire": "England",
+  "Lincolnshire": "England",
+  "England-wide": "England",
+  "Gwynedd": "Wales",
+  "Conwy": "Wales",
+  "Denbighshire": "Wales",
+  "Pembrokeshire": "Wales",
+  "Highland": "Scotland",
+  "South Ayrshire": "Scotland"
+ },
+ "authorities": {
+  "Northumberland County Council": [
+   "Northumberland"
+  ],
+  "Northumberland National Park Authority": [
+   "Northumberland"
+  ],
+  "Northumbrian Water": [
+   "Northumberland",
+   "County Durham",
+   "North Yorkshire"
+  ],
+  "Forestry England": [
+   "Northumberland",
+   "Cornwall",
+   "Buckinghamshire",
+   "Kent",
+   "Suffolk",
+   "Lancashire"
+  ],
+  "National Trust": [
+   "England-wide"
+  ],
+  "Cyngor Gwynedd": [
+   "Gwynedd"
+  ],
+  "Eryri National Park Authority": [
+   "Gwynedd",
+   "Conwy"
+  ],
+  "Conwy County Borough Council": [
+   "Conwy"
+  ],
+  "Denbighshire County Council": [
+   "Denbighshire"
+  ],
+  "Pembrokeshire County Council": [
+   "Pembrokeshire"
+  ],
+  "The Highland Council": [
+   "Highland"
+  ],
+  "South Ayrshire Council": [
+   "South Ayrshire"
+  ],
+  "North East Lincolnshire Council": [
+   "Lincolnshire"
+  ]
+ }
 }
