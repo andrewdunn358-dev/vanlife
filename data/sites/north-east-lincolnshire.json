@@ -3,32 +3,65 @@
   "authority_type": "unitary",
   "nation": "England",
   "researched_on": "2026-07-26",
-  "researched_by": "council news release, April 2023",
+  "researched_by": "the council's own announcement plus local press",
   "source_format": "html",
   "sources": [
+    "https://www.nelincs.gov.uk/overnight-motorhome-parking-site-opens-in-cleethorpes/",
     "https://www.nelincs.gov.uk/north-east-lincolnshire-council-to-trial-12-month-designated-parking-provision-for-overnight-campers"
   ],
-  "policy_summary": "Overnight motorhome parking prohibited in all council car parks, with a 12-month trial of 10 designated spaces at Thrunscoe Lane car park, Cleethorpes, at GBP12 per 24 hours and a 48-hour maximum. Required a change to the Parking Order - a clear example of the instrument being an off-street parking order rather than a PSPO. A height restrictor was installed at Marine Walk to deter unauthorised use.",
+  "policy_summary": "Thrunscoe Land Motorhome Parking opened 31 March 2025 and remains the ONLY council car park in North East Lincolnshire where overnight motorhome stays are allowed. Ten hard-standing bays with three metres between vehicles, GBP12 for 24 hours or GBP24 for 48, two nights maximum.\n\nSeasonal: closed from 1 November to mid-March. Payment is by the PayByPhone app only - the ticket machines will not take motorhome parking. There is an Elsan point for chemical waste and fresh water.\n\nReopened for 2026 with a new surface and prices held. Described by the council as popular since the trial began.",
+  "notes": "A proper conversion from trial to fixture, and the app-only payment is worth flagging to users: no signal, no payment, and unlike Fontburn there is no next-day arrangement.\n\nThe trial required a change to the Parking Order rather than a PSPO - the fourth authority confirming that pattern.",
   "open_questions": [
-    "Did the 12-month trial from 2023 continue?",
-    "Is the blanket prohibition still in force?"
+    "Exact 2026 season dates. 1 November to 14 March is reported; the council quotes 31 March openings.",
+    "Is the 'no return within 7 days' rule current? It appears in a third-party listing, not the council's own text."
   ],
   "sites": [
     {
-      "name": "Thrunscoe Lane Car Park, Cleethorpes",
+      "name": "Thrunscoe Land Motorhome Parking, Cleethorpes",
       "kind": "provision",
       "lat": null,
       "lon": null,
       "instrument": "off_street_parking_order",
-      "status": "unknown",
+      "status": "in_force",
       "bays": 10,
       "price_per_night": 12.0,
       "currency": "GBP",
       "max_nights": 2,
+      "payment_methods": [
+        "paybyphone app only"
+      ],
+      "payment_notes": "Ticket machines do NOT take motorhome parking. App only, paid on arrival - so no signal means no payment, with no deferral offered.",
+      "payment_deferrable": false,
+      "requires_self_contained": true,
+      "facilities": [
+        "Elsan chemical waste point",
+        "fresh water",
+        "public toilets in the car park"
+      ],
+      "prohibits": [
+        "chairs",
+        "tables",
+        "anything placed outside the vehicle",
+        "parking outside marked bays"
+      ],
+      "enforcement": "pcn",
       "last_verified": "2026-07-26",
-      "confidence": "low",
-      "search_hint": "Thrunscoe Lane car park, Cleethorpes",
-      "notes": "GBP12 per 24 hours, 48-hour maximum. Hard standing near the Cleethorpes Coast Light Railway. Trial approved April 2023."
+      "confidence": "high",
+      "search_hint": "Thrunscoe Land car park, Cleethorpes",
+      "notes": "Southern part of Thrunscoe Land car park, on the hard standing near the Cleethorpes Coast Light Railway. GBP24 for the full 48 hours. Closed over winter, roughly 1 November to mid-March. Park centrally to keep three metres between vans."
+    },
+    {
+      "name": "Grant Street Car Park, Cleethorpes",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "restricts": "sleeping",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "search_hint": "Grant Street car park, Cleethorpes",
+      "notes": "Daytime parking for motorhomes too large for a regular bay. Daytime only - no overnight stays."
     },
     {
       "name": "All other North East Lincolnshire council car parks",
@@ -36,15 +69,13 @@
       "lat": null,
       "lon": null,
       "instrument": "off_street_parking_order",
-      "applies_to": "unknown",
+      "applies_to": "adapted_for_sleeping",
       "restricts": "parking",
-      "status": "unknown",
+      "status": "in_force",
+      "enforcement": "pcn",
       "last_verified": "2026-07-26",
-      "confidence": "low",
-      "notes": "Council stated overnight motorhome parking is prohibited in all council car parks. Height restrictor installed at Marine Walk car park."
+      "confidence": "high",
+      "notes": "Overnight motorhome parking is prohibited in every other council car park. A height restrictor was installed at Marine Walk specifically to stop unauthorised use after joint enforcement with Humberside Police over the summers of 2021 and 2022."
     }
-  ],
-  "areas": [
-    "Lincolnshire"
   ]
 }

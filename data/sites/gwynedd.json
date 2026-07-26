@@ -1,113 +1,146 @@
 {
   "authority": "Cyngor Gwynedd",
+  "authority_type": "unitary",
   "nation": "Wales",
   "researched_on": "2026-07-26",
-  "researched_by": "desk research, not verified against source documents",
+  "researched_by": "the council's own Motorhomes / Arosfan pages",
   "source_format": "html",
   "sources": [
-    "https://www.gwynedd.llyw.cymru/en/Residents/Parking-roads-and-travel/Parking-and-permits/Motorhomes-Arosfan.aspx"
+    "https://www.gwynedd.llyw.cymru/en/Residents/Parking-roads-and-travel/Parking-and-permits/Motorhomes-Arosfan.aspx",
+    "https://www.gwynedd.llyw.cymru/en-gb/parking-roads-and-travel/parking-and-permits/motorhomes-arosfan"
   ],
-  "policy_summary": "Motorhomes may park in any council car park during the day. Sleeping overnight is not permitted in any car park except the designated Arosfan sites. Separate orders prevent overnight motorhome parking in lay-bys at various locations.",
+  "policy_summary": "The Arosfan network - four dedicated stopovers modelled on continental aires, funded through the Welsh Government's Brilliant Basics programme. GBP16.50 covers 16:00 to 10:00 the following morning; park in the bays during the day and the normal car park tariff applies on top. Two nights maximum, self-contained vehicles only.\n\nMotorhomes may park in any Gwynedd car park during the day, but sleeping overnight is permitted ONLY in the Arosfan bays. Parking outside a designated bay risks a penalty charge notice.\n\nThe council is explicit about what these are not: 'as motor homes are self-contained, the aim of the Arosfan sites is not to provide a camping facility'.\n\nIntroduced alongside the sites were specific orders preventing overnight motorhome parking in lay-bys in the areas worst affected - provision and enforcement together, as in South Ayrshire.",
+  "notes": "Widely regarded as the closest thing the UK has to a European aire network. Facilities are not uniform: chemical and grey waste disposal at Criccieth, Pwllheli and Llanberis; fresh water at Criccieth, Caernarfon and Pwllheli. Caernarfon has water but no waste point, which matters if you are planning a route around it.",
+  "open_questions": [
+    "Which lay-bys are covered by the orders? The council names none.",
+    "Has a Meirionnydd site been found? Work was continuing as of 2023.",
+    "Full list of car parks with height barriers - the council mentions them without listing them."
+  ],
   "sites": [
     {
-      "name": "Arosfan Llanberis",
+      "name": "Arosfan Doc Fictoria, Caernarfon",
       "kind": "provision",
-      "lat": 53.12128,
-      "lon": -4.12775,
-      "instrument": "policy_only",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
       "status": "in_force",
       "price_per_night": 16.5,
       "currency": "GBP",
       "arrival_from": "16:00",
       "departure_by": "10:00",
-      "max_nights": null,
-      "requires_self_contained": false,
+      "max_nights": 2,
+      "requires_self_contained": true,
+      "self_contained_definition": "the council treats motorhomes as self-contained and states the sites are not a camping facility",
+      "facilities": [
+        "fresh water"
+      ],
+      "enforcement": "pcn",
       "last_verified": "2026-07-26",
-      "confidence": "low",
-      "notes": "A 2023 planning application described nine motorhome bays at the Y Glyn car park beside Llyn Padarn, Llanberis - almost certainly this site. Use that name when locating it.",
+      "confidence": "high",
+      "search_hint": "Doc Fictoria car park, Caernarfon",
+      "notes": "Doc Fictoria car park, the old Shell site. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00.",
+      "postcode": "LL55 1SQ"
+    },
+    {
+      "name": "Arosfan Y Glyn, Llanberis",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
+      "price_per_night": 16.5,
+      "currency": "GBP",
+      "arrival_from": "16:00",
+      "departure_by": "10:00",
+      "max_nights": 2,
+      "requires_self_contained": true,
+      "self_contained_definition": "the council treats motorhomes as self-contained and states the sites are not a camping facility",
+      "facilities": [
+        "chemical waste",
+        "grey waste"
+      ],
+      "enforcement": "pcn",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
       "search_hint": "Y Glyn car park, Llyn Padarn, Llanberis",
-      "geocoded_by": "nominatim",
-      "geocode_precision": "water",
-      "geocode_band": "area",
-      "geocode_checked": false
+      "notes": "Y Glyn car park beside Llyn Padarn, the area known locally as the lagoons. Nine bays were in the original planning application. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00."
     },
     {
-      "name": "Arosfan Caernarfon (Doc Fictoria, old Shell site)",
+      "name": "Arosfan Maes, Criccieth",
       "kind": "provision",
-      "postcode": "LL55 1SQ",
-      "instrument": "policy_only",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
       "status": "in_force",
       "price_per_night": 16.5,
       "currency": "GBP",
       "arrival_from": "16:00",
       "departure_by": "10:00",
-      "requires_self_contained": false,
+      "max_nights": 2,
+      "requires_self_contained": true,
+      "self_contained_definition": "the council treats motorhomes as self-contained and states the sites are not a camping facility",
+      "facilities": [
+        "chemical waste",
+        "grey waste",
+        "fresh water"
+      ],
+      "enforcement": "pcn",
       "last_verified": "2026-07-26",
-      "confidence": "medium",
-      "notes": "Postcode published by council.",
-      "lat": null,
-      "lon": null
+      "confidence": "high",
+      "search_hint": "Maes car park, Criccieth",
+      "notes": "The Maes car park. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00."
     },
     {
-      "name": "Arosfan Criccieth",
+      "name": "Arosfan Cei'r Gogledd (North Quay), Pwllheli",
       "kind": "provision",
-      "instrument": "policy_only",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
       "status": "in_force",
       "price_per_night": 16.5,
       "currency": "GBP",
       "arrival_from": "16:00",
       "departure_by": "10:00",
-      "requires_self_contained": false,
+      "max_nights": 2,
+      "requires_self_contained": true,
+      "self_contained_definition": "the council treats motorhomes as self-contained and states the sites are not a camping facility",
+      "facilities": [
+        "chemical waste",
+        "grey waste",
+        "fresh water"
+      ],
+      "enforcement": "pcn",
       "last_verified": "2026-07-26",
-      "confidence": "low",
-      "search_hint": "Criccieth, Gwynedd",
-      "lat": null,
-      "lon": null
-    },
-    {
-      "name": "Arosfan Pwllheli",
-      "kind": "provision",
-      "instrument": "policy_only",
-      "status": "in_force",
-      "price_per_night": 16.5,
-      "currency": "GBP",
-      "arrival_from": "16:00",
-      "departure_by": "10:00",
-      "requires_self_contained": false,
-      "last_verified": "2026-07-26",
-      "confidence": "low",
-      "search_hint": "Pwllheli, Gwynedd",
-      "lat": null,
-      "lon": null
+      "confidence": "high",
+      "search_hint": "Cei'r Gogledd, North Quay, Pwllheli",
+      "notes": "North Quay. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00."
     },
     {
       "name": "All other Gwynedd council car parks",
       "kind": "restriction",
       "lat": null,
       "lon": null,
-      "instrument": "policy_only",
+      "instrument": "off_street_parking_order",
       "applies_to": "adapted_for_sleeping",
       "restricts": "sleeping",
       "status": "in_force",
+      "enforcement": "pcn",
       "last_verified": "2026-07-26",
-      "confidence": "medium",
-      "notes": "Blanket policy, not per-site. Parking permitted, sleeping not. Needs the individual car park list and geometry. Height barriers noted at some car parks - list not yet captured."
+      "confidence": "high",
+      "notes": "Daytime parking is fine anywhere. Sleeping overnight is permitted only in the Arosfan bays. Height barriers at some car parks exclude larger motorhomes; the council does not list which."
     },
     {
-      "name": "Various lay-bys, county-wide",
+      "name": "Lay-bys in the worst-affected areas, county-wide",
       "kind": "restriction",
       "lat": null,
       "lon": null,
-      "instrument": "unknown",
-      "applies_to": "unknown",
+      "instrument": "on_street_tro",
+      "applies_to": "adapted_for_sleeping",
       "restricts": "parking",
       "status": "in_force",
       "last_verified": "2026-07-26",
-      "confidence": "low",
-      "notes": "Council states 'specific orders' exist preventing overnight motorhome parking in lay-bys. Locations and instrument type not yet identified. HIGH PRIORITY - lay-bys are where vans actually stop."
+      "confidence": "medium",
+      "notes": "Specific orders introduced alongside the Arosfan sites to remove the right of motorhomes to park overnight in lay-bys where problems were worst. HIGH PRIORITY GAP: the council has not published which lay-bys. Lay-bys are where vans actually stop, so this is the most valuable missing piece in the record."
     }
-  ],
-  "areas": [
-    "Gwynedd"
   ]
 }
