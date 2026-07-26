@@ -356,3 +356,14 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-ra
 }
 .vstrip b { color: var(--ink); font-weight: 700; }
 .vstrip a { color: var(--link); }
+
+/* photos when present - fixed ratio box so mixed sources still line up */
+.vcard img {
+  width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain;
+  display: block; margin-bottom: 0.4rem; border-radius: 6px; background: #fff;
+}
+.vcard.is-on img { background: transparent; }
+.vcredit {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.72rem; color: var(--ink-3); margin: 0.9rem 0 0;
+}

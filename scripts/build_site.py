@@ -148,6 +148,44 @@ def asset(name):
     return open(os.path.join(ASSETS, name), encoding="utf-8").read()
 
 
+def vehicle_picker():
+    """Photos when they exist, drawn silhouettes until then.
+
+    Manifest-driven so images can be dropped in one at a time. Any image
+    used must have its source and licence recorded alongside it - press
+    photos from manufacturers are editorial-use-only and are not safe here.
+    """
+    man = json.load(open(os.path.join(ASSETS, "vehicles.json"), encoding="utf-8"))
+    svgs = json.load(open(os.path.join(ASSETS, "vehicle-svgs.json"), encoding="utf-8"))
+
+    cards, credits = [], []
+    for v in man["vehicles"]:
+        if v.get("image"):
+            art = (f'<img src="vehicles/{esc(v["image"])}" alt="" loading="lazy" '
+                   f'width="1200" height="800">')
+            if v.get("credit"):
+                credits.append(f'{esc(v["name"])}: {esc(v["credit"])}'
+                               + (f' ({esc(v["licence"])})' if v.get("licence") else ""))
+        else:
+            art = svgs.get(v["key"], "")
+        cards.append(
+            f'  <button class="vcard" data-v="{esc(v["key"])}" role="radio" '
+            f'aria-checked="false">\n    {art}\n'
+            f'    <span class="vname">{esc(v["name"])}</span>\n'
+            f'    <span class="vdim">{v["dims"]}</span>\n  </button>')
+
+    tail = ""
+    if credits:
+        tail = ('<p class="vcredit">Vehicle images: ' + " &middot; ".join(credits) + "</p>")
+
+    grid = ('<div class="vgrid" role="radiogroup" aria-label="Vehicle type">\n'
+            + "\n".join(cards) + "\n</div>" + tail)
+    shell = open(os.path.join(ASSETS, "vehicle-picker.html"), encoding="utf-8").read()
+    if "<!--VGRID-->" not in shell:
+        raise SystemExit("vehicle-picker.html is missing its <!--VGRID--> marker")
+    return shell.replace("<!--VGRID-->", grid)
+
+
 def esc(v):
     return html.escape(str(v)) if v is not None else ""
 
@@ -493,7 +531,7 @@ def index_page(records, out_dir):
     body.append("<p class=\"summary\">Where something has not been checked, or the location has not been "
                 "recorded yet, the record says so rather than leaving you to guess.</p>")
 
-    body.append(asset("vehicle-picker.html"))
+    body.append(vehicle_picker())
     body.append(mapping)
     body.append(HOWTO)
     body.append('<ul class="roll">')

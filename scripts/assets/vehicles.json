@@ -1,0 +1,61 @@
+{
+  "_note": "Drop images in site-assets/vehicles/ and set 'image'. Falls back to the drawn silhouette while empty. Use side or 3/4 front, white or transparent background, roughly 1200x800, and record where each came from.",
+  "vehicles": [
+    {
+      "key": "vw",
+      "name": "VW / small camper",
+      "dims": "2.0m &middot; 4.9m",
+      "image": "",
+      "credit": "",
+      "licence": ""
+    },
+    {
+      "key": "panel",
+      "name": "Panel van conversion",
+      "dims": "2.6m &middot; 5.9m",
+      "image": "",
+      "credit": "",
+      "licence": ""
+    },
+    {
+      "key": "coachbuilt",
+      "name": "Coachbuilt motorhome",
+      "dims": "3.1m &middot; 7.0m",
+      "image": "",
+      "credit": "",
+      "licence": ""
+    },
+    {
+      "key": "aclass",
+      "name": "A-class motorhome",
+      "dims": "3.3m &middot; 8.0m",
+      "image": "",
+      "credit": "",
+      "licence": ""
+    },
+    {
+      "key": "caravan",
+      "name": "Touring caravan",
+      "dims": "2.6m &middot; 6.5m",
+      "image": "",
+      "credit": "",
+      "licence": ""
+    },
+    {
+      "key": "twinaxle",
+      "name": "Twin axle caravan",
+      "dims": "2.7m &middot; 8.2m",
+      "image": "",
+      "credit": "",
+      "licence": ""
+    },
+    {
+      "key": "car",
+      "name": "Car or estate",
+      "dims": "not for sleeping",
+      "image": "",
+      "credit": "",
+      "licence": ""
+    }
+  ]
+}
