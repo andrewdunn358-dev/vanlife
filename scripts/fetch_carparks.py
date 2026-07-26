@@ -29,46 +29,86 @@ import urllib.parse
 import urllib.request
 
 ENDPOINTS = [
-    "https://overpass-api.de/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.osm.ch/api/interpreter",
+    "https://overpass.openstreetmap.ru/api/interpreter",
+    "https://overpass.osm.jp/api/interpreter",
 ]
 UA = "vanlife-dev/0.1 (github.com/andrewdunn358-dev/vanlife)"
 
+# Relations are a tiny fraction of car parks and much the most expensive
+# part of the query, so they are off unless asked for. Resolving an
+# administrative area is also costly - a bounding box is far cheaper and
+# is what to reach for when Overpass is busy.
 AREA_QUERY = """
-[out:json][timeout:180];
+[out:json][timeout:%d];
 area["name"="%s"]["boundary"="administrative"]->.a;
 (
   node["amenity"="parking"](area.a);
-  way["amenity"="parking"](area.a);
-  relation["amenity"="parking"](area.a);
+  way["amenity"="parking"](area.a);%s
 );
 out tags center;
 """
 
 BBOX_QUERY = """
-[out:json][timeout:180];
+[out:json][timeout:%d];
 (
   node["amenity"="parking"](%s);
-  way["amenity"="parking"](%s);
-  relation["amenity"="parking"](%s);
+  way["amenity"="parking"](%s);%s
 );
 out tags center;
 """
 
+RELATION_AREA = '\n  relation["amenity"="parking"](area.a);'
+RELATION_BBOX = '\n  relation["amenity"="parking"](%s);'
 
-def run_query(q):
+
+def run_query(q, attempts=2):
+    """Every mirror, twice, with a pause between rounds.
+
+    Overpass is a free shared service. 504 and 429 mean it is busy, not
+    that the query is wrong - so back off rather than hammering it.
+    """
     body = urllib.parse.urlencode({"data": q}).encode()
     last = None
-    for url in ENDPOINTS:
-        try:
-            req = urllib.request.Request(url, data=body, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=200) as r:
-                return json.loads(r.read().decode())
-        except Exception as exc:  # noqa: BLE001
-            last = exc
-            print(f"  {url.split('/')[2]} failed: {exc}", file=sys.stderr)
-            time.sleep(2)
-    raise SystemExit(f"All Overpass endpoints failed. Last error: {last}")
+    for attempt in range(attempts):
+        for url in ENDPOINTS:
+            host = url.split("/")[2]
+            try:
+                req = urllib.request.Request(
+                    url, data=body, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=240) as r:
+                    print(f"  {host} answered", file=sys.stderr)
+                    return json.loads(r.read().decode())
+            except urllib.error.HTTPError as exc:
+                last = exc
+                note = {504: "busy", 429: "rate limited",
+                        400: "query rejected"}.get(exc.code, "")
+                print(f"  {host}: HTTP {exc.code} {note}", file=sys.stderr)
+                if exc.code == 400:
+                    raise SystemExit(
+                        "Overpass rejected the query itself - retrying will "
+                        "not help. Check the area name.")
+            except Exception as exc:  # noqa: BLE001
+                last = exc
+                print(f"  {host}: {exc}", file=sys.stderr)
+            time.sleep(1.5)
+        if attempt + 1 < attempts:
+            print("  all mirrors busy, waiting 20s...", file=sys.stderr)
+            time.sleep(20)
+
+    raise SystemExit(
+        f"\nEvery Overpass mirror is busy. Last error: {last}\n\n"
+        "Options, cheapest first:\n"
+        "  1. Wait a few minutes and try again - load varies a lot.\n"
+        "  2. Use a bounding box instead of an area. Resolving an\n"
+        "     administrative boundary is the expensive part.\n"
+        "       --bbox 55.2,-1.8,55.7,-1.4\n"
+        "  3. Split a large county into two or three boxes.\n\n"
+        "If this becomes routine, download a Geofabrik regional extract\n"
+        "once and query it locally instead of asking a free shared\n"
+        "service for a whole county every time.")
 
 
 def tidy(elements, keep_operator):
@@ -108,6 +148,9 @@ def main():
                     help="also capture operator, access, fee, height limit")
     ap.add_argument("--out-dir", default="data/reference")
     ap.add_argument("--force", action="store_true", help="re-query even if cached")
+    ap.add_argument("--relations", action="store_true",
+                    help="include parking relations - rare, and much slower")
+    ap.add_argument("--timeout", type=int, default=120)
     args = ap.parse_args()
 
     label = args.area or args.bbox.replace(",", "_")
@@ -121,10 +164,12 @@ def main():
         return
 
     if args.area:
-        q = AREA_QUERY % args.area
+        rel = RELATION_AREA if args.relations else ""
+        q = AREA_QUERY % (args.timeout, args.area, rel)
     else:
         b = args.bbox
-        q = BBOX_QUERY % (b, b, b)
+        rel = (RELATION_BBOX % b) if args.relations else ""
+        q = BBOX_QUERY % (args.timeout, b, b, rel)
 
     print(f"querying Overpass for {label}...", file=sys.stderr)
     t0 = time.time()
