@@ -3,26 +3,90 @@
   "authority_type": "unitary",
   "nation": "Wales",
   "researched_on": "2026-07-26",
-  "researched_by": "news reporting of a Feb 2024 cabinet decision",
+  "researched_by": "local press coverage of council decisions through 2024",
   "source_format": "unknown",
   "sources": [],
-  "policy_summary": "Cabinet approved a trial in February 2024 allowing overnight parking AND sleeping at four car parks. Note the wording - sleeping explicitly permitted, which is rarer than permitting parking.",
+  "policy_summary": "Parking is allowed in council car parks; sleeping overnight is prohibited. A 'Pembs Stop' trial was approved in February 2024 for four car parks at GBP10 a night, up to two nights, year-round for 18 months - then overwhelmingly rejected by scrutiny in April after objections from Visit Pembrokeshire and local campsite operators, one of whom said one and two-night stays were 25-30% of his turnover. By September Cabinet had cut it to a single site at Goodwick Moor, chosen for its ferry-port traffic, with Western Way Pembroke Dock to be considered after a three-month review.",
+  "notes": "The clearest case yet of provision being blocked by the campsite industry rather than by residents. Worth carrying into the hostility index: opposition comes from competitors as often as from communities.",
   "open_questions": [
-    "Which four car parks? Only Tenby is hinted at in reporting.",
-    "Did the trial continue past its first season?",
-    "Price, hours, self-containment requirement all unknown."
+    "Did the Goodwick Moor trial actually start? Aimed for March 2025, pending a traffic order.",
+    "Was Western Way added after the three-month review?",
+    "Are the on-street restrictions at Manorbier and Newgale still in force?"
   ],
   "sites": [
     {
-      "name": "Four trial car parks (locations to confirm)",
+      "name": "Goodwick Moor Car Park, Goodwick",
       "kind": "provision",
       "lat": null,
       "lon": null,
-      "instrument": "unknown",
+      "instrument": "off_street_parking_order",
       "status": "unknown",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "max_nights": 2,
+      "prohibits": [
+        "LPG bottles outside",
+        "furniture outside"
+      ],
+      "facilities": [],
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Goodwick Moor car park, Goodwick, Pembrokeshire",
+      "notes": "The only survivor of the four-site scheme. Chosen for its link to the Fishguard ferry port. Aimed to start March 2025, subject to a traffic order."
+    },
+    {
+      "name": "Western Way Car Park, Pembroke Dock",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "draft",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "max_nights": 2,
       "last_verified": "2026-07-26",
       "confidence": "very_low",
-      "notes": "Approved 12 Feb 2024. Castle Beach Tenby appears in reporting but may be illustrative rather than one of the four."
+      "search_hint": "Western Way car park, Pembroke Dock",
+      "notes": "To be considered only after a three-month review of Goodwick Moor. Also ferry-linked."
+    },
+    {
+      "name": "North Beach, Tenby and Townsmoor, Narberth",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "unknown",
+      "restricts": "sleeping",
+      "status": "revoked",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Included in the original four-site Pembs Stop proposal, dropped in September 2024. Overnight sleeping remains prohibited here."
+    },
+    {
+      "name": "All other Pembrokeshire council car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "unknown",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Council position: parking is allowed, sleeping overnight is prohibited. Under the Pembrokeshire County Council (Off Street Parking Places Order 2011)."
+    },
+    {
+      "name": "Manorbier and Newgale on-street",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "on_street_tro",
+      "applies_to": "unknown",
+      "restricts": "parking",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Specific on-street restrictions introduced during 2020-21 to prevent overnight parking. Current status unconfirmed."
     }
   ]
 }

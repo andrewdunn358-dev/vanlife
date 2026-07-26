@@ -2,11 +2,12 @@
   "authority": "Eryri National Park Authority",
   "nation": "Wales",
   "researched_on": "2026-07-26",
-  "researched_by": "desk research from news reporting, NOT from authority sources",
+  "researched_by": "press coverage of the Authority's 10 June 2026 decision",
   "source_format": "unknown",
-  "sources": [],
-  "policy_summary": "Restricted overnight parking at 11 car parks from 1 April 2026 by shortening operational hours rather than making an order. Faced significant backlash; a reversal was reported as likely with a decision due 10 June 2026. Current status unknown.",
-  "warning": "DO NOT PUBLISH. Status genuinely uncertain - this is the volatility case study, not usable data.",
+  "sources": [
+    "https://www.dailypost.co.uk/news/north-wales-news/decision-made-overnight-car-parking-34097581"
+  ],
+  "policy_summary": "RESOLVED 10 June 2026. The Authority reversed the April restriction and will maintain 24-hour access at the vast majority of its car parks, pending a wider review.\n\nThe important part is their own wording: this 'does not represent a change in policy... overnight stays have never been permitted'. So the car parks being open 24 hours does NOT mean you may sleep in them. Two separate facts, and reading the reversal as permission would be wrong.\n\nAn ANPR pilot at Llyn Tegid and Llangywer remains under consideration. The Authority directs campervan and motorhome users to designated campsites.",
   "sites": [
     {
       "name": "Betws-y-Coed long stay car park",
@@ -16,17 +17,15 @@
       "instrument": "opening_hours",
       "applies_to": "all_vehicles",
       "restricts": "parking",
-      "time_from": "22:00",
-      "time_to": "03:00",
-      "status": "unknown",
+      "status": "revoked",
       "enforcement": "anpr",
       "last_verified": "2026-07-26",
-      "confidence": "very_low",
-      "notes": "Introduced 1 Apr 2026, reversal proposed by Jun 2026. MUST verify current status before any use.",
-      "search_hint": "Betws-y-Coed, Conwy"
+      "confidence": "medium",
+      "search_hint": "Betws-y-Coed, Conwy",
+      "notes": "Restricted 22:00-03:00 from 1 April 2026, reversed 10 June. 24-hour access restored - but overnight stays are still not permitted."
     },
     {
-      "name": "Llyn Tegid car park",
+      "name": "Llyn Tegid car park, Bala",
       "kind": "restriction",
       "lat": null,
       "lon": null,
@@ -36,9 +35,28 @@
       "status": "unknown",
       "enforcement": "anpr",
       "last_verified": "2026-07-26",
-      "confidence": "very_low",
-      "notes": "ANPR trialled here. Proposal to replace full closure with a 01:00-03:00 window only - a two-hour closure designed to prevent overnight stays while preserving dawn access.",
-      "search_hint": "Llyn Tegid, Bala, Gwynedd"
+      "confidence": "low",
+      "search_hint": "Llyn Tegid, Bala, Gwynedd",
+      "notes": "ANPR pilot still under consideration here and at Llangywer, after repeated concerns from Llangywer Community Council and Bala Town Council."
+    },
+    {
+      "name": "All Eryri National Park Authority car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Overnight stays have never been permitted in ENPA car parks, whatever the opening hours. The Authority directs users to designated campsites."
     }
+  ],
+  "notes": "The volatility case study, now with an ending. Restricted 1 April 2026, reversed 10 June - ten weeks. Any per-spot prohibition dataset would have been wrong for most of that window in one direction or the other.",
+  "open_questions": [
+    "Did the ANPR pilot at Llyn Tegid and Llangywer go ahead?",
+    "What does the wider review conclude, and when?",
+    "Which of the 11 car parks, if any, kept restricted hours?"
   ]
 }
