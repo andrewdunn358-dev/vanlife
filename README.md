@@ -60,6 +60,31 @@ this road" wants every year. "What signal will I get today" wants the
 latest only — masts change, and the 3G switch-off shifted things during
 2025.
 
+## The Ofcom schema
+
+Ofcom publishes **wide**: one row per location, with columns shaped
+`{parameter}_top{1..4}_{operator}` across four operators (`ee`, `o2`,
+`vf`, `3uk`). Roughly 160 columns, most empty on any given row.
+
+Only `top1` matters here — the strongest cell each operator had at that
+spot, which is what "will I have signal" means. Top 2-4 are weaker cells
+the receiver could also see: useful for network planning, noise for this.
+
+`ofcom_to_geojsonl.py` pivots that into one Point per location carrying
+one RSRP value per operator, so the map switches operator without
+rebuilding tiles.
+
+### Notspots are kept deliberately
+
+Locations where no operator had a reading get `n_ops: 0` and no `best`
+value. They are not dropped, because a total notspot is the most useful
+single fact this app can tell someone.
+
+Carry the ambiguity into the UI though: an absent reading may mean
+genuine no-service, or simply that Ofcom did not upload that measurement
+— they publish a targeted subset rather than everything captured. Same
+provenance-not-verdict principle as the legality layer.
+
 ## Running it
 
 Everything runs in one container so the host is disposable. Currently a
@@ -76,17 +101,15 @@ Then inside the container:
 
 ```bash
 # 1. See what you have got. Reads the head only, returns instantly.
-python3 scripts/inspect_csv.py data/raw/ofcom_4g.csv
+python3 scripts/inspect_csv.py data/raw/4g-lte-2025-mobile-signal-measurement-data.csv
 
-# 2. Convert. Streams, so 14GB is fine on 8GB of RAM.
-python3 scripts/csv_to_geojsonl.py \
-    data/raw/ofcom_4g.csv \
-    data/interim/4g.geojsonl \
-    --keep Operator,RSRP,RSRQ \
-    --numeric RSRP,RSRQ
+# 2. Convert. Streams, so 7GB is fine on 8GB of RAM.
+python3 scripts/ofcom_to_geojsonl.py \
+    data/raw/4g-lte-2025-mobile-signal-measurement-data.csv \
+    data/interim/4g-2025.geojsonl --sinr
 
 # 3. Build tiles. Hours on two cores — run it overnight.
-./scripts/build_tiles.sh data/interim/4g.geojsonl data/out/signal-4g.pmtiles
+./scripts/build_tiles.sh data/interim/4g-2025.geojsonl data/out/signal-4g.pmtiles
 ```
 
 Then copy `signal-4g.pmtiles` next to `viewer/index.html`, serve the
