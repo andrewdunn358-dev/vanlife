@@ -287,10 +287,16 @@ def by_area(records):
     return grouped
 
 
-def region_page(region, counties, out_dir, blurb=""):
-    """Counties within a region. One step down from the front page."""
+def region_page(region, counties, out_dir, blurb="", all_counties=None):
+    """Counties within a region.
+
+    Lists every county, not only the researched ones. A region page showing
+    two counties when it has four implies coverage that does not exist, and
+    the gaps double as the to-do list.
+    """
     n_auth = len({d["authority"] for docs in counties.values() for d in docs})
     n_rec = sum(len(d["sites"]) for docs in counties.values() for d in docs)
+    todo = [c for c in (all_counties or []) if c not in counties]
 
     body = [HEAD.format(
         title=f"Staying overnight in the {html.escape(region)} in a van",
@@ -298,8 +304,9 @@ def region_page(region, counties, out_dir, blurb=""):
              "county by county, from councils, national parks and landowners.",
         css=asset("site.css"), root="../", mapassets="")]
 
+    total = len(counties) + len(todo)
     body.append('<div class="state">')
-    body.append(f"<span><b>{len(counties)}</b> counties</span>")
+    body.append(f"<span><b>{len(counties)}</b> of {total} counties covered</span>")
     body.append(f"<span><b>{n_auth}</b> bodies</span>")
     body.append(f"<span><b>{n_rec}</b> records</span>")
     body.append("</div>")
@@ -321,6 +328,16 @@ def region_page(region, counties, out_dir, blurb=""):
             + "</span></a>"
             f'<span class="tally">{prov} of {recs} permitted</span></li>')
     body.append("</ul>")
+
+    if todo:
+        body.append('<h3 class="nation">Not looked at yet</h3>')
+        body.append('<p class="summary">These counties have not been researched. '
+                    'That is a gap in this site, not a sign there are no rules '
+                    'there &mdash; assume there are.</p>')
+        body.append('<ul class="todo">')
+        for c in todo:
+            body.append(f"<li>{esc(c)}</li>")
+        body.append("</ul>")
 
     body.append('<a class="back" href="../index.html">&larr; All regions</a>')
     body.append(FOOT.format(when=date.today().isoformat()))
@@ -686,20 +703,25 @@ def index_page(records, out_dir):
 
     body.append('<h3 class="nation">Where are you going?</h3>')
     body.append('<ul class="roll">')
-    seen = [r for r in order if r in grouped] + \
+    all_counties = cfg.get("counties", {})
+    seen = [r for r in order if r in grouped or r in all_counties] + \
            [r for r in sorted(grouped) if r not in order]
     for region in seen:
-        counties = grouped[region]
+        counties = grouped.get(region, {})
+        known = all_counties.get(region, [])
         recs = sum(len(d["sites"]) for docs in counties.values() for d in docs)
         prov = sum(1 for docs in counties.values() for d in docs
                    for s in d["sites"] if s.get("kind") == "provision")
         sub = blurbs.get(region) or ", ".join(sorted(counties)[:4])
+        total = len(known) or len(counties)
+        tally = (f"{len(counties)} of {total} "
+                 + ("county" if total == 1 else "counties")
+                 + (f" &middot; {prov} of {recs} permitted" if recs else ""))
+        cls = "" if counties else ' class="dim"'
         body.append(
-            f'<li><a href="region/{slug(region)}.html">{esc(region)}'
+            f'<li{cls}><a href="region/{slug(region)}.html">{esc(region)}'
             f'<span class="rollsub">{esc(sub)}</span></a>'
-            f'<span class="tally">{len(counties)} '
-            + ("county" if len(counties) == 1 else "counties")
-            + f" &middot; {prov} of {recs} permitted</span></li>")
+            f'<span class="tally">{tally}</span></li>')
     body.append("</ul>")
     body.append("<script>" + asset("vehicle.js") + "</script>")
     body.append(FOOT.format(when=date.today().isoformat()))
@@ -737,8 +759,11 @@ def main():
     blurbs = cfg.get("region_blurb", {})
     grouped = by_area(records)
     areas = regions = 0
-    for region, counties in grouped.items():
-        region_page(region, counties, args.out, blurbs.get(region, ""))
+    all_counties = cfg.get("counties", {})
+    for region in set(list(grouped) + list(all_counties)):
+        counties = grouped.get(region, {})
+        region_page(region, counties, args.out, blurbs.get(region, ""),
+                    all_counties.get(region, []))
         regions += 1
         for area, docs in counties.items():
             area_page(area, docs, args.out, region)

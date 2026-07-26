@@ -384,3 +384,13 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-ra
   display: block; font-weight: 400; font-size: 0.78rem; color: var(--ink-3);
   letter-spacing: 0; line-height: 1.4;
 }
+
+.todo {
+  list-style: none; padding: 0; margin: 0 0 var(--gap);
+  display: grid; gap: 0.4rem 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.86rem; color: var(--ink-3);
+}
+.roll li.dim a { color: var(--ink-3); }
+.roll li.dim .tally { opacity: 0.75; }
