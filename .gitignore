@@ -11,6 +11,9 @@ data/*
 !data/authorities-priority.csv
 !data/sites/
 !data/sites/*.json
+!data/research-register.csv
+!data/reference/
+!data/reference/*.csv
 *.geojsonl
 *.pmtiles
 *.mbtiles
