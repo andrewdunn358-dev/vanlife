@@ -1,0 +1,37 @@
+{
+  "authority": "Northumbrian Water",
+  "authority_type": "landowner (water)",
+  "nation": "England",
+  "researched_on": "2026-07-26",
+  "researched_by": "user report from direct visit (Fontburn); not yet verified against published policy",
+  "source_format": "unknown",
+  "sources": [],
+  "policy_summary": "Overnight parking is PERMITTED and CHARGED at Fontburn, £10. This is provision, not restriction - a materially different posture from the councils researched so far. Unknown whether this is a Fontburn arrangement or a Northumbrian Water tariff applying across Derwent, Kielder and other sites. That distinction decides whether water companies are a per-site job or a per-company one.",
+  "open_questions": [
+    "Is the £10 signed at the car park, or published online only? Decides scrapeability.",
+    "Any conditions - self-containment, max nights, arrival/departure times, awnings?",
+    "Site-specific or company-wide tariff?",
+    "Does the same apply at Derwent and Kielder Water?"
+  ],
+  "sites": [
+    {
+      "name": "Fontburn Reservoir",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 10.00,
+      "currency": "GBP",
+      "payment_methods": ["machine", "on_site_hut", "online"],
+      "payment_notes": "Machine is not always on. Hut only when staffed. Online otherwise.",
+      "payment_requires_signal": true,
+      "requires_self_contained": null,
+      "max_nights": null,
+      "arrival_from": null,
+      "departure_by": null,
+      "last_verified": "2026-07-26",
+      "confidence": "medium",
+      "notes": "Reported by a regular visitor, so the £10 and the payment routes are reliable. Everything else unknown. NOTE the signal dependency: if the machine is off and the hut is shut, paying needs data coverage - in a Northumberland reservoir valley that is not a safe assumption. Cross-reference against the coverage layer."
+    }
+  ]
+}
