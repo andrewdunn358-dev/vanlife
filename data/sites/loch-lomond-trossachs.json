@@ -1,0 +1,83 @@
+{
+  "authority": "Loch Lomond and The Trossachs National Park Authority",
+  "authority_type": "national_park",
+  "nation": "Scotland",
+  "researched_on": "2026-07-26",
+  "researched_by": "the Authority's own byelaw pages and booking system, plus an Argyll and Bute FOI response",
+  "source_format": "html",
+  "sources": [
+    "https://www.lochlomond-trossachs.org/things-to-do/camping/campingbyelaws/",
+    "https://www.lochlomond-trossachs.org/things-to-do/camping/get-a-permit/",
+    "https://www.lochlomond-trossachs.org/things-to-do/camping/campingbyelaws/camping-motorhome-qas/",
+    "https://www.mountaineering.scot/access/special-arrangements/loch-lomond"
+  ],
+  "policy_summary": "Camping Management Byelaws, in force 1 March to 30 September each year across Camping Management Zones covering less than 4% of the park's 720 square miles. Introduced 2017 with a ten-year review, which is live now - public consultation runs to 21 September 2026, and motorhome rules are one of the five things being reviewed.\n\nSleeping in a vehicle inside a zone without a permit is an OFFENCE. Permits are GBP4.30 per night for a tent or a motorhome alike, valid 19:00 to 10:00 for vehicles, bookable up to three nights and four weeks ahead. Breach is reported to the Procurator Fiscal, with a fine of up to GBP500 - the only criminal penalty with a stated figure anywhere in this dataset.\n\nOutside the zones, and across the whole park from October to February, the byelaws do not apply.",
+  "notes": "THE CARVE-OUT IS THE MOST USEFUL FACT IN THIS DATASET FOR SCOTLAND.\n\nThe byelaw makes it an offence to sleep in a vehicle in a Camping Management Zone WITHOUT A PERMIT - unless the vehicle is on a road, which includes a lay-by, as defined by the Roads (Scotland) Act 1984. And the byelaws do not apply at all to lay-bys controlled by Transport Scotland on trunk roads inside the zones.\n\nSo a van in a lay-by inside a zone is lawful without a permit. The same van parked ten metres off the road on the lochshore is committing an offence. The line is the road, not the zone.\n\nArgyll and Bute confirmed by FOI that there are no clearways on their roads within the West Loch Lomond zone and nothing prohibiting overnight camping in their lay-bys, and that three of their off-street car parks sit inside the zone. The limit is road traffic law rather than the byelaw: permanent encampment on a road is a separate offence.\n\nSecond point people get wrong. The Scottish Outdoor Access Code gives a right to wild camp - and it EXCLUDES motor vehicles. There is no van equivalent of Scotland's wild camping right anywhere, in or out of a national park.",
+  "open_questions": [
+    "Price discrepancy: the Authority's pages say GBP4.30, one secondary source says GBP4.50. Check at booking.",
+    "WHICH permit areas accept motorhomes? The Authority says 'some locations' without a list - that is the gap that matters most.",
+    "What does the 2026 review conclude? Consultation closes 21 September 2026 and motorhome rules are in scope, so this record has a known expiry.",
+    "Which lay-bys inside the zones are Transport Scotland's and which are council-controlled? The distinction decides lawfulness and nobody publishes a map."
+  ],
+  "sites": [
+    {
+      "name": "Camping Management Zone permit areas (motorhome permits, where available)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "byelaw",
+      "status": "in_force",
+      "price_per_night": 4.3,
+      "currency": "GBP",
+      "arrival_from": "19:00",
+      "departure_by": "10:00",
+      "max_nights": 3,
+      "booking": "online_only",
+      "facilities": [],
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "GBP4.30 a night, the same as a tent, and the cheapest legitimate overnight anywhere in this dataset. Valid 19:00 to 10:00. No formal facilities - these are permitted wild camping spots, not aires. Only SOME permit areas accept motorhomes and the Authority does not list which."
+    },
+    {
+      "name": "Lay-bys and roads inside the Camping Management Zones",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "byelaw",
+      "status": "in_force",
+      "restricts": "parking",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "LAWFUL WITHOUT A PERMIT. The byelaw exempts vehicles on a road, which includes lay-bys, as defined by the Roads (Scotland) Act 1984, and does not apply at all to Transport Scotland lay-bys on trunk roads. You may stop and rest, including sleeping overnight. Permanent encampment on a road remains an offence under road traffic law, so this is for a night, not a week."
+    },
+    {
+      "name": "Camping Management Zones, off the road, without a permit",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "time_from": "01 March",
+      "time_to": "30 September",
+      "status": "in_force",
+      "penalty_type": "court",
+      "penalty_amount": 500,
+      "enforcement": "patrol",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "An offence to sleep in a vehicle inside a zone without a permit, unless on a road. Reported to the Procurator Fiscal with a fine of up to GBP500 - a criminal matter, not a parking ticket. Zones run from the lochshore to the nearby road and about 200m beyond it, or to the nearest visible feature. Seasonal: 1 March to 30 September only."
+    },
+    {
+      "name": "The rest of the National Park, and everywhere October to February",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "byelaw",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "The byelaws cover under 4% of 720 square miles. Outside the zones, and across the whole park from October to February, they do not apply - though the Scottish Outdoor Access Code that governs instead explicitly excludes motor vehicles, so there is still no positive right to sleep in a van. Parking law applies."
+    }
+  ]
+}

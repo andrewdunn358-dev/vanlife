@@ -1,0 +1,45 @@
+{
+  "authority": "Argyll and Bute Council",
+  "authority_type": "unitary",
+  "nation": "Scotland",
+  "researched_on": "2026-07-26",
+  "researched_by": "FOI response published via parkswatchscotland",
+  "source_format": "pdf_text",
+  "sources": [
+    "https://parkswatchscotland.co.uk/2017/01/23/camping-byelaws-campervans-west-loch-lomond/"
+  ],
+  "policy_summary": "Confirmed by FOI: within the West Loch Lomond Camping Management Zone there are NO clearways on Argyll and Bute controlled roads, and NO provisions prohibiting overnight camping in lay-bys on their roads. Three of their off-street car parks sit inside the zone.\n\nSo on Argyll and Bute's roads inside the zone, staying overnight in a vehicle is lawful. The national park byelaw exempts vehicles on a road, and the council has added nothing on top.",
+  "notes": "An unusual record: the finding is an ABSENCE of restriction, confirmed in writing. That is worth as much to a user as a prohibition, and it is the kind of thing only an FOI produces - no council publishes a list of places it has not restricted.\n\nThe FOI dates from 2017, when the byelaws were being introduced. Needs re-checking, particularly with the ten-year review live.",
+  "open_questions": [
+    "Re-confirm for 2026 - the FOI is nine years old and the byelaw review is in progress.",
+    "Which three off-street car parks inside the zone are theirs, and what are their rules?",
+    "Argyll and Bute is enormous and includes the west coast and the islands. Everything outside the Loch Lomond zone is unresearched.",
+    "Are there designated aires? Secondary sources mention some in Argyll and Bute without naming them."
+  ],
+  "sites": [
+    {
+      "name": "Argyll and Bute controlled roads and lay-bys, West Loch Lomond zone",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "notes": "Confirmed by FOI in 2017: no clearways, and nothing prohibiting overnight camping in lay-bys on their roads within the zone. Combined with the byelaw's road exemption, that makes overnight stays lawful here. Nine years old - re-check."
+    },
+    {
+      "name": "Three Argyll and Bute off-street car parks inside the zone",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "applies_to": "unknown",
+      "restricts": "parking",
+      "status": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "very_low",
+      "notes": "Their existence is confirmed by FOI; their locations and rules are not. Off-street car parks are not covered by the byelaw's road exemption."
+    }
+  ]
+}
