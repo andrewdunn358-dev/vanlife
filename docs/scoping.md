@@ -1,6 +1,6 @@
 # Vanlife App — Scoping & Architecture
 
-**Status:** concept / pre-build
+**Status:** Phase 1 complete — signal layer tested and rejected. See section 9.
 **Date:** July 2026
 **Working name:** TBD
 **Repo:** https://github.com/andrewdunn358-dev/vanlife
@@ -14,7 +14,9 @@
 A campervan and vanlife app for the UK that answers three questions no existing app answers well:
 
 1. **Can I legally stay here overnight?** — sourced from actual traffic orders and PSPOs, not anecdote.
-2. **Will I have signal here?** — from real measured drive-test data, not operator marketing maps.
+2. ~~**Will I have signal here?** — from real measured drive-test data, not operator marketing maps.~~
+   **Withdrawn.** Ofcom's drive-test data does not cover the places vans go. See section 9.
+   If signal returns, it must come from modelled national coverage, honestly labelled as modelled.
 3. **Will my solar keep up?** — yield forecast for a specific spot and a specific electrical system.
 
 Everything else (POIs, campsites, services, reviews) is table stakes and exists purely to make the app worth opening daily.
@@ -24,6 +26,8 @@ Everything else (POIs, campsites, services, reviews) is table stakes and exists 
 The incumbents — Park4Night, Searchforsites, Campercontact, iOverlander — own crowd-sourced POI density. That fight is unwinnable from zero.
 
 **The wedge is computed layers, not crowd-sourced pins.** Every differentiator above is derived from public data or physics. It ships complete on day one with no user base, and it cannot be copied by a competitor without equivalent data engineering effort.
+
+**Revised July 2026:** with signal withdrawn, the wedge narrows to *legality*. That is now the single load-bearing differentiator, and the phase plan should reflect that rather than treating it as third in a queue. Solar is a supporting feature, not a wedge — the physics is public and any competitor can compute it.
 
 Secondary differentiator: **offline-first**. Vans live in signal blackspots. Full offline map and POI database is a genuine moat against web-first competitors.
 
@@ -43,7 +47,7 @@ Secondary differentiator: **offline-first**. Vans live in signal blackspots. Ful
 | Traffic orders | DfT D-TRO service | Free API, GitHub auth | Public beta since Sept 2025; v4.0.0 production from end May 2026. Coverage patchy — authorities still retro-digitising. England only. |
 | Overnight bans | Council PSPOs | Manual scrape, per-council | The real differentiator. Not centralised anywhere. Start with coastal + national park councils. Manifesto Club FOI surveys are a useful seed. |
 | Off-street parking orders | Council parking orders (RTRA 1984) | Manual, per-council | **Gap in original scoping.** Many "no overnight sleeping" signs in council car parks are parking place orders, not PSPOs. Resolve instrument scope before Phase 3. |
-| Mobile signal | Ofcom drive-test open data | Free bulk CSV | ~14GB 4G, ~50GB 5G. Measured along roads. Ideal geometry for a van app. |
+| Mobile signal | Ofcom drive-test open data | Free bulk CSV | **Tested and rejected — see section 9.** Published annually per year, not one file: 2025 4G is a 250MB zip expanding to 7.1GB. Covers ~13% of UK land area at best, effectively far less. |
 | Mobile coverage | Ofcom Connected Nations Mobile API | Free, registration required | Per-operator fields. Postcode granularity — too coarse to replace drive-test, useful as online supplement. |
 | Solar irradiance | Open-Meteo | Free API | Shortwave radiation forecast. |
 | Terrain / shading | EA LIDAR composite DSM (1m) | Free, open licence | **Revised from OS Terrain 50.** A 50m DTM cannot see trees, which dominate shading at van-parking scale. DSM includes vegetation and buildings. England coverage good; NRW has 1m for Wales. |
@@ -92,10 +96,11 @@ The host has changed four times during scoping. These make the next change cheap
 
 ## 6. Phases
 
-**Phase 1 — Signal layer**
-Ofcom bulk download → GeoJSON → Tippecanoe → PMTiles → map. No database, no permissions, no scraping, no partners. Fastest path to something demonstrably unique.
+**Phase 1 — Signal layer — COMPLETE, NEGATIVE RESULT**
+Built, ran, answered its question. The drive-test data is not dense enough off the trunk network. See section 9. Pipeline retained: it is the same shape every later layer needs.
 
-*Open question this phase answers:* is the drive-test data dense enough off the A-roads to be useful in the rural places vans actually go? Nothing else in this document matters until that's known.
+**Phase 1b — Legality layer is now the first product phase.**
+Formerly phases 2 and 3. This is the only remaining differentiator and should be built next, before solar and before POIs.
 
 **Phase 2 — D-TRO integration**
 Register for API access, sync England data. PostGIS enters here. UI must be explicit about coverage gaps rather than implying completeness.
@@ -123,7 +128,46 @@ Formalise what VanOS already consumes. Keys, rate limits, terms of use, provenan
 - API pricing — free tier, or paid from the start
 - **Who this is for.** Full-timers, weekenders, or Euro-tourers. The signal layer implies remote workers, which is a small, high-willingness-to-pay niche and a different product from a weekender discovery app. Naming this resolves half of the above.
 
-## 8. Risks
+## 8. Findings
+
+### 2026-07-26 — Ofcom drive-test data rejected as a signal layer
+
+**Ran:** 2025 4G LTE dataset, full pipeline, 12,066,912 locations parsed with zero coordinate failures and zero points outside UK bounds. Clean, well-formed data.
+
+**Finding 1 — the notspot field is not a coverage measurement.**
+31.6% of locations had no reading from any operator. That looked like a major discovery until checked geographically:
+
+| Area | Notspot rate |
+|---|---|
+| National | 31.6% |
+| Birmingham | 32.7% |
+| Manchester | 32.4% |
+| Glasgow | 32.8% |
+| Bristol | 32.1% |
+
+City centres cannot match the national blank rate. Confirmed independently by per-operator counts: Three 68.0%, O2 68.0%, Vodafone 68.0%, EE 67.7% — four networks with different mast estates and spectrum do not independently read at the same share of locations. The blanks are unrecorded rows, not notspots.
+
+**Consequence:** absent readings must never render as "no signal" anywhere in the product.
+
+**Finding 2 — the data does not cover where vans go.** This is the decisive one.
+
+Zero measurements across five sampled remote areas: NW Highlands, Cambrian Mountains, Rannoch Moor, Upper Teesdale, Kielder. Manchester alone returned 18,450 points in an identically sized box.
+
+Grid analysis: 427 cells at 0.1° ≈ 12–13% of UK land area. And that overstates it, since one road through a 73km² cell marks the whole cell as covered. Usable coverage at lay-by granularity is a fraction of a percent.
+
+**Cause:** Ofcom collects this as their spectrum assurance vehicles go about routine business — interference investigations and the like. It is not a survey. Coverage follows where their engineers drive: cities and trunk roads.
+
+**Decision:** proposition #2 withdrawn. Options considered:
+
+1. **Lead with legality instead.** Chosen. It was always the feature people would pay for, and the doc's own risk section predicted this.
+2. Switch to Ofcom Connected Nations modelled coverage — complete nationally, postcode granularity, but modelled. Contradicts the original "not marketing maps" positioning. Possible later if labelled honestly.
+3. Keep drive-test data for trunk-road route planning only. Genuine but minor; not a wedge.
+
+**Cost of finding this out:** one afternoon and £0. This is what Phase 1 was for, and it worked exactly as intended — the plan was right even though the answer was no.
+
+**Retained value:** the ETL pipeline, tile build, viewer and repo discipline all transfer unchanged to the legality layer. Nothing built is wasted.
+
+## 9. Risks
 
 **Legal.** Publishing "you can legally stay here" is a liability surface. Data will be incomplete and will go stale. Needs careful UI framing — informational, never advisory — and a solicitor's review of disclaimer wording before launch, not after.
 
