@@ -1,0 +1,72 @@
+{
+  "authority": "Forestry England",
+  "authority_type": "landowner (forestry)",
+  "nation": "England",
+  "researched_on": "2026-07-26",
+  "researched_by": "desk research from Forestry England's own pages",
+  "source_format": "html",
+  "sources": [
+    "https://www.forestryengland.uk/campervan-stopovers",
+    "https://www.forestryengland.uk/kielder-castle/motorhomes",
+    "https://www.forestryengland.uk/news/forestry-england-launches-new-forest-campervan-road-trip-summer-2026",
+    "https://www.forestryengland.uk/article/campervan-stays-rules-and-regulations"
+  ],
+  "policy_summary": "National 'Forest Campervan Road Trip' scheme across seven forest car parks, one of which is Kielder in Northumberland. Kielder Castle is the exception to most rules: no pre-booking, park and pay on arrival. Overnight campervan or motorhome stays are NOT permitted in any other Forestry England car park. A single national policy covering hundreds of sites - far less work than a council, and exactly why the landowner tier is tractable.",
+  "national_scheme": {
+    "name": "Forest Campervan Road Trip",
+    "locations": ["Cardinham Woods (Cornwall)", "Wendover Woods (Bucks)", "Bedgebury National Pinetum (Kent)", "High Lodge Thetford (Suffolk)", "Jeskyns Community Woodland (Kent)", "Gisburn Forest (Lancs)", "Kielder Forest (Northumberland)"],
+    "season_2026": "16 July to 14 September, bookings opened 21 May",
+    "price": "GBP16/night, GBP14 members; Kielder Castle GBP15 for all",
+    "max_nights": 2,
+    "requires_self_contained": true,
+    "prohibits": ["tents", "touring caravans", "cars", "awnings", "BBQs", "generators", "outdoor equipment"]
+  },
+  "sites": [
+    {
+      "name": "Kielder Castle Car Park",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 15.00,
+      "currency": "GBP",
+      "arrival_from": "17:00",
+      "max_nights": 2,
+      "requires_self_contained": true,
+      "self_contained_definition": "self-contained toilet facilities inside the vehicle; toilet block available at the car park",
+      "booking": "none_required",
+      "payment_methods": ["machine", "ringgo"],
+      "payment_deferrable": false,
+      "prohibits": ["tents", "touring caravans", "cars", "awnings", "BBQs", "generators", "outdoor equipment"],
+      "facilities": ["toilet block"],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "First come first served, no pre-booking - the only site in the national scheme without it. Park up after 5pm. Dark sky location. Charges apply to Forestry England members too; overnight is not covered by the free member parking benefit."
+    },
+    {
+      "name": "All other Forestry England car parks",
+      "kind": "restriction",
+      "lat": null, "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "Forestry England state plainly that overnight campervan or motorhome stays are not permitted in any car park outside the scheme. Landowner policy, so no PCN - but they can require you to leave. Needs the full car park list to be mappable; that list may itself be a useful dataset."
+    },
+    {
+      "name": "Tower Knowe / Hawkhope / Elf Kirk (Kielder Water)",
+      "kind": "provision",
+      "lat": null, "lon": null,
+      "instrument": "landowner_policy",
+      "status": "unknown",
+      "price_per_night": null,
+      "requires_self_contained": true,
+      "last_verified": "2026-07-26",
+      "confidence": "very_low",
+      "notes": "Older sources (2018-2021) describe overnight parking at around GBP10 at several Kielder Water car parks. These sit within Kielder Water & Forest Park, a partnership between Forestry England, Northumbrian Water and others - so responsibility per car park is unclear and may not be Forestry England's. NOT CURRENT: verify before any use."
+    }
+  ]
+}

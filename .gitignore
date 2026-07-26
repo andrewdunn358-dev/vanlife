@@ -32,3 +32,6 @@ __pycache__/
 .DS_Store
 @eaDir/
 Thumbs.db
+
+# Generated site output - rebuild with scripts/build_site.py
+site/
