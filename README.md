@@ -60,6 +60,45 @@ this road" wants every year. "What signal will I get today" wants the
 latest only — masts change, and the 3G switch-off shifted things during
 2025.
 
+## Coverage lookup by postcode
+
+Two sources, kept deliberately separate because they mean different things:
+
+| | Source | Coverage | Nature |
+|---|---|---|---|
+| **Measured** | Your drive-test SQLite | ~13% of UK land, effectively less | Real readings |
+| **Predicted** | Ofcom Mobile Coverage API | Whole UK, 50m grid | A model |
+
+Never merge them into a single number. Absence of measured data means
+*nobody drove there* — not that there is no signal.
+
+```bash
+# One-off: index the measurements for proximity queries
+python3 scripts/build_sqlite.py \
+    data/interim/4g-2025.geojsonl \
+    data/out/signal.sqlite --tech 4g
+
+# Then look anything up
+python3 scripts/coverage_lookup.py "BS1 4DJ"
+python3 scripts/coverage_lookup.py "Applecross" --radius 5
+python3 scripts/coverage_lookup.py 57.4321 -5.8012
+```
+
+SQLite's built-in R*Tree does the spatial indexing — no PostGIS, no
+server, no extensions to compile, and it runs unchanged on a phone,
+which is where this has to end up.
+
+For predicted coverage, register free at
+[api.ofcom.org.uk](https://api.ofcom.org.uk) and request the Mobile
+product (100 calls/min, 50,000/month), then:
+
+```bash
+export OFCOM_MOBILE_KEY=your_key_here
+```
+
+Ofcom's scale is numeric: 4 likely, 3 limited, 0 none, reported per
+operator for voice and data, indoor and outdoor.
+
 ## The Ofcom schema
 
 Ofcom publishes **wide**: one row per location, with columns shaped
