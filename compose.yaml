@@ -20,8 +20,11 @@ services:
       - ${DATA_DIR:-./data}:/work/data
       - ./scripts:/work/scripts:ro
     working_dir: /work
-    # Two cores total on the ML110 - leave DSM some headroom.
-    cpus: 1.5
+    # No `cpus:` here - DSM's kernel does not expose the CPU CFS scheduler,
+    # so Docker cannot set CPU quotas and the container fails to start with
+    # "NanoCPUs can not be set". Tippecanoe will use both cores; that is
+    # fine, it just makes DSM sluggish while it runs.
+    #
     # DSM 7.2.2 leaves roughly 3.2GB available on an 8GB box. This cap is
     # a safety net: it kills a runaway process here rather than letting
     # the OOM killer pick a DSM service. Neither script needs much - the
