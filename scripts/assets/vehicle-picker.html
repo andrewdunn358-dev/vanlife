@@ -1,0 +1,90 @@
+<div class="vehicle" id="vpick">
+<h4>What do you drive?</h4>
+<p>The rules depend on the vehicle, not just the place. Pick yours once and every
+record on this site will say whether it applies to you. Stays in your browser
+&mdash; nothing is sent anywhere.</p>
+
+<div class="vgrid" role="radiogroup" aria-label="Vehicle type">
+
+  <button class="vcard" data-v="vw" role="radio" aria-checked="false">
+    <svg viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M18 20h58v22H18z"/><path d="M76 27c9 1 18 5 24 9v6H76z"/>
+      <path d="M22 12h50v8H22z"/><circle cx="34" cy="46" r="6"/><circle cx="88" cy="46" r="6"/>
+      <path d="M18 42h10M40 42h42"/></g></svg>
+    <span class="vname">VW / small camper</span>
+    <span class="vdim">about 2.0m high</span>
+  </button>
+
+  <button class="vcard" data-v="panel" role="radio" aria-checked="false">
+    <svg viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M12 14h72v30H12z"/><path d="M84 22c10 2 19 8 24 13v9H84z"/>
+      <circle cx="30" cy="47" r="6"/><circle cx="94" cy="47" r="6"/>
+      <path d="M12 44h12M36 44h52"/><path d="M86 26v12h18"/></g></svg>
+    <span class="vname">Panel van conversion</span>
+    <span class="vdim">about 2.6m high</span>
+  </button>
+
+  <button class="vcard" data-v="coachbuilt" role="radio" aria-checked="false">
+    <svg viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M8 10h76v34H8z"/><path d="M84 20c9 1 18 7 24 12v12H84z"/>
+      <path d="M8 10l6-4h64l6 4"/><circle cx="28" cy="47" r="6"/><circle cx="96" cy="47" r="6"/>
+      <path d="M8 44h10M34 44h56"/><path d="M86 24v12h20"/></g></svg>
+    <span class="vname">Coachbuilt motorhome</span>
+    <span class="vdim">about 3.1m high</span>
+  </button>
+
+  <button class="vcard" data-v="aclass" role="radio" aria-checked="false">
+    <svg viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M8 8h94a10 10 0 0 1 10 10v26H8z"/>
+      <path d="M96 14h8a6 6 0 0 1 6 6v10H96z"/>
+      <circle cx="28" cy="47" r="6"/><circle cx="94" cy="47" r="6"/>
+      <path d="M8 44h10M34 44h52M100 44h12"/></g></svg>
+    <span class="vname">A-class motorhome</span>
+    <span class="vdim">about 3.3m high</span>
+  </button>
+
+  <button class="vcard" data-v="caravan" role="radio" aria-checked="false">
+    <svg viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M26 14h76a8 8 0 0 1 8 8v22H26z"/>
+      <path d="M26 22L8 40h6"/><circle cx="64" cy="47" r="6"/>
+      <path d="M26 44h32M70 44h40"/><path d="M84 20v12h24"/></g></svg>
+    <span class="vname">Touring caravan</span>
+    <span class="vdim">single axle</span>
+  </button>
+
+  <button class="vcard" data-v="twinaxle" role="radio" aria-checked="false">
+    <svg viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M22 12h82a8 8 0 0 1 8 8v24H22z"/>
+      <path d="M22 20L6 40h6"/><circle cx="56" cy="47" r="6"/><circle cx="76" cy="47" r="6"/>
+      <path d="M22 44h26M64 44h4M84 44h28"/><path d="M86 18v12h26"/></g></svg>
+    <span class="vname">Twin axle caravan</span>
+    <span class="vdim">often over 8m</span>
+  </button>
+
+  <button class="vcard" data-v="car" role="radio" aria-checked="false">
+    <svg viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M10 44V32l14-14h46l20 14h18a4 4 0 0 1 4 4v8z"/>
+      <path d="M44 18v14M10 32h80"/><circle cx="32" cy="46" r="6"/><circle cx="90" cy="46" r="6"/></g></svg>
+    <span class="vname">Car or estate</span>
+    <span class="vdim">not adapted for sleeping</span>
+  </button>
+
+</div>
+
+<div class="vfollow" id="vfollow" hidden>
+  <p class="vq">One more thing, and it is the question that decides most of these:
+  does your vehicle have a <strong>fixed toilet and sealed tanks</strong> for waste
+  water and sewage?</p>
+  <div class="vopts">
+    <button class="vopt" data-sc="full">Yes &mdash; fixed toilet, both tanks sealed</button>
+    <button class="vopt" data-sc="partial">Portable toilet only</button>
+    <button class="vopt" data-sc="none">Neither</button>
+  </div>
+  <p class="vwhy">Authorities that require &ldquo;self-contained&rdquo; vehicles almost always
+  mean an onboard toilet plus sealed containers. There is no UK certification for
+  this, so it is a claim rather than a standard &mdash; but it is what the bookable
+  bays are checking.</p>
+</div>
+
+<p id="v-summary" class="vsum"></p>
+</div>

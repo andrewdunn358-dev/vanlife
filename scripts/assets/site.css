@@ -289,3 +289,55 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-ra
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto; }
 }
+
+/* ---- vehicle picker ---- */
+.vgrid {
+  display: grid; gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+}
+.vcard {
+  display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
+  padding: 1rem 0.65rem 0.85rem; cursor: pointer; text-align: center;
+  background: var(--paper); color: var(--ink-3);
+  border: 1px solid var(--hair); border-radius: 10px;
+  font: inherit; transition: border-color .12s ease, color .12s ease, background .12s ease;
+}
+.vcard svg { width: 100%; max-width: 5.5rem; height: auto; margin-bottom: 0.35rem; }
+.vcard:hover { border-color: var(--ink-3); color: var(--ink-2); }
+.vcard.is-on {
+  border-color: var(--permit); background: var(--permit-bg); color: var(--permit);
+}
+.vname {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.86rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink);
+}
+.vcard.is-on .vname { color: var(--permit); }
+.vdim { font-family: "Space Grotesk", system-ui, sans-serif; font-size: 0.72rem; color: var(--ink-3); }
+.vcard:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+.vfollow { margin-top: 1.5rem; padding-top: 1.4rem; border-top: 1px solid var(--hair); }
+.vq { font-size: 1rem; color: var(--ink-2); margin: 0 0 0.9rem; max-width: var(--measure); }
+.vq strong { color: var(--ink); font-weight: 600; }
+.vopts { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.vopt {
+  font-family: "Space Grotesk", system-ui, sans-serif; font-size: 0.88rem;
+  padding: 0.55rem 0.95rem; cursor: pointer;
+  background: var(--paper); color: var(--ink-2);
+  border: 1px solid var(--hair); border-radius: 8px;
+  transition: border-color .12s ease, background .12s ease, color .12s ease;
+}
+.vopt:hover { border-color: var(--ink-3); }
+.vopt.is-on { background: var(--permit-bg); border-color: var(--permit); color: var(--permit); font-weight: 700; }
+.vopt:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.vwhy { font-size: 0.88rem; color: var(--ink-3); margin: 0.9rem 0 0; max-width: var(--measure); }
+
+/* ---- carried-forward strip on authority pages ---- */
+.vstrip {
+  display: block; margin: 0 0 var(--gap);
+  padding: 0.75rem 1rem; border-radius: 8px;
+  background: var(--card); border: 1px solid var(--hair);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.86rem; color: var(--ink-2);
+}
+.vstrip b { color: var(--ink); font-weight: 700; }
+.vstrip a { color: var(--link); }

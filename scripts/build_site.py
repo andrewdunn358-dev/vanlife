@@ -322,6 +322,12 @@ def notice_html(s, parent):
         rule["applies_to"] = s["applies_to"]
     if s.get("restricts"):
         rule["restricts"] = s["restricts"]
+    ex = [str(x).lower() for x in (s.get("excludes_vehicle_types") or [])]
+    ex += [str(x).lower() for x in (s.get("prohibits") or [])]
+    if any("caravan" in x for x in ex):
+        rule["excludes_caravans"] = True
+    if s.get("max_length_m"):
+        rule["max_length"] = s["max_length_m"]
     for src in ("max_height_m", "osm_maxheight"):
         if s.get(src):
             try:
@@ -423,8 +429,8 @@ def authority_page(d, out_dir, root="../"):
     body.append(f"<span{cls}><b>{mappable}</b> of {len(sites)} mapped</span>")
     body.append("</div>")
 
+    body.append('<p class="vstrip" id="vstrip" data-home="../index.html"></p>')
     body.append(mapping)
-    body.append(asset("vehicle-form.html"))
     body.append('<section class="authority">')
     body.append('<div class="authority-head">')
     body.append(f"<h2>{esc(name)}</h2>")
@@ -487,6 +493,7 @@ def index_page(records, out_dir):
     body.append("<p class=\"summary\">Where something has not been checked, or the location has not been "
                 "recorded yet, the record says so rather than leaving you to guess.</p>")
 
+    body.append(asset("vehicle-picker.html"))
     body.append(mapping)
     body.append(HOWTO)
     body.append('<ul class="roll">')
@@ -497,6 +504,7 @@ def index_page(records, out_dir):
             f'<li><a href="authority/{slug(d["authority"])}.html">{esc(d["authority"])}</a>'
             f'<span class="tally">{p} permitted &middot; {r} restricted</span></li>')
     body.append("</ul>")
+    body.append("<script>" + asset("vehicle.js") + "</script>")
     body.append(FOOT.format(when=date.today().isoformat()))
 
     path = os.path.join(out_dir, "index.html")
