@@ -203,12 +203,12 @@ python3 scripts/ofcom_to_geojsonl.py \
 ### Working on the site
 
 ```bash
-python3 scripts/serve.py
+python3 scripts/serve.py    # http://localhost:24712
 ```
 
 Builds, serves, and rebuilds whenever anything in `data/sites`, `scripts`
-or `site-assets` changes. Edit a record, reload the browser, see it. Picks
-a free port by default; `--port 8000` to fix one. Stdlib only, so it runs
+or `site-assets` changes. Edit a record, reload the browser, see it. Serves on
+port 24712; `--port 0` for any free port. Stdlib only, so it runs
 on DSM without installing anything.
 
 Then copy `signal-4g.pmtiles` next to `viewer/index.html`, serve the
