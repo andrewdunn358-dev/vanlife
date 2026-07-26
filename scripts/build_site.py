@@ -25,189 +25,8 @@ import urllib.parse
 from collections import Counter
 from datetime import date
 
-CSS = """
-:root {
-  --ink: #1A1815;
-  --ink-soft: #56524C;
-  --paper: #FBFAF8;
-  --rule: #D8D4CC;
-  --permit: #1F5C3D;
-  --restrict: #A8620F;
-  --unknown: #6B6864;
-  --sign: #0B3C7A;
-  --measure: 66ch;
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Source Serif 4", Georgia, serif;
-  font-size: 17px;
-  line-height: 1.55;
-}
-.wrap { max-width: 74ch; margin: 0 auto; padding: 0 1.25rem 5rem; }
+CSS = None  # loaded from assets/site.css
 
-/* masthead ------------------------------------------------------------ */
-.masthead { border-bottom: 3px solid var(--ink); margin-bottom: 0; padding: 2.5rem 0 1rem; }
-.masthead a { color: inherit; text-decoration: none; }
-.wordmark {
-  font-family: Overpass, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 800; font-size: clamp(1.6rem, 5vw, 2.3rem);
-  letter-spacing: -0.02em; text-transform: uppercase; margin: 0; line-height: 1;
-}
-.standfirst {
-  font-family: Overpass, Arial, sans-serif; font-size: 0.82rem;
-  letter-spacing: 0.09em; text-transform: uppercase;
-  color: var(--ink-soft); margin: 0.6rem 0 0;
-}
-
-/* the honesty bar ----------------------------------------------------- */
-.state {
-  font-family: "Overpass Mono", ui-monospace, monospace;
-  font-size: 0.78rem; border-bottom: 1px solid var(--rule);
-  padding: 0.75rem 0; margin-bottom: 2.5rem;
-  display: flex; flex-wrap: wrap; gap: 0 1.5rem; color: var(--ink-soft);
-}
-.state b { color: var(--ink); font-weight: 600; }
-.state .warn { color: var(--restrict); }
-
-/* notices -------------------------------------------------------------- */
-.authority { margin: 0 0 3.5rem; }
-.authority-head { border-bottom: 1px solid var(--ink); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
-.authority-head h2 {
-  font-family: Overpass, Arial, sans-serif; font-weight: 700;
-  font-size: 1.35rem; letter-spacing: -0.01em; margin: 0; line-height: 1.2;
-}
-.authority-head h2 a { color: inherit; text-decoration: none; }
-.authority-head h2 a:hover { text-decoration: underline; }
-.meta {
-  font-family: "Overpass Mono", monospace; font-size: 0.72rem;
-  text-transform: uppercase; letter-spacing: 0.06em;
-  color: var(--ink-soft); margin: 0.4rem 0 0;
-}
-.summary { color: var(--ink-soft); margin: 0 0 1.75rem; max-width: var(--measure); }
-
-.notice { border-left: 5px solid var(--unknown); padding: 0 0 0 1rem; margin: 0 0 1.75rem; }
-.notice.is-provision { border-left-color: var(--permit); }
-.notice.is-restriction { border-left-color: var(--restrict); }
-.notice h3 {
-  font-family: Overpass, Arial, sans-serif; font-weight: 700;
-  font-size: 1rem; margin: 0 0 0.15rem; line-height: 1.3;
-}
-.kind {
-  font-family: "Overpass Mono", monospace; font-size: 0.68rem;
-  letter-spacing: 0.11em; text-transform: uppercase; display: block;
-  margin-bottom: 0.3rem; color: var(--unknown);
-}
-.is-provision .kind { color: var(--permit); }
-.is-restriction .kind { color: var(--restrict); }
-
-.terms { list-style: none; margin: 0.6rem 0 0; padding: 0;
-         font-family: "Overpass Mono", monospace; font-size: 0.78rem; }
-.terms li { padding: 0.15rem 0; }
-.terms .k { display: inline-block; min-width: 12ch; color: var(--ink-soft); }
-.notice p.note { font-size: 0.92rem; color: var(--ink-soft); margin: 0.7rem 0 0; max-width: var(--measure); }
-
-.explain {
-  font-size: 0.86rem; color: var(--ink-soft); margin: 0.6rem 0 0;
-  padding-left: 0.75rem; border-left: 2px solid var(--rule);
-  max-width: var(--measure);
-}
-.howto { border: 1px solid var(--ink); padding: 1.25rem 1.4rem; margin: 0 0 2.5rem; }
-.howto h4 { font-family: Overpass, Arial, sans-serif; font-size: 0.95rem;
-            margin: 0 0 0.75rem; font-weight: 700; }
-.howto dl { margin: 0; font-size: 0.92rem; }
-.howto dt { font-family: "Overpass Mono", monospace; font-size: 0.75rem;
-            text-transform: uppercase; letter-spacing: 0.06em;
-            color: var(--ink); margin-top: 0.9rem; }
-.howto dt:first-child { margin-top: 0; }
-.howto dd { margin: 0.2rem 0 0; color: var(--ink-soft); max-width: var(--measure); }
-
-.vehicle { border: 1px solid var(--ink); padding: 1.25rem 1.4rem; margin: 0 0 2.5rem; }
-.vehicle h4 { font-family: Overpass, Arial, sans-serif; font-size: 0.95rem;
-              margin: 0 0 0.5rem; font-weight: 700; }
-.vehicle p { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 1rem; max-width: var(--measure); }
-.vrow { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: flex-end; }
-.vrow label { font-family: "Overpass Mono", monospace; font-size: 0.7rem;
-              text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft);
-              display: flex; flex-direction: column; gap: 0.25rem; }
-.vrow input[type=number], .vrow select {
-  font-family: "Source Serif 4", serif; font-size: 0.92rem; text-transform: none;
-  letter-spacing: 0; padding: 0.3rem 0.4rem; border: 1px solid var(--rule);
-  background: #fff; color: var(--ink); min-width: 7rem;
-}
-.vchecks { margin-top: 0.9rem; }
-.vchecks label { flex-direction: row; align-items: center; gap: 0.4rem; }
-.vsum { font-family: "Overpass Mono", monospace; font-size: 0.75rem;
-        margin: 1rem 0 0; color: var(--ink); }
-.yours { font-size: 0.88rem; margin: 0.7rem 0 0; padding: 0.5rem 0.7rem;
-         border-left: 3px solid var(--rule); max-width: var(--measure); }
-.yours b { font-family: Overpass, Arial, sans-serif; font-size: 0.76rem;
-           text-transform: uppercase; letter-spacing: 0.05em; display: block;
-           margin-bottom: 0.15rem; }
-.y-ok { border-left-color: var(--permit); color: var(--permit); }
-.y-blocks { border-left-color: var(--restrict); color: var(--restrict); }
-.y-check { border-left-color: var(--unknown); color: var(--ink-soft); }
-
-.goto { font-family: "Overpass Mono", monospace; font-size: 0.72rem;
-        margin: 0.7rem 0 0; display: flex; flex-wrap: wrap; gap: 0 1rem; align-items: baseline; }
-.goto a { color: var(--sign); }
-.goto .coords { color: var(--ink-soft); }
-
-.provenance {
-  font-family: "Overpass Mono", monospace; font-size: 0.7rem;
-  color: var(--ink-soft); border-top: 1px dotted var(--rule);
-  margin-top: 0.9rem; padding-top: 0.5rem;
-}
-.provenance a { color: var(--sign); }
-.gap { color: var(--restrict); }
-
-/* index list ----------------------------------------------------------- */
-.roll { list-style: none; padding: 0; margin: 0; }
-.roll li { border-bottom: 1px solid var(--rule); padding: 0.8rem 0;
-           display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
-.roll a { color: var(--ink); text-decoration: none; font-family: Overpass, Arial, sans-serif;
-          font-weight: 600; font-size: 1rem; }
-.roll a:hover { text-decoration: underline; }
-.roll .tally { font-family: "Overpass Mono", monospace; font-size: 0.72rem;
-               color: var(--ink-soft); white-space: nowrap; }
-
-/* map ------------------------------------------------------------------ */
-.map-wrap { margin: 0 0 2.5rem; }
-#map { height: 380px; border: 1px solid var(--ink); background: var(--rule); }
-.map-key {
-  font-family: "Overpass Mono", monospace; font-size: 0.7rem;
-  color: var(--ink-soft); margin: 0.5rem 0 0;
-  display: flex; flex-wrap: wrap; gap: 0 1.25rem;
-}
-.map-key .dot { display: inline-block; width: 9px; height: 9px; margin-right: 5px; }
-.dot.p { background: var(--permit); }
-.dot.r { background: var(--restrict); }
-.awaiting {
-  border: 1px dashed var(--rule); padding: 1.25rem; margin: 0 0 2.5rem;
-}
-.awaiting h4 {
-  font-family: Overpass, Arial, sans-serif; font-size: 0.9rem;
-  margin: 0 0 0.5rem; font-weight: 700;
-}
-.awaiting p { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 0.75rem; max-width: var(--measure); }
-.awaiting ul { font-family: "Overpass Mono", monospace; font-size: 0.76rem;
-               margin: 0; padding-left: 1.2rem; color: var(--ink-soft); }
-.maplibregl-popup-content {
-  font-family: "Overpass Mono", monospace !important; font-size: 0.72rem !important;
-  border-radius: 0 !important; border: 1px solid var(--ink); padding: 0.6rem 0.75rem !important;
-}
-.maplibregl-popup-content b { font-family: Overpass, Arial, sans-serif; font-size: 0.85rem; }
-
-.back { font-family: "Overpass Mono", monospace; font-size: 0.75rem;
-        display: inline-block; margin: 2rem 0 0; color: var(--sign); }
-footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1rem;
-         font-family: "Overpass Mono", monospace; font-size: 0.7rem; color: var(--ink-soft); }
-a:focus-visible { outline: 2px solid var(--sign); outline-offset: 3px; }
-@media (max-width: 30rem) { .terms .k { display: block; min-width: 0; } }
-"""
 
 HEAD = """<!DOCTYPE html>
 <html lang="en-GB"><head>
@@ -217,7 +36,7 @@ HEAD = """<!DOCTYPE html>
 <meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 {mapassets}<style>{css}</style>
 </head><body><div class="wrap">
 <header class="masthead">
@@ -519,7 +338,7 @@ def notice_html(s, parent):
     if rows:
         out.append('<ul class="terms">')
         for k, v in rows:
-            out.append(f'<li><span class="k">{esc(k)}</span>{esc(v)}</li>')
+            out.append(f'<li><span class="k">{esc(k)}</span><span class="v">{esc(v)}</span></li>')
         out.append("</ul>")
 
     inst = s.get("instrument", "unknown")
@@ -595,7 +414,7 @@ def authority_page(d, out_dir, root="../"):
     body = [HEAD.format(
         title=f"{html.escape(name)} - overnight parking rules",
         desc=f"Published overnight parking and sleeping rules for {html.escape(name)}, with sources and dates.",
-        css=CSS, root=root, mapassets=MAP_ASSETS if has_map else "")]
+        css=asset("site.css"), root=root, mapassets=MAP_ASSETS if has_map else "")]
 
     body.append('<div class="state">')
     body.append(f"<span><b>{len(sites)}</b> records</span>")
@@ -651,7 +470,7 @@ def index_page(records, out_dir):
         title="Overnight - where you can stay in a van in the UK",
         desc="Published overnight parking and sleeping rules for UK councils, "
              "national parks and landowners. Every record shows its source and date.",
-        css=CSS, root="", mapassets=MAP_ASSETS if has_map else "")]
+        css=asset("site.css"), root="", mapassets=MAP_ASSETS if has_map else "")]
 
     body.append('<div class="state">')
     body.append(f"<span><b>{len(records)}</b> authorities</span>")
