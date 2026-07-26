@@ -320,12 +320,32 @@ def main():
     try:
         data = predicted(postcode, key)
     except urllib.error.HTTPError as exc:
+        # Azure API Management puts a specific diagnosis in the body.
+        # Never swallow it - it distinguishes a wrong key from a pending
+        # subscription from the wrong product.
+        try:
+            body = exc.read().decode(errors="replace")[:400]
+        except Exception:  # noqa: BLE001
+            body = ""
         if exc.code == 404:
             print(f"  {postcode}: not found in Ofcom's data.")
+            if body:
+                print(f"  {body}")
         elif exc.code in (401, 403):
-            print("  Auth failed. Check the key and that Mobile is enabled.")
+            print(f"  HTTP {exc.code} - authorisation refused.")
+            if body:
+                print(f"  API says: {body}")
+            print("\n  Usual causes, in order of likelihood:")
+            print("   1. Subscription still pending - Ofcom approve manually,")
+            print("      so a fresh signup is not live yet.")
+            print("   2. Using the Broadband key rather than the Mobile one.")
+            print("      They are separate products with separate keys.")
+            print("   3. Key copied with whitespace. Check: "
+                  "echo \"[$OFCOM_MOBILE_KEY]\"")
         else:
             print(f"  HTTP {exc.code}: {exc.reason}")
+            if body:
+                print(f"  {body}")
         print()
         return
     except Exception as exc:  # noqa: BLE001
