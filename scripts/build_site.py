@@ -395,6 +395,16 @@ def empty_area_page(area, out_dir, region=None):
     return path
 
 
+BLANKET_PHRASES = ("all other", "all ", "various", "county-wide", "elsewhere",
+                   "everywhere", "throughout", "generally", "rest of")
+
+
+def is_blanket(name):
+    """Does this record describe a whole estate rather than one place?"""
+    n = (name or "").lower()
+    return any(p in n for p in BLANKET_PHRASES)
+
+
 def records_for(area, doc, cfg):
     """The records that actually belong in this county.
 
@@ -408,8 +418,37 @@ def records_for(area, doc, cfg):
     if len(covers) <= 1:
         return doc["sites"]
     placed = cfg.get("site_areas", {}).get(doc["authority"], {})
-    return [s for s in doc["sites"]
-            if placed.get(s.get("name"), area) == area]
+    out, orphans, guessed = [], [], []
+    for s in doc["sites"]:
+        name = s.get("name", "")
+        if name in placed:
+            where = placed[name]
+            # A string names one county, a list names several, "all" means the
+            # whole estate - which is right for a rule covering a national park
+            # that straddles two counties.
+            if where == "all" or area == where or (
+                    isinstance(where, list) and area in where):
+                out.append(s)
+            continue
+        # Unplaced records only belong everywhere if they ARE everywhere.
+        # A blanket rule applies across the estate; a named car park does
+        # not, and defaulting it to every county is how Elf Kirk ended up
+        # in Buckinghamshire.
+        if is_blanket(name):
+            out.append(s)
+            # The heuristic reads names, and names lie. "Kielder day parking
+            # (all car parks)" matched "all " and spread across three
+            # counties. Report every guess so a wrong one is visible.
+            guessed.append(name)
+        else:
+            orphans.append(name)
+    if orphans:
+        print(f"  UNPLACED in {doc['authority']}: {', '.join(orphans)}")
+        print("    add these to site_areas in areas.json - they are hidden until you do")
+    if guessed and area == (cfg.get("authorities", {}).get(doc["authority"]) or [""])[0]:
+        print(f"  treated as estate-wide in {doc['authority']}: {'; '.join(guessed)}")
+        print("    if any of those is actually one place, add it to site_areas")
+    return out
 
 
 def area_page(area, docs, out_dir, region=None):
