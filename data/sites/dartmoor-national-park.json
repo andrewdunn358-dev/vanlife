@@ -1,0 +1,60 @@
+{
+  "authority": "Dartmoor National Park Authority",
+  "authority_type": "national_park",
+  "nation": "England",
+  "researched_on": "2026-07-26",
+  "researched_by": "the Authority's own camping page",
+  "source_format": "html",
+  "sources": [
+    "https://www.dartmoor.gov.uk/enjoy-dartmoor/outdoor-activities/camping"
+  ],
+  "policy_summary": "Overnight sleeping in vehicles, at the roadside or in car parks, is not permitted under NATIONAL PARK BYELAWS. That is a different legal basis from everything else recorded so far - not a parking order, not a PSPO, not a landowner's conditions of entry, but local law.\n\nThe Authority is careful to distinguish stopping from staying: pulling into a lay-by to admire the view and have a cup of tea is fine. Sleeping there is not. Motorhome users are directed to designated campsites.\n\nIt also publishes a Coach Driver and Motorhome Guide map, and warns that vehicle size puts some roads off limits and that satellite navigation should not be relied on.",
+  "notes": "IMPORTANT AND WIDELY MISUNDERSTOOD. Dartmoor is one of the very few places in England where wild camping is legally permitted - but for TENTS ONLY, pitched away from roads and attractions. That right does not extend to vehicles at all. People routinely assume Dartmoor's wild camping permission covers sleeping in a van. It does not, and the prohibition is a byelaw rather than a parking rule, so it applies at the roadside as well as in car parks.\n\nFirst confirmed byelaw in the dataset. That takes the instrument count to six: off-street parking orders, on-street TROs, experimental TROs, PSPOs, opening hours, landowner policy - and now byelaws. The original scoping assumed one.",
+  "open_questions": [
+    "Which byelaws specifically, and from when? The Authority cites them without naming them.",
+    "How are they enforced, and what is the penalty? A byelaw breach is a criminal matter rather than a PCN.",
+    "Does the Authority run any car park where motorhomes may stay? Nothing found suggests so.",
+    "Is the same true of the Duchy of Cornwall and commons land within the park, which have separate ownership?"
+  ],
+  "sites": [
+    {
+      "name": "Roadside and lay-bys throughout Dartmoor National Park",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "Overnight sleeping in a vehicle at the roadside is prohibited by byelaw. Stopping is fine - the Authority explicitly permits pulling into a lay-by for the view and a cup of tea. It is sleeping that is caught, and it is caught anywhere in the park, not only in car parks."
+    },
+    {
+      "name": "All Dartmoor National Park car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "Same byelaw prohibition. Users are directed to designated campsites that accept motorhomes."
+    },
+    {
+      "name": "Wild camping rights (tents only)",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "Recorded because the confusion is so common. Dartmoor permits wild camping in TENTS, pitched away from roads and attractions, with no large groups. That right does not extend to vehicles. Having a legal right to wild camp on Dartmoor on foot does not mean you may sleep in a van there."
+    }
+  ]
+}
