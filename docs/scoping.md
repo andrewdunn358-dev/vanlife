@@ -102,6 +102,10 @@ Built, ran, answered its question. The drive-test data is not dense enough off t
 **Phase 1b — Legality layer is now the first product phase.**
 Formerly phases 2 and 3. This is the only remaining differentiator and should be built next, before solar and before POIs.
 
+**Revised again after desk research, 26 July 2026 — see [legality-research.md](legality-research.md).** Lead with *provision*, not prohibition: designated overnight sites are published willingly by authorities, stable, legally safe to report, and number in the low hundreds rather than thousands. Prohibition becomes a secondary layer. The hostility index falls out of the ratio between them.
+
+Key structural finding: overnight restrictions are imposed through at least five different instruments — off-street parking orders, on-street TROs, experimental TROs, PSPOs, and simply changing car park opening hours. The original PSPO-scraper plan would have caught almost none of them.
+
 **Phase 2 — D-TRO integration**
 Register for API access, sync England data. PostGIS enters here. UI must be explicit about coverage gaps rather than implying completeness.
 
@@ -122,7 +126,8 @@ Formalise what VanOS already consumes. Keys, rate limits, terms of use, provenan
 - Working name and domain
 - Free vs paid split — assumption: POIs free, legality/solar/offline packs paid. Consider inverting: offline packs and routing are the clean paid features, since they carry no accuracy liability.
 - Whether PSPO scraping is per-council bespoke or a generalisable pipeline
-- Whether the legality layer covers PSPOs only or all instrument types (see section 4)
+- ~~Whether the legality layer covers PSPOs only or all instrument types~~ **Answered:** at least five instruments, PSPOs are a minority. See legality-research.md.
+- Whether prohibition data is worth collecting at all given ten-week reversal cycles, or whether provision plus hostility index is the whole product
 - Solo build or bring in help for the app layer
 - Whether to court landowners early (Britstops-style) or stay pure discovery
 - API pricing — free tier, or paid from the start

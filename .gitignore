@@ -1,8 +1,12 @@
-# Data never goes in git. Not the raw CSVs, not the intermediates,
+# Bulk data never goes in git. Not the raw CSVs, not the intermediates,
 # not the tiles. Git LFS is not the answer either - you will hit the
 # quota and the bandwidth billing fast.
 data/
 *.csv
+
+# Exception: small hand-maintained reference data belongs in version
+# control. It is the research itself, not a build artefact.
+!data/authorities-priority.csv
 *.geojsonl
 *.pmtiles
 *.mbtiles
