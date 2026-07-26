@@ -1,71 +1,183 @@
 {
   "authority": "South Ayrshire Council",
+  "authority_type": "unitary",
   "nation": "Scotland",
   "researched_on": "2026-07-26",
-  "researched_by": "desk research, not verified",
+  "researched_by": "the council's own news releases and tourism site",
   "source_format": "html",
   "sources": [
-    "https://www.south-ayrshire.gov.uk/article/28078/Council-to-trial-overnight-parking-for-campervans"
+    "https://www.south-ayrshire.gov.uk/article/28078/Council-to-trial-overnight-parking-for-campervans",
+    "https://www.south-ayrshire.gov.uk/article/39559/Campervan-parking-scheme-expanded-for-2022",
+    "https://south-ayrshire.gov.uk/article/59258/Motorhome-parking-scheme-trial-extended-in-Troon-and-returning-to-Ballantrae",
+    "https://destinationsouthayrshire.co.uk/stay-posts/campervan-parking-scheme/"
   ],
-  "policy_summary": "Trial scheme providing designated overnight campervan bays to encourage tourism. Provision-first example - useful contrast with Cornwall and Conwy.",
+  "policy_summary": "The most developed provision found anywhere so far, and the only one that has grown rather than shrunk. Ayr and Girvan started as a 2021 trial at GBP5 for a single night; both were made PERMANENT in 2022, the fee went to GBP10, and the stay went to three consecutive nights. Further sites at Ballantrae, Prestwick and Troon followed, some seasonal.\n\nThe fee includes waste disposal with chemical facilities, and Girvan has toilets and a washroom. Managed by the Ayrshire Roads Alliance.\n\nAlongside the bays the council introduced no-overnight-parking signage on Ayr Esplanade and on Louisa Drive and Harbour Street in Girvan, with fixed penalties. Provision and restriction arriving together and deliberately - somewhere to go, and enforcement where you should not.",
+  "notes": "The reason given for the original scheme is worth recording: chemical toilet waste was being emptied into Girvan harbour and into public toilets, and there were 50 campervans in Girvan on one day. Provision was the answer to a pollution problem, not a tourism initiative - and it worked well enough to be made permanent and expanded twice.\n\nCompare Pembrokeshire, where each revision made the scheme smaller. This is the opposite trajectory and the strongest single argument in the dataset that provision reduces the problem it is meant to address.",
+  "open_questions": [
+    "Are the seasonal Troon and Ballantrae sites still running in 2026?",
+    "Current fee - GBP10 was the 2022 figure; the tourism page now says 'a fee per night'.",
+    "Full site list for 2026. Ayrshire Roads Alliance holds the definitive one."
+  ],
   "sites": [
     {
       "name": "Knockcushan Street Car Park, Girvan",
       "kind": "provision",
-      "lat": 55.24339,
-      "lon": -4.85921,
-      "instrument": "policy_only",
-      "status": "unknown",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
       "bays": 20,
-      "price_per_night": 5.0,
+      "price_per_night": 10.0,
       "currency": "GBP",
-      "max_nights": 1,
+      "max_nights": 3,
       "return_gap_hours": 24,
+      "payment_methods": [
+        "cashless"
+      ],
       "requires_self_contained": false,
+      "facilities": [
+        "waste disposal including chemical",
+        "toilets",
+        "washroom (charges apply)"
+      ],
       "prohibits": [
         "tents",
         "awnings",
-        "generators"
+        "generators run outside the van"
       ],
       "excludes_vehicle_types": [
         "caravan"
       ],
+      "enforcement": "fpn",
       "last_verified": "2026-07-26",
-      "confidence": "low",
-      "notes": "Announced as a trial; start date was TBC in the source. Verify whether it ran and is still running.",
-      "search_hint": "Knockcushan Street, Girvan",
-      "geocoded_by": "nominatim",
-      "geocode_precision": "water",
-      "geocode_band": "area",
-      "geocode_checked": false
+      "confidence": "high",
+      "search_hint": "Knockcushan Street car park, Girvan",
+      "notes": "Permanent since 2022, having started as a 2021 trial. The best-equipped site in the dataset - toilets and a washroom as well as chemical waste disposal. Fixed penalties for non-campervans using the bays."
     },
     {
       "name": "Blackburn Road Car Park, Ayr",
       "kind": "provision",
-      "instrument": "policy_only",
-      "status": "unknown",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "in_force",
       "bays": 20,
-      "price_per_night": 5.0,
+      "price_per_night": 10.0,
       "currency": "GBP",
-      "max_nights": 1,
+      "max_nights": 3,
       "return_gap_hours": 24,
-      "requires_self_contained": false,
+      "payment_methods": [
+        "cashless"
+      ],
+      "facilities": [
+        "waste disposal including chemical",
+        "nearby public toilets"
+      ],
       "prohibits": [
         "tents",
         "awnings",
-        "generators"
+        "generators run outside the van"
       ],
+      "excludes_vehicle_types": [
+        "caravan"
+      ],
+      "enforcement": "fpn",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "search_hint": "Blackburn Road car park, Ayr",
+      "notes": "Permanent since 2022. A councillor predicted 'carnage' and called the decision in for scrutiny; it was pushed through and made permanent the following year."
+    },
+    {
+      "name": "The Vennel Car Park, Ballantrae",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "unknown",
+      "max_nights": 3,
       "excludes_vehicle_types": [
         "caravan"
       ],
       "last_verified": "2026-07-26",
       "confidence": "low",
-      "search_hint": "Blackburn Road, Ayr",
+      "search_hint": "The Vennel car park, Ballantrae",
+      "notes": "Seasonal, motorhomes only. Ran April to 30 September in 2022 and 2023; 2026 status unconfirmed."
+    },
+    {
+      "name": "Harbour Road (Ballast Bank) Car Park, Troon",
+      "kind": "provision",
       "lat": null,
-      "lon": null
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "unknown",
+      "max_nights": 3,
+      "excludes_vehicle_types": [
+        "caravan"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Ballast Bank car park, Troon",
+      "notes": "Added 2023, seasonal to 30 September."
+    },
+    {
+      "name": "North Shore Car Park, Troon (near ferry terminal)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "unknown",
+      "bays": 5,
+      "max_nights": 3,
+      "excludes_vehicle_types": [
+        "caravan"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "North Shore car park, Troon",
+      "notes": "Reduced from ten bays to five for 2023. Seasonal."
+    },
+    {
+      "name": "North Shore Road Car Park, Barassie",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "unknown",
+      "max_nights": 3,
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "North Shore Road car park, Barassie, Troon",
+      "notes": "THE ONLY SOUTH AYRSHIRE SITE THAT ACCEPTS CARAVANS. Near the toilet block. Every other site is motorhomes and campervans only."
+    },
+    {
+      "name": "Links Road Car Park, Prestwick",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "status": "unknown",
+      "max_nights": 3,
+      "excludes_vehicle_types": [
+        "caravan"
+      ],
+      "last_verified": "2026-07-26",
+      "confidence": "low",
+      "search_hint": "Links Road car park, Prestwick",
+      "notes": "Opened April 2022 as a seasonal site. 2026 status unconfirmed."
+    },
+    {
+      "name": "Ayr Esplanade, Louisa Drive and Harbour Street Girvan, and nearby streets",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "on_street_tro",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "parking",
+      "status": "in_force",
+      "enforcement": "fpn",
+      "last_verified": "2026-07-26",
+      "confidence": "high",
+      "notes": "Signage introduced at the same time as the bays, to enforce no overnight parking on the seafront streets. Fixed penalties. The pairing is deliberate: somewhere legitimate to go, and enforcement where you should not."
     }
-  ],
-  "areas": [
-    "South Ayrshire"
   ]
 }
