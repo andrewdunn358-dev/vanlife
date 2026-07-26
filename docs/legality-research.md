@@ -99,9 +99,41 @@ found at least these dimensions:
 - `height_barrier_m` — Gwynedd flags car parks larger vans cannot enter
 
 ### Vehicle-dependent answers
+
 Whether a site is usable depends on the *vehicle*, not just the place.
-Self-contained exemptions and height barriers mean the app needs the
-user's van spec before it can answer. Design for that from the start.
+Implemented in [`../scripts/vehicle_match.py`](../scripts/vehicle_match.py).
+
+**Definitions disagree, and that is the whole problem.** Cornwall's draft
+order catches any vehicle *adapted for sleeping* even if also used for
+other purposes - a Transit with a mattress. Other orders target *motor
+caravans*, a DVLA body type on the V5C, which many self-builds are not.
+The same van is caught by one and not the other, so the profile must
+carry both what the V5C says and what the vehicle actually is.
+
+`self_contained` is not a boolean either. Cornwall's test is an onboard
+toilet plus sealed containers for wastewater and sewage. That is a set of
+capabilities, and in the UK it is self-declared - there is no
+certification scheme.
+
+**The matcher never returns a bare yes or no.** It returns findings with
+reasons and a severity of blocks / caution / info, so the UI shows the
+reasoning rather than a verdict. That is the same provenance-not-verdict
+principle as section 9 of the scoping doc, and it is what keeps this
+informational rather than advisory.
+
+### Provision your vehicle cannot use is not provision
+
+Running the matcher surfaced this and the desk research had missed it.
+
+A self-build Transit is blocked from Cornwall's ordinary car parks
+(adapted for sleeping) **and** from the ten designated alternatives (not
+self-contained). Cornwall's regime therefore excludes self-builds
+entirely, while appearing generous on paper.
+
+**Consequence: the hostility index must be scored per vehicle, not per
+authority.** "Cornwall provides 10 sites" is true and useless to half the
+market. Personalising it also makes it a feature no competitor can copy
+without the same schema.
 
 ## 5. Never key on authority identity
 
