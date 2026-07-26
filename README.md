@@ -160,6 +160,19 @@ Do not use `curl ... | tar xz --strip-components=1` once you have started
 correcting data — it overwrites everything, including coordinates you have
 verified by hand.
 
+The trade-off is that records added or corrected in the repo cannot reach
+an install that already has that file. To pull them in without losing your
+geometry:
+
+```bash
+python3 scripts/merge_records.py          # dry run
+python3 scripts/merge_records.py --write
+```
+
+Repo content wins for the research, local wins for coordinates. Matched on
+site name. Local-only records that carry coordinates are kept rather than
+discarded.
+
 ## Running it
 
 Everything runs in one container so the host is disposable. Currently a
