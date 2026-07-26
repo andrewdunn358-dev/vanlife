@@ -237,6 +237,24 @@ coverage collapses to motorways and towns.
 If it is motorways only, the signal layer is not the wedge and the
 scoping needs revisiting before anything else is built.
 
+## Checks
+
+Run these after changing data. The first two need no network.
+
+```bash
+python3 scripts/validate_sites.py      # schema, provenance, missing fields
+python3 scripts/check_geography.py     # are the pins where the site says?
+```
+
+`check_geography.py` exists because Cornwall showed two pins in
+Northumberland and nothing caught it. Coordinates and county assignment
+were being validated separately, so a record could be internally
+consistent and still 600km from where the page put it. It asks
+postcodes.io which county each coordinate is actually in and compares.
+
+It also reports repeated identical coordinates, which is how five test
+values that had leaked into the data were found.
+
 ## Rules
 
 **Data never goes in git.** Not the CSVs, not the tiles. Not via LFS
