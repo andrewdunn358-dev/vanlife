@@ -176,7 +176,12 @@ def vehicle_picker():
 
     tail = ""
     if credits:
-        tail = ('<p class="vcredit">Vehicle images: ' + " &middot; ".join(credits) + "</p>")
+        sources = {c.split(": ", 1)[1] for c in credits}
+        if len(sources) == 1:
+            tail = f'<p class="vcredit">Vehicle images: {sources.pop()}</p>'
+        else:
+            tail = ('<p class="vcredit">Vehicle images: '
+                    + " &middot; ".join(credits) + "</p>")
 
     grid = ('<div class="vgrid" role="radiogroup" aria-label="Vehicle type">\n'
             + "\n".join(cards) + "\n</div>" + tail)
