@@ -208,8 +208,11 @@ MAP_JS = """<script>
     data.features.forEach(function (f) {
       var el = document.createElement("div");
       var permit = f.properties.kind === "provision";
-      el.style.cssText = "width:15px;height:15px;border:2px solid #FBFAF8;cursor:pointer;"
-        + "background:" + (permit ? "#1F5C3D" : "#A8620F");
+      var n = f.properties.count || 1;
+      var size = Math.min(30, 13 + Math.round(Math.sqrt(n) * 3));
+      el.style.cssText = "width:" + size + "px;height:" + size + "px;"
+        + "border:2px solid #FBFAF8;cursor:pointer;background:"
+        + (permit ? "#1F5C3D" : "#A8620F");
       new maplibregl.Marker({ element: el })
         .setLngLat(f.geometry.coordinates)
         .setPopup(new maplibregl.Popup({ offset: 14, closeButton: false })
@@ -321,18 +324,62 @@ def site_geojson(records):
     return {"type": "FeatureCollection", "features": feats}, awaiting
 
 
+def authority_geojson(records):
+    """One marker per authority, not per site.
+
+    Site-level pins do not scale - 428 authorities with a handful of
+    records each would be thousands of overlapping markers. At authority
+    level the map answers a different and more useful question: where is
+    provision, and where is there only restriction.
+    """
+    feats, unplaced = [], []
+    for d in records:
+        pts = [(s["lat"], s["lon"]) for s in d["sites"] if s.get("lat") is not None]
+        if not pts:
+            unplaced.append(d["authority"])
+            continue
+        lat = sum(p[0] for p in pts) / len(pts)
+        lon = sum(p[1] for p in pts) / len(pts)
+        prov = sum(1 for s in d["sites"] if s.get("kind") == "provision")
+        rest = len(d["sites"]) - prov
+        posture = "provides" if prov else "restricts"
+        feats.append({
+            "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": [lon, lat]},
+            "properties": {
+                "kind": "provision" if prov else "restriction",
+                "posture": posture,
+                "count": len(d["sites"]),
+                "popup": (f"<b>{esc(d['authority'])}</b><br>"
+                          f"{prov} where you can stay<br>"
+                          f"{rest} restricted<br>"
+                          f"<a href='authority/{slug(d['authority'])}.html'>see the records</a>"),
+            },
+        })
+    return {"type": "FeatureCollection", "features": feats}, unplaced
+
+
 def map_block(gj, awaiting):
     """A map when there is something to map, an honest to-do list when not."""
     if gj["features"]:
         n = len(gj["features"])
         centre = gj["features"][0]["geometry"]["coordinates"] if n == 1 else [-3.2, 54.6]
         zoom = 12 if n == 1 else 5
+        n = len(gj["features"])
+        authority_level = "posture" in (gj["features"][0]["properties"])
         out = ['<div class="map-wrap"><div id="map"></div>',
-               '<p class="map-key">',
-               '<span><span class="dot p"></span>you can stay</span>',
-               '<span><span class="dot r"></span>you cannot stay</span>']
+               '<p class="map-key">']
+        if authority_level:
+            out += ['<span><span class="dot p"></span>provides somewhere to stay</span>',
+                    '<span><span class="dot r"></span>restricts only</span>',
+                    '<span>marker size shows how many records</span>']
+        else:
+            out += ['<span><span class="dot p"></span>you can stay</span>',
+                    '<span><span class="dot r"></span>you cannot stay</span>']
         if awaiting:
-            out.append(f'<span class="gap">{len(awaiting)} more not yet located</span>')
+            label = ("authorities with no located records" if authority_level
+                     else "more not yet located")
+            out.append(f'<span class="gap">{len(awaiting)} {label}</span>')
         out.append("</p></div>")
         out.append(MAP_JS % (json.dumps(gj), json.dumps(centre), zoom))
         return "\n".join(out), True
@@ -479,8 +526,9 @@ def index_page(records, out_dir):
     prov = sum(1 for d in records for s in d["sites"] if s.get("kind") == "provision")
     mapped = sum(1 for d in records for s in d["sites"] if s.get("lat") is not None)
 
-    gj, awaiting = site_geojson(records)
-    mapping, has_map = map_block(gj, awaiting)
+    gj, unplaced = authority_geojson(records)
+    _sgj, awaiting = site_geojson(records)
+    mapping, has_map = map_block(gj, unplaced)
 
     body = [HEAD.format(
         title="Overnight - where you can stay in a van in the UK",
