@@ -63,6 +63,18 @@ def coord_rank(site):
     return (checked, source, band)
 
 
+def placeholder_pin(site):
+    """A whole number in both axes is a stand-in somebody meant to revisit.
+
+    Same test as check_locations.py. Worth repeating here because this is
+    where a stale local record gets carried forward for another year.
+    """
+    lat, lon = site.get("lat"), site.get("lon")
+    if lat is None or lon is None:
+        return False
+    return round(lat, 3) == round(lat) and round(lon, 3) == round(lon)
+
+
 def describe(site):
     if site is None or site.get("lat") is None:
         return "no pin"
@@ -125,7 +137,17 @@ def merge_file(local_path, repo_path):
         if o.get("lat") is not None or o.get("geocode_checked"):
             # local-only record with real work in it - do not discard
             repo["sites"].append(o)
-            notes.append(f"kept local-only record with geometry: {n}")
+            if placeholder_pin(o):
+                notes.append(
+                    f"STALE? local-only record on a placeholder pin: {n}"
+                    f"\n      {describe(o)} - whole numbers are a stand-in, "
+                    "not a location."
+                    "\n      Kept, because this tool never deletes your data. "
+                    "If the repo has since"
+                    "\n      split this into properly located records, delete "
+                    "it from the local file.")
+            else:
+                notes.append(f"kept local-only record with geometry: {n}")
         else:
             notes.append(f"dropped local-only record: {n}")
 
