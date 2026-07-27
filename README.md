@@ -175,13 +175,40 @@ discarded.
 
 ## Running it
 
-Everything runs in one container so the host is disposable. Currently a
+Two containers, and they behave differently on purpose. Currently a
 ProLiant ML110 Gen9 (2 cores, 8GB) under DSM; nothing here depends on
 that.
 
+### The site
+
+```bash
+docker compose up -d site   # http://<nas>:24721
+```
+
+Long-running, `restart: unless-stopped`, so it survives a reboot and a
+closed terminal. Stock `python:3.12-alpine` with the project bind-mounted
+— the build and the server are stdlib only, so there is no image to
+build and nothing to rebuild when the code changes.
+
+It runs `serve.py`, which watches `data/sites`, `scripts` and
+`site-assets`, so `./scripts/update.sh` is the whole update: the files
+change, the site rebuilds within a second, no separate build step and no
+restart. `SITE_PORT` in `.env` moves the published port if 24721 is taken.
+
+```bash
+docker compose logs -f site       # what it is doing
+docker compose ps                 # health comes from fetching a built page
+docker compose restart site
+```
+
+### The ETL
+
+One-shot — it exits when you leave it, so it is *meant* to be absent from
+`docker ps`.
+
 ```bash
 cp .env.example .env        # set DATA_DIR to a real shared folder
-docker compose build        # builds Tippecanoe from source, takes a while
+docker compose build etl    # builds Tippecanoe from source, takes a while
 docker compose run --rm etl
 ```
 
@@ -200,16 +227,18 @@ python3 scripts/ofcom_to_geojsonl.py \
 ./scripts/build_tiles.sh data/interim/4g-2025.geojsonl data/out/signal-4g.pmtiles
 ```
 
-### Working on the site
+### Working on the site without Docker
 
 ```bash
 python3 scripts/serve.py    # http://localhost:24721
 ```
 
-Builds, serves, and rebuilds whenever anything in `data/sites`, `scripts`
-or `site-assets` changes. Edit a record, reload the browser, see it. Serves on
-port 24721; `--port 0` for any free port. Stdlib only, so it runs
-on DSM without installing anything.
+The same server the `site` container runs. Builds, serves, and rebuilds
+whenever anything in `data/sites`, `scripts` or `site-assets` changes.
+Edit a record, reload the browser, see it. Serves on port 24721; `--port 0`
+for any free port. Stdlib only, so it runs on DSM without installing
+anything. Ctrl-C to stop — and if you background it by hand rather than
+using the container, `nohup ... &`, or it dies with the terminal.
 
 Then copy `signal-4g.pmtiles` next to `viewer/index.html`, serve the
 directory with `python3 -m http.server 8000`, and look at it.

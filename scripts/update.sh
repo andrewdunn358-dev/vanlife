@@ -33,8 +33,18 @@ for dir in scripts docs site-assets; do
     fi
 done
 
+# compose.yaml is overwritten like any other tracked file, so local edits
+# to it are lost on every update. Keep a copy of the old one when it
+# actually differs, rather than letting a hand-added service disappear
+# silently - that is exactly how the site stopped being served once.
 for f in README.md compose.yaml .gitignore .env.example; do
-    [ -f "$TMP/$f" ] && cp "$TMP/$f" "$ROOT/$f"
+    [ -f "$TMP/$f" ] || continue
+    if [ "$f" = "compose.yaml" ] && [ -f "$ROOT/$f" ] \
+       && ! cmp -s "$TMP/$f" "$ROOT/$f"; then
+        cp "$ROOT/$f" "$ROOT/$f.local-backup"
+        echo "  your compose.yaml differed - kept it as compose.yaml.local-backup"
+    fi
+    cp "$TMP/$f" "$ROOT/$f"
 done
 echo "  updated top-level files"
 

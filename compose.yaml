@@ -1,15 +1,54 @@
-# Phase 1 needs exactly one container: somewhere to run Tippecanoe.
-# No database yet - that arrives with Phase 2 (D-TRO).
+# Two services, and they are nothing like each other.
 #
-#   docker compose build
-#   docker compose run --rm etl
+#   site  long-running. Serves the site on 24721 and comes back after a
+#         reboot. Start it once and forget it:
 #
-# Then inside the container:
+#             docker compose up -d site
+#
+#   etl   one-shot. Somewhere to run Tippecanoe. Exits when you leave it,
+#         which is the intention - do not expect it in `docker ps`:
+#
+#             docker compose build etl
+#             docker compose run --rm etl
+#
+# Then inside the etl container:
 #   python3 scripts/inspect_csv.py data/raw/ofcom_4g.csv
 #   python3 scripts/csv_to_geojsonl.py data/raw/ofcom_4g.csv data/interim/4g.geojsonl --keep ...
 #   ./scripts/build_tiles.sh data/interim/4g.geojsonl data/out/signal-4g.pmtiles
+#
+# No database yet - that arrives with Phase 2 (D-TRO).
 
 services:
+  site:
+    # Stock Python, no Dockerfile: build_site.py and serve.py are stdlib
+    # only, so there is nothing to install and nothing to rebuild when the
+    # code changes. Pinned to a minor version rather than `latest` so a
+    # NAS reboot cannot pull a different interpreter under the site.
+    image: python:3.12-alpine
+    working_dir: /work
+    # The whole project, writable: serve.py rebuilds into site/ on every
+    # change. That is also what makes update.sh enough on its own - it
+    # rewrites scripts/ and data/, serve.py notices within a second and
+    # rebuilds. No separate build step after an update.
+    volumes:
+      - .:/work
+    command: python3 scripts/serve.py --port 24721
+    ports:
+      - "${SITE_PORT:-24721}:24721"
+    # unless-stopped, not always: if you deliberately stop it, a reboot
+    # should not quietly start it again.
+    restart: unless-stopped
+    healthcheck:
+      # A built page, not just an open port - the port answers while the
+      # build is broken, and a site serving nothing should read unhealthy.
+      test: ["CMD", "python3", "-c",
+             "import urllib.request as u; u.urlopen('http://localhost:24721/index.html').read(1)"]
+      interval: 60s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+    mem_limit: 512m
+
   etl:
     build:
       context: .

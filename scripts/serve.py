@@ -10,11 +10,15 @@ a stylesheet, reload the browser, see it.
 
 Watches data/sites, scripts and site-assets. Stdlib only, so it runs on
 DSM's Python without installing anything. Ctrl-C to stop.
+
+Also the long-running server behind the `site` service in compose.yaml,
+which is why it handles SIGTERM and serves requests in threads.
 """
 import argparse
 import functools
 import http.server
 import os
+import signal
 import socketserver
 import subprocess
 import sys
@@ -72,6 +76,18 @@ def watcher(interval, stop):
         build()
 
 
+class ThreadingHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
+    """One request at a time is fine for editing; it is not fine for a
+    server that stays up.
+
+    The plain TCPServer handles one connection at a time, so a browser
+    holding a connection open - or one stalled tile request - blocks
+    every other request until it finishes. Daemon threads so a hung
+    request cannot keep the process alive at shutdown.
+    """
+    daemon_threads = True
+
+
 class Quiet(http.server.SimpleHTTPRequestHandler):
     """Serves from an explicit directory.
 
@@ -109,9 +125,10 @@ def main():
 
     root = os.path.abspath(args.dir)
     handler = functools.partial(Quiet, directory=root)
-    socketserver.TCPServer.allow_reuse_address = True
+    Server = ThreadingHTTPServer
+    Server.allow_reuse_address = True
     try:
-        httpd = socketserver.TCPServer(("", args.port), handler)
+        httpd = Server(("", args.port), handler)
     except OSError as e:
         sys.exit(f"Could not bind port {args.port}: {e}\nTry --port 0.")
     port = httpd.server_address[1]
@@ -119,13 +136,20 @@ def main():
     stop = threading.Event()
     threading.Thread(target=watcher, args=(args.interval, stop), daemon=True).start()
 
+    # Docker stops a container with SIGTERM, not Ctrl-C. Without this the
+    # process ignores it, waits out the ten second grace period and gets
+    # SIGKILLed, so every restart of the site service takes ten seconds.
+    signal.signal(signal.SIGTERM, lambda *_: threading.Thread(
+        target=httpd.shutdown, daemon=True).start())
+
     print(f"\n  http://localhost:{port}")
     print(f"  watching {', '.join(WATCH)} - edit and reload\n")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
-        print("\nstopped")
+        pass
     finally:
+        print("\nstopped")
         stop.set()
         httpd.server_close()
 
