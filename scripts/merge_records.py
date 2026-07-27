@@ -1,19 +1,29 @@
 #!/usr/bin/env python3
 """
-Take the repo's research records, keep your locally verified coordinates.
+Take the repo's research records, keep the better coordinates.
 
 update.sh never overwrites data/sites/*.json, which is what protects
 coordinates you have checked by hand. The cost is that records added or
 corrected in the repo cannot reach an install that already has the file.
 
-This resolves that: repo content wins for the research, local wins for
-geometry. Sites are matched on name.
+This resolves that: repo content wins for the research, and geometry is
+decided per record by which pin is better evidenced. Sites are matched on
+name.
 
     python3 scripts/merge_records.py
     python3 scripts/merge_records.py --write
 
 Nothing is written without --write, and it reports every record it would
-add, every coordinate it would carry over, and anything it cannot match.
+add, every coordinate it would take from either side, and anything it
+cannot match.
+
+Note on the rule change: this used to keep the local pin unconditionally,
+which was right when local coordinates were hand-checked and the repo had
+none. Once the repo carried 200-odd researched pins that rule started
+overwriting good coordinates with the geocoder guesses it had replaced -
+an install could sit on a pin in the middle of a reservoir forever, and
+running this again would reapply it. A pin you have checked yourself
+still always wins.
 """
 import argparse
 import glob
@@ -26,9 +36,44 @@ import tempfile
 
 REPO = "https://github.com/andrewdunn358-dev/vanlife/archive/refs/heads/main.tar.gz"
 
-# Fields that belong to this install, not to the repo.
-LOCAL_FIELDS = ("lat", "lon", "geocoded_by", "geocode_precision", "geocode_band",
-                "geocode_checked", "osm_id", "match_score", "postcode")
+# The geometry block. These move together or not at all - carrying a lat
+# from one side and the provenance from the other would make the record
+# lie about where its pin came from.
+GEOMETRY = ("lat", "lon", "geocoded_by", "geocode_precision", "geocode_band",
+            "geocode_checked", "geocode_source", "osm_id", "match_score",
+            "postcode")
+
+BAND_RANK = {"precise": 3, "nearby": 2, "approximate": 2, "area": 1}
+
+
+def coord_rank(site):
+    """How much a pin is worth believing.
+
+    Checked by a human beats everything. After that it is who placed it:
+    a car park found by name in a source beats a geocoder that was handed
+    a place name and returned whatever it matched - a reservoir, a
+    village centre, an administrative boundary.
+    """
+    if site is None or site.get("lat") is None:
+        return (0, 0, 0)
+    checked = 2 if site.get("geocode_checked") else 0
+    by = (site.get("geocoded_by") or "").lower()
+    source = 2 if by and by != "nominatim" else 1 if by else 0
+    band = BAND_RANK.get(site.get("geocode_band"), 0)
+    return (checked, source, band)
+
+
+def describe(site):
+    if site is None or site.get("lat") is None:
+        return "no pin"
+    bits = [f"{site['lat']:.5f},{site['lon']:.5f}"]
+    if site.get("geocode_checked"):
+        bits.append("checked")
+    if site.get("geocoded_by"):
+        bits.append(str(site["geocoded_by"]))
+    if site.get("geocode_band"):
+        bits.append(str(site["geocode_band"]))
+    return " ".join(bits)
 
 
 def fetch(dest):
@@ -53,17 +98,26 @@ def merge_file(local_path, repo_path):
     local = json.load(open(local_path, encoding="utf-8"))
     have = {s.get("name"): s for s in local.get("sites", [])}
 
-    kept = added = 0
+    kept = added = upgraded = 0
     for s in repo["sites"]:
         mine = have.get(s.get("name"))
         if mine is None:
             added += 1
             continue
-        for f in LOCAL_FIELDS:
-            if f in mine and mine[f] is not None:
-                s[f] = mine[f]
-        if mine.get("lat") is not None:
-            kept += 1
+        if coord_rank(mine) >= coord_rank(s):
+            # Local pin is as good or better - take the whole block.
+            for f in GEOMETRY:
+                if f in mine and mine[f] is not None:
+                    s[f] = mine[f]
+                elif f in s and f not in mine:
+                    s.pop(f, None)
+            if mine.get("lat") is not None:
+                kept += 1
+        else:
+            upgraded += 1
+            notes.append(f"better pin from repo: {s.get('name')}"
+                         f"\n      yours: {describe(mine)}"
+                         f"\n       repo: {describe(s)}")
 
     orphans = [n for n in have if n not in {s.get("name") for s in repo["sites"]}]
     for n in orphans:
@@ -78,7 +132,9 @@ def merge_file(local_path, repo_path):
     if added:
         notes.append(f"{added} record(s) new from repo")
     if kept:
-        notes.append(f"{kept} coordinate(s) carried over")
+        notes.append(f"{kept} coordinate(s) kept from this install")
+    if upgraded:
+        notes.append(f"{upgraded} coordinate(s) taken from the repo")
     return repo, notes
 
 

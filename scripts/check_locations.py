@@ -237,7 +237,16 @@ def check(records, online=True, only=None):
                      "sign or a transposed pair")
                 continue
 
-            # 2. A geocoder that admitted it failed. legality-research.md
+            # 2. A round number is not a coordinate. 55.0, -2.0 is a
+            #    placeholder somebody meant to come back to; it lands in
+            #    a field near Hexham and looks like data.
+            if round(lat, 3) == round(lat) and round(lon, 3) == round(lon):
+                flag("high", doc, s, "placeholder coordinate",
+                     f"{lat}, {lon} is a whole number in both axes - that is "
+                     "a stand-in, not a surveyed point")
+                continue
+
+            # 3. A geocoder that admitted it failed. legality-research.md
             #    section 6c is about exactly this: Nominatim returning the
             #    middle of a reservoir for a car park beside it.
             if s.get("geocoded_by") == "nominatim":
