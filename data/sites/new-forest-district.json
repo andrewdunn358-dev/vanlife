@@ -1,0 +1,125 @@
+{
+  "authority": "New Forest District Council",
+  "authority_type": "district",
+  "parent_authority": "Hampshire County Council",
+  "nation": "England",
+  "researched_on": "2026-07-27",
+  "researched_by": "the council's own parking pages and, decisively, the text of the District of New Forest (Off Street Parking Places) Order 2005 and its 2026 schedules",
+  "source_format": "pdf_text",
+  "sources": [
+    "https://www.newforest.gov.uk/parking",
+    "https://www.newforest.gov.uk/article/1255/Parking-regulations",
+    "https://newforest.gov.uk/media/486/off-street-parking-places-order-2005/pdf/principal_order_after_amendment_introduction_of_electric_vehicle_charging_points_from_17_January_20.pdf",
+    "https://newforest.gov.uk/media/2189/Schedule-1-Amenity-Parking-Places-to-which-charges-apply/pdf/Schedule_1_-__Amenity_Parking_Places_2026.pdf",
+    "https://newforest.gov.uk/media/2188/Schedule-2-Town-and-Village-Car-Parks-to-which-charges-apply/pdf/Schedule_2_town_and_village_car_parks_new_tar_-_2026.pdf",
+    "https://newforest.gov.uk/media/2186/Schedule-3-Parking-Places-to-Which-Charges-do-not-Apply/pdf/Schedule_3_-_parking-places-no-charges_May_20_-_2026.pdf",
+    "https://newforest.gov.uk/media/2879/ANNUAL-PARKING-ENFORCEMENT-REPORT/pdf/Annual_enforcement_report_2023_to_2024.pdf",
+    "https://newforest.gov.uk/article/1233/Coastal-parking",
+    "https://www.newforest.gov.uk/article/1234/Town-and-village-parking",
+    "https://newforest.gov.uk/article/1015/Council-car-parks",
+    "https://newforest.gov.uk/ParkingConsultation",
+    "https://www.newforestnpa.gov.uk/enjoying/visiting-responsibly/visitor-information/car-parking/",
+    "https://www.advertiserandtimes.co.uk/news/coastal-roads-popular-with-long-stay-motorhomes-set-for-new-9350880/",
+    "https://www.advertiserandtimes.co.uk/news/decision-made-on-one-of-two-coastal-spot-car-parking-schemes-9417575/",
+    "https://moderncampground.com/europe/united-kingdom/hampshire-bans-overnight-campervan-parking-in-keyhaven-to-protect-environment-and-ease-congestion/",
+    "https://www.newmiltontowncouncil.gov.uk/?p=26944"
+  ],
+  "policy_summary": "New Forest District Council runs the town and coastal car parks that the National Park Authority does not - 51 of them, over 6,000 spaces, including the ones a van user would actually consider: Bath Road and Town Quay in Lymington, six at Milford on Sea, three on Marine Drive at Barton on Sea, two at Keyhaven and two at Fordingbridge. There is no provision. The council operates no aire, no motorhome bays, no waste point, and its 2024-25 twenty-year parking strategy consultation was framed around demand, carbon and active travel with no mention of motorhomes at all.\n\nThe restriction is unusually clean, and it is a restriction on SLEEPING rather than on PARKING. Article 12 of the District of New Forest (Off Street Parking Places) Order 2005 reads: 'No person shall without the prior written permission of the Council use any part of a parking place or any vehicle including a caravan left in a parking place: (a) for sleeping or camping purposes'. That applies to every council car park in the district, at all hours, to any vehicle - it catches a car as readily as a motorhome, because the trigger is the act rather than the bodywork.\n\nWhat the order does NOT do is ban overnight parking. Maximum stays under Article 7 are long: 20 hours at almost every amenity and long-stay car park including all three Marine Drive car parks at Barton on Sea, all of Milford on Sea, Keyhaven Road and Lymington Town Quay, and a remarkable 72 hours at Bath Road in Lymington. Charging hours are 06:00 to 22:00 from 1 April to 30 September and 08:00 to 18:00 from 1 October to 31 March, so the overnight hours are free in any case. The practical position is therefore precise and worth stating carefully: leaving a van parked in a New Forest District car park overnight is within the order; being asleep in it is not.\n\nOther articles that bite on van users: Article 6 forbids a vehicle drawing a trailer from waiting unless the trailer is disconnected; Article 5 makes it a contravention to park a vehicle outside the class specified for that car park, and most sites exclude goods vehicles over 3.5 tonnes (Emsworth Road in Lymington and Pennington drop that to 2 and 1.5 tonnes respectively, which does catch larger motorhomes). Enforcement is civil - PCNs under the 2005 order, 7,166 issued in 2023-24, and the council says it maintains 'early and late cover in addition to daytime patrolling during the summer months'. No contravention is published for the Article 12 sleeping ban specifically, which is the weak joint in the regime.\n\nDirection of travel is tightening, but the tightening is being done by the county rather than the district. On 16 May 2025 Hampshire County Council approved a traffic order for Saltgrass Lane and New Lane at Keyhaven combining pay and display from 10:00 to 18:00 with an outright prohibition on campervans and motor caravans parking between 20:00 and 08:00 - the seafront was described in the decision as 'often now used as ... a camp site or worse'. The parallel scheme for Marine Drive East and West at Barton on Sea, with the same 20:00-08:00 motor caravan ban, was deferred for further work on the business case. Those roads are on-street and belong to Hampshire, not to the district, even though the district owns the car parks a few yards away.",
+  "control_map": {
+    "off-street car parks in towns and on the coast": "New Forest District Council - 51 car parks under the Off Street Parking Places Order 2005, sleeping and camping banned by Article 12",
+    "on-street parking and traffic regulation orders (Keyhaven, Barton on Sea Marine Drive)": "Hampshire County Council as highway authority - the 20:00-08:00 motor caravan ban at Keyhaven is Hampshire's order, not the district's",
+    "the open Forest, its verges and 130+ car parks": "Forestry England - car parks open 04:00-23:00 only, PCN for parking 23:00-04:00 - see forestry-england.json",
+    "planning consent for any new stopover or campsite inside the National Park": "New Forest National Park Authority - see new-forest-national-park.json",
+    "grazing and hand feeding of commoners' stock": "Verderers of the New Forest under their own byelaws"
+  },
+  "sites": [
+    {
+      "name": "All New Forest District Council car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "pcn",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "Article 12 of the District of New Forest (Off Street Parking Places) Order 2005: 'No person shall without the prior written permission of the Council use any part of a parking place or any vehicle including a caravan left in a parking place: (a) for sleeping or camping purposes'. Applies to all 51 council car parks, 24 hours a day. Recorded as applies_to 'all_vehicles' deliberately - the offence is the act of sleeping, not the vehicle type, so a car and a coachbuilt motorhome are caught identically. Note the 'without the prior written permission of the Council' clause: the council can licence an overnight stay and has an existing legal route to run an aire without varying the order. It has not used it.\n\nArticle 6 separately forbids waiting with a trailer connected, and Article 5 makes parking outside the specified vehicle class a contravention."
+    },
+    {
+      "name": "New Forest District Council coastal amenity car parks (Barton on Sea, Milford on Sea, Keyhaven Road, Lymington Town Quay)",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "all_vehicles",
+      "restricts": "parking",
+      "status": "in_force",
+      "max_stay_hours": 20,
+      "time_from": "06:00",
+      "time_to": "22:00",
+      "excludes_vehicle_types": [
+        "goods vehicle over 3.5 tonnes",
+        "passenger vehicle adapted for more than 12 passengers (some sites)"
+      ],
+      "enforcement": "pcn",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Marine Drive East, Marine Drive West and Marine Drive 3 Barton on Sea; Hurst Road East and West, Sturt Pond, Hordle Cliff West and Taddiford Gap at Milford on Sea; Keyhaven Road; Lymington Town Quay long stay",
+      "notes": "Schedule 1 of the 2005 order. Maximum stay 20 hours at every one of these, charging 06:00-22:00 from 1 April to 30 September and 08:00-18:00 from 1 October to 31 March. A 20-hour maximum spans a night, so overnight PARKING here is not a contravention and the overnight hours are unpaid - the Article 12 sleeping ban is what actually prohibits an overnight stay. This is the sharpest parking-versus-sleeping split in the dataset so far and it should not be flattened into 'no overnight parking'.\n\nNo coordinates recorded: outbound geocoding services were blocked this session and no council source publishes coordinates or postcodes for these car parks. Each of the eleven named car parks is individually locatable and should be split out and pinned on a later pass."
+    },
+    {
+      "name": "Bath Road Car Park, Lymington",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "max_stay_hours": 72,
+      "time_from": "06:00",
+      "time_to": "22:00",
+      "excludes_vehicle_types": [
+        "goods vehicle over 3.5 tonnes"
+      ],
+      "enforcement": "pcn",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Bath Road car park, Lymington, Hampshire",
+      "notes": "The outlier. A 72-hour maximum stay, more than three times the district norm and the longest in the order - a vehicle may lawfully sit here for three nights. The Article 12 sleeping and camping ban still applies, so the permission is to leave the van, not to stay in it. Popular with boat owners using the Isle of Wight ferry and the Lymington marinas, which is presumably where the 72 hours comes from.\n\nNo coordinates recorded: geocoding services were unreachable this session. Locatable from the council's own car park listing on a later pass."
+    },
+    {
+      "name": "Keyhaven Short Stay Car Park",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "all_vehicles",
+      "restricts": "parking",
+      "status": "in_force",
+      "max_stay_hours": 3,
+      "return_gap_hours": 2,
+      "time_from": "06:00",
+      "time_to": "22:00",
+      "excludes_vehicle_types": [
+        "goods vehicle over 3.5 tonnes",
+        "passenger vehicle adapted for more than 12 passengers"
+      ],
+      "enforcement": "pcn",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Keyhaven short stay car park, Keyhaven, Milford on Sea",
+      "notes": "Three-hour maximum with no return within two hours - the tightest limit on the New Forest coast and effectively an overnight bar in its own right, independent of Article 12. Sits directly alongside the Hampshire County Council on-street order on Saltgrass Lane and New Lane that bans motor caravans between 20:00 and 08:00. Keyhaven is the one place in the district where the district's car park rules and the county's street rules were tightened in tandem, and the pressure that produced both was campervans overnighting on the salt marsh.\n\nNo coordinates recorded: geocoding services were unreachable this session."
+    }
+  ],
+  "notes": "Where control actually sits, because in the New Forest it almost never sits where a van user assumes. The district council owns the town and coastal car parks and nothing else. It does not own the open Forest - that is Forestry England, 130-plus car parks, open 04:00 to 23:00 with a PCN for anyone 'parking during 11:00pm to 4:00am when the car parks are closed', and that hours restriction is the single most consequential overnight rule in the whole area (it belongs in forestry-england.json, where it is currently missing). It does not own the roads either: on-street restrictions, including the Keyhaven motor caravan ban, are Hampshire County Council's as highway authority. And it has no say over verges, grazing or hand feeding, which are Forestry England's land and the Verderers' byelaws respectively.\n\nThe Article 12 finding is the most transferable thing in this file. A sleeping-and-camping prohibition of exactly this shape sits in a large number of English off-street parking orders inherited from the 1980s and 1990s model wording, and it is far more common than the motorhome-specific overnight bans that make the news. It is also under-enforced: the council's annual enforcement report records 7,166 PCNs for 2023-24 with no breakdown mentioning camping, sleeping, motorhomes or campervans anywhere, and civil enforcement officers are described as working 'early and late cover' rather than through the night. The rule is real; the chance of meeting it at 2am in a coastal car park in October is not high. Both halves of that are worth telling a user.\n\nA trap to avoid when reading Schedule 3: Burley's free car park carries the only 'No waiting between the hours of 24.00 and 06.00' clause in the district, which looks like an overnight ban - but it is confined to the area marked 'coach park' and applies only to passenger vehicles adapted to carry more than 12 passengers. It does not catch motorhomes.\n\nDirection of travel: tightening, but by displacement upward to the county rather than by the district acting. Hampshire approved Keyhaven in May 2025 and deferred Barton on Sea; Forestry England began charging across the New Forest on 20 April 2026 at up to GBP8 a visit. Both push vehicles toward the district's free overnight hours in its coastal car parks, which are precisely the places Article 12 already prohibits sleeping. The district has 51 car parks, a 20-year parking strategy in progress, and an existing power in its own order to permit overnight stays in writing. It is the body best placed in the New Forest to create provision and the one showing least sign of doing so.",
+  "open_questions": [
+    "Coordinates for all named car parks. Nominatim, Overpass and direct HTTP geocoding were all blocked by egress policy this session, and no council source publishes postcodes or coordinates. Eleven coastal car parks plus Bath Road and Town Quay are individually locatable and should be pinned on a later pass.",
+    "Did the Hampshire County Council Marine Drive East and West scheme at Barton on Sea come back after the May 2025 deferral, and is the Keyhaven order (10:00-18:00 charging, 20:00-08:00 motor caravan prohibition) now made and signed? Belongs in a Hampshire County Council file.",
+    "Which contravention code does the council use for an Article 12 sleeping or camping breach, and how many such PCNs are issued a year? The published enforcement report gives no breakdown.",
+    "Did the 2024-25 twenty-year parking strategy, due to complete May 2025, say anything about motorhomes or overnight provision? Only the consultation launch page was reachable; the final strategy document was not found.",
+    "Has the council ever granted the 'prior written permission' Article 12 contemplates - for an event, a rally or a trial stopover? That would be the precedent for provision without needing a new order."
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "authority": "Yorkshire Dales National Park Authority",
+  "authority_type": "national park",
+  "nation": "England",
+  "researched_on": "2026-07-27",
+  "researched_by": "the Authority's own car parks page and camping page, its published Byelaws Relating to Car Parks (29 March 2022) and the two Authority committee reports behind them, its Access Hub per-car-park pages (which publish an OS grid reference for each site), and its online shop",
+  "source_format": "html",
+  "sources": [
+    "https://www.yorkshiredales.org.uk/plan-your-visit/essential-information/car-parks-and-toilets/",
+    "https://www.yorkshiredales.org.uk/wp-content/uploads/sites/13/2022/09/Byelaws-relating-to-Car-Parks-29.3.22.pdf",
+    "https://www.yorkshiredales.org.uk/wp-content/uploads/sites/13/2022/03/Item-14-Byelaws-relating-to-Car-Parks.pdf",
+    "https://www.yorkshiredales.org.uk/wp-content/uploads/sites/13/2021/12/Item-16-Byelaws-relating-to-Car-Parks.pdf",
+    "https://www.yorkshiredales.org.uk/plan-your-visit/where-to-stay/",
+    "https://www.yorkshiredales.org.uk/plan-your-visit/where-to-stay/camping/",
+    "https://www.yorkshiredales.org.uk/plan-your-visit/essential-information/",
+    "https://www.yorkshiredales.org.uk/places/reeth/",
+    "https://www.yorkshiredales.org.uk/wp-content/uploads/sites/13/2025/09/Item-2-Minutes-NPA-24-June-2025.pdf",
+    "https://accesshub.yorkshiredales.org.uk/plan-your-visit/",
+    "https://accesshub.yorkshiredales.org.uk/places/aysgarth-falls-yorkshire-dales-national-park-visitor-centre/",
+    "https://accesshub.yorkshiredales.org.uk/places/buckden-national-park-car-park/",
+    "https://accesshub.yorkshiredales.org.uk/places/clapham-national-park-car-park/",
+    "https://accesshub.yorkshiredales.org.uk/places/grassington-national-park-visitor-centre/",
+    "https://accesshub.yorkshiredales.org.uk/places/dales-countryside-museum/",
+    "https://accesshub.yorkshiredales.org.uk/places/horton-in-ribblesdale-national-car-park/",
+    "https://accesshub.yorkshiredales.org.uk/places/kettlewell-national-park-car-park/",
+    "https://accesshub.yorkshiredales.org.uk/places/linton-falls-national-park-car-park/",
+    "https://accesshub.yorkshiredales.org.uk/places/malham-national-park-visitor-centre/",
+    "https://accesshub.yorkshiredales.org.uk/places/stainforth-national-park-car-park/",
+    "https://retail.yorkshiredales.org.uk/products/parking-fine",
+    "https://retail.yorkshiredales.org.uk/collections/parking"
+  ],
+  "policy_summary": "A small, tidy estate - ten car parks - with a blanket prohibition that is stated plainly on the website and, unusually, is NOT backed by a closure. This is the mirror image of the Peak District and the contrast is the most useful thing in this file.\n\nThe Authority's line appears in two places and is unambiguous. On the car parks page: 'Overnight occupation of vehicles is prohibited in all National Park Authority-owned car parks. Camping and overnight occupation of motorhomes is also prohibited.' On the camping page: 'Fly camping and overnight occupation of vehicles in our car parks is also not allowed at any time', alongside 'Wild camping is not permitted anywhere in the Yorkshire Dales without prior permission from the landowner.'\n\nWhat is prohibited is OCCUPATION, not presence. The car parks themselves stay open. The Access Hub pages for Buckden, Clapham, Horton-in-Ribblesdale, Kettlewell, Linton Falls and Stainforth all give car park opening hours as '24 hours'; none of the ten is gated or has a published closing time; and the tariff sells long stays outright - up to 24 hours GBP 7.00, up to 48 hours GBP 8.50, seven days GBP 20.00, from 1 April 2026. The Authority will therefore take money for leaving a vehicle in one of its car parks for a week. It simply will not let you sleep in it. The only time boundary published anywhere is the tariff day: 'Daily charges are valid between 6 am and midnight.' That is a charging window, not a curfew, and there is no instrument in this dataset closing a Yorkshire Dales car park at night.\n\nThe legal underpinning is thinner than the website implies. The operative instrument is the Byelaws Relating to Car Parks made 29 March 2022 under section 90(1) and (5) of the National Parks and Access to the Countryside Act 1949, replacing North Yorkshire County Council byelaws of 19 May 1987. Byelaw 6 is the whole of it: 'No person shall, without the consent of the Authority, erect a tent or use any vehicle, including a caravan or caravanette or any other structure, for the purpose of camping on the land except on any area which may be set apart and indicated by notice as a place where camping is permitted.' There is no overnight-parking byelaw, no hours byelaw, and - unlike the Peak District's 2024 revision - no words 'overnight sleeping'. Penalty for any byelaw breach is a fine not exceeding GBP 500 on summary conviction. Byelaw 10 makes it an offence to remain on the land without paying the appropriate fee, which is how the tariff is enforced; in practice the Authority runs a soft GBP 6 online late-payment product rather than issuing penalty charge notices.\n\nProvision is nil. The Authority runs no aire, no motorhome bays, no campsite, and no waste or chemical disposal point anywhere in its ownership. Its 'motorhome and campervan' page is a directory of six commercial hire firms, not a list of places to stay. Every one of the ten car parks does have an EV charge point, which is the only vehicle service the Authority provides.",
+  "notes": "The analytic point worth carrying forward: this authority prohibits the activity, not the vehicle. Compare the Peak District, where byelaw 4 empties every car park of every vehicle between midnight and 6am regardless of whether anyone is inside. In the Yorkshire Dales you may lawfully buy a 48-hour or seven-day ticket and leave a motorhome standing in Malham car park; the offence only crystallises when you occupy it overnight. For a van user that is a real difference - it means a Dales car park is a lawful place to leave a vehicle and an unlawful place to be in one, and the enforcement question becomes evidential rather than automatic.\n\nThat evidential problem is the weak seam. 'Overnight occupation of vehicles' is the Authority's own phrase and it is not the phrase in its byelaws. To prosecute, the Authority has to bring the conduct inside byelaw 6 - using a vehicle 'for the purpose of camping'. The Peak District went to the trouble of adding '/overnight sleeping' to its 2024 byelaw precisely to close that argument. The Yorkshire Dales byelaws were remade in 2022 and did not. The 2021 and 2022 committee reports show why: the review was a housekeeping exercise - raise the maximum fine from GBP 100 to GBP 500, revoke the 1987 North Yorkshire byelaws, tidy the wording - and the only substantive change made between December 2021 and March 2022 was a rewrite of byelaw 8 to satisfy an objection from the Trail Riders Fellowship about transporting motorcycles. Campervans, motorhomes and overnight parking are not mentioned anywhere in either report. The prohibition is asserted on the website; it was never legislated for directly.\n\nDirection of travel is flat, not tightening. Nothing in the 2025 Authority minutes, the byelaw papers or the current website suggests either new restriction or new provision. This is a settled 'no' that predates the current motorhome pressure and has not been revisited because of it.\n\nOwnership is the usual trap and the register is right to fence it. The Authority owns only ten car parks in a 2,179 square kilometre park. Almost every village car park a van driver will actually pull into - Reeth, Sedbergh, Settle, Ingleton, Leyburn, Hawes town centre, Skipton - belongs to North Yorkshire Council, Westmorland and Furness Council, a parish council or a private landowner, all researched separately. Reeth in particular has no Authority car park at all: the Authority's own page describes parking 'around the edges of the large central village green' with 'honesty boxes at several points', which is manorial green, not National Park land. Do not read this file across to it.\n\nOne loose end in the estate itself. The Schedule to the 2022 byelaws lists ELEVEN car parks, including Dent (3.3 acres) - the largest but one. The public car parks page and the Access Hub list only TEN, with Dent absent from both. Either Dent has been transferred or closed to public pay-and-display since 2022, or it is simply missing from the visitor pages. It is not mapped here.\n\nCoordinates in this file are good. The Authority publishes a six-figure or eight-figure OS grid reference for each car park on its Access Hub accessibility pages, and those were converted from OSGB36 to WGS84 rather than looked up. Two - Grassington and Linton Falls - are published with a three-digit easting and are correspondingly coarser.",
+  "open_questions": [
+    "Whether the 29 March 2022 byelaws were ever confirmed by the Secretary of State. The committee report sets out the process - re-advertise, deposit for one month, then apply for confirmation - and a public notice of intention to apply for confirmation was placed in the local press, but no confirmation date was found and the PDF the Authority publishes carries only the making date. The 1987 byelaws they revoke were confirmed, so the substance of the camping prohibition is not in doubt either way.",
+    "What happened to Dent car park. It is item (iv) in the Schedule to the 2022 byelaws at 3.3 acres but appears on neither the current car parks page nor the Access Hub. Transferred, closed, or an omission?",
+    "How, and how often, 'overnight occupation' is actually enforced. No penalty notice regime, no ANPR, no published patrol arrangement and no prosecution figures were found - only a GBP 6 online late-payment product for unpaid parking. The realistic sanction appears to be a ranger asking people to move on.",
+    "Whether the ten car parks carry signage stating the no-overnight-occupation rule on site, and in what words. Only the website wording could be verified.",
+    "Whether any of the ten has a height barrier or a length restriction that would exclude a large motorhome. None is mentioned on any Authority page, which suggests not, but it is not stated positively either.",
+    "The exact easting for Grassington (published as 'SE 018 6377', a malformed three-digit easting) and for Linton Falls ('SE 006 6323'). Grassington has been read as SE 0018 6377 because SE 0180 would place the pin in fields 1.3 km from the Centre, inconsistent with the Authority's own statement that Linton Falls is 0.6 km away."
+  ],
+  "sites": [
+    {
+      "name": "All Yorkshire Dales National Park Authority car parks - overnight occupation of vehicles",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "The Authority's published rule, in its own words on the car parks page: 'Overnight occupation of vehicles is prohibited in all National Park Authority-owned car parks. Camping and overnight occupation of motorhomes is also prohibited.' Repeated on the camping page as 'Fly camping and overnight occupation of vehicles in our car parks is also not allowed at any time.' Covers all ten car parks and every kind of vehicle. Note what it does NOT do: it does not close the car parks and it does not stop you leaving a vehicle overnight. The tariff sells up to 24 hours for GBP 7.00, up to 48 hours for GBP 8.50 and seven days for GBP 20.00 (from 1 April 2026), and the Access Hub gives car park opening hours as '24 hours'. Presence is priced; occupation is prohibited. Recorded as policy_only because the phrase 'overnight occupation' appears nowhere in the byelaws - see the byelaw 6 record for the enforceable clause."
+    },
+    {
+      "name": "All Yorkshire Dales National Park Authority car parks - camping in a vehicle (byelaw 6)",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "excludes_vehicle_types": [
+        "caravan",
+        "caravanette"
+      ],
+      "notes": "Byelaw 6 of the Byelaws Relating to Car Parks made 29 March 2022 under section 90(1) and (5) of the National Parks and Access to the Countryside Act 1949: 'No person shall, without the consent of the Authority, erect a tent or use any vehicle, including a caravan or caravanette or any other structure, for the purpose of camping on the land except on any area which may be set apart and indicated by notice as a place where camping is permitted.' No area has been set apart. Penalty: a fine not exceeding GBP 500 on summary conviction (raised from GBP 100 in the 1987 North Yorkshire County Council byelaws that these revoke). This is the only enforceable instrument behind the website's overnight-occupation ban, and it turns on 'the purpose of camping' - the Peak District added the words 'overnight sleeping' to its equivalent byelaw in 2024 to close that argument; the Yorkshire Dales remade its byelaws in 2022 and did not. There is NO byelaw closing the car parks at night and no hours byelaw. Byelaw 10 separately makes it an offence to leave a vehicle 'unless the appropriate parking fee has been paid'."
+    },
+    {
+      "name": "Wild camping and fly camping across the Yorkshire Dales National Park",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "The Authority's camping page: 'Wild camping is not permitted anywhere in the Yorkshire Dales without prior permission from the landowner.' Unlike Dartmoor there is no right to camp on access land here, and unlike the Peak District the Authority owns very little open land, so the rule it is stating is the general law of trespass rather than its own landowner position. It matters for vans mainly at the margins - verges, gateways and quarry pull-ins on the moor roads over Buttertubs, Fleet Moss and Park Rash - none of which are Authority land and none of which are covered by the car park byelaws. No verge byelaws exist or are proposed here, in contrast to the Peak District's January 2026 North Lees scheme."
+    },
+    {
+      "name": "Malham National Park Centre Car Park",
+      "kind": "restriction",
+      "lat": 54.06006,
+      "lon": -2.15518,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card",
+        "cash at the visitor centre"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "Changing Places facility",
+        "EV charging (dual charger, 62p per kWh)",
+        "National Park Visitor Centre",
+        "Dark Sky Discovery site"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Malham National Park Centre car park, Chapel Gate, Malham",
+      "notes": "The busiest of the ten - the Authority says 'our Malham car park tends to be one of the busiest' and advises a backup plan. Also a Dark Sky Discovery site, which is exactly why people want to stay. Byelaw 6 and the overnight-occupation policy apply: you may pay to leave a vehicle here for up to seven days, but you may not sleep in it. Toilets open 24 hours. Car park machines are card only; cash is taken at the visitor centre. 1.8 acres per the byelaw schedule.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference SD 8994 6269 published by the Authority on its Access Hub page for the site, converted OSGB36 to WGS84",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/malham-national-park-visitor-centre/"
+    },
+    {
+      "name": "Aysgarth Falls National Park Centre Car Park",
+      "kind": "restriction",
+      "lat": 54.29464,
+      "lon": -1.98491,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card",
+        "cash at the visitor centre"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "EV charging (dual charger, 62p per kWh)",
+        "National Park Visitor Centre"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Aysgarth Falls National Park Centre car park, Church Bank, Aysgarth",
+      "postcode": "DL8 3TH",
+      "notes": "Wensleydale's honeypot, on the waterfalls walk between the upper and lower falls. The visitor centre opens 10am to 5pm; the CAR PARK is not gated and has no published closing time - the only overnight rule is the ban on occupying a vehicle. Toilets open 24 hours. 1.864 acres per the byelaw schedule. Note that the Authority's headquarters at Yoredale, Bainbridge, a few miles up the dale, is a staff car park and not one of the ten.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference SE 0108 8878 published by the Authority on its Access Hub page for the site, converted OSGB36 to WGS84",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/aysgarth-falls-yorkshire-dales-national-park-visitor-centre/"
+    },
+    {
+      "name": "Dales Countryside Museum Car Park, Hawes",
+      "kind": "restriction",
+      "lat": 54.30473,
+      "lon": -2.19406,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card",
+        "cash at the visitor centre"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "Changing Places facility",
+        "EV charging (dual charger, 62p per kWh)",
+        "National Park Visitor Centre",
+        "Dales Countryside Museum"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Dales Countryside Museum car park, Station Yard, Burtersett Road, Hawes",
+      "notes": "The Authority's Hawes car park, in the old station yard on Burtersett Road - NOT the town-centre car parks in Hawes, which are not the Authority's. 3.4 acres, the second largest in the schedule, on the Pennine Way and a natural overnight stop for anyone crossing the Buttertubs. Byelaw 6 and the overnight-occupation policy apply. Museum hours are 10am-5pm February to October and 10am-4pm November to December, closed January; the car park has no published closing time and the toilets are open 24 hours.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference SD 8747 8992 published by the Authority on its Access Hub page for the museum, converted OSGB36 to WGS84",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/dales-countryside-museum/"
+    },
+    {
+      "name": "Grassington National Park Centre Car Park (Colvend)",
+      "kind": "restriction",
+      "lat": 54.06987,
+      "lon": -1.99874,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card",
+        "cash at the visitor centre"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "Changing Places facility",
+        "EV charging (dual charger, 62p per kWh)",
+        "National Park Visitor Centre",
+        "coach parking",
+        "5 blue badge bays"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Grassington National Park Centre car park, Hebden Road, Grassington",
+      "postcode": "BD23 5LB",
+      "notes": "By far the largest of the ten - 8.12 acres in the byelaw schedule, called Colvend there - with a large coach park as well as the car park. The obvious place a motorhome would fit, and squarely covered by byelaw 6 and the overnight-occupation policy. Visitor centre opens weekends only in winter and daily from 1 April; the car park itself has no published closing time.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference published by the Authority as 'SE 018 6377', a malformed three-digit easting, read as SE 0018 6377 and converted OSGB36 to WGS84; SE 0180 would sit 1.3 km east of the Centre, inconsistent with the Authority's own statement that Linton Falls is 0.6 km away. Corroborated by postcode BD23 5LB",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/grassington-national-park-visitor-centre/"
+    },
+    {
+      "name": "Buckden Car Park",
+      "kind": "restriction",
+      "lat": 54.19233,
+      "lon": -2.09161,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "EV charging (dual charger, 62p per kWh)",
+        "Dark Sky Discovery site"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Buckden National Park car park, Upper Wharfedale",
+      "postcode": "BD23 5JA",
+      "notes": "Upper Wharfedale, at the foot of Buckden Pike and on the road over to Bishopdale and Hawes. A Dark Sky Discovery site, which makes it one of the most attractive overnight prospects in the park and one of the clearest to rule out. The Access Hub gives the car park's opening hours as '24 hours' while noting 'daily charges are valid between 6 am and midnight' - open all night, but you may not occupy a vehicle in it. 1.48 acres per the byelaw schedule.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference SD 9412 7740 published by the Authority on its Access Hub page for the site, converted OSGB36 to WGS84; corroborated by postcode BD23 5JA and what3words inhabited.gullible.trend",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/buckden-national-park-car-park/"
+    },
+    {
+      "name": "Clapham Car Park",
+      "kind": "restriction",
+      "lat": 54.11784,
+      "lon": -2.39405,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "EV charging (dual charger, 62p per kWh)"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Clapham National Park car park, Clapham, North Yorkshire",
+      "postcode": "LA2 8EG",
+      "notes": "The Ingleborough side of the park, at the start of the Ingleborough Cave and Gaping Gill walks and a short hop off the A65 - the reason it attracts overnighters. Open 24 hours with charges valid 6am to midnight; byelaw 6 and the overnight-occupation policy apply. 1.65 acres per the byelaw schedule.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference SD 7434 6918 published by the Authority on its Access Hub page for the site, converted OSGB36 to WGS84; corroborated by postcode LA2 8EG and what3words outnumber.swim.bravest",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/clapham-national-park-car-park/"
+    },
+    {
+      "name": "Horton-in-Ribblesdale Car Park",
+      "kind": "restriction",
+      "lat": 54.14904,
+      "lon": -2.29744,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "EV charging (dual charger, 62p per kWh)"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Horton in Ribblesdale National Park car park, Pennine Way",
+      "notes": "The Three Peaks car park, and the single most contested overnight spot in the Yorkshire Dales - walkers start the Three Peaks round before dawn, which makes sleeping in a van the night before extremely attractive. The Authority's rule is the same as everywhere else: pay for up to 24, 48 hours or seven days if you like, but do not occupy the vehicle overnight. Open 24 hours. 1.32 acres per the byelaw schedule.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference SD 8067 7262 published by the Authority on its Access Hub page for the site, converted OSGB36 to WGS84; corroborated by what3words florists.famines.exhaled",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/horton-in-ribblesdale-national-car-park/"
+    },
+    {
+      "name": "Kettlewell Car Park",
+      "kind": "restriction",
+      "lat": 54.14679,
+      "lon": -2.0511,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "EV charging (dual charger, 62p per kWh)"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Kettlewell National Park car park, Wharfedale",
+      "postcode": "BD23 5RB",
+      "notes": "The smallest but one at 0.72 acre, in Wharfedale at the foot of Park Rash and the Coverdale road. Open 24 hours; byelaw 6 and the overnight-occupation policy apply. Being tight on space it is also the least practical of the ten for a large motorhome, though no height or length restriction is published.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference SD 9676 7233 published by the Authority on its Access Hub page for the site, converted OSGB36 to WGS84; corroborated by postcode BD23 5RB",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/kettlewell-national-park-car-park/"
+    },
+    {
+      "name": "Stainforth Car Park",
+      "kind": "restriction",
+      "lat": 54.10189,
+      "lon": -2.28012,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card"
+      ],
+      "facilities": [
+        "toilets",
+        "RADAR accessible toilet",
+        "EV charging (dual charger, 62p per kWh)"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Stainforth National Park car park, B6479 near Settle",
+      "postcode": "BD24 9QD",
+      "notes": "On the B6479 between Settle and Horton, the car park for Stainforth Force and Catrigg Force. 0.84 acre per the byelaw schedule. Open 24 hours with charges valid 6am to midnight; byelaw 6 and the overnight-occupation policy apply. Toilets open 24 hours.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference SD 8178 6737 published by the Authority on its Access Hub page for the site, converted OSGB36 to WGS84; corroborated by postcode BD24 9QD and what3words bounding.buddy.flicks",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/stainforth-national-park-car-park/"
+    },
+    {
+      "name": "Linton Falls Car Park",
+      "kind": "restriction",
+      "lat": 54.06501,
+      "lon": -1.99232,
+      "instrument": "byelaw",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "payment_methods": [
+        "card"
+      ],
+      "facilities": [
+        "toilets (not RADAR)",
+        "EV charging (dual charger, 62p per kWh)"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Linton Falls National Park car park, near Grassington",
+      "notes": "The smallest of the ten at 0.2 acre, a few hundred metres from Grassington National Park Centre and 0.2 km from Linton Falls itself. The only one of the ten the Authority describes as having no accessible RADAR toilet. Open 24 hours; byelaw 6 and the overnight-occupation policy apply.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "OS grid reference published by the Authority as 'SE 006 6323' - a three-digit easting, so 100 m precision at best - read as SE 0060 6323 and converted OSGB36 to WGS84. Consistent with the Authority's stated 0.8 km walk to Grassington National Park Centre",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://accesshub.yorkshiredales.org.uk/places/linton-falls-national-park-car-park/"
+    }
+  ]
+}

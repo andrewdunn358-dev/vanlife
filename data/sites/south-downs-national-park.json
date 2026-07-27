@@ -1,0 +1,123 @@
+{
+  "authority": "South Downs National Park Authority",
+  "authority_type": "national park",
+  "nation": "England",
+  "researched_on": "2026-07-27",
+  "researched_by": "the Authority's own Seven Sisters Country Park visitor site, its park-wide visitor guidance, the East Sussex County Council transfer papers, and its Camping and Glamping planning advice note; ownership of each honeypot car park checked separately against the National Trust, Hampshire County Council and Natural England",
+  "source_format": "html",
+  "sources": [
+    "https://www.southdowns.gov.uk/national-park-authority/our-work/coronavirus-covid-19-update/enjoying-the-south-downs-national-park/",
+    "https://www.southdowns.gov.uk/seven-sisters/",
+    "https://www.southdowns.gov.uk/?p=54441",
+    "https://www.southdowns.gov.uk/seven-sisters/our-vision-for-seven-sisters-country-park/",
+    "https://www.southdowns.gov.uk/app/uploads/2021/02/Final-Camping-Glamping-TAN-for-publication-08.07.21.pdf",
+    "https://www.southdowns.gov.uk/dark-night-skies/where-to-stargaze/ditchling-beacon-dark-sky-discovery-site/",
+    "https://www.sevensisters.org.uk/plan-your-visit/car-parking/",
+    "https://www.sevensisters.org.uk/plan-your-visit/getting-here/",
+    "https://www.sevensisters.org.uk/plan-your-visit/",
+    "https://www.sevensisters.org.uk/plan-your-visit/accommodation/",
+    "https://www.sevensisters.org.uk/faqs/",
+    "https://democracy.eastsussex.gov.uk/documents/s28674/LMTE%2020%20January%202020%20CASC%20APPENDIX%201%20-%20SDNPA%20Final%20Submission%20as%20Preferr...pdf",
+    "https://www.hants.gov.uk/thingstodo/countryparks/qecp/visit-us/parking",
+    "https://www.warnfordparish.gov.uk/community/warnford-village-7802/news/old-winchester-hill-beacon-hill-parking-charges-16890",
+    "https://www.nationaltrail.co.uk/en_GB/service/horsebox-parking-devils-dyke/",
+    "https://park4night.com/en/place/240186",
+    "https://park4night.com/en/place/417642",
+    "https://api.postcodes.io/postcodes/BN254AD"
+  ],
+  "policy_summary": "The register's suspicion is right, but only just. Until 2021 the South Downs National Park Authority was a pure planning authority with no land and no car parks of its own - its own visitor guidance still says, in the present tense, 'The National Park Authority does not manage any car parks or toilets.' That sentence is now out of date. On 30 July 2021 the Authority bought the 280-hectare Seven Sisters Country Park at Exceat from East Sussex County Council, and with it two pay-and-display car parks. They are the only car parks the Authority owns anywhere in the National Park.\n\nThe regime at those two car parks is unambiguous and physical rather than legal. 'Our car parks are locked overnight and a release fee is payable. Overnight parking is prohibited.' Gates open at 7am and close at 9pm from 31 March to 26 October, 6pm the rest of the year. There is no byelaw text, no parking order and no fixed penalty published - the enforcement mechanism is a locked gate and a charge to get your vehicle out again. A 3m height barrier stands at the south car park, which excludes most motorhomes from that side before the question of the night even arises. Tariffs are car-only bands (GBP 3.50 up to two hours, GBP 5 up to four, GBP 7 over four, fixed for three years), no Blue Badge concession, coins, card or RingGo 40750, and there is a 7.5t limit on Litlington Road serving the north car park.\n\nThere is no provision. The Authority runs no aire and no campervan bays. Overnight accommodation at Seven Sisters is a camping field for up to 20 tents and a camping barn/bunkhouse at Foxhole, operated by a concessionaire and deliberately car-free - 'vehicles are parked 1 mile away at the Visitor Centre.' Nowhere on Authority land may you lawfully sleep in a vehicle.\n\nEverywhere else in the park, the Authority's power is planning, not parking. Its Camping and Glamping technical advice note is explicit that 'the word caravan is defined in the 1960 Act and it includes motor homes and campervans', so any site set up for vans needs planning permission under Local Plan Policy SD23 and a site licence; the 28-day permitted development right and exempted-organisation certificates cover tents, not vans. That is the lever the Authority actually pulls. Whether you can park overnight at Devil's Dyke or Ditchling Beacon is somebody else's decision entirely.",
+  "notes": "Ownership of the honeypots, established before anything was recorded, because almost none of it is the Authority's:\n\n- Devil's Dyke - NATIONAL TRUST. The main top car park is NT pay-and-display; the National Trail advises horseboxes to use it because the smaller nearby car parks have width restrictions.\n- Ditchling Beacon - NATIONAL TRUST. The Authority's own dark-skies page names it 'Ditchling Beacon National Trust Car Park, Brighton, BN1 9QD', GBP 3 all day, free to NT members. The downland itself is partly Sussex Wildlife Trust; the car park is NT.\n- Butser Hill and Queen Elizabeth Country Park - HAMPSHIRE COUNTY COUNCIL. One car park on Butser Hill and seven on the forest side, open 24 hours a day but 'overnight parking is not permitted'. Forestry England runs the forest itself and sells a pass that also covers both Seven Sisters car parks, which confuses people into thinking the two sites share a regime. They do not.\n- Old Winchester Hill and Beacon Hill - NATURAL ENGLAND, as National Nature Reserves. Natural England introduced a voluntary parking donation on 1 January 2018.\n- Seven Sisters - THE AUTHORITY, since 30 July 2021, and only since then.\n\nSo four separate landowners hold the five places a van user would actually head for, and the Authority holds one of them.\n\nThe stale sentence is worth keeping. 'The National Park Authority does not manage any car parks or toilets' still sits on the Authority's own site, on a page written during the 2020 lockdowns, a year before it bought a country park with two car parks and a toilet block. Anyone taking that page at face value in 2026 would conclude there is nothing to record here. There is.\n\nEnforcement at Exceat is the interesting part. Everywhere else in this dataset the question is which instrument bites and what the penalty is. At Seven Sisters there is no published instrument at all - the Authority simply locks the gate at 9pm and charges you to get the vehicle back. That is a landowner acting as a landowner, and it is more effective against an overnight stay than most byelaws, because there is no argument to have and no ticket to appeal. It also means the prohibition has no reach beyond the barrier: the A259 verges, the lay-bys on the hill up to Seaford and the Litlington Road are highway, and nothing the Authority does controls them.\n\nEast Sussex County Council's 2020 transfer papers show the Authority was thinking about overnight capacity when it took the site on - Foxhole was to become a bunkhouse with 'public camping available in front of the camping barn at low cost'. Vans were not part of that plan and still are not. The direction of travel is more beds, on foot, not more parking.\n\nInformal overnighting in the park happens on farmland and county-council verge parking rather than anywhere the Authority controls. Bo Peep above Alciston, a free hilltop car park on the South Downs Way, is the best-known example - vans report no signage either way, and a farmer has been telling people that height barriers and no-overnight-parking signs are coming. That is the pattern across the South Downs: pressure is being answered by private landowners with barriers, not by the National Park Authority with orders.",
+  "open_questions": [
+    "The size of the release fee at Seven Sisters. The car parking page says one is payable but never says how much, and no schedule of charges was found.",
+    "Whether byelaws made by East Sussex County Council for Seven Sisters Country Park under section 41 of the Countryside Act 1968 survived the 2021 transfer, and whether the Authority has made or intends to make byelaws of its own. Nothing byelaw-shaped is published; the transfer papers do not mention byelaws at all.",
+    "Separate coordinates for the north and south car parks at Exceat. Both are recorded here on one pin taken from the BN25 4AD postcode centroid. The published what3words references are north ///stiletto.endings.crew and south ///acoustics.affords.followers, which would resolve them precisely if someone can convert them.",
+    "Whether the Authority owns any car park other than the two at Exceat. Nothing was found. The South Downs Centre at Midhurst, its headquarters, has a car park referred to in passing on its facilities page, but no ownership, charges or overnight terms are published for it.",
+    "Whether the number of bays in each Exceat car park is published anywhere. No capacity figure was found.",
+    "Whether the 3m height barrier at the south car park is permanent or can be opened - coaches are said to be admitted there by arrangement at quiet times, which implies it can.",
+    "Whether the Authority has ever refused planning permission for a motorhome aire or campervan site under Policy SD23. The technical advice note sets out the test but no decisions were traced."
+  ],
+  "sites": [
+    {
+      "name": "Seven Sisters Country Park car parks (north and south), Exceat",
+      "kind": "restriction",
+      "lat": 50.775316,
+      "lon": 0.15406,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "parking",
+      "status": "in_force",
+      "time_from": "21:00",
+      "time_to": "07:00",
+      "payment_methods": [
+        "coins",
+        "card",
+        "RingGo 40750"
+      ],
+      "facilities": [
+        "toilets at the visitor centre",
+        "EV charging - four 7kW podPoint units, north car park only",
+        "cycle racks",
+        "picnic areas in both car parks"
+      ],
+      "excludes_vehicle_types": [
+        "coach",
+        "vehicles over 3m high in the south car park",
+        "vehicles over 7.5t on Litlington Road to the north car park"
+      ],
+      "enforcement": "patrol",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Seven Sisters Country Park car park, Exceat, Seaford",
+      "postcode": "BN25 4AD",
+      "notes": "THE ONLY CAR PARKS THE AUTHORITY OWNS. Acquired with the country park from East Sussex County Council on 30 July 2021. The rule is stated plainly on the park's own parking page: 'Our car parks are locked overnight and a release fee is payable. Overnight parking is prohibited.' Gates open 7am to 9pm between 31 March and 26 October, and 7am to 6pm from October to March, so the effective closure is 9pm-7am in summer and 6pm-7am in winter. No byelaw, no parking order and no fixed penalty is published - enforcement is the gate and the release fee, which is unusually direct and leaves nothing to appeal. Car tariffs GBP 3.50 up to 2 hours, GBP 5.00 up to 4 hours, GBP 7.00 over 4 hours, fixed for three years; motorbikes free; no Blue Badge concession. Coaches GBP 10 up to 3 hours, GBP 20 all day, but no coaches at weekends, bank holidays or in the summer months. A 3m height barrier on the south car park rules out most motorhomes there outright, and the 7.5t limit on Litlington Road applies to the north one. A Forestry England annual pass covers both, which misleads people into assuming a Forestry England overnight regime; it does not apply.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "ONS centroid of BN25 4AD, the satnav postcode the park publishes for itself; the north and south car parks sit either side of the A259 at Exceat within roughly 250m of this point",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://www.sevensisters.org.uk/plan-your-visit/getting-here/"
+    },
+    {
+      "name": "Seven Sisters Country Park land (280 hectares, Exceat to Cuckmere Haven)",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "patrol",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "notes": "The Authority is the landowner of all 280 hectares and permits overnight stays only through its concessionaire's camping field (up to 20 tents), camping barn/bunkhouse and cottages at Foxhole - all of which are deliberately car-free, with 'vehicles parked 1 mile away at the Visitor Centre'. There is no vehicle access to any pitch, so a campervan cannot legitimately stay anywhere on the site even as a paying camper. Also relevant to anyone thinking of a night here: 'No barbeques or open flames are permitted in any area of the protected landscape of Seven Sisters Country Park due to the risk of fire.' Recorded as landowner_policy rather than byelaw because no byelaw text was found - whether East Sussex County Council's country park byelaws survived the 2021 transfer is unresolved.",
+      "search_hint": "Seven Sisters Country Park, Exceat, Cuckmere Haven"
+    },
+    {
+      "name": "Wild camping across the South Downs National Park",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "applies_to": "adapted_for_sleeping",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "'Wild camping is not permitted in the National Park' - the Authority's own visitor guidance, on the same page that (wrongly, since 2021) says it manages no car parks. This is a statement of the general law rather than an instrument the Authority can enforce: outside Dartmoor there is no right to camp on open access land in England, so camping without the landowner's consent is a trespass, and the landowners here are farmers, the National Trust, the Sussex Wildlife Trust, Forestry England, Natural England and county councils. The same page tells visitors to 'only park in designated parking spaces and not on grass verges', which is the nearest the Authority comes to a park-wide parking position and carries no penalty of its own.",
+      "search_hint": "South Downs National Park wild camping"
+    },
+    {
+      "name": "Planning control of campervan and motorhome sites (Local Plan Policy SD23)",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "applies_to": "dvla_motor_caravan",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "The Authority's real park-wide power, and the reason the South Downs has no aire. Its Camping and Glamping technical advice note states that 'the word caravan is defined in the 1960 Act and it includes motor homes and campervans'. That puts vans outside the two routes that let tent camping happen without a planning application: the 28-day permitted development right, and the exempted-organisation camping certificates (national parks are named as exemptions for those, but they cover tents and trailer tents). Anything set up for motorhomes therefore needs full planning permission under Local Plan Policy SD23 Sustainable Tourism, which requires a proposal to increase understanding of the park's special qualities, minimise reliance on the private car, avoid harming landscape character, use existing buildings where possible, and - outside settlement boundaries - make a positive contribution to natural beauty and wildlife. 'Minimise private car dependency' is a difficult test for a facility whose entire purpose is arriving by vehicle. Recorded as a restriction because that is its practical effect on where a van may legally stay; it is a development control instrument, not a parking one, and carries no on-the-night penalty.",
+      "search_hint": "South Downs Local Plan Policy SD23 camping glamping technical advice note"
+    }
+  ]
+}
