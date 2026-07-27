@@ -1,0 +1,193 @@
+{
+  "authority": "Severn Trent Water",
+  "authority_type": "landowner (water)",
+  "nation": "England",
+  "researched_on": "2026-07-27",
+  "researched_by": "Severn Trent's own visitor site and parking pages, its Carsington walks map PDF, its parking permit page, plus Carsington Bird Club and a Peak District car park guide for the gate times Severn Trent does not publish",
+  "source_format": "html",
+  "sources": [
+    "https://www.stwater.co.uk/our-visitor-sites/",
+    "https://www.stwater.co.uk/our-visitor-sites/upper-derwent-valley/",
+    "https://www.stwater.co.uk/our-visitor-sites/carsington-water/",
+    "https://www.stwater.co.uk/our-visitor-sites/carsington-water/parking-at-carsington/",
+    "https://www.stwater.co.uk/our-visitor-sites/tittesworth-water/",
+    "https://www.stwater.co.uk/our-visitor-sites/draycote-water/parking-at-draycote/",
+    "https://www.stwater.co.uk/content/dam/stw/visitor-sites/new-carsington-walks-map.pdf",
+    "https://www.stwater.co.uk/get-in-touch/parking-permit/",
+    "https://www.stwater.co.uk/news/news-releases/stay-safe-at-severn-trent-s-reservoirs-during-the-summer-holiday/",
+    "https://peakplaces.co.uk/fairholmes",
+    "https://www.carsingtonbirdclub.co.uk/cbc/blog/info/",
+    "https://www.carsington7.co.uk/directions/",
+    "https://alanrogers.com/campsite/carsington-water-caravan-and-motorhome-club-site-heart-of-england"
+  ],
+  "policy_summary": "A gated day-visit estate. Severn Trent runs ten visitor reservoirs and the regime across all of them is the same shape: arrive after the gates open, pay by ANPR or machine, leave before the gates shut. There is no overnight provision anywhere - no bays, no aire, no campsite, no lodges - and on the Upper Derwent Valley page the position is stated outright: 'No overnight parking.'\n\nWhat makes this file different from Yorkshire Water's is the instrument. Yorkshire Water prohibits overnight parking with a sentence on a webpage and leaves the gates open. Severn Trent publishes clock times and closes. Tittesworth prints a month-by-month table running from 7am-5pm in midwinter to 7am-9pm in high summer; Carsington opens the visitor centre car park at 7:30am and closes it at 8pm April-September and 7pm October-March, with Sheepwash and Millfields on 8am-7pm; the Upper Derwent Valley car parks are 'open in daylight hours' and the entrance to Fairholmes is coned off when closed, though you can still drive out. That is instrument opening_hours, the Eryri mechanism, applied estate-wide as the normal way of doing business rather than as a new anti-motorhome measure.\n\nEnforcement is private parking enforcement, not signage. Carsington and Draycote both run ANPR with parking charge notices issued by Group Nexus and appeals handled through appealpcn.co.uk under British Parking Association rules. At Carsington you can pay on exit at a terminal, online or through the Trust app within 24 hours of leaving - so the absence of a ticket on the dashboard means nothing, and neither does an empty car park at 10pm.",
+  "notes": "Three water companies, three answers, and Severn Trent is the middle one. Northumbrian Water sells you the night for GBP10. Yorkshire Water says no and leaves the gate open. Severn Trent says no and locks the gate. For a van the third is the only one that is self-enforcing, and it is also the only one where the risk is being shut IN rather than moved on - the Fairholmes cones go across the entrance, not the exit, which is a deliberate and rather civilised design.\n\nStep 2 of the protocol found nothing here, and that is a real result rather than a gap. Severn Trent's ten visitor sites - Carsington, Linacre, Upper Derwent Valley, Foremark, Thornton, Staunton Harold, Draycote, Shustoke, Tittesworth and Trimpley - carry cafes, cycle hire, bird hides, watersports and fishing, and no accommodation of any kind. The one thing that looks like an exception is not one: the Carsington Water Caravan and Motorhome Club Site at DE6 3JL, 117 pitches, mid-March to early November, is a Caravan and Motorhome Club site trading on the reservoir's name. Nothing found ties it to Severn Trent land. Recorded here as private supply so nobody researches it again under this authority.\n\nCross-reference worth keeping: Derwent Overlook, which one Peak District guide describes as a 24-hour alternative to Fairholmes, is NOT Severn Trent's. It is named in the schedule to the Peak District National Park Authority's byelaws, so it is Authority land and carries byelaw 4 - no vehicle left between midnight and 6am, GBP500 fine, prosecuted in the magistrates. A van user who reads that guide and moves 500 metres up the road swaps a landowner's condition of entry for a criminal offence. That is the single most expensive mistake available in the Upper Derwent Valley.",
+  "open_questions": [
+    "Carsington's parking tariff. The company page gives only the motorbike rate of GBP2 and the permit terms; a race organiser's directions page quotes GBP3 for two hours and GBP5 all day, and Draycote publishes GBP3.50 all day with 15 minutes free. Get the current Carsington board.",
+    "Are the Upper Derwent Valley car parks actually locked, or only coned? 'Open in daylight hours' with cones across the Fairholmes entrance is what a third-party guide reports; Severn Trent publishes no clock times for the valley at all.",
+    "Tittesworth's postcode is recorded as ST13 8SW on the strength of it resolving into Leekfrith parish, which contains the reservoir. Severn Trent does not publish it. Confirm.",
+    "Kings Tree and the upper Derwent Lane car parks - the road beyond Fairholmes is closed to traffic at times and the arrangements were not established. No coordinates recorded.",
+    "Does Severn Trent hold any interest in the Elan Valley estate for recreation purposes? The register note for this body flags 'Elan Valley links', but the estate is Welsh and sits with Dwr Cymru. If there is a Severn Trent interest it would be the only place on this estate where camping exists."
+  ],
+  "sites": [
+    {
+      "name": "All Severn Trent visitor site car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "anpr",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "The estate-wide position. Severn Trent's Upper Derwent Valley page states it in three words - 'No overnight parking' - and no site on the estate publishes anything to the contrary or offers any overnight facility. The ten visitor reservoirs are Carsington, Linacre, Upper Derwent Valley, Foremark, Thornton, Staunton Harold, Draycote, Shustoke, Tittesworth and Trimpley; annual permits cover five of them (Carsington, Tittesworth, Draycote, Linacre and Shustoke) and a permit buys daytime parking, not a night. In practice the prohibition is enforced by the gates and the cameras rather than by anyone reading the rule."
+    },
+    {
+      "name": "Fairholmes car park, Upper Derwent Valley",
+      "kind": "restriction",
+      "lat": 53.39641,
+      "lon": -1.7287,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "bays": 100,
+      "price_note": "GBP3.50 up to 2 hours, GBP6 up to 4 hours, GBP7 all day, every day including bank holidays. Blue Badge holders pay the same.",
+      "payment_methods": [
+        "machine"
+      ],
+      "facilities": [
+        "toilets",
+        "refreshment kiosk",
+        "cycle hire",
+        "picnic benches"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Fairholmes car park, Derwent Lane, Bamford, Hope Valley",
+      "postcode": "S33 0AQ",
+      "notes": "The main car park for Derwent and Howden reservoirs and the busiest place in the valley - about 100 spaces, toilets, kiosk and cycle hire. Severn Trent says the valley car parks are 'open in daylight hours' and publishes no clock times; a Peak District car park guide reports the entrance being coned off when closed with exit still possible, and states plainly that overnight parking is not permitted. Also 'closed in extreme weather', which in this valley means snow.\n\nRecorded as opening_hours rather than landowner_policy because the operative mechanism is closure - the car park is shut, not merely posted. That is the Eryri distinction and it matters for how it is enforced.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "postcode centroid for the car park's published postcode on Derwent Lane; the tarmac sits a few hundred metres west of the centroid",
+      "geocode_band": "nearby",
+      "geocode_checked": false,
+      "geocode_source": "https://peakplaces.co.uk/fairholmes"
+    },
+    {
+      "name": "Heatherdene car park, Ladybower Reservoir",
+      "kind": "restriction",
+      "lat": 53.36416,
+      "lon": -1.69861,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "price_note": "GBP3.50 up to 2 hours, GBP6 up to 4 hours, GBP7 all day - the same tariff as Fairholmes, and higher than the GBP2/GBP4 charged at the valley's smaller car parks.",
+      "payment_methods": [
+        "machine"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Heatherdene car park, A6013, Ladybower Reservoir, Bamford",
+      "postcode": "S33 0BY",
+      "notes": "The Ladybower car park, on the A6013 above the dam, giving access to the reservoir and to Win Hill. Same regime as Fairholmes: daylight hours only, no overnight parking, closed in extreme weather. It is the most conspicuous large car park on the A57/A6013 route across the Peak and the one a van coming over Snake Pass will see first.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "postcode centroid for the car park's published postcode on the A6013 at Ladybower",
+      "geocode_band": "nearby",
+      "geocode_checked": false,
+      "geocode_source": "https://www.stwater.co.uk/our-visitor-sites/upper-derwent-valley/"
+    },
+    {
+      "name": "Upper Derwent Valley smaller car parks (Bridge End, Hagg Side and others)",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "price_note": "GBP2 up to 2 hours, GBP4 over 4 hours - roughly half the Fairholmes and Heatherdene tariff.",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "notes": "Severn Trent's second tier in the valley, on a cheaper tariff and with the same daylight-hours regime and the same no-overnight-parking rule. Bridge End, Derwent Dam and Hagg Side are the ones named on the company's page. No postcodes are published so no pins.\n\nDo not confuse these with Derwent Overlook, which despite sitting next to Derwent Dam belongs to the Peak District National Park Authority and appears in the schedule to its byelaws - see the notes on this file."
+    },
+    {
+      "name": "Carsington Water car parks (Visitor Centre, Sheepwash and Millfields)",
+      "kind": "restriction",
+      "lat": 53.06111,
+      "lon": -1.6413,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "anpr",
+      "time_from": "20:00",
+      "time_to": "07:30",
+      "price_note": "Tariff not published on the company page beyond GBP2 for motorbikes; a third-party source quotes GBP3 for two hours and GBP5 all day. Annual permits available. Blue Badge holders pay.",
+      "payment_methods": [
+        "machine",
+        "online",
+        "app"
+      ],
+      "facilities": [
+        "visitor centre",
+        "toilets",
+        "cafe",
+        "cycle hire",
+        "bird hides"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Carsington Water Visitor Centre, Big Lane, Ashbourne",
+      "postcode": "DE6 1ST",
+      "notes": "The most tightly run car park in this file and the clearest gate times on the estate. Severn Trent's own Carsington walks map gives the visitor centre car park as 7:30am-8pm April to September and 7:30am-7pm October to March, with Sheepwash and Millfields on 8am-7pm; Carsington Bird Club, which has reason to know, gives 7:30am-7pm (8pm in summer) for the visitor centre and 8am-7pm (8pm summer) for the other two. time_from and time_to record the summer shut window at the visitor centre.\n\nANPR reads your plate on entry. You pay on exit at a terminal, online, or through the Trust app within 24 hours of leaving, so nothing on the dashboard tells a warden anything - the record is the camera. Parking charge notices are issued by Group Nexus and appealed in writing through appealpcn.co.uk; they cannot be appealed by phone. The Caravan and Motorhome Club site nearby is not Severn Trent's; see notes.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "postcode centroid for the visitor centre address published on Severn Trent's Carsington walks map",
+      "geocode_band": "nearby",
+      "geocode_checked": false,
+      "geocode_source": "https://www.stwater.co.uk/content/dam/stw/visitor-sites/new-carsington-walks-map.pdf"
+    },
+    {
+      "name": "Tittesworth Water car parks",
+      "kind": "restriction",
+      "lat": 53.14097,
+      "lon": -2.00251,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "time_from": "21:00",
+      "time_to": "07:00",
+      "price_note": "Charges apply to all visitors including Blue Badge holders. All machines take contactless; three also take cash and chip-and-PIN. Annual permit available.",
+      "payment_methods": [
+        "machine"
+      ],
+      "facilities": [
+        "visitor centre",
+        "toilets",
+        "cafe",
+        "play area"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Tittesworth Water visitor centre, Meerbrook, Leek, Staffordshire",
+      "postcode": "ST13 8SW",
+      "notes": "The best-documented opening hours anywhere in the landowner tier - Severn Trent publishes a month-by-month table and it is worth copying out, because a van arriving at 9pm in November meets a very different site from one arriving at 9pm in July:\n\nNovember-January 7am-5pm; February-March 7am-6pm; April 7am-8pm; May-August 7am-9pm; September 7am-8pm; October 7am-7pm.\n\ntime_from and time_to record the high-summer shut window (May-August). In midwinter the gates are shut before dusk and four hours earlier than in July. On the edge of the Peak District below The Roaches, which is exactly the kind of place a van heads for at the end of a climbing day.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "postcode centroid in Leekfrith parish, the parish containing the reservoir and visitor centre; Severn Trent does not publish the postcode itself",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://www.stwater.co.uk/our-visitor-sites/tittesworth-water/"
+    }
+  ],
+  "areas": [
+    "Derbyshire",
+    "Staffordshire"
+  ]
+}

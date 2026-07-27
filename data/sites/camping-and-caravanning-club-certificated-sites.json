@@ -1,0 +1,50 @@
+{
+  "authority": "Camping and Caravanning Club - Certificated Sites",
+  "authority_type": "commercial (commercial_network)",
+  "nation": "UK",
+  "researched_on": "2026-07-27",
+  "researched_by": "the Club's own public pages plus the primary legislation on legislation.gov.uk; no member-only or paywalled site data accessed",
+  "source_format": "html",
+  "sources": [
+    "https://www.campingandcaravanningclub.co.uk/about-us/certificated-sites/",
+    "https://www.campingandcaravanningclub.co.uk/about-us/certificated-sites/facts/",
+    "https://www.campingandcaravanningclub.co.uk/campsites/member-only/certificated-sites/",
+    "https://www.legislation.gov.uk/ukpga/Eliz2/8-9/62/schedule/FIRST/enacted",
+    "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/5/crossheading/class-a-use-of-land-as-caravan-site/made",
+    "https://www.caravanclub.co.uk/uk-holidays/uk-sites/certificated-locations/",
+    "https://acceo.org/",
+    "https://www.lexisnexis.co.uk/legal/guidance/in-relation-to-caravan-sites-where-there-is-a-site-approved-by-an-exempted-organisation-under-paragraph"
+  ],
+  "policy_summary": "A network of over 800 five-van sites, open only to Club members, with fees starting around GBP10 per unit per night on top of membership from GBP56.95 a year. Sites take up to five caravans or motorhomes and up to ten tents, need at least half an acre, must offer drinking water, chemical toilet disposal and refuse collection, keep six metres between units, and are inspected annually by Club Site Officers. Most run March to October; year-round operation is allowed where the ground stands up to it. Maximum 28 days in any one stay.\n\nTHE FIVE-VAN LIMIT IS NOT A CLUB POLICY. It is the statutory ceiling in paragraph 5 of the First Schedule to the Caravan Sites and Control of Development Act 1960: a site licence is not required for land covered by a certificate issued by an exempted organisation 'if not more than five caravans are at the time stationed for the purposes of human habitation on the land'. Six vans and the exemption falls away, the site needs a licence from the district council, and the whole edifice collapses. The Club is an exempted organisation because it holds a certificate under paragraph 12 of the same Schedule, granted on the basis that its objects include the encouragement of recreational activities. In England those certificates now come from Natural England; in Wales and Scotland from the devolved administrations.\n\nThe second half of the mechanism is planning. Article 3 and Schedule 2 Part 5 Class A of the Town and Country Planning (General Permitted Development) (England) Order 2015 grant permitted development rights for 'the use of land, other than a building, as a caravan site' in the circumstances set out in paragraphs 2 to 10 of that same First Schedule. Licence exemption therefore drags deemed planning permission along behind it. A farmer with a paddock and a Club certificate needs neither a site licence nor a planning application. That single cross-reference between a 1960 licensing statute and a 2015 planning order is what created several thousand small overnight sites in the UK without a single planning committee ever voting on one of them. Class A carries one condition: the use stops and the caravans go when the exempting circumstances cease.\n\nAgainst the Caravan and Motorhome Club's Certificated Locations, the CS scheme is smaller and dearer per night but broader in what it accepts. CAMC lists over 2,000 CLs from as little as GBP2.50 a night, also five units, also members-only - but no independent tent camping, only awnings, toilet tents and single-berth pup tents treated as part of the outfit. The Camping and Caravanning Club takes up to ten tents alongside the five vans, and it can do that because tents are not caravans and sit under a separate exemption the Club also holds, under section 269(6) of the Public Health Act 1936. Two statutes, two certificates, one site. That is the real difference between a CS and a CL, and it is invisible from the marketing.",
+  "notes": "For this dataset the interesting fact is not the 800 sites - which are paywalled and off limits - but the legal chain, because the same chain is what makes farm shops, pubs and private aires work. Paragraph 5 of Schedule 1 to the 1960 Act plus Part 5 Class A of the GPDO is the single most important mechanism in UK van overnighting outside council car parks, and the clubs are simply its largest users. Anything the register records as 'permission' rather than an order or a licence is almost always running on this.\n\nWhere the exemption route is fragile: it is a certificate, not a permission that runs with the land. It is issued annually, the organisation can withdraw it, and if the site goes beyond what paragraph 5 allows the exemption and the Part 5 Class A rights fall away together - at which point the local planning authority can take enforcement action against an unauthorised caravan site. LexisNexis guidance frames the question in exactly those terms. A user should understand a CS as a site that exists at the Club's discretion, not a licensed campsite.\n\nThe scheme is the opposite trajectory to council provision: it has been growing quietly for decades while council car parks have been closing to vans, and it is invisible in every dataset because the addresses sit behind a membership wall. Any coverage map built only from public sources will understate real supply in rural England and Wales by a large margin - probably by three thousand sites once CAMC's CLs are counted.\n\nCross-reference, do not duplicate: the Caravan and Motorhome Club's Certificated Locations are a separate register entry (priority 1, '~2000+ five-pitch farm sites, member benefit, paywalled list') and have not yet been written up as their own file. Comparative figures above are recorded here only to explain the difference between the two schemes; the CL network's own detail belongs in that file.",
+  "open_questions": [
+    "Northern Ireland. The 1960 Act does not extend there - caravan sites are governed by the Caravans Act (Northern Ireland) 1963 - yet the CS network is described as UK-wide. Which instrument certificates the NI sites has not been established.",
+    "Scotland. Third-party summaries suggest tent numbers on Scottish CSs are treated differently from England and Wales; the Club's own pages do not say so. Needs the Scottish exemption certificate wording.",
+    "The current annual fee charged to a CS landowner. A secondary source puts it around GBP165 with no setup fee, against roughly GBP59 for a CAMC CL, but neither club publishes it openly and the figure is unconfirmed.",
+    "Exact current CS count. The Club's own pages say 'over 800' in one place and do not give a number in another; the last published precise figure has not been located.",
+    "Whether a motorhome is unambiguously a 'caravan' for section 29(1) of the 1960 Act. The whole scheme assumes it is, and both clubs and every council operate on that basis, but the definition is written around structures that are towed or transported, and a 2023 Ten Minute Rule Bill sought to put motorhomes on a separate footing. See the private aires file."
+  ],
+  "sites": [
+    {
+      "name": "Certificated Sites network (UK-wide, members only)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "max_nights": 28,
+      "requires_self_contained": false,
+      "facilities": [
+        "drinking water",
+        "chemical toilet disposal",
+        "refuse collection"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "Over 800 sites, each capped at five caravans or motorhomes plus up to ten tents. Fees from GBP10 per unit per night; Club membership from GBP56.95 a year is a precondition, though non-members may join a member already on site. Minimum half an acre, six metres between units, annual Site Officer inspection, 28 days maximum per stay, typically March to October. Deliberately recorded as a single network-level record with no coordinates: the site list is a member benefit and is not scraped. Legal basis is paragraph 5 of Schedule 1 to the Caravan Sites and Control of Development Act 1960 (five-van certificate from an exempted organisation, the Club being certificated under paragraph 12) plus GPDO 2015 Schedule 2 Part 5 Class A for the planning side. Tents ride on a separate exemption under section 269(6) of the Public Health Act 1936."
+    }
+  ]
+}

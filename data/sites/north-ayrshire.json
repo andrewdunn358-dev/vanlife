@@ -1,0 +1,113 @@
+{
+  "authority": "North Ayrshire Council",
+  "authority_type": "unitary",
+  "nation": "Scotland",
+  "researched_on": "2026-07-27",
+  "researched_by": "the council's own car parks page, which publishes the permitted and prohibited vehicle types verbatim; trade and local press on the June 2026 cabinet decision for Largs; a parking-industry report on the Largs ANPR contract; and a campsite directory for the Eglinton Country Park rally field. Read against data/sites/south-ayrshire.json, the neighbouring authority, throughout",
+  "source_format": "html",
+  "sources": [
+    "https://www.north-ayrshire.gov.uk/roads-and-parking/parking/car-parks",
+    "https://www.practicalmotorhome.com/news/seafront-overnight-parking-approved-for-motorhomes-in-largs",
+    "https://www.transportxtra.com/publications/local-transport-today/news/70375/anpr-technology-for-largs-seafront-car-park/",
+    "https://www.ukcampsite.co.uk/sites/details.asp?revid=10777",
+    "https://api.postcodes.io/postcodes/KA128TA"
+  ],
+  "policy_summary": "The answer to the question this task was set to resolve is no. North Ayrshire did not follow South Ayrshire. For five years the two authorities shared a coastline, a tourism market and the same summer motorhome pressure, and did opposite things with it.\n\nSouth Ayrshire trialled bays at Ayr and Girvan in 2021, made both permanent in 2022, raised the fee to GBP10, extended stays to three nights, and added Ballantrae, Prestwick, Troon and Barassie - seven sites, growing, with chemical waste disposal included and toilets and a washroom at Girvan. Over the same period North Ayrshire published no motorhome scheme at all, and on its single flagship car park it went further than any restriction in South Ayrshire: Largs Seafront car park does not restrict overnight parking, it excludes the vehicles outright. The council's published conditions state that 'only authorised vehicle types are permitted to park' - cars, small vans and motorcycles - and list as prohibited 'heavy goods vehicles (HGVs), large goods vehicles (LGVs), buses, campervans, motorhomes, caravans, trailers'. That is a twenty-four-hour ban by body type, not a night-time rule, and it sits behind a barriered APT Skidata pay-on-exit and ANPR system with a GBP100 penalty charge, GBP50 if paid within fourteen days and GBP150 after fifty-six days. The tariff runs to a four-day GBP40 ticket, so this is a car park that will happily sell a motorist ninety-six hours and will not let a campervan through the barrier for one.\n\nThat changed on 4 June 2026, and it changed once. Cabinet approved a pilot motorhome facility at Bowencraig East car park on the Largs seafront near the marina: up to twenty spaces for campervans and motorhomes, with water, electricity and sewage disposal, funded by GBP100,000 of the council's Crown Estate marine revenue and conditional on delivering 'coastal community benefits'. Cllr Tom Marshall put it as 'we agreed that it was time we had a dedicated site for motorhomes', noting that on a busy weekend there can already be up to twenty campervans in the area. Charges have not been set and no opening date was published.\n\nRead the funding line carefully, because it is the finding. South Ayrshire's bays were a parking scheme, built and run by the Ayrshire Roads Alliance out of the roads and parking function, priced, permanent, and expandable. North Ayrshire's is a coastal regeneration capital project paid for from Crown Estate seabed revenue with a community-benefit condition attached. Different budget, different department, different test of success. That is why it took five years to arrive, why it is one site rather than seven, and why it is more likely to be built well than to be replicated.\n\nElsewhere on the estate there is nothing. Short-stay car parks at Irvine, Kilwinning and Saltcoats run three-hour maxima; long-stay parking exists at Irvine, Saltcoats and Kilwinning with no motorhome product. The council states it operates no residents' parking permit scheme. Parking at the Ardrossan, Brodick and Millport ferry terminals is CalMac's, not the council's. On Arran and Cumbrae the council publishes no overnight provision and no overnight prohibition - a blank rather than a ban, which is not the same thing as permission. The one council-owned overnight facility outside the parking system is the rally field at Eglinton Country Park, which takes accredited organisations of ten or more and no individual vans."
+,
+  "notes": "THE CONTRAST WITH SOUTH AYRSHIRE, AND THE INSTITUTIONAL REASON FOR IT. The gold-standard file records South Ayrshire's scheme as 'managed by the Ayrshire Roads Alliance'. The Alliance is a shared roads and transportation service between South Ayrshire and East Ayrshire councils; North Ayrshire is not a partner and runs its own roads function. So the vehicle that designed, priced, signed and enforced the seven-site scheme next door simply does not operate here, and there was no shared officer team to copy it across. That is a concrete, checkable mechanism for a policy stopping dead at an administrative boundary, and it is a better explanation than either council being more or less hostile than the other. FLAGGED AS AN INFERENCE: the Alliance's membership is stated on its own pages but was not read directly in this session. Verify before publishing the claim.\n\nTHE SECOND STRUCTURAL DIFFERENCE IS WHAT THE PROVISION IS FOR. South Ayrshire's scheme was a pollution response - chemical waste going into Girvan harbour and public toilets, fifty campervans in Girvan on one day - and the fee funded the disposal that fixed it. North Ayrshire's is a coastal-community investment funded from Crown Estate marine revenue, which the council receives precisely because it has a coast, and which comes with a condition that the spend benefits coastal communities. A motorhome aire is an unusually neat fit for that condition, which is probably why this project got funded when a parking-budget version had not for five years. Consequence for the dataset: North Ayrshire's provision is capital-led and single-site, and there is no revenue mechanism pushing it to expand the way South Ayrshire's fee income did.\n\nEXCLUSION BY VEHICLE TYPE IS A DIFFERENT INSTRUMENT FROM AN OVERNIGHT BAN, AND THIS FILE IS THE CLEAREST EXAMPLE SO FAR. Section 4 of the method doc separates restricting parking from restricting sleeping. Largs Seafront is a third thing: the vehicle may not enter at any hour for any purpose. A motorhome driver cannot stop for an hour to buy chips. Cornwall's order catches vehicles 'adapted for sleeping' and so reaches a Transit with a mattress; Largs names campervans, motorhomes, caravans and trailers as body types alongside HGVs and buses, which reads as a size-and-barrier rule dressed as a vehicle-type rule and would probably NOT catch a self-build panel van that presents as a small van. That is the mirror image of the Cornwall problem in section 4 - here the self-builder is the one who gets through - and it means applies_to is recorded as dvla_motor_caravan rather than adapted_for_sleeping.\n\nDIRECTION OF TRAVEL: turning, from a low base, at one site. Not expanding in South Ayrshire's sense, but the first movement in either direction since the seafront car park was barriered. The honest read is that North Ayrshire is roughly where South Ayrshire was in 2021, five years late, with better facilities specified at the outset - water, electricity AND sewage, where South Ayrshire's original bays were waste disposal only - and no committed second site.\n\nPRIVATE AND THIRD-PARTY SUPPLY, RECORDED SO NOBODY RE-RESEARCHES IT UNDER THIS AUTHORITY: Auchrannie Resort at Brodick runs a commercial motorhome stopover on Arran; Lochranza Caravan and Campsite is the long-established site at the north end of Arran; Seaview and Skelmorlie Mains are private caravan parks on the mainland coast; Kelburn Country Centre near Largs is the Boyle family's estate, not a council country park. Ferry terminal parking at Ardrossan, Brodick and Millport slipway is operated by CalMac. None of these are North Ayrshire Council provision and none are recorded here.\n\nENFORCEMENT REALITY: real at Largs Seafront and untested everywhere else. The seafront car park has a barrier, ANPR and an APT Skidata Parking.Logic management system upgraded under contract, with pay-on-exit and pay-by-phone; a GBP100 penalty is published. Nothing comparable exists at any other North Ayrshire car park, and no evidence was found of any overnight enforcement on Arran or Cumbrae.",
+  "open_questions": [
+    "Has the Bowencraig East facility actually been built, and what does it charge? Approved 4 June 2026 with charges explicitly not yet decided; nothing found confirming construction, an opening date, a tariff, a maximum stay or a self-containment rule. This is the single most valuable thing to re-check in a month.",
+    "Coordinates for Bowencraig East car park and for Largs Seafront car park. Neither could be sourced to car-park precision - the council publishes no addresses or postcodes for its car parks, and every OSM, Overpass and geocoder route was blocked in this session. Both are recorded with lat/lon null rather than guessed. Bowencraig East is on the shore side of the A78 south of Largs towards the marina; Largs Seafront is the barriered car park on the promenade.",
+    "Is the Ayrshire Roads Alliance membership claim right - South and East Ayrshire only, with North Ayrshire outside it? The whole institutional explanation for the contrast rests on this and it was inferred, not read.",
+    "Is Largs Seafront's vehicle-type exclusion in a made off-street parking order, or is it only published conditions of use? A GBP100 penalty implies an order, but no order was located, and if it is conditions only the enforcement position is much weaker than it looks.",
+    "Would a self-build panel van registered as a van, not a motor caravan, be refused at the Largs Seafront barrier? The wording suggests not; the barrier height may decide it regardless.",
+    "Does the council publish anything at all for Arran and Cumbrae - the silence there may be genuine absence of policy or may be a page not found in this session.",
+    "Is Eglinton Country Park's camping still council-run and events-only in 2026, and does it ever take individual motorhomes? The council's own Eglinton page could not be fetched."
+  ],
+  "sites": [
+    {
+      "name": "Bowencraig East Car Park, Largs",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "draft",
+      "operator": "North Ayrshire Council",
+      "bays": 20,
+      "currency": "GBP",
+      "requires_self_contained": false,
+      "facilities": [
+        "water",
+        "electricity",
+        "sewage disposal"
+      ],
+      "excludes_vehicle_types": [
+        "caravan"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Bowencraig East car park, Largs seafront, near Largs Yacht Haven",
+      "notes": "APPROVED, NOT YET OPEN - status is 'draft' for that reason, and no price is recorded because none has been set. North Ayrshire Council's cabinet approved this on Tuesday 4 June 2026 as a pilot project: up to twenty spaces for campervans or motorhomes on the Largs seafront near the marina, with water and electricity connections and sewage disposal.\n\nFUNDING IS THE INTERESTING FIELD: GBP100,000 from the Crown Estate revenue payments the council receives, carrying a condition that the scheme delivers 'coastal community benefits'. This is not parking money and it did not come out of the roads budget. It is why the facility is better specified than South Ayrshire's original bays - which had waste disposal but no electric - and why there is no obvious mechanism to fund a second one.\n\nRATIONALE IN THE COUNCIL'S OWN WORDS: Cllr Tom Marshall said 'we agreed that it was time we had a dedicated site for motorhomes' and noted that 'on a busy weekend there can be up to 20 campervans' already using the area informally. Twenty bays for twenty observed vans is provision sized to existing demand rather than to growth.\n\nCARAVANS: the approval is described throughout as campervans and motorhomes. No caravan provision is mentioned, so caravans are recorded as excluded - but that is inference from the wording, not a published rule.\n\nNO INSTRUMENT: this is a cabinet decision, not an order. No off-street parking order, variation or TRO covering these bays was found. Instrument is policy_only until one appears.\n\nCOORDINATES NULL, DELIBERATELY. Bowencraig is on the A78 shore south of Largs towards Largs Yacht Haven; a campercontact listing exists for 'Bowencraig East Car Park' filed under Fairlie, but its content could not be read and no coordinate was obtained from any source. Not guessed. See open_questions.\n\nCONTRAST TO HOLD ON TO: this one approved pilot arrives five years after South Ayrshire's trial, in the authority that until now excluded motorhomes from its main car park entirely."
+    },
+    {
+      "name": "Largs Seafront Car Park",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "dvla_motor_caravan",
+      "restricts": "parking",
+      "status": "in_force",
+      "enforcement": "anpr",
+      "excludes_vehicle_types": [
+        "campervan",
+        "motorhome",
+        "caravan",
+        "trailer",
+        "HGV",
+        "LGV",
+        "bus"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Seafront car park, Largs promenade",
+      "notes": "NOT AN OVERNIGHT RULE - A TOTAL EXCLUSION, TWENTY-FOUR HOURS A DAY. The council's published conditions say 'only authorised vehicle types are permitted to park', naming cars, small vans and motorcycles, and list as prohibited 'heavy goods vehicles (HGVs), large goods vehicles (LGVs), buses, campervans, motorhomes, caravans, trailers'. A motorhome may not use this car park at any hour for any length of time for any purpose. restricts is recorded as 'parking' rather than 'sleeping' or 'both' for exactly that reason: sleeping never arises, because the vehicle cannot be there.\n\nTHE TARIFF MAKES THE POINT SHARPER: GBP3 for two hours, GBP5 for four, GBP10 for a 24-hour ticket, GBP20 for 48 hours, GBP30 for 72 and GBP40 for 96. The council will sell a car four days and nights in its seafront car park and will not admit a campervan for one hour. Whatever this restriction is about, it is not about people sleeping on the promenade.\n\nENFORCEMENT IS REAL, WHICH IS UNUSUAL IN THIS DATASET. The car park is barriered and runs APT Skidata's Parking.Logic system with ANPR, pay-on-exit and pay-by-phone, upgraded under a contract awarded by the council. Penalty charge GBP100, reduced to GBP50 if paid within fourteen days, rising to GBP150 if unpaid after fifty-six. Blue badge holders must still pay the tariff. Compare Exmoor and Dumfries and Galloway, where the worst case is being asked to leave; here the barrier decides before you are in.\n\nINSTRUMENT RECORDED WITH A CAVEAT. off_street_parking_order is the best fit for a Scottish council off-street car park issuing GBP100 penalty charge notices, but the order itself was not located and the exclusion may live only in published conditions of use. If it is conditions only, the enforcement position is contractual rather than statutory. Confidence is high on the published rule and on the penalty, and lower on the instrument - see open_questions.\n\nAPPLIES_TO: 'dvla_motor_caravan' rather than 'adapted_for_sleeping'. The list is of body types - campervan, motorhome, caravan, trailer, alongside HGV, LGV and bus - which reads as a size rule. A self-build conversion registered and presenting as a small van would probably not be caught by the wording, which is the exact inverse of the Cornwall problem where the self-builder is caught by everything.\n\nCOORDINATES NULL. The council publishes no address or postcode for its car parks and no independent pin could be sourced in this session. Not guessed."
+    },
+    {
+      "name": "Eglinton Country Park events camping, Irvine",
+      "kind": "provision",
+      "lat": 55.6403,
+      "lon": -4.6659,
+      "instrument": "landowner_policy",
+      "status": "unknown",
+      "operator": "North Ayrshire Council parks and countryside service (country park is council-owned; camping operation not confirmed from a council page)",
+      "requires_self_contained": false,
+      "booking": "by prior arrangement, accredited organisations only",
+      "facilities": [
+        "standard and hardstanding pitches",
+        "toilets and showers",
+        "no electric hook-up",
+        "dog walk",
+        "accessible facilities",
+        "recycling",
+        "cafe on site"
+      ],
+      "prohibits": [
+        "individual bookings - accredited organisations of 10 or more only"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "low",
+      "search_hint": "Eglinton Country Park events camping, Irvine, Ayrshire",
+      "postcode": "KA12 8TA",
+      "notes": "THE STEP-2 CATEGORY IN ITS MOST RESTRICTIVE FORM: council countryside land with a camping and caravanning function that no parking page mentions - but it is a rally field, not a stopover, and an individual van cannot use it.\n\nTERMS: takes 'accredited organisations only of 10 or more', season given as 1 April to 31 October 2026, accepting tents, caravans, motorhomes and small campervans on standard and hardstanding pitches, with toilets and showers but no electric hook-up. Booking is by direct contact. In practice this is the Camping and Caravanning Club / Caravan and Motorhome Club rally market, which is why it is invisible to every motorhome-facing search.\n\nWHY CONFIDENCE IS LOW: the only description read is a campsite directory listing. The council's own Eglinton Country Park page could not be fetched in this session, so the camping operation is not confirmed from a council source and the operator field is an assumption from the park's ownership. Status is 'unknown' accordingly. Do not present this to a user as bookable council provision until a council page confirms it.\n\nIT IS STILL WORTH RECORDING. It is the only council-owned overnight capacity in North Ayrshire outside the parking system, and its existence establishes that the council has land, toilets and a licence position that could take vans - which makes the five-year gap in ordinary provision a choice rather than a constraint.\n\nA separate glamping proposal near the country park was refused by the council's own planners, so the surrounding land is not quietly filling with private supply either.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "the country park's main address postcode KA12 8TA, off the A78 north-east of Irvine; the events camping field is within the park and its exact position inside the park is not established",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://api.postcodes.io/postcodes/KA128TA",
+      "geocode_corroboration": "two independent sources agree to within about 40 metres: postcodes.io returns 55.640321 / -4.665897 for KA12 8TA in admin district North Ayrshire, and the ukcampsite.co.uk listing for Eglinton Country Park Events Camping gives 55.640123 / -4.666418 for the same postcode."
+    }
+  ]
+}

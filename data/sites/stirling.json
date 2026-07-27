@@ -1,0 +1,91 @@
+{
+  "authority": "Stirling Council",
+  "authority_type": "unitary",
+  "nation": "Scotland",
+  "researched_on": "2026-07-27",
+  "researched_by": "the council's own parking pages and its Balmaha car park consultation page, local reporting on rural parking enforcement, a Trossachs visitor guide for car park ownership, and data/sites/loch-lomond-trossachs.json for the byelaw boundary this file deliberately does not duplicate",
+  "source_format": "html",
+  "sources": [
+    "https://www.stirling.gov.uk/roads-transport-and-parking/parking-and-permits/parking-in-stirling/",
+    "https://stirling.gov.uk/roads-transport-streets/parking-zones-permits/changes-to-balmaha-car-park/",
+    "https://www.stirling.gov.uk/roads-transport-and-parking/roads-and-pavements/traffic-regulation-orders/",
+    "https://www.stirlingnews.co.uk/news/18946084.enforcement-activity-sees-1-400-penalties-handed/",
+    "https://trossachs.co.uk/car-parking-in-balmaha/",
+    "https://www.transportscotland.gov.uk/road-order/a84a85-trunk-road-loch-lubnaig-clearway-order-202",
+    "https://forestryandland.gov.scot/visit/stay-the-night/stay-the-night-destinations"
+  ],
+  "policy_summary": "Stirling is the hardest authority in the dataset to read correctly, because three different bodies write rules over the same ground and only one of them is the council.\n\nWHAT THE COUNCIL ITSELF DOES is short and unambiguous. Its parking page says: 'Motorhome parking is allowed in any Stirling Council car park. There are no specific parking bays for motor homes. Drivers should ensure that they park within the marked boundary of one parking bay. Sleeping overnight in a motor home parked in one of our car parks is not allowed.' Its Balmaha page repeats it in wider terms - 'Sleeping overnight in vehicles is not permitted in Stirling Council car parks'. So a van may park and pay like a car, all day, anywhere in the estate, and may not sleep. Charges are modest by Highland standards: all-day GBP4.10 at Callander's Riverside, Station Road and Meadows car parks and in central Stirling, GBP3.10 at Dunblane, with Balmaha now charged on Sundays too. Balmaha is the exception in one respect - the council added five dedicated caravan and motorhome bays there when it introduced charging, and they are daytime bays like any other.\n\nWHAT THE COUNCIL ALSO DOES is close roads to stopping. The B837 from Balmaha to Rowardennan is a designated clearway, and the council enforces alongside Police Scotland and the Park Authority at Finnich Glen on the A809 and on the A821 by Ben A'an. Between August 2019 and September 2020 it issued more than 1,400 penalties across those three places, about 1,150 of them at Balmaha and the B837 alone. That is the highest rural enforcement count recorded against any council in this dataset.\n\nWHAT THE COUNCIL DOES NOT DO is the camping byelaws, and this is the thing people get wrong. The Camping Management Zones that make it an offence to sleep in a vehicle from 1 March to 30 September belong to Loch Lomond and The Trossachs National Park Authority, not to Stirling Council, and they are recorded in full in that authority's own file. West Loch Lomond, Trossachs West and Trossachs North zones cover a great deal of western Stirling. Nor is the A84/A85 corridor the council's: the Loch Lubnaig clearway is a Transport Scotland trunk road order, first made temporarily in 2023.\n\nThe practical result is that the council's own rule and the Park Authority's byelaw point in the same direction but bite in different places. The byelaw exempts a vehicle on a road, including a lay-by. The council's rule bites precisely where the byelaw does not - in a car park. Between them there is very little of western Stirling where a van may lawfully spend a night without a permit or a campsite.",
+  "notes": "THE CARVE-OUT IS THE WHOLE STORY AND IT RUNS THE OPPOSITE WAY TO WHAT PEOPLE ASSUME. Loch Lomond and The Trossachs' byelaw makes sleeping in a vehicle inside a Camping Management Zone an offence unless the vehicle is on a road, which includes a lay-by. Stirling Council's rule makes sleeping in a vehicle in one of its car parks not allowed - and a council car park is exactly the off-road, non-lay-by ground the byelaw exempts nothing on. So the lay-by is the safe line under the byelaw, and the car park is the unsafe line under the council. Get the two the wrong way round, as a lot of forum advice does, and you are in the one place each rule catches.\n\nBOUNDARIES, PRECISELY, BECAUSE THIS FILE EXISTS TO DRAW THEM. Stirling Council owns: its car parks and their rules, its own roads and the clearways on them (the B837 to Rowardennan, restrictions at Finnich Glen and on the A821), and the parking charges. The National Park Authority owns: the Camping Management Zones, the permit system, the GBP4.30 permits and the up-to-GBP500 criminal penalty, and its own visitor car parks. Transport Scotland owns: the A84/A85 trunk road and the Loch Lubnaig clearway. Scottish Water and the steamship operator control the Loch Katrine road, which is not a public road at all. Forestry and Land Scotland owns Queen Elizabeth Forest Park and the Stay the Night car parks in it. Five landlords, one landscape.\n\nENFORCEMENT HERE IS REAL, WHICH IS UNUSUAL. Most restriction records in this dataset are signage with no evidence anyone acts on them. Stirling has published numbers: 1,400-plus tickets in thirteen months, 1,150 at Balmaha and the B837, 200 at Finnich Glen, 70 on the A821, issued by the council's own officers working with Police Scotland and the National Park. The convener's framing was public safety - 'careless and reckless parking' that 'stopped emergency services' - not tourism management.\n\nTHE BALMAHA CASE IS THE MOST INSTRUCTIVE THING THE COUNCIL HAS DONE. When it consulted on charging at the 177-space Balmaha car park it did three things at once: introduced charges, kept the first hour free for local residents, and added five caravan and motorhome bays. Then it said in the same breath that overnight sleeping is still not permitted. That is provision for the daytime and prohibition for the night, in the busiest single car park on the east shore of Loch Lomond, at the point where the West Highland Way meets the road. It is the clearest illustration in Scotland that 'motorhome bays' and 'somewhere to stay' are not the same thing.\n\nWHAT IS ACTUALLY AVAILABLE IN THIS AREA BELONGS TO OTHER BODIES. Forestry and Land Scotland's Stay the Night scheme runs car parks at Braeval, Duke's Pass, Garadhban and Pendreich inside or beside Stirling, plus Ardgartan and Tarbet Isle over the boundary. The Park Authority's permit areas take motorhomes at some locations. Neither is the council's, and neither should be recorded here.\n\nOne housekeeping note. No provision the parking pages fail to mention was found for this council - no country park camping, no council-owned caravan site, no marina or harbour stopover. That is a negative finding rather than an unchecked one, but Mugdock Country Park, which sits in the Stirling Council area under a joint management arrangement, could not be checked directly this session and is left as an open question.",
+  "open_questions": [
+    "Is the 'no sleeping overnight' rule written into the Stirling Council off-street parking order, or is it only published on the website? Perth and Kinross has it as Article 29 of its order; the equivalent Stirling order text was not located, and that decides whether a penalty charge notice would stick.",
+    "Mugdock Country Park - Stirling Council area, jointly managed with East Dunbartonshire. Does it permit any overnight vehicle stay, and does the council own or lease any camping there? Not checked.",
+    "Is there a Stirling Council car park in Killin, and what are its rules? Killin sits at the Perth and Kinross boundary on the A827 and is a known pressure point, but no council car park page naming it was found.",
+    "What are the exact terms of the A84/A85 Trunk Road (Loch Lubnaig) Clearway Order - lengths, hours, whether the permanent order replaced the 2023 temporary one? Only the order's existence and publication on Transport Scotland's road-order pages was established; the text was not read.",
+    "Coordinates. Nothing in this file carries a pin. Balmaha car park, the Callander car parks and the B837 clearway all need geometry before they can be published - Balmaha in particular, since it is a single named 177-space site.",
+    "Aberfoyle - the council's parking page does not list it. Are the Aberfoyle car parks the council's, Forestry and Land Scotland's, or the Park Authority's?",
+    "Did the Balmaha Sunday charging and the five motorhome bays actually go live? The consultation page dates from 2021 and depended on a Traffic Regulation Order; the current parking page lists Balmaha as pay and display on Sundays, which suggests yes.",
+    "What became of the objections to the Balmaha car park scheme that the village took to appeal?"
+  ],
+  "sites": [
+    {
+      "name": "Roads and lay-bys in Stirling outside the Camping Management Zones and clearways",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "notes": "Stirling Council publishes no general prohibition on overnight parking on its roads, and where it has not made a clearway an overnight stop on the public road is not prohibited by this authority. Two large qualifications, both belonging to other bodies and recorded in their own files rather than here. First, from 1 March to 30 September the National Park Authority's camping byelaws make sleeping in a vehicle inside a Camping Management Zone an offence unless the vehicle is on a road or lay-by - and much of western Stirling is inside a zone. Second, the A84/A85 through Loch Lubnaig is a trunk road and its clearway is Transport Scotland's. Beyond both, the Scottish Outdoor Access Code does not extend to motor vehicles, so there is no positive right to sleep in a van anywhere in Scotland. This record is the absence of a council prohibition, nothing more."
+    },
+    {
+      "name": "All Stirling Council car parks - no overnight sleeping",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "patrol",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Stirling Council parking motorhome overnight sleeping not allowed",
+      "notes": "THE COUNCIL'S OWN RULE, AND IT IS A SLEEPING RULE, NOT A PARKING ONE. 'Motorhome parking is allowed in any Stirling Council car park. There are no specific parking bays for motor homes... Sleeping overnight in a motor home parked in one of our car parks is not allowed.' The Balmaha page puts it more broadly still - 'Sleeping overnight in vehicles is not permitted in Stirling Council car parks'. So the van is welcome to park and pay by the hour like anything else, day or night, and its occupants may not sleep in it. Charging hours are typically 08:45 to 17:30 Monday to Saturday, extended to Sundays at Callander and Balmaha; outside those hours the car parks stay open and free, and the sleeping rule still applies. Recorded as policy_only rather than an off-street parking order because the rule was found on the council's published pages and the underlying order text could not be located - which is exactly the distinction that decides whether a penalty charge notice would stand. Covers the whole estate including the Callander, Dunblane and Balmaha car parks, so no pin."
+    },
+    {
+      "name": "Balmaha Car Park, Loch Lomond",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "bays": 177,
+      "enforcement": "patrol",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Balmaha car park, B837, Loch Lomond, Stirling Council",
+      "notes": "The busiest single council car park in the national park part of Stirling and the one place in the estate with dedicated motorhome provision - which is daytime only. 177 spaces beside the visitor centre, run by Stirling Council, with public toilets open 09:30 to 17:30. When the council introduced charging it added FIVE CARAVAN AND MOTORHOME BAYS, a cross path, and a first free hour for local residents, capping all-day parking at Callander levels; the current tariff page shows around GBP3.20 to GBP4.10 all day and pay and display now extending to Sundays. In the same breath the council stated that sleeping overnight in vehicles is not permitted, so the bays are for stopping, not staying. This is also the enforcement hotspot: roughly 1,150 of the 1,400-plus penalties issued across rural Stirling between August 2019 and September 2020 were at Balmaha and on the adjoining B837 clearway. Note the overlap that is NOT this council's: Balmaha sits inside the West Loch Lomond area covered by the Park Authority's camping byelaws, which are recorded against that authority and not duplicated here. Coordinates could not be corroborated this session, so no pin yet - this is the highest-value geocoding job in the file."
+    },
+    {
+      "name": "B837 Balmaha to Rowardennan clearway, and rural parking restrictions at Finnich Glen and Ben A'an",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "on_street_tro",
+      "applies_to": "all_vehicles",
+      "restricts": "parking",
+      "status": "in_force",
+      "enforcement": "pcn",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "B837 Balmaha Rowardennan clearway Stirling Council",
+      "notes": "The council's own on-road restrictions, as distinct from the Park Authority's byelaws. The B837 from Balmaha along the east shore to Rowardennan - the road to the Ben Lomond car park and a long stretch of the West Highland Way - is a designated clearway. Restrictions are also enforced at Finnich Glen, the Devil's Pulpit on the A809, and on the A821 near Ben A'an on the Duke's Pass. Between August 2019 and September 2020 the council issued more than 1,400 penalties across the three: about 1,150 on the B837 and at Balmaha, 200 at Finnich Glen, 70 on the A821. Enforced by the council's own officers working with Police Scotland and the National Park. The council's framing is emergency access rather than camping - the convener spoke of parking that 'stopped emergency services'. Linear restrictions, so no pin. The order names and exact lengths were not located; Stirling advertises its traffic regulation orders through tellmescotland rather than listing them on its own site."
+    }
+  ],
+  "areas": [
+    "Stirling"
+  ]
+}

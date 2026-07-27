@@ -1,0 +1,249 @@
+{
+  "authority": "Comhairle nan Eilean Siar",
+  "authority_type": "unitary",
+  "nation": "Scotland",
+  "researched_on": "2026-07-27",
+  "researched_by": "the Comhairle's own site and a February 2026 committee paper, the destination organisation's guidance, and the community trusts' own camping and booking pages",
+  "source_format": "html",
+  "sources": [
+    "https://www.cne-siar.gov.uk/roads-and-travel",
+    "https://www.cne-siar.gov.uk/roads-and-travel/traffic-regulation-orders-tro",
+    "https://www.cne-siar.gov.uk/roads-and-travel/access-rights",
+    "https://cne-siar.gov.uk/business/tourism/outer-hebrides-visitor-levy",
+    "https://www.cne-siar.gov.uk/sites/default/files/imce/Committees/Sustainable%20Development%20Committee/2026/February/J-10A-Visitor-Levy.pdf",
+    "https://www.insider.co.uk/news/comhairle-nan-eilean-siar-pauses-35419134",
+    "https://feeds.bbci.co.uk/news/articles/cwyqlezrnz0o",
+    "https://www.scotsman.com/lifestyle/staycation/western-isles-plan-to-impose-tax-on-motorhome-visitors-3394378",
+    "https://www.visitouterhebrides.co.uk/planning-your-trip/motorhomes",
+    "https://www.visitouterhebrides.co.uk/accommodation/type/camping-and-caravan-sites",
+    "https://www.westharristrust.org/campinginwestharris",
+    "https://www.visitouterhebrides.co.uk/accommodation/west-harris-trust-campervan-hook-ups-p554731",
+    "https://www.visitouterhebrides.co.uk/accommodation/designated-overnight-parking-spots-west-harris-trust-p568201",
+    "https://www.visitouterhebrides.co.uk/accommodation/designated-overnight-parking-spots-north-harris-trust-p568311",
+    "https://www.kneepcampsite.com/",
+    "https://www.ukcampsite.co.uk/sites/details.asp?revid=6495",
+    "https://www.ukcampsite.co.uk/sites/details.asp?revid=8648",
+    "https://www.welovestornoway.com/index.php/articles/34100-campervan-sparks-fury-on-the-machair",
+    "https://katiegoes.com/hebrides-campervan-overnight-parking/",
+    "https://www.hitchedandhiking.com/blog/overnight-park-ups-in-the-outer-hebrides"
+  ],
+  "policy_summary": "The Comhairle publishes nothing. There is no motorhome page, no aire, no overnight parking policy and no parking section at all: Roads and Travel offers bus services, electric vehicles, ports and piers, road cameras, street lighting, traffic regulation orders and winter maintenance, and stops. The Access Rights page turns out to be about exempting festival fields from access rights, not about vehicles. Searching in Gaelic returns nothing either - the Comhairle publishes bilingually, but bilingual publication of a policy that does not exist in English produces nothing in Gaelic.\n\nWhat fills the gap is the community, and it fills it properly. Provision in the Western Isles is run by community landowners and townships: West Harris Trust has fourteen serviced hook-up pitches at Talla na Mara, Pairc Niseaboist and the old Seilebost school at GBP35, plus six or seven marked roadside spots at a GBP10 donation that exist explicitly to stop verge erosion; North Harris Trust maps about thirty designated overnight spots and runs 24-hour chemical disposal at Urgha and Huisinis at GBP3; Kneep Campsite at Traigh na Beirigh is run by the Kneep villagers; Vatersay township built campervan parking to keep vans off its machair. This is a whole regime of provision with no council in it anywhere.\n\nThe consequence is that the regime a driver meets is a landowner regime, not a legal one. No order, no fixed penalty, no signage backed by an instrument. The Land Reform (Scotland) Act 2003 access rights that make Scotland permissive on foot do not extend to motor vehicles, so a van on the machair is on crofters' common grazings without a right, and it is the crofting interest rather than the Comhairle that has any standing to object.\n\nThe money question is the visitor levy, and it has always had motorhomes inside it. In 2021 the Comhairle consulted on taxing campervan and motorhome visitors, its convener asking for 'a contribution towards the infrastructure' after a summer of ferry deck pressure and roadside waste. By February 2026 the accommodation-based levy had been paused - a June 2025 feasibility study found it would need a high rate to produce net benefit and would burden very small providers - and the Comhairle's formal position to the Scottish Parliament is that it 'continues to support the development of a flat-rate point-of-entry levy as a more appropriate and equitable approach for island authorities'. The motorhome charge has not gone away. It has changed shape, from a motorhome tax into a charge at the pier that would catch everything coming off the boat."
+  ,
+  "notes": "The direction of travel is provision, and none of it is the council's. Every stopover in the islands was built by a community trust, a grazings committee or a township, mostly with honesty boxes, mostly in response to damage they were already seeing. The Comhairle's contribution is a levy debate.\n\nThat matters for how the dataset reads the Western Isles: a search of the authority alone returns nothing and looks like an empty area, when in fact the islands have one of the denser networks of legitimate overnight stopping in Scotland. The register entry is honest only if the community operators are in it.\n\nEnforcement is social rather than legal, and it works about as well as that suggests. The June 2024 Vatersay case is the type specimen: a van parked on the machair eight metres from the designated bays the township had paid to build, and the community's only recourse was a Facebook argument about whether they could fine anyone. They cannot.\n\nThe real throttle on motorhome numbers here is not parking policy at all, it is CalMac deck space. Any provision analysis for the Western Isles that ignores the ferry booking system is measuring the wrong valve.\n\nPrivate supply, named here so nobody re-researches it under this authority: Laxdale Holiday Park at Stornoway, Balranald Caravan and Campsite in the RSPB reserve at North Uist, Clachan Sands Campsite, Lickisto Blackhouse Camping, Moorcroft Holidays and Lochside Cottage Caravans are all commercial operations, not Comhairle sites.\n\nTravel writers also report informal but tolerated overnight parking at Melbost beach car park and Brevig harbour on Lewis, Cliff beach car park at Uig, Committee Road and Loch Bi on the Uists, Berneray East Beach (GBP10 honesty box, attributed to Berneray Community Council), the Berneray and Eriskay ferry terminals and Ardmhor on Barra. None of these are recorded as sites: ownership is unverified for all of them, and several are CalMac terminal land rather than anybody's provision."
+  ,
+  "open_questions": [
+    "Does the Comhairle operate any off-street parking order at all? The TRO index has an 'Orders in Place' section that 404s from the outside, so the Stornoway town-centre pay-and-display regime could not be read and its overnight position is unknown.",
+    "Who owns and runs Horgabost campsite on Harris? Fifty pitches on the machair, a 2019 residents' petition about dune collapse, and no operator named on any listing. Township, grazings committee or private is unresolved - it is not the Comhairle.",
+    "Coordinates for Huisinis Gateway, the Urgha chemical disposal point, the Vatersay township bays and Clachan Sands. Named and real, but no source consulted published a coordinate.",
+    "The North Harris Trust's own map (north-harris.org) would give the roughly thirty designated spots individually; it could not be fetched in this session.",
+    "Is a Gaelic-language version of any of this published anywhere - Comhairle, Visit Outer Hebrides, or the trusts? Nothing was found.",
+    "Whether the point-of-entry levy, if the Scottish Government enables it, would price motorhomes separately as the 2021 proposal did."
+  ],
+  "sites": [
+    {
+      "name": "West Harris Trust campervan hook-ups (Talla na Mara, Pairc Niseaboist, Seilebost School)",
+      "kind": "provision",
+      "lat": 57.86928,
+      "lon": -6.95437,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "bays": 14,
+      "price_per_night": 35.0,
+      "currency": "GBP",
+      "payment_methods": [
+        "online booking",
+        "telephone"
+      ],
+      "facilities": [
+        "electric hook-up",
+        "toilets",
+        "showers",
+        "drinking water",
+        "waste and recycling",
+        "chemical toilet disposal",
+        "cafe and gift shop at Talla na Mara"
+      ],
+      "prohibits": [
+        "tents",
+        "awnings"
+      ],
+      "excludes_vehicle_types": [
+        "vehicles over 7.5m"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "West Harris Trust camping Talla na Mara Pairc Niseaboist",
+      "notes": "OPERATOR: West Harris Trust, a community charity run on behalf of West Harris residents - not the Comhairle. Three adjoining sites twelve miles south of Tarbert: Talla na Mara 3 pitches, Pairc Niseaboist 7 pitches (opened 2020, April to October), Seilebost old school 4 pitches (April to September). Motorhomes and caravans only, maximum 7.5m; none of the sites takes tents or awnings. Booked through westharristrust.campmanager.com. Dogs barred at Seilebost before 15 May for lambing.",
+      "postcode": "HS3 3HP",
+      "geocoded_by": "web_research",
+      "geocode_precision": "destination listing pin for the West Harris hook-up sites, on the coast road between Seilebost and Niseaboist",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://www.visitouterhebrides.co.uk/accommodation/west-harris-trust-campervan-hook-ups-p554731"
+    },
+    {
+      "name": "West Harris Trust roadside overnight parking spots (Losgaintir, Seilebost, Niseaboist)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "requires_self_contained": true,
+      "facilities": [],
+      "prohibits": [
+        "tents",
+        "driving off the marked parking area"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "West Harris Trust designated overnight parking Luskentyre Seilebost",
+      "notes": "OPERATOR: West Harris Trust. Six or seven signed spots holding two to six vehicles each, spread along the Losgaintir, Seilebost and Niseaboist coast. No facilities, no booking, first come first served, GBP10 suggested donation, self-contained vehicles only. The Trust's own reason for creating them is the useful part: they were 'identified in order to protect the roadsides from erosion' - provision as damage control, the same logic as Girvan. Multiple separate spots, so no single coordinate."
+    },
+    {
+      "name": "North Harris Trust designated overnight parking spots",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "facilities": [
+        "chemical toilet disposal at Urgha and Huisinis Gateway, 24 hours, GBP3 a use"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "North Harris Trust designated overnight parking spots map",
+      "notes": "OPERATOR: North Harris Trust, the community landowner of the North Harris estate - not the Comhairle. About thirty designated spots across North Harris, plotted on an interactive map on north-harris.org, with the Trust's framing being consent rather than tolerance: 'park at one of these sites and you can rest assured that you are welcome'. Two chemical disposal points, at Urgha (five minutes from the Tarbert ferry) and at Huisinis Gateway at the end of the single-track road, GBP3 each. Huisinis Gateway itself has hook-ups, water, toilets and showers on an honesty-box basis. About thirty scattered spots, so no single coordinate; the individual locations are on the Trust's map."
+    },
+    {
+      "name": "Kneep Campsite (Traigh na Beirigh), Cnip, Uig, Isle of Lewis",
+      "kind": "provision",
+      "lat": 58.221236,
+      "lon": -6.947413,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "bays": 50,
+      "currency": "GBP",
+      "payment_methods": [
+        "online booking"
+      ],
+      "facilities": [
+        "electric hook-up (18 pitches)",
+        "toilets",
+        "showers (GBP1 coin)",
+        "accessible shower room",
+        "washing-up sinks",
+        "drinking water",
+        "chemical toilet disposal",
+        "waste and recycling",
+        "community hub"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Kneep campsite Traigh na Beirigh Cnip Uig Lewis",
+      "notes": "OPERATOR: 'a community based enterprise and run by the Kneep villagers' - the Cnip grazings/village trust, not the Comhairle. Fifty pitches on the dunes behind Reef beach, eighteen with hook-up, tents and vans both taken. Season roughly 1 May to 30 September; the community hub runs March to October. Booked through kneepcampsite.campmanager.com. The site asks people to keep to the marked paths because the dune system is fragile - the same machair anxiety that drives everything else in these islands.",
+      "postcode": "HS2 9HS",
+      "geocoded_by": "web_research",
+      "geocode_precision": "campsite on the dunes at Traigh na Beirigh (Reef beach)",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://www.ukcampsite.co.uk/sites/details.asp?revid=6495"
+    },
+    {
+      "name": "Horgabost Campsite, Isle of Harris",
+      "kind": "provision",
+      "lat": 57.857714,
+      "lon": -6.978427,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "bays": 50,
+      "currency": "GBP",
+      "facilities": [
+        "toilets",
+        "showers",
+        "drinking water",
+        "chemical toilet disposal",
+        "site shop"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Horgabost campsite Isle of Harris",
+      "notes": "OPERATOR NOT ESTABLISHED, and worth someone's half hour. Fifty pitches directly on the machair opposite Taransay, no hook-ups, no hardstanding, 1 May to 30 September. Every listing site carries it and none names an owner; the Comhairle is not it. A 2019 letter from Horgabost residents about dune collapse points at a township or grazings-committee arrangement. Recorded here because it is one of the three chemical disposal points West Harris Trust directs people to (Huisinis, Urgha, Horgabost), so it functions as public infrastructure whoever owns it.",
+      "postcode": "HS3 3HR",
+      "geocoded_by": "web_research",
+      "geocode_precision": "campsite on the machair at Horgabost, west coast of Harris",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://www.ukcampsite.co.uk/sites/details.asp?revid=8648"
+    },
+    {
+      "name": "Vatersay township campervan parking",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "payment_methods": [
+        "honesty box"
+      ],
+      "facilities": [
+        "toilet",
+        "sink",
+        "coin-operated showers",
+        "power socket at the community hall"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Vatersay community hall campervan parking Barra",
+      "notes": "OPERATOR: Vatersay township and community association, using the community hall's facilities, with an honesty box. Built, in a resident's words, because the community 'have gone to some considerable expense and trouble to provide campervan parking to try to save our machair'. Coordinates not published by any source consulted; the bays are at the Vatersay hall by the beach. Left unpinned rather than guessed."
+    },
+    {
+      "name": "Clachan Sands overnight parking, North Uist",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "unknown",
+      "price_per_night": 10.0,
+      "currency": "GBP",
+      "payment_methods": [
+        "honesty box"
+      ],
+      "facilities": [
+        "fresh water tap",
+        "picnic tables",
+        "bin"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "low",
+      "search_hint": "Clachan Sands North Uist overnight parking honesty box",
+      "notes": "Community-maintained overnight parking at the north end of North Uist, GBP10 honesty box, reported consistently by two independent travel writers but by no official source. Note the name collision: Clachan Sands Campsite at Goulaby is a separate commercial site. Operator and exact location both unconfirmed, hence low confidence and no pin."
+    },
+    {
+      "name": "Machair, verges, passing places and undesignated stopping - Outer Hebrides",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "applies_to": "dvla_motor_caravan",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "notes": "Not law, and it matters that it is not. The islands' published position - via Visit Outer Hebrides and the 'Outer Hebrides is a special PLACE' campaign, not via the Comhairle - is that overnight parking is 'only permitted in designated campsites or approved spots', with machair, passing places, business car parks and private driveways all ruled out and 'you may be asked to move' as the sanction. There is no order behind any of it and no penalty. What actually restrains a driver is that almost all of this ground is crofters' common grazings and that Land Reform (Scotland) Act 2003 access rights stop at the vehicle - Scotland's permissive access regime never covered motorhomes. So the practical answer is that the guidance is right about where you should stop and wrong about the reason, and the enforcement is a knock on the window."
+    }
+  ],
+  "areas": [
+    "Na h-Eileanan Siar"
+  ]
+}

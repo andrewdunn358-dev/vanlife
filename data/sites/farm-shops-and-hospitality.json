@@ -1,0 +1,95 @@
+{
+  "authority": "Farm shops, breweries, vineyards, garden centres",
+  "authority_type": "commercial (hospitality)",
+  "nation": "UK",
+  "researched_on": "2026-07-27",
+  "researched_by": "primary legislation on legislation.gov.uk plus planning and exemption guidance; no aggregator member lists accessed",
+  "source_format": "html",
+  "sources": [
+    "https://www.legislation.gov.uk/ukpga/Eliz2/8-9/62/schedule/FIRST/enacted",
+    "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/5/crossheading/class-a-use-of-land-as-caravan-site/made",
+    "https://www.planninggeek.co.uk/gpdo/temporary-buildings-uses/class-b/",
+    "https://www.planninggeek.co.uk/gpdo/temporary-buildings-uses/class-bc/",
+    "https://www.ukmotorhomes.net/uk-stopovers/uk-stopover-setup",
+    "https://campra.org.uk/wp-content/uploads/business_hub/What%20is%20an%20Exemption%20Certificate%20v2.pdf",
+    "https://campra.org.uk/wp-content/uploads/business_hub/04_Planning_TRO_Site_Licences_Certificates.pdf",
+    "https://acceo.org/"
+  ],
+  "policy_summary": "This is not an organisation, it is a category: farm shops, breweries, vineyards, garden centres, cider makers, farm cafes and the like, letting a motorhome stand overnight in their car park or a corner of a field, usually free, on the understanding that you buy something. It is the largest source of overnight space in the UK that nobody has mapped, and it exists entirely inside a set of statutory exemptions rather than under any permission anyone applied for.\n\nStart with the thing most hosts get wrong. 'We're not a campsite, they're just parking' is not a legal position. The Caravan Sites and Control of Development Act 1960 catches the use of land as a caravan site, and a motorhome standing overnight with someone asleep in it is a caravan stationed for the purposes of human habitation. Section 1 of the Act prohibits that without a site licence. Everything below is an exemption from that prohibition, not an escape from it.\n\nFOUR ROUTES, and which one applies depends almost entirely on how much land the business has.\n\nParagraph 2 of the First Schedule is the pub and farm shop default: no licence is needed for use of land by 'a person travelling with a caravan who brings the caravan on to the land for a period which includes not more than two nights', provided (a) no other caravan is stationed on that land or adjoining land in the same occupation during that period, and (b) in the preceding twelve months caravans were stationed there on no more than 28 days in total. Read condition (a) properly: it means ONE VAN AT A TIME. A car park with three motorhomes in it on a Friday night is outside paragraph 2, however small each stay was. Condition (b) is the harder ceiling - 28 days a year, which is about one van every other weekend, not a van every night.\n\nParagraph 3 is the route for anyone with land. Holdings of five acres or more need no licence for up to three caravans at a time, again capped at 28 days in any twelve months. That is why a vineyard with a paddock can take three vans on a summer evening and a town-centre brewery with a yard cannot.\n\nParagraph 5 is the route out of the 28-day cap altogether: land covered by a certificate issued by an exempted organisation, up to five caravans at a time, with no annual day limit. The exempted organisations are certificated under paragraph 12 - in England by Natural England, in Wales and Scotland by the devolved administrations - and include the two big clubs, ACCEO's rallying clubs, and several bodies that will certificate a commercial host without requiring the visitors to be members. This is the step a farm shop takes when the informal arrangement outgrows paragraph 2.\n\nThe planning side is the part almost nobody realises is already solved. Schedule 2 Part 5 Class A of the Town and Country Planning (General Permitted Development) (England) Order 2015 grants permitted development rights for the use of land, other than a building, as a caravan site in exactly the circumstances in paragraphs 2 to 10 of the 1960 Act's First Schedule. Licence exemption therefore carries deemed planning permission with it. Class A's single condition is that the use stops and the caravans go when those circumstances cease. A host operating properly inside paragraph 2, 3 or 5 needs no licence AND no planning application. That is the whole answer to 'is this legal'.\n\nThe fourth route is newer and separate. Part 4 Class BC of the GPDO, in force in England since 26 July 2023, permits a temporary recreational campsite for up to 60 days in a calendar year on up to 50 pitches, conditional on providing toilet and waste disposal on site and notifying the local planning authority in writing with a site plan before starting each year. Prior approval is needed in Flood Zones 2 and 3, and it is excluded on SSSIs, scheduled monuments, listed building land and safety hazard areas. Crucially it permits motorhomes and campervans but NOT touring caravans - the exclusion is for any caravan 'except a caravan which is used as a motor vehicle designed or adapted for human habitation'. Class BC also does not remove the site licence requirement, only the planning one, so a host relying on it still needs to sit inside a Schedule 1 exemption or hold a licence. The old Part 4 Class B 28-day right is not a substitute: it excludes caravan sites, and since Class BC arrived its camping application is limited to festival use.",
+  "notes": "The reason this category matters to the dataset is that it is a different KIND of supply from council provision, and the difference is not just who owns the land. Council provision is created by a positive decision - an order made, bays marked, a committee report, a price set - and it can be withdrawn the same way. Permission-based supply is created by a business deciding to say yes inside an exemption that already exists, and it needs nobody's approval to appear. That is why it has grown while council provision has shrunk: it has no gatekeeper.\n\nIt is also why it is invisible. There is no register of paragraph 2 stays. Nothing is published, nothing is mapped, and the aggregators that do collect it sell the list. A national picture built from council sources alone will systematically show rural England and Wales as having nowhere to stay when in fact it has thousands of places, and will show the opposite of the truth about direction of travel.\n\nThe fragility is real though, and a user should understand it. None of these routes give a right to stay. They remove a prohibition on the LANDOWNER. The host can say no on the night, and there is no penalty regime, no appeal, and nothing to enforce against either party - it is permission on private land, not a licence and not a legal instrument. That is the opposite failure mode from a council car park, where the rules are published and enforced but the answer is usually no.\n\nWatch the 28-day counters. Both paragraph 2 and paragraph 3 count days on which any caravan was stationed on the land in the preceding twelve months, not days per visitor. A popular farm shop burns through the allowance by early summer and is then unlawful for the rest of the year unless it has taken out a certificate. Local planning authorities do occasionally act on this, and the usual trigger is a neighbour complaint rather than a proactive check.\n\nCross-reference, do not duplicate: Britstops is a separate register entry (priority 1, roughly 1,000 pubs, farm shops, breweries and vineyards, paid guide, marked PARTNER OR COMPETE - DO NOT SCRAPE) and is the main aggregator of exactly this category. Independent pubs and inns are a third separate entry. The mechanism recorded here is what all three run on; the network detail belongs in those files, not this one.",
+  "open_questions": [
+    "Whether Class BC has been replicated in Wales and Scotland. It is an England-only amendment to the England GPDO; the Welsh and Scottish permitted development orders have not been checked and their temporary use rights may differ in both day count and vehicle scope.",
+    "Whether a host charging for the overnight stay changes the analysis. Nothing in paragraphs 2, 3 or 5 is conditioned on payment, but a charged, advertised, year-round offer starts to look like a material change of use in its own right and may attract business rates. No authority found either way.",
+    "How local planning authorities in practice count the 28 days under paragraphs 2 and 3 - per parcel, per holding, or per planning unit - where a farm has several separate yards in the same occupation.",
+    "Whether the tent exemptions under section 269 of the Public Health Act 1936 are being used by this category at all, or whether hosts stay strictly vehicle-only to avoid a second regime.",
+    "The scale of the category. Britstops' roughly 1,000 hosts is the only published number and is a paid-membership subset; the number of businesses that quietly say yes without being listed anywhere is unknown and probably several times larger."
+  ],
+  "sites": [
+    {
+      "name": "Two nights, one van - Caravan Sites Act 1960 Schedule 1 paragraph 2",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "price_per_night": 0.0,
+      "currency": "GBP",
+      "max_nights": 2,
+      "requires_self_contained": false,
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "The default legal basis for a pub, farm shop or garden centre letting a van stay. No site licence needed for a person travelling with a caravan who brings it on to the land for a period including not more than two nights, PROVIDED no other caravan is stationed on that land or adjoining land in the same occupation during that period, and caravans were stationed there on no more than 28 days in the preceding twelve months. One van at a time, and the annual counter is the real constraint. Planning permission is deemed under GPDO 2015 Schedule 2 Part 5 Class A. Typically free with an expectation of custom; payment is not a condition either way."
+    },
+    {
+      "name": "Three vans on five acres or more - Schedule 1 paragraph 3",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "max_nights": 28,
+      "requires_self_contained": false,
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "For holdings of five acres or more, taken with any adjoining land in the same occupation: no site licence for up to three caravans stationed at any one time, capped at 28 days in any twelve months. This is why farms, vineyards and rural garden centres can take a small group where a town-centre business cannot. Planning permission deemed under GPDO Part 5 Class A. The 28-day counter is per land, not per visitor."
+    },
+    {
+      "name": "Five vans under an exemption certificate - Schedule 1 paragraph 5",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "max_nights": 28,
+      "requires_self_contained": false,
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "The route a host takes when informal arrangements outgrow the 28-day cap. An exempted organisation - itself certificated under paragraph 12, in England by Natural England - issues the landowner a certificate, typically renewable annually, permitting up to five caravans or motorhomes at a time with NO annual day limit. Several exempted organisations will certificate a commercial host without requiring visitors to be members, which is what distinguishes this from the members-only club schemes. Certificate holders must be inspected and neighbours and the licensing authority consulted before issue. Planning permission deemed under GPDO Part 5 Class A. Exceed five vans and both the licence exemption and the planning rights fall away together."
+    },
+    {
+      "name": "Temporary recreational campsite, 60 days - GPDO Part 4 Class BC (England only)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "max_nights": 60,
+      "bays": 50,
+      "requires_self_contained": false,
+      "facilities": [
+        "toilet",
+        "waste disposal"
+      ],
+      "excludes_vehicle_types": [
+        "caravan"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "notes": "In force in England since 26 July 2023. Permitted development for a temporary recreational campsite of up to 50 pitches for up to 60 days in a calendar year. Conditions: toilet and waste disposal provided on site, and written notification to the local planning authority with a site plan before starting in each calendar year. Prior approval required in Flood Zones 2 and 3 (56-day determination). Excluded on SSSIs, scheduled monuments, listed building land, safety hazard and military explosives areas, and constrained in nutrient neutrality catchments. Motorhomes and campervans are permitted; TOURING CARAVANS ARE NOT - the exclusion covers any caravan except one used as a motor vehicle designed or adapted for human habitation. IMPORTANT: this grants planning permission only. It does not remove the site licence requirement, so a host still needs to sit inside a Schedule 1 exemption or hold a licence. The older Part 4 Class B 28-day right is not an alternative - it excludes caravan sites and its camping use is now limited to festivals. Confidence medium on the commencement date: secondary sources give both 26 July 2023 and 26 July 2024; the amending instrument is SI 2023/747."
+    }
+  ]
+}

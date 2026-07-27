@@ -1,0 +1,228 @@
+{
+  "authority": "National Trust for Scotland",
+  "authority_type": "landowner (conservation)",
+  "nation": "Scotland",
+  "researched_on": "2026-07-27",
+  "researched_by": "the Trust's own visitor FAQ, its outdoor access guidance and individual property pages, plus the two clubs' listings for the campsites inside Trust properties",
+  "source_format": "html",
+  "sources": [
+    "https://www.nts.org.uk/visitor-faq",
+    "https://www.nts.org.uk/stories/top-tips-for-exploring-the-outdoors",
+    "https://www.nts.org.uk/visit/places/glencoe/planning-your-visit",
+    "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit",
+    "https://www.nts.org.uk/visit/places/culzean/planning-your-visit",
+    "https://www.nts.org.uk/visit/places/kintail/planning-your-visit",
+    "https://www.nts.org.uk/visit/places/torridon/planning-your-visit",
+    "https://alanrogers.com/campsite/culzean-castle-camping-caravanning-club-site-lowlands",
+    "https://alanrogers.com/campsite/glencoe-camping-caravanning-club-site-heart-of-scotland",
+    "https://www.caravanclub.co.uk/club-sites/scotland/highlands/morvich-club-campsite",
+    "https://www.scottishfield.co.uk/uncategorized/a-campsite-fit-for-a-king-as-park-gets-five-star-honour/"
+  ],
+  "policy_summary": "SEPARATE BODY FROM THE NATIONAL TRUST. The National Trust for Scotland is an independent charity with its own estate, its own membership and its own published wording; data/sites/national-trust.json covers the England and Wales organisation and the two must not be merged.\n\nAnd the wording is the point, because NTS publishes what the National Trust file has been unable to find. The visitor FAQ says plainly 'we ask that you do not park in our car parks overnight' and, immediately after, 'motorhomes and caravans should use official sites, as our rural car parks have no cleaning or waste disposal facilities'. The outdoor access guidance is more specific still: 'we ask that campervans, motorhomes and caravans don't stay in our car parks overnight', with the reason given as the litter and human waste found the following morning. That is the same reasoning South Ayrshire used to justify building bays, deployed here to justify not building them.\n\nNote the verb. 'We ask' is not 'you must not'. This is landowner_policy, not an order: no penalty charge notice, no fixed penalty, nothing to appeal. The Trust's sanction is a condition of entry and the ability to require you to leave. Where a property is gated - Culzean Country Park runs 10.00 to 17.00 from 21 March to 1 November - the gate does the work instead, and being inside overnight is simply not available.\n\nThe Scottish legal context is worth stating because visitors get it wrong constantly. The Trust states it correctly: access rights under the Land Reform (Scotland) Act 2003 cover wild camping by 'small groups with lightweight equipment' and 'it doesn't apply to motorised vehicles'. A campervan in an NTS car park is there on the Trust's permission, never on a statutory right.\n\nCharging is now normal and motorhomes are sometimes priced separately. Most NTS car parks charge; members park free with a sticker. Glencoe charges GBP4 a car and GBP6 a motorhome or caravan, cannot take a car towing a caravan, and states flatly that 'overnight parking is not permitted'. Glenfinnan charges GBP5 and will not take motorhomes in the Trust car park at all, sending them to the adjacent community car park, which is somebody else's land.\n\nAgainst all that, the Trust does have overnight motorhome capacity, and it does not tell you so. Two large club sites sit inside or on the edge of NTS properties - Culzean and Glencoe - and a third is on the Kintail estate at Morvich. None of them is mentioned on the Trust's own visiting pages for those properties. Ninety pitches beside Culzean Castle, a hundred at the edge of the Glencoe visitor centre and eighty-eight at Morvich do not appear anywhere in the Trust's answer to 'where can I stay in a motorhome'."
+  ,
+  "notes": "The classic section-2 miss, three times over. Ask NTS about motorhomes and you get 'use official sites'; the official sites are on their own land, run by the Camping and Caravanning Club and the Caravan and Motorhome Club, and nothing on either side links to the other. Culzean's planning-your-visit page does not mention the campsite in the country park at all. Kintail's page mentions the Morvich site only to disclaim it as 'a separate facility rather than National Trust property', while placing the Trust's own ranger office next door to it - which is a statement about who runs it, not about who owns the ground; the Club's own page says the land is 'mostly owned by the National Trust for Scotland'.\n\nSo the answer to 'does any NTS site permit overnight motorhome stays' is yes, at three of them, but never in a car park and never on a Trust booking system. The lease or licence terms are the thing that would settle it and none is published.\n\nDirection of travel: tightening on the car parks, priced rather than banned. Charging has spread, motorhomes are being given their own tariff line (Glencoe) or excluded outright (Glenfinnan), and the overnight ask is now stated in two separate places on the Trust's site where the National Trust in England has still not published its equivalent. This file answers that file's open question 'does National Trust for Scotland have the same policy?' - substantially yes, but NTS says it out loud, and NTS's version is explicitly about occupation, not just presence.\n\nNot researched here: Ben Lomond and the Rowardennan car park, Grey Mare's Tail, Corrieshalloch Gorge, Torridon and Brodick Castle. Torridon's page carries no parking or camping information at all beyond single-track road etiquette, and admission there is free."
+  ,
+  "open_questions": [
+    "Does NTS use ANPR anywhere? Nothing found on any page read. Glencoe and Glenfinnan are ticket-machine and marked-bay operations; whether the busiest sites have moved to camera enforcement is unresolved.",
+    "Which NTS car parks are physically gated overnight, beyond Culzean Country Park's 10.00-17.00 seasonal hours? A gate is a much harder restriction than an 'ask' and the estate-wide picture is unknown.",
+    "The Glencoe tariff is inconsistent between pages: one gives GBP4 car and GBP6 motorhome/caravan, another lists a GBP4 'small motorhome' rate. Confirm the 2026 bands.",
+    "The land ownership under the Glencoe Camping and Caravanning Club site. It is described as on the edge of the NTS visitor centre; NTS freehold is inferred, not confirmed.",
+    "Lease or licence terms for the Culzean, Glencoe and Morvich club sites - length, whether NTS takes a rent or a share, and whether NTS could reclaim the ground.",
+    "Ben Lomond: who owns and runs the Rowardennan car park, given NTS owns the mountain but the loch shore there is contested between several bodies. The NTS property page says nothing about parking.",
+    "Corrieshalloch Gorge, Grey Mare's Tail and Brodick Castle car parks - charges, hours and any overnight signage. Pages could not be retrieved in this session.",
+    "Is there a Trust-run campsite anywhere on the estate, as distinct from a club site on Trust land? Torridon is the likeliest candidate and could not be confirmed."
+  ],
+  "sites": [
+    {
+      "name": "All National Trust for Scotland car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "Published estate-wide policy, in the Trust's own words in two places. Visitor FAQ: 'We ask that you do not park in our car parks overnight', followed by 'Motorhomes and caravans should use official sites, as our rural car parks have no cleaning or waste disposal facilities'. Outdoor access guidance: 'We ask that campervans, motorhomes and caravans don't stay in our car parks overnight', with litter and human waste found in the morning given as the reason. A request from a landowner, not an order - no PCN, no FPN, but they can require you to leave. Most NTS car parks now charge; members park free with a sticker."
+    },
+    {
+      "name": "Glencoe National Nature Reserve visitor centre car park",
+      "kind": "restriction",
+      "lat": 56.672862,
+      "lon": -5.082682,
+      "instrument": "landowner_policy",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "payment_methods": [
+        "card",
+        "cash"
+      ],
+      "excludes_vehicle_types": [
+        "car towing caravan"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Glencoe Visitor Centre car park National Trust for Scotland",
+      "notes": "The clearest statement on the estate: 'Overnight parking is not permitted.' Daytime is GBP4 a car and GBP6 a motorhome or caravan (a GBP4 'small motorhome' band also appears), free to members, ticket machines taking card and cash. Larger-vehicle spaces are limited and a car towing a caravan cannot be accommodated. Given where this is - the single most pressured glen in Scotland for van parking - the flat refusal here is the load-bearing fact for anyone planning a west Highland route.",
+      "postcode": "PH49 4HX",
+      "geocoded_by": "web_research",
+      "geocode_precision": "coordinates published on the Trust's own Glencoe planning-your-visit page",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://www.nts.org.uk/visit/places/glencoe/planning-your-visit"
+    },
+    {
+      "name": "Glenfinnan Monument car park",
+      "kind": "restriction",
+      "lat": 56.865855,
+      "lon": -5.417011,
+      "instrument": "landowner_policy",
+      "applies_to": "dvla_motor_caravan",
+      "restricts": "parking",
+      "status": "in_force",
+      "excludes_vehicle_types": [
+        "motorhome"
+      ],
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Glenfinnan Monument visitor centre car park",
+      "notes": "Motorhomes are excluded from the Trust car park outright, not merely overnight: parking is GBP5 a vehicle, coaches GBP1.50 a head, and the page directs motorhomes to 'the adjacent community car park', which 'has larger vehicle spaces and may be able to accommodate you'. That is a different landowner and outside this record. The Trust warns the site is 'incredibly busy and we are limited for space', asks people to arrive by bus or train, and notes that illegally parked vehicles are removed. The estate-wide overnight ask applies on top.",
+      "postcode": "PH37 4LT",
+      "geocoded_by": "web_research",
+      "geocode_precision": "coordinates published on the Trust's own Glenfinnan planning-your-visit page",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit"
+    },
+    {
+      "name": "Culzean Country Park (gated opening hours)",
+      "kind": "restriction",
+      "lat": 55.355273,
+      "lon": -4.789619,
+      "instrument": "opening_hours",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "time_from": "10:00",
+      "time_to": "17:00",
+      "enforcement": "signage_only",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Culzean Castle and Country Park opening times",
+      "notes": "The country park runs 21 March to 1 November, daily 10.00 to 17.00, so the estate is simply shut outside those hours and overnight presence is not a policy question. Parking is free to members; the Trust does not publish the non-member rate on this page. Whether every vehicle entrance is physically barriered, or only the main gate, is unconfirmed - hence medium.",
+      "postcode": "KA19 8LE",
+      "geocoded_by": "web_research",
+      "geocode_precision": "converted from the OS grid reference NS232103 published by the Trust for Culzean Castle",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://www.nts.org.uk/visit/places/culzean/planning-your-visit"
+    },
+    {
+      "name": "Culzean Castle Camping and Caravanning Club Site, Culzean Country Park",
+      "kind": "provision",
+      "lat": 55.353098,
+      "lon": -4.76826,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "bays": 90,
+      "currency": "GBP",
+      "payment_methods": [
+        "online booking"
+      ],
+      "facilities": [
+        "electric hook-up (60 pitches)",
+        "hardstanding (20 pitches)",
+        "toilets",
+        "showers",
+        "washing facilities",
+        "children's play area",
+        "safari tents for hire"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Culzean Castle Camping and Caravanning Club site Maybole",
+      "notes": "PROVISION THE PARKING PAGES DO NOT MENTION. Ninety touring pitches a short walk from the castle, inside the Trust's Culzean Country Park, open late April to early November. RUN BY: the Camping and Caravanning Club, not the Trust - Ayrshire's first five-star touring park under VisitScotland's scheme in 2018. The Trust's own Culzean pages never mention it, and the Club's pages never mention a lease. Recorded under NTS because the ground is inside an NTS country park, but the operator is the Club and the tenure is unpublished.",
+      "postcode": "KA19 8JX",
+      "geocoded_by": "web_research",
+      "geocode_precision": "campsite entrance within Culzean Country Park, corroborated by postcode and what3words on the listing",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://alanrogers.com/campsite/culzean-castle-camping-caravanning-club-site-lowlands"
+    },
+    {
+      "name": "Glencoe Camping and Caravanning Club Site",
+      "kind": "provision",
+      "lat": 56.670645,
+      "lon": -5.079852,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "bays": 100,
+      "currency": "GBP",
+      "payment_methods": [
+        "online booking"
+      ],
+      "facilities": [
+        "electric hook-up (70 pitches)",
+        "hardstanding (70 pitches)",
+        "motorhome service point",
+        "toilets",
+        "showers",
+        "backpacker hut"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Glencoe Camping and Caravanning Club site Ballachulish",
+      "notes": "PROVISION THE PARKING PAGES DO NOT MENTION, and three hundred metres from a car park that says overnight parking is not permitted. A hundred pitches, seventy with hook-up, a motorhome service point, early April to late October, described as 'nestled on the edge of the eco-friendly Glencoe National Trust for Scotland Visitor Centre'. RUN BY: the Camping and Caravanning Club. NTS ownership of the ground is inferred from the adjacency and the description, not confirmed - the main reason this is medium and not high. If it turns out the Club owns the freehold, this record belongs elsewhere.",
+      "postcode": "PH49 4LA",
+      "geocoded_by": "web_research",
+      "geocode_precision": "club site beside the Glencoe visitor centre, distinct from the NTS car park pin",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://alanrogers.com/campsite/glencoe-camping-caravanning-club-site-heart-of-scotland"
+    },
+    {
+      "name": "Morvich Caravan and Motorhome Club Site, Kintail",
+      "kind": "provision",
+      "lat": 57.235,
+      "lon": -5.38087,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "bays": 88,
+      "currency": "GBP",
+      "payment_methods": [
+        "online booking"
+      ],
+      "facilities": [
+        "hardstanding (77 pitches)",
+        "toilets",
+        "showers",
+        "accessible shower room"
+      ],
+      "excludes_vehicle_types": [
+        "outfits over 9.2m"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Morvich Caravan and Motorhome Club site Kintail Inverinate",
+      "notes": "PROVISION THE PARKING PAGES DO NOT MENTION. Eighty-eight pitches, seventy-seven hardstanding, 20 March to 19 October in 2026, maximum outfit 9.2m. RUN BY: the Caravan and Motorhome Club. The Club's page says the surrounding land is 'mostly owned by the National Trust for Scotland'; the Trust's Kintail page puts its own ranger office at Morvich Farm 'next to' the site and calls it 'a separate facility rather than National Trust property' - which distinguishes operation from ownership and leaves the tenure open. Kept at medium for that reason. NTS rangers run guided walks from next door.",
+      "postcode": "IV40 8HQ",
+      "geocoded_by": "web_research",
+      "geocode_precision": "club site coordinates published on the Caravan and Motorhome Club's own page",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://www.caravanclub.co.uk/club-sites/scotland/highlands/morvich-club-campsite"
+    }
+  ],
+  "areas": [
+    "Highland",
+    "South Ayrshire"
+  ]
+}

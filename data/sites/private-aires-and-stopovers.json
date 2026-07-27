@@ -1,0 +1,86 @@
+{
+  "authority": "Private aires and stopovers",
+  "authority_type": "commercial (commercial_site)",
+  "nation": "UK",
+  "researched_on": "2026-07-27",
+  "researched_by": "CAMpRA's public campaign and business-hub material, primary legislation, and planning guidance; no member-only or paid site lists accessed",
+  "source_format": "html",
+  "sources": [
+    "https://campra.org.uk/",
+    "https://campra.org.uk/campra-accredited-aire/",
+    "https://campra.org.uk/campra-aires/",
+    "https://campra.org.uk/faqs/",
+    "https://campra.org.uk/wp-content/uploads/business_hub/What%20is%20an%20Exemption%20Certificate%20v2.pdf",
+    "https://campra.org.uk/wp-content/uploads/business_hub/04_Planning_TRO_Site_Licences_Certificates.pdf",
+    "https://www.ukmotorhomes.net/uk-stopovers/uk-stopover-setup",
+    "https://www.legislation.gov.uk/ukpga/Eliz2/8-9/62/schedule/FIRST/enacted",
+    "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/5/crossheading/class-a-use-of-land-as-caravan-site/made",
+    "https://acceo.org/"
+  ],
+  "policy_summary": "AN AIRE IS NOT A LEGAL CATEGORY IN THE UNITED KINGDOM. That single fact explains most of what follows. In France an aire de services is a recognised municipal facility type with its own conventions; in the UK the word describes an intention, not a status. Legally a private aire is a caravan site under the Caravan Sites and Control of Development Act 1960 and nothing else, and it must either hold a site licence from the district council or fit inside one of the First Schedule exemptions. There is no lighter-touch regime for a hard-standing bay used by a self-contained vehicle for one night, because the 1960 Act was written for static caravan parks and does not distinguish between a residential mobile home and a motorhome that arrives at seven and leaves at nine.\n\nWhat an operator actually faces. Below six vans, the exemption certificate route is straightforward: an exempted organisation issues the landowner a certificate under paragraph 5 of the First Schedule for up to five caravans or motorhomes stationed at any one time, and Schedule 2 Part 5 Class A of the GPDO 2015 supplies deemed planning permission because it grants permitted development for caravan site use in the circumstances where a licence is not required. No licence, no planning application, certificate renewable annually, and non-members can generally use the site if the organisation and the landowner agree. Above five vans, all of that disappears at once and the operator needs a full site licence plus express planning permission, assessed against Model Standards issued in 1983 for England and Wales and 1990 for Scotland - road widths, unit spacing, fire points, hard standings - drafted around static caravans. Circular 23/83 says the standards should be applied with regard to the circumstances of each case, and that where use is restricted to self-contained vehicles lower standards may be desirable. That discretion exists. It is rarely used.\n\nSO THE UK'S SUPPLY IS SHAPED LIKE A CLIFF. Everything is either five vans or a full commercial campsite, with nothing in between, and the continental aire - twenty to fifty bays, no facilities beyond water and a drain, unstaffed, machine-operated - lands squarely in the gap. That is the structural answer to why Britain has, in CAMpRA's words, 'very few dedicated motorhome stopovers' while they are common across Europe. It is not planning hostility so much as a missing tier.\n\nCouncil land is a different mechanism again and belongs in the individual authority files. Land occupied by the local authority in whose area it sits is exempt from site licensing outright, so a council can build an aire of any size without a licence. Its constraint is instead a Traffic Regulation Order under Part IV of the Road Traffic Regulation Act 1984, because most off-street parking orders prohibit overnight parking or sleeping and must be amended to permit it. CAMpRA publishes model wording for exactly that amendment - vehicle definition, hours, bay spacing, prohibited activities, maximum stay and non-return period, day and overnight tariffs. That is a genuine oddity worth recording: the drafting guidance councils reach for when they build an aire is written by the campaign group lobbying them to build it.\n\nCAMpRA itself. CAMpRA UK Ltd is a non-profit campaigning for a network of motorhome stopovers, and it has done the thing campaign groups rarely do - it has stopped only asking and become part of the mechanism. It is an exempted organisation, and it issues certificates to landowners permitting up to five motorhomes overnight without formal planning approval, in England, Wales and Scotland. It calls these 5 Van Certified Aires and offers landowners free help setting them up. Its accreditation standard is deliberately narrow, and the narrowness is the point: self-contained motorhomes and campervans only, parking rather than pitching, no awnings, no toilets or showers unless the host business already has them, water and waste disposal desirable but not required. An accredited aire is explicitly not a campsite, which keeps it inside the exemption and keeps it out of competition with licensed sites. CAMpRA does not paywall its list - accredited aires are published through the Search for Sites directory rather than a members' area, which makes this the one commercial network in the register whose supply is, in principle, publicly countable.",
+  "notes": "The insight worth keeping is that permission-based supply and council provision are not two flavours of the same thing. They fail differently and they scale differently.\n\nCouncil provision needs a decision. Someone has to write a report, amend a TRO, set a tariff and defend it at a committee, and every one of those steps is a place where a councillor can say no - which is why the register keeps finding schemes that shrank on revision. But when a council does say yes it can build forty bays, because council land does not need a site licence at all.\n\nPermission-based supply needs no decision from anybody. A landowner and an exempted organisation can create an aire between them in weeks with no public process. But it is capped at five vans by statute, so it scales by multiplying sites rather than by growing them. Five hundred five-van aires and one fifty-bay municipal aire are not interchangeable even though the second is easier to map: the first is dispersed, unadvertised, fragile and renewable annually; the second is durable, signed and enforceable.\n\nThe register should therefore expect these two supplies to have opposite trajectories, and the evidence so far says they do. Council provision is contracting under enforcement pressure while certificated supply grows quietly underneath it, and because the certificated tier is not published in any official dataset, the national picture looks worse than it is - which in turn feeds the political argument that vans have nowhere legitimate to go.\n\nThe legal pressure point to watch is the definition. Everything here assumes a motorhome is a 'caravan' within the 1960 Act, which is how every council, both clubs and CAMpRA operate, but the Act's definition is built around structures that are towed or transported. CAMpRA's own position paper argues for statutory clarification separating self-contained motorcaravans from caravans on the basis that a self-contained vehicle is not camping at all, and a Bill along those lines has been before the Commons. If that ever passed it would not tweak the regime, it would remove the five-van ceiling from motorhome stopovers entirely - and the cliff described above would flatten overnight. It is the single change that would most alter this dataset.\n\nNO NAMED SITES ARE RECORDED HERE, deliberately. CAMpRA's accredited aires are publicly listed through Search for Sites, so naming a handful would have been legitimate, but individual locations could not be corroborated from a second independent source in this session and the protocol forbids publishing coordinates that have not been properly located. Recording three or four plausible pins would have been worse than recording none. Next pass should take the public CAMpRA list, cross-check each against park4night or searchforsites, and add them as real located provision records - they would be among the few genuinely mappable commercial entries in the whole register.",
+  "open_questions": [
+    "How many CAMpRA-accredited aires currently exist. The public pages describe the 5 Van Certified scheme but give no total, deferring to the Search for Sites directory. A count is obtainable and would be the best single measure of how fast this sector is growing.",
+    "Named aires with verified coordinates. Not attempted this pass for the reason in notes. The CAMpRA list is public, so this is a straightforward next task rather than a blocked one.",
+    "How many exempted organisations issue certificates to commercial aires, and on what terms. CAMpRA, The Motor Caravanners Club and Motorhome Fun are named in the source material as certificating without requiring visitor membership, but there is no published list of exempted organisations and the certification fees are not public.",
+    "The France comparison in numbers. CAMpRA's public material says only that the UK has 'very few' stopovers while aires are 'common throughout Europe'. Reliable counts for France and Germany were not obtained and should not be guessed; a sourced figure would strengthen the argument considerably.",
+    "The status of the Caravan Site Licensing (Exemptions of Motor Homes) Bill, which was before the Commons in February 2023. Sponsor, contents and fate could not be read directly - the Hansard page refused the request - and the reference here rests on CAMpRA's own account of proposing the change.",
+    "Whether the exact paragraph numbering of the First Schedule used here is right in every case. Paragraphs 2, 3, 5 and 6 are corroborated from two directions, including ACCEO's own references to its paragraph 4 and paragraph 6 certificates; the local authority exemption is cited here without a number because two readings of the Schedule disagreed on whether it is paragraph 10 or 11.",
+    "Whether Model Standards discretion under Circular 23/83 is ever actually exercised for motorhome-only sites. If some authority has licensed an aire on relaxed standards it would be a valuable precedent and worth finding."
+  ],
+  "sites": [
+    {
+      "name": "CAMpRA 5 Van Certified Aires (England, Wales and Scotland)",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "requires_self_contained": true,
+      "facilities": [
+        "drinking water (desirable, not required)",
+        "waste disposal (desirable, not required)"
+      ],
+      "prohibits": [
+        "awnings",
+        "toilets and showers unless already part of the host business",
+        "any use resembling pitched camping"
+      ],
+      "excludes_vehicle_types": [
+        "caravan",
+        "tent"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "CAMpRA UK Ltd is an exempted organisation and issues certificates to landowners for up to five motorhomes overnight without a site licence or a planning application, under paragraph 5 of the First Schedule to the Caravan Sites and Control of Development Act 1960 read with GPDO 2015 Schedule 2 Part 5 Class A. Self-contained motorhomes and campervans only; parking, not pitching. The accreditation is deliberately minimal so the site stays inside the exemption and out of campsite territory. Accredited aires are published openly through the Search for Sites directory rather than behind a membership wall, which makes this network publicly countable - unlike the club schemes. No individual sites recorded here; see notes."
+    },
+    {
+      "name": "Exemption-certificate aires from other exempted organisations",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "max_nights": 28,
+      "requires_self_contained": false,
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "notes": "The same paragraph 5 route, used by bodies other than CAMpRA. The Motor Caravanners Club and Motorhome Fun are named in CAMpRA's own business-hub material as issuing motorcaravan exemption certificates that do NOT require the visitor to be a member, which is the practical difference from the Camping and Caravanning Club's Certificated Sites and the Caravan and Motorhome Club's Certificated Locations. Certificates run for up to a year and are renewable. Before issuing, the organisation must consult neighbours and the local licensing authority, inspect the site, and operate a complaints procedure. Confidence medium because there is no published register of exempted organisations and the terms are known only from secondary description."
+    },
+    {
+      "name": "Licensed private aires above five vans",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "policy_only",
+      "status": "in_force",
+      "requires_self_contained": false,
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "notes": "The route nobody takes, and the reason the UK has no continental-scale aires in private hands. Six vans or more means a site licence from the district council plus express planning permission, assessed against Model Standards written in 1983 (England and Wales) and 1990 (Scotland) for static caravan parks - spacing, road widths, fire points, hard standings. Circular 23/83 permits those standards to be relaxed where use is restricted to self-contained vehicles, and CAMpRA leans on that wording, but no example of an authority actually doing so has been found. The cost and delay of this route against the near-zero cost of the five-van certificate is what pins private UK supply at five bays a site."
+    }
+  ]
+}

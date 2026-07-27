@@ -16,7 +16,17 @@
   "Denbighshire": "Wales",
   "Pembrokeshire": "Wales",
   "Highland": "Scotland",
-  "South Ayrshire": "Scotland"
+  "South Ayrshire": "Scotland",
+  "North Ayrshire": "Scotland",
+  "Dumfries and Galloway": "Scotland",
+  "Na h-Eileanan Siar": "Scotland",
+  "Powys": "Wales",
+  "Monmouthshire": "Wales",
+  "Merthyr Tydfil": "Wales",
+  "Carmarthenshire": "Wales",
+  "Antrim": "Northern Ireland",
+  "Londonderry": "Northern Ireland",
+  "UK-wide": "UK"
  },
  "authorities": {
   "Northumberland County Council": [
@@ -62,6 +72,12 @@
   ],
   "South Ayrshire Council": [
    "South Ayrshire"
+  ],
+  "North Ayrshire Council": [
+   "North Ayrshire"
+  ],
+  "Dumfries and Galloway Council": [
+   "Dumfries and Galloway"
   ],
   "North East Lincolnshire Council": [
    "Lincolnshire"
@@ -192,6 +208,47 @@
    "Blaenau Gwent",
    "Merthyr Tydfil",
    "Rhondda Cynon Taf"
+  ],
+  "Yorkshire Water": [
+   "West Yorkshire",
+   "South Yorkshire",
+   "North Yorkshire"
+  ],
+  "Severn Trent Water": [
+   "Derbyshire",
+   "Staffordshire"
+  ],
+  "South West Water": [
+   "Devon",
+   "Cornwall",
+   "Somerset"
+  ],
+  "Comhairle nan Eilean Siar": [
+   "Na h-Eileanan Siar"
+  ],
+  "National Trust for Scotland": [
+   "Highland",
+   "South Ayrshire"
+  ],
+  "Welsh Water / Dwr Cymru": [
+   "Powys",
+   "Pembrokeshire",
+   "Monmouthshire",
+   "Merthyr Tydfil",
+   "Carmarthenshire"
+  ],
+  "Causeway Coast and Glens Borough Council": [
+   "Antrim",
+   "Londonderry"
+  ],
+  "Camping and Caravanning Club - Certificated Sites": [
+   "UK-wide"
+  ],
+  "Farm shops, breweries, vineyards, garden centres": [
+   "UK-wide"
+  ],
+  "Private aires and stopovers": [
+   "UK-wide"
   ]
  },
  "regions": {
@@ -305,7 +362,8 @@
   "Londonderry": "Northern Ireland",
   "Tyrone": "Northern Ireland",
   "Fermanagh": "Northern Ireland",
-  "England-wide": "Nationwide"
+  "England-wide": "Nationwide",
+  "UK-wide": "Nationwide"
  },
  "region_order": [
   "South West",
@@ -586,6 +644,78 @@
    "Craig y Nos Country Park car park, Pen-y-cae": "Powys",
    "All Bannau Brycheiniog National Park Authority car parks - overnight parking and sleeping": "all",
    "Wild camping and overnight sleeping on land within the National Park": "all"
+  },
+  "Yorkshire Water": {
+   "Swinsty Stack Point car park": "North Yorkshire",
+   "Swinsty Moor car park, Fewston Embankment": "North Yorkshire",
+   "Blubberhouses car park, Fewston Reservoir": "North Yorkshire",
+   "Thruscross Reservoir car park": "North Yorkshire",
+   "Langsett Barn car park": "South Yorkshire",
+   "Digley Reservoir car parks (Quarry and South)": "West Yorkshire",
+   "Scammonden Wood Edge car park": "West Yorkshire",
+   "Ogden Water car park": "West Yorkshire",
+   "Baitings Embankment and Rivelin car parks - locked at night": [
+    "West Yorkshire",
+    "South Yorkshire"
+   ]
+  },
+  "Severn Trent Water": {
+   "Fairholmes car park, Upper Derwent Valley": "Derbyshire",
+   "Heatherdene car park, Ladybower Reservoir": "Derbyshire",
+   "Upper Derwent Valley smaller car parks (Bridge End, Hagg Side and others)": "Derbyshire",
+   "Carsington Water car parks (Visitor Centre, Sheepwash and Millfields)": "Derbyshire",
+   "Tittesworth Water car parks": "Staffordshire"
+  },
+  "South West Water": {
+   "Roadford Lake Campsite": "Devon",
+   "Roadford Lake main car park": "Devon",
+   "Burrator Reservoir car parks": "Devon",
+   "Wimbleball Lake Campsite": "Somerset",
+   "Siblyback Lake Campsite": "Cornwall",
+   "Stithians Lake Campsite": "Cornwall",
+   "Tamar Lakes Campsite": "Cornwall",
+   "Colliford Lake car parks": "Cornwall"
+  },
+  "National Trust for Scotland": {
+   "All National Trust for Scotland car parks": "all",
+   "Glencoe National Nature Reserve visitor centre car park": "Highland",
+   "Glenfinnan Monument car park": "Highland",
+   "Culzean Country Park (gated opening hours)": "South Ayrshire",
+   "Culzean Castle Camping and Caravanning Club Site, Culzean Country Park": "South Ayrshire",
+   "Glencoe Camping and Caravanning Club Site": "Highland",
+   "Morvich Caravan and Motorhome Club Site, Kintail": "Highland"
+  },
+  "Welsh Water / Dwr Cymru": {
+   "Llys-y-Frân Lakeview Campsite": "Pembrokeshire",
+   "Llys-y-Frân Lake day car park": "Pembrokeshire",
+   "Llandegfedd Lake": "Monmouthshire",
+   "Elan Valley Visitor Centre car park": "Powys",
+   "Elan Valley estate car parks (Elan Valley Trust)": "Powys",
+   "Talybont Reservoir": "Powys",
+   "Pontsticill Reservoir": [
+    "Powys",
+    "Merthyr Tydfil"
+   ],
+   "Llyn Brianne": [
+    "Carmarthenshire",
+    "Powys"
+   ],
+   "All other Welsh Water reservoirs and operational land": "all"
+  },
+  "Causeway Coast and Glens Borough Council": {
+   "Sandhill Drive Motorhome Park and Aire de Service, Portrush": "Antrim",
+   "Carrick Dhu Holiday Park, Portrush": "Antrim",
+   "Juniper Hill Holiday Park, Portstewart": "Londonderry",
+   "Benone Holiday and Leisure Park, Limavady": "Londonderry",
+   "Drumaheglis Holiday Park and Marina, Ballymoney": "Antrim",
+   "Cushendall Holiday Park": "Antrim",
+   "Cushendun Holiday Park": "Antrim",
+   "All Causeway Coast and Glens Borough Council off-street car parks - sleeping and camping": "all",
+   "Whiterocks Beach car park, Portrush": "Antrim",
+   "Portrush East Strand car park": "Antrim",
+   "Ballintoy Harbour car park": "Antrim",
+   "Ballycastle Harbour, Ballycastle Marina and Portrush West Bay - seasonal charging": "Antrim",
+   "Downhill Beach and Benone Strand": "Londonderry"
   }
  }
 }
