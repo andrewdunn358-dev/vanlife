@@ -265,9 +265,13 @@ body {
   transition: border-color .12s ease, transform .12s ease;
 }
 .roll a:hover { border-color: var(--ink-3); transform: translateY(-1px); }
+/* The tally lives INSIDE the card link: name and tally share the top row,
+   the sub-line spans underneath. It used to be a sibling of the <a>, which
+   left it floating outside the card border. */
 .roll .tally {
   font-weight: 400; font-size: 0.82rem; color: var(--ink-3);
   white-space: nowrap; font-variant-numeric: tabular-nums;
+  grid-column: 2; grid-row: 1; justify-self: end;
 }
 
 .back {
@@ -377,9 +381,15 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-ra
   border-bottom: 1px solid var(--hair);
 }
 .nation:first-of-type { margin-top: 0; }
-.roll a { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
-.roll li { display: flex; }
-.roll li a { flex: 1; }
+.roll a {
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: baseline; gap: 0.2rem 1rem;
+}
+.roll a .rollsub { grid-column: 1 / -1; }
+@media (max-width: 480px) {
+  .roll a { grid-template-columns: 1fr; }
+  .roll .tally { grid-column: 1; grid-row: auto; justify-self: start; white-space: normal; }
+}
 .rollsub {
   display: block; font-weight: 400; font-size: 0.78rem; color: var(--ink-3);
   letter-spacing: 0; line-height: 1.4;

@@ -16,6 +16,7 @@ the dangerous kind.
     python3 scripts/build_site.py --out site
 """
 import argparse
+import csv
 import glob
 import html
 import json
@@ -48,9 +49,13 @@ HEAD = """<!DOCTYPE html>
 </header>
 """
 
+# MapLibre is vendored in site-assets/vendor and copied into site/vendor on
+# every build. It used to come from unpkg, and the map silently failed to
+# appear anywhere the CDN was slow, blocked or offline - which on a NAS on
+# home broadband is not a rare condition. Offline-first means local.
 MAP_ASSETS = (
-    '<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">\n'
-    '<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>\n'
+    '<link href="{root}vendor/maplibre-gl.css" rel="stylesheet">\n'
+    '<script src="{root}vendor/maplibre-gl.js"></script>\n'
 )
 
 MAP_JS = """<script>
@@ -290,6 +295,16 @@ def by_area(records):
     return grouped
 
 
+# Compass regions take a definite article ("the North East"); nations and
+# named places do not ("Scotland", never "the Scotland").
+THE_REGIONS = {"North East", "North West", "South East", "South West",
+               "East of England", "West Midlands", "East Midlands"}
+
+
+def region_phrase(region):
+    return f"the {region}" if region in THE_REGIONS else region
+
+
 def region_page(region, counties, out_dir, blurb="", all_counties=None):
     """Counties within a region.
 
@@ -301,11 +316,18 @@ def region_page(region, counties, out_dir, blurb="", all_counties=None):
     n_rec = sum(len(d["sites"]) for docs in counties.values() for d in docs)
     todo = [c for c in (all_counties or []) if c not in counties]
 
-    body = [HEAD.format(
-        title=f"Staying overnight in the {html.escape(region)} in a van",
-        desc=f"Overnight parking and sleeping rules across the {html.escape(region)}, "
-             "county by county, from councils, national parks and landowners.",
-        css=asset("site.css"), root="../", mapassets="")]
+    if region == "Nationwide":
+        title = "Staying overnight in a van - nationwide rules"
+        desc = ("Overnight parking and sleeping rules from bodies whose land "
+                "spans the whole country, such as the National Trust and "
+                "Forestry England.")
+    else:
+        title = f"Staying overnight in {html.escape(region_phrase(region))} in a van"
+        desc = (f"Overnight parking and sleeping rules across "
+                f"{html.escape(region_phrase(region))}, county by county, from "
+                "councils, national parks and landowners.")
+    body = [HEAD.format(title=title, desc=desc,
+                        css=asset("site.css"), root="../", mapassets="")]
 
     total = len(counties) + len(todo)
     body.append('<div class="state">')
@@ -326,11 +348,11 @@ def region_page(region, counties, out_dir, blurb="", all_counties=None):
         prov = sum(1 for d in docs for s in d["sites"] if s.get("kind") == "provision")
         body.append(
             f'<li><a href="../area/{slug(county)}.html">{esc(county)}'
+            f'<span class="tally">{prov} of {recs} permitted</span>'
             f'<span class="rollsub">'
             + ", ".join(esc(d["authority"]) for d in docs[:3])
             + (f" and {len(docs) - 3} more" if len(docs) > 3 else "")
-            + "</span></a>"
-            f'<span class="tally">{prov} of {recs} permitted</span></li>')
+            + "</span></a></li>")
     body.append("</ul>")
 
     if todo:
@@ -352,7 +374,7 @@ def region_page(region, counties, out_dir, blurb="", all_counties=None):
     return path
 
 
-def empty_area_page(area, out_dir, region=None):
+def empty_area_page(area, out_dir, region=None, others=None):
     """A county nobody has researched yet.
 
     Generated for every county so the URL exists from the start and the
@@ -383,6 +405,7 @@ def empty_area_page(area, out_dir, region=None):
                 "own, and landowners such as water companies, Forestry England or "
                 "the National Trust, each with a different position. They rarely "
                 "agree.</p></div>")
+    body.append(others_block(area, others))
 
     if region:
         body.append(f'<a class="back" href="../region/{slug(region)}.html">'
@@ -391,6 +414,165 @@ def empty_area_page(area, out_dir, region=None):
 
     path = os.path.join(out_dir, "area", f"{slug(area)}.html")
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w", encoding="utf-8").write("\n".join(body))
+    return path
+
+
+# ---- the research register: every authority, researched or not ----------
+#
+# The site used to show only the 19 researched bodies, which implied the
+# other 400 do not exist. Same principle as listing every county: the
+# gaps ARE the to-do list, so every authority in the register gets a page
+# saying plainly whether anyone has looked yet.
+
+# Register full names that differ from the name a research file uses.
+REGISTER_ALIASES = {"Gwynedd Council": "Cyngor Gwynedd"}
+
+
+def load_register():
+    path = "data/research-register.csv"
+    if not os.path.exists(path):
+        return []
+    rows = [{k: (v or "").strip() for k, v in r.items()}
+            for r in csv.DictReader(open(path, encoding="utf-8"))]
+    for r in rows:
+        # The reference data capitalises "The Humber"; the site does not.
+        if r.get("region") == "Yorkshire and The Humber":
+            r["region"] = "Yorkshire and the Humber"
+    return rows
+
+
+def load_register_map():
+    p = os.path.join(ASSETS, "register-map.json")
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+
+
+def register_counties(row, regmap, counties_known):
+    """Which county pages an authority belongs on. Empty = none known,
+    which is right for UK-wide landowners and commercial networks."""
+    ov = (regmap.get("overrides", {}).get(row["short_name"])
+          or regmap.get("overrides", {}).get(row["authority"]))
+    if ov:
+        return ov if isinstance(ov, list) else [ov]
+    code = regmap.get("county_codes", {}).get(row.get("parent_county", ""))
+    if code:
+        return [code]
+    if row.get("type") == "London borough":
+        return ["Greater London"]
+    if row["short_name"] in counties_known:
+        return [row["short_name"]]
+    return []
+
+
+def stub_authority_page(row, counties, out_dir):
+    """An authority nobody has researched yet. The page exists so the gap
+    is visible and linkable, exactly like an unresearched county."""
+    name = row["authority"]
+    body = [HEAD.format(
+        title=f"{html.escape(name)} - overnight parking rules (not researched)",
+        desc=f"Overnight parking and sleeping rules for {html.escape(name)}. "
+             "Not yet researched for this site.",
+        css=asset("site.css"), root="../", mapassets="")]
+
+    body.append('<div class="state">')
+    body.append('<span class="warn"><b>0</b> records</span>')
+    body.append("<span>not researched yet</span>")
+    if row.get("priority"):
+        body.append(f'<span>research priority {esc(row["priority"])} of 4</span>')
+    body.append("</div>")
+
+    body.append('<section class="authority">')
+    body.append('<div class="authority-head">')
+    body.append(f"<h2>{esc(name)}</h2>")
+    meta = " &middot; ".join(x for x in (row.get("type"), row.get("nation")) if x)
+    body.append(f'<p class="meta">{meta}</p>')
+    body.append("</div>")
+
+    body.append('<div class="awaiting"><h4>Nobody has looked here yet</h4>'
+                f"<p>{esc(name)} is on the research register but nobody has "
+                "checked what it publishes about overnight parking or sleeping "
+                "in a vehicle. That is a gap in the research, not a finding "
+                "&mdash; assume there are rules and check with the authority "
+                "before you rely on anything.</p>")
+    if row.get("pressure_reason"):
+        body.append(f'<p>Why it is on the list: {esc(row["pressure_reason"])}</p>')
+    body.append("</div>")
+    body.append("</section>")
+
+    if counties:
+        body.append(f'<a class="back" href="../area/{slug(counties[0])}.html">'
+                    f'&larr; {esc(counties[0])}</a>')
+    else:
+        body.append('<a class="back" href="../authorities.html">'
+                    '&larr; Every authority</a>')
+    body.append(FOOT.format(when=date.today().isoformat()))
+
+    path = os.path.join(out_dir, "authority", f"{slug(name)}.html")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w", encoding="utf-8").write("\n".join(body))
+    return path
+
+
+def authorities_index_page(records, reg, matched, out_dir):
+    """The whole register on one page: who has been researched, who has not.
+
+    Progress stated plainly - 19 of 428 reads badly, which is the point.
+    """
+    done = {d["authority"]: d for d in records}
+    body = [HEAD.format(
+        title="Every UK authority - the research register",
+        desc="Every council, national park and landowner tracked for overnight "
+             "parking rules, and whether anyone has researched it yet.",
+        css=asset("site.css"), root="", mapassets="")]
+
+    body.append('<div class="state">')
+    body.append(f"<span><b>{len(reg)}</b> bodies tracked</span>")
+    body.append(f"<span><b>{len(records)}</b> researched</span>")
+    body.append(f'<span class="warn"><b>{len(reg) - len(matched)}</b> still to do</span>')
+    body.append("</div>")
+
+    body.append('<div class="authority-head"><h2>Every authority</h2>'
+                '<p class="meta">the research register</p></div>')
+    body.append('<p class="summary">Every body that can set overnight rules '
+                'on land a van can reach: councils, national parks, water '
+                'companies, forestry bodies and the big landowners. Researched '
+                'ones link to their records. The rest are gaps, listed rather '
+                'than hidden. Priority 1 means heavy van pressure; 4 means '
+                'it can wait.</p>')
+
+    nations = ["England", "Scotland", "Wales", "Northern Ireland", "UK"]
+    by_nation = {}
+    for r in reg:
+        by_nation.setdefault(r.get("nation") or "UK", []).append(r)
+    for nation in nations + sorted(set(by_nation) - set(nations)):
+        rows = by_nation.get(nation)
+        if not rows:
+            continue
+        rows.sort(key=lambda r: (r.get("priority") or "9", r["short_name"]))
+        body.append(f'<h3 class="nation">{esc(nation)}</h3>')
+        body.append('<ul class="roll">')
+        for r in rows:
+            dname = matched.get(r["authority"])
+            if dname:
+                d = done[dname]
+                p = sum(1 for s in d["sites"] if s.get("kind") == "provision")
+                tally = (f"{len(d['sites'])} records &middot; "
+                         f"{p} permitted")
+            else:
+                tally = (f"priority {esc(r['priority'])}" if r.get("priority")
+                         else "unprioritised") + " &middot; not researched"
+            target = slug(dname or r["authority"])
+            cls = "" if dname else ' class="dim"'
+            body.append(
+                f'<li{cls}><a href="authority/{target}.html">'
+                f'{esc(r["short_name"] or r["authority"])}'
+                f'<span class="tally">{tally}</span>'
+                f'<span class="rollsub">{esc(r.get("type") or "")}</span></a></li>')
+        body.append("</ul>")
+
+    body.append('<a class="back" href="index.html">&larr; Home</a>')
+    body.append(FOOT.format(when=date.today().isoformat()))
+    path = os.path.join(out_dir, "authorities.html")
     open(path, "w", encoding="utf-8").write("\n".join(body))
     return path
 
@@ -451,7 +633,24 @@ def records_for(area, doc, cfg):
     return out
 
 
-def area_page(area, docs, out_dir, region=None):
+def others_block(area, others):
+    """Bodies the register places in this county that nobody has checked."""
+    if not others:
+        return ""
+    out = ['<h3 class="nation">Also set rules here - not researched yet</h3>',
+           '<p class="summary">The register places these bodies in '
+           + esc(area) + " as well, but nobody has checked what they "
+           "publish. Assume they have rules.</p>",
+           '<ul class="todo">']
+    for r in sorted(others, key=lambda r: (r.get("priority") or "9",
+                                           r["short_name"])):
+        out.append(f'<li><a href="../authority/{slug(r["authority"])}.html">'
+                   f'{esc(r["short_name"] or r["authority"])}</a></li>')
+    out.append("</ul>")
+    return "\n".join(out)
+
+
+def area_page(area, docs, out_dir, region=None, others=None):
     """Everything that governs one place, whoever owns it.
 
     The most useful page on the site: a council, a national park, a water
@@ -475,7 +674,8 @@ def area_page(area, docs, out_dir, region=None):
         title=f"Staying overnight in {html.escape(area)} in a van",
         desc=f"Overnight parking and sleeping rules across {html.escape(area)} - "
              "councils, national parks, water companies and landowners in one place.",
-        css=asset("site.css"), root="../", mapassets=MAP_ASSETS if has_map else "")]
+        css=asset("site.css"), root="../",
+        mapassets=MAP_ASSETS.format(root="../") if has_map else "")]
 
     body.append('<div class="state">')
     body.append(f"<span><b>{len(docs)}</b> "
@@ -506,9 +706,10 @@ def area_page(area, docs, out_dir, region=None):
         body.append(
             f'<li><a href="../authority/{slug(d["authority"])}.html">'
             f'{esc(d["authority"])}'
-            f'<span class="rollsub">{esc(kind)}</span></a>'
-            f'<span class="tally">{p} permitted &middot; {r} restricted</span></li>')
+            f'<span class="tally">{p} permitted &middot; {r} restricted</span>'
+            f'<span class="rollsub">{esc(kind)}</span></a></li>')
     body.append("</ul>")
+    body.append(others_block(area, others))
 
     body.append("<script>" + asset("vehicle.js") + "</script>")
     if region:
@@ -733,7 +934,8 @@ def authority_page(d, out_dir, root="../"):
     body = [HEAD.format(
         title=f"{html.escape(name)} - overnight parking rules",
         desc=f"Published overnight parking and sleeping rules for {html.escape(name)}, with sources and dates.",
-        css=asset("site.css"), root=root, mapassets=MAP_ASSETS if has_map else "")]
+        css=asset("site.css"), root=root,
+        mapassets=MAP_ASSETS.format(root=root) if has_map else "")]
 
     body.append('<div class="state">')
     body.append(f"<span><b>{len(sites)}</b> "
@@ -777,7 +979,7 @@ def authority_page(d, out_dir, root="../"):
     return path
 
 
-def index_page(records, out_dir):
+def index_page(records, out_dir, reg=None):
     total = sum(len(d["sites"]) for d in records)
     prov = sum(1 for d in records for s in d["sites"] if s.get("kind") == "provision")
     mapped = sum(1 for d in records for s in d["sites"] if s.get("lat") is not None)
@@ -790,10 +992,15 @@ def index_page(records, out_dir):
         title="Overnight - where you can stay in a van in the UK",
         desc="Published overnight parking and sleeping rules for UK councils, "
              "national parks and landowners. Every record shows its source and date.",
-        css=asset("site.css"), root="", mapassets=MAP_ASSETS if has_map else "")]
+        css=asset("site.css"), root="",
+        mapassets=MAP_ASSETS.format(root="") if has_map else "")]
 
     body.append('<div class="state">')
-    body.append(f"<span><b>{len(records)}</b> authorities</span>")
+    if reg:
+        body.append(f'<span><b>{len(records)}</b> of '
+                    f'<a href="authorities.html">{len(reg)} bodies</a> researched</span>')
+    else:
+        body.append(f"<span><b>{len(records)}</b> authorities</span>")
     body.append(f"<span><b>{total}</b> "
                 + ("record" if total == 1 else "records") + "</span>")
     body.append(f"<span><b>{prov}</b> where you can stay</span>")
@@ -835,9 +1042,14 @@ def index_page(records, out_dir):
         cls = "" if counties else ' class="dim"'
         body.append(
             f'<li{cls}><a href="region/{slug(region)}.html">{esc(region)}'
-            f'<span class="rollsub">{esc(sub)}</span></a>'
-            f'<span class="tally">{tally}</span></li>')
+            f'<span class="tally">{tally}</span>'
+            f'<span class="rollsub">{esc(sub)}</span></a></li>')
     body.append("</ul>")
+    if reg:
+        body.append('<p class="summary">Or start from '
+                    f'<a href="authorities.html">the full register</a> &mdash; '
+                    f'every one of the {len(reg)} councils, national parks and '
+                    'landowners this site tracks, researched or not.</p>')
     body.append("<script>" + asset("vehicle.js") + "</script>")
     body.append(FOOT.format(when=date.today().isoformat()))
 
@@ -865,37 +1077,91 @@ def main():
     shutil.copy(os.path.join(ASSETS, "favicon.svg"),
                 os.path.join(args.out, "favicon.svg"))
 
-    src = os.path.join(os.path.dirname(ASSETS), "..", "site-assets", "vehicles")
-    src = os.path.normpath(src)
-    if os.path.isdir(src):
-        dst = os.path.join(args.out, "vehicles")
-        shutil.copytree(src, dst)
-        n = len([f for f in os.listdir(dst) if not f.startswith(".")])
-        print(f"copied {n} vehicle image(s) into {dst}")
+    for extra in ("vehicles", "vendor"):
+        src = os.path.join(os.path.dirname(ASSETS), "..", "site-assets", extra)
+        src = os.path.normpath(src)
+        if os.path.isdir(src):
+            dst = os.path.join(args.out, extra)
+            shutil.copytree(src, dst)
+            n = len([f for f in os.listdir(dst) if not f.startswith(".")])
+            print(f"copied {n} file(s) into {dst}")
 
     cfg = json.load(open(os.path.join(ASSETS, "areas.json"), encoding="utf-8"))
     blurbs = cfg.get("region_blurb", {})
     grouped = by_area(records)
     areas = regions = 0
     all_counties = cfg.get("counties", {})
+
+    # The register: every authority, matched against what has actually
+    # been researched. Unmatched rows become stub pages and county to-dos.
+    reg = load_register()
+    regmap = load_register_map()
+    counties_known = {c for cs in all_counties.values() for c in cs}
+    researched_names = {d["authority"] for d in records}
+    matched = {}       # register full name -> researched data name
+    for r in reg:
+        name = REGISTER_ALIASES.get(r["authority"], r["authority"])
+        if name in researched_names:
+            matched[r["authority"]] = name
+    county_todo = {}   # county -> [register rows not yet researched]
+    unplaced_rows = []
+    for r in reg:
+        if r["authority"] in matched:
+            continue
+        cs = register_counties(r, regmap, counties_known)
+        for c in cs:
+            if c in counties_known:
+                county_todo.setdefault(c, []).append(r)
+            else:
+                print(f"  register maps {r['short_name']!r} to unknown county {c!r}")
+        if not cs:
+            unplaced_rows.append(r["short_name"])
+
     for region in set(list(grouped) + list(all_counties)):
         counties = grouped.get(region, {})
         region_page(region, counties, args.out, blurbs.get(region, ""),
                     all_counties.get(region, []))
         regions += 1
         for area, docs in counties.items():
-            area_page(area, docs, args.out, region)
+            area_page(area, docs, args.out, region,
+                      others=county_todo.get(area))
             areas += 1
         for area in all_counties.get(region, []):
             if area not in counties:
-                empty_area_page(area, args.out, region)
+                empty_area_page(area, args.out, region,
+                                others=county_todo.get(area))
                 areas += 1
 
     for d in records:
         authority_page(d, args.out)
-    index_page(records, args.out)
+
+    stubs = 0
+    if reg:
+        stub_slugs = set()
+        researched_slugs = {slug(d["authority"]) for d in records}
+        for r in reg:
+            if r["authority"] in matched:
+                continue
+            s = slug(r["authority"])
+            if s in researched_slugs or s in stub_slugs:
+                print(f"  register slug collision, skipped: {r['authority']}")
+                continue
+            stub_slugs.add(s)
+            stub_authority_page(r, register_counties(r, regmap, counties_known),
+                                args.out)
+            stubs += 1
+        authorities_index_page(records, reg, matched, args.out)
+        if unplaced_rows:
+            print(f"  {len(unplaced_rows)} register bodies on no county page "
+                  "(nation- or UK-wide): " + ", ".join(sorted(unplaced_rows)[:8])
+                  + (" ..." if len(unplaced_rows) > 8 else ""))
+
+    index_page(records, args.out, reg=reg)
 
     n = sum(len(d["sites"]) for d in records)
+    if stubs:
+        print(f"  {stubs} stub authority pages from the register, "
+              "plus authorities.html")
     mapped = sum(1 for d in records for s in d["sites"] if s.get("lat") is not None)
     print(f"built {len(records) + areas + regions + 1} pages in {args.out}/ "
           f"({regions} regions, {areas} counties, {len(records)} authorities)")
