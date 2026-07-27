@@ -159,6 +159,39 @@
    "Moray",
    "Perth and Kinross",
    "Angus"
+  ],
+  "Kent County Council": [
+   "Kent"
+  ],
+  "Thanet District Council": [
+   "Kent"
+  ],
+  "Norfolk County Council": [
+   "Norfolk"
+  ],
+  "North Norfolk District Council": [
+   "Norfolk"
+  ],
+  "Hampshire County Council": [
+   "Hampshire"
+  ],
+  "Torbay Council": [
+   "Devon"
+  ],
+  "Ceredigion County Council": [
+   "Ceredigion"
+  ],
+  "Powys County Council": [
+   "Powys"
+  ],
+  "Bannau Brycheiniog National Park Authority": [
+   "Powys",
+   "Carmarthenshire",
+   "Monmouthshire",
+   "Torfaen",
+   "Blaenau Gwent",
+   "Merthyr Tydfil",
+   "Rhondda Cynon Taf"
   ]
  },
  "regions": {
@@ -541,6 +574,18 @@
    "Ashcombe Car Park, Simonsbath": "Somerset",
    "Exmoor House Car Park, Dulverton": "Somerset",
    "Open moorland, roadside and lay-bys throughout Exmoor National Park": "all"
+  },
+  "Bannau Brycheiniog National Park Authority": {
+   "Gwaun Hepste Car Park, Waterfall Country": "Powys",
+   "Cwm Porth (Porth yr Ogof) Car Park, Ystradfellte": "Powys",
+   "Keeper's Pond (Pen-ffordd-goch) Car Park, B4246 above Blaenavon": "Torfaen",
+   "Fox Hunter Car Park, Blorenge, B4246 near Blaenavon": "Torfaen",
+   "Llyn-y-Fan road car park, Llanddeusant": "Carmarthenshire",
+   "Carreg Cennen car park, Trapp": "Carmarthenshire",
+   "National Park Visitor Centre (Mountain Centre) car park, Libanus": "Powys",
+   "Craig y Nos Country Park car park, Pen-y-cae": "Powys",
+   "All Bannau Brycheiniog National Park Authority car parks - overnight parking and sleeping": "all",
+   "Wild camping and overnight sleeping on land within the National Park": "all"
   }
  }
 }

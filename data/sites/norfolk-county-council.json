@@ -1,0 +1,59 @@
+{
+  "authority": "Norfolk County Council",
+  "authority_type": "county (upper tier)",
+  "nation": "England",
+  "researched_on": "2026-07-27",
+  "researched_by": "the council's own civil parking enforcement and legal orders index, its traffic regulation order pages, its Citizen Space consultation record and published plan for the Salthouse order, a district-published notice of a Norfolk County Council order, and press reporting corroborated against a motorhome stopover database",
+  "source_format": "html",
+  "sources": [
+    "https://www.norfolk.gov.uk/roads-and-transport/roads/parking/civil-parking-enforcement-and-legal-orders",
+    "https://www.norfolk.gov.uk/article/39688/Civil-parking-enforcement-and-legal-orders",
+    "https://www.norfolk.gov.uk/roads-and-transport/roads/traffic-orders-notices-and-restrictions/traffic-regulation-orders",
+    "https://norfolk.citizenspace.com/environment-transport-and-development/pla314-salthouse-beach-road-proposed-prohibition-o/",
+    "https://norfolk.citizenspace.com/environment-transport-and-development/pla314-salthouse-beach-road-proposed-prohibition-o/supporting_documents/Proposed%20Plan.pdf",
+    "https://vanlifematters.co.uk/8113-2",
+    "https://www.searchforsites.co.uk/marker.php?id=32438",
+    "https://www.north-norfolk.gov.uk/media/9582/wells-next-the-sea-147174-notice.pdf",
+    "https://tro.trafficpenaltytribunal.gov.uk/norfolk-north-norfolk",
+    "https://api.postcodes.io/postcodes/NR257XW"
+  ],
+  "policy_summary": "SCOPE NOTE: Norfolk County Council is the highways authority for the whole of Norfolk - there is no unitary carve-out, unlike Devon. It makes every on-street traffic regulation order in the county, including in North Norfolk, Great Yarmouth and King's Lynn and West Norfolk. IT DOES NOT OWN A SINGLE CAR PARK. Every off-street car park in Norfolk belongs to a district or borough, to a parish council, to the National Trust or to a private estate, and each is researched separately. Nothing in this file is about a car park. The Broads Authority is a separate register entry with its own land, moorings and byelaws and is not covered here either.\n\nThere is NO county-wide Norfolk prohibition on overnight parking, on sleeping in a vehicle, or on motorhomes in lay-bys. Norfolk has not done what North Yorkshire did on its coast, and it has not even done what Devon did - there is no standing vehicle-class schedule in a consolidation order waiting to have new lengths of road added to it. Norfolk's orders are made village by village, each as a freestanding instrument, which means there is no single list of where motor caravans are restricted and no way to find one except by reading the whole legal-orders index.\n\nExactly ONE motor-caravan restriction was found in the entire county: Beach Road, Salthouse. The order prohibits motor caravans from parking on either side of the 450-metre road between 6.30pm and 8.30am, every day. Beach Road runs north from the A149 across the marsh to the shingle bank; it is inside the Norfolk Coast National Landscape and crosses a Site of Special Scientific Interest, and the stated triggers were chemical toilets emptied into the roadside ditches, littering, fires and the sheer volume of large vehicles on a single-track marsh road. The push came from Salthouse Parish Council, not from the county.\n\nThe enforcement chain here is unusual and worth understanding. Norfolk County Council makes the order but has delegated civil parking enforcement to its districts: Norwich City Council enforces Norwich, Great Yarmouth Borough Council enforces Great Yarmouth, South Norfolk Council enforces South Norfolk, and King's Lynn and West Norfolk Borough Council enforces King's Lynn, West Norfolk, NORTH NORFOLK, Broadland and Breckland. So a penalty charge notice for a motorhome on Beach Road, Salthouse is issued by an officer employed by a borough council forty miles away, under an order made by the county, in a district run by a third council which controls the car parks. Three authorities, one kerb.\n\nNo county-level motorhome or campervan policy statement was found on norfolk.gov.uk - no equivalent of Devon's 'Visiting Devon in your motor home' page. No lay-by order was found on the A149 coast road, the A47, the A11 or anywhere else. On any road in Norfolk not covered by a specific order, the county's instruments do not make sleeping in a lawfully parked vehicle an offence.",
+  "notes": "The finding that matters is the absence. Norfolk has 90-odd miles of the most motorhome-pressured coast in eastern England - Wells, Blakeney, Cley, Salthouse, Cromer, Winterton, Horsey - and the county highways authority has responded with one order, on one road, in one village. Compare Devon, which built a named 'Motor Caravan' schedule into its consolidation order and now adds seafronts to it; compare North Yorkshire, which ran a coastal-corridor ETRO. Norfolk has done neither. The pressure is being absorbed off the highway instead: by North Norfolk District Council's estate-wide 'no sleeping or camping' condition in its car park order, and by private and parish landowners at Wells, Blakeney and Holkham who simply lock their gates at night. The county is the least active of the three.\n\nDirection of travel: additive but glacial, and parish-driven. Salthouse got its order because a parish council pushed for it over several years. Nothing suggests Norfolk County Council has a programme, a policy or an appetite for a coastal-corridor instrument. If more orders come, they will come the same way - one village at a time, each triggered by a specific complaint.\n\nThere is a real documentary problem with this authority. Norfolk publishes its parking legal orders as a long alphabetical index of scanned PDFs by parish, with no search, no map layer for vehicle-class restrictions, and no consolidated order. The index does not appear to have been refreshed since late 2023 and carries no entry for Salthouse at all, even though an order was made there in April 2025. There is a CPE map at maps.norfolk.gov.uk/cpe/ which is the right place for a human to look next, but it could not be read here. The practical consequence for a van user is that the only reliable way to know whether a Norfolk road carries a motor-caravan restriction is to look at the signs.\n\nENFORCEMENT REALITY: signage-led. The Salthouse restriction is corroborated on the ground by a motorhome stopover database entry for Beach Road, which records the site as daytime-only with 'no overnight parking' signage - independent confirmation that the signs went up and that the van community has noticed.",
+  "open_questions": [
+    "The sealed text of the Salthouse order. Norfolk County Council's Citizen Space record names 'The Norfolk County Council, (Salthouse, U14288 Beach Road) (Prohibition of Waiting) Order 2025', made 9 April 2025 and operative 22 April 2025, but the order and statement of reasons are published only as .docx files that could not be read. The proposed PLAN that accompanied that consultation appears to show only about 20 metres of 'at any time' double yellow lines and KEEP CLEAR markings at the SOUTH end of Beach Road - which is NOT the same thing as a 450-metre overnight motor-caravan ban. Either the plan covers only part of the scheme, or the motor-caravan limb was made under a separate or earlier order. Someone must open the .docx files or the signs.",
+    "Whether the motor-caravan restriction is in force TODAY and on what date it started. Press reporting describes it in the future tense ('the order would make it an offence'), and the only Wayback capture of that article is from March 2026, so the timing is not pinned down.",
+    "Whether the restriction bites on the DVLA body type 'motor caravan' (as Devon's Schedule 14 does) or on some other wording. 'Motor caravan' is the term reported, but the drafting has not been read, and the difference decides whether an unconverted panel van is caught.",
+    "Whether any other Norfolk road carries a motor-caravan or overnight restriction. The county's legal-orders index has no search and appears stale; Salthouse itself is missing from it. Absence of evidence, not evidence of absence.",
+    "A separate 'bid to ban parking on a road in Sea Palling all year round' was reported by the local press but could not be read (robots.txt). Sea Palling sits behind the largest car park in the North Norfolk estate and is an obvious motorhome pressure point - this needs checking.",
+    "Whether Norfolk County Council has ANY published motorhome or campervan guidance. None was found. If it exists it is not indexed.",
+    "The contents of the CPE map at maps.norfolk.gov.uk/cpe/ - the only mapped view of Norfolk's parking orders."
+  ],
+  "sites": [
+    {
+      "name": "Beach Road, Salthouse (no motor caravans overnight)",
+      "kind": "restriction",
+      "lat": 52.951174,
+      "lon": 1.094158,
+      "instrument": "on_street_tro",
+      "applies_to": "dvla_motor_caravan",
+      "restricts": "parking",
+      "status": "in_force",
+      "time_from": "18:30",
+      "time_to": "08:30",
+      "enforcement": "pcn",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Beach Road, Salthouse, Norfolk",
+      "postcode": "NR25 7XW",
+      "notes": "THE ONLY MOTOR-CARAVAN RESTRICTION FOUND ANYWHERE IN NORFOLK. Motor caravans may not park on either side of the 450-metre length of Beach Road, from the A149 in the village north across the marsh to the shingle bank, between 6.30pm and 8.30am, seven days a week. The road is in the Norfolk Coast National Landscape and crosses an SSSI. Reasons given: chemical toilet waste emptied into the roadside ditches, littering, fires, and the volume and size of vehicles creating danger on a narrow marsh road. Pushed by Salthouse Parish Council; the county council made the order. Enforcement is by penalty charge notice, but the enforcing body is King's Lynn and West Norfolk Borough Council, which holds the CPE contract for the North Norfolk area - not Norfolk County Council and not North Norfolk District Council. Confidence is medium, not high: the hours, the 450m length and the 'motor caravan' vehicle class come from press reporting and are corroborated by 'no overnight parking' signage recorded in a motorhome stopover database, but the sealed order text is published only as an unreadable .docx and the accompanying plan shows a much shorter length of ordinary double yellow lines at the south end. Treat the fact of the restriction as solid and the exact extent as unverified.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "ONS centroid of NR25 7XW, the Beach Road postcode for Salthouse; the restricted length runs roughly 450m north from here to the shingle bank",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://www.searchforsites.co.uk/marker.php?id=32438"
+    }
+  ],
+  "areas": [
+    "Norfolk"
+  ]
+}
