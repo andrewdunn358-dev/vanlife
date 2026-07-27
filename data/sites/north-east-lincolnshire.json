@@ -19,8 +19,8 @@
     {
       "name": "Thrunscoe Land Motorhome Parking, Cleethorpes",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 53.5438,
+      "lon": -0.0103,
       "instrument": "off_street_parking_order",
       "status": "in_force",
       "bays": 10,
@@ -48,20 +48,32 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "search_hint": "Thrunscoe Land car park, Cleethorpes",
-      "notes": "Southern part of Thrunscoe Land car park, on the hard standing near the Cleethorpes Coast Light Railway. GBP24 for the full 48 hours. Closed over winter, roughly 1 November to mid-March. Park centrally to keep three metres between vans."
+      "notes": "Southern part of Thrunscoe Land car park, on the hard standing near the Cleethorpes Coast Light Railway. GBP24 for the full 48 hours. Closed over winter, roughly 1 November to mid-March. Park centrally to keep three metres between vans.",
+      "postcode": "DN35 0AH",
+      "geocoded_by": "web_research",
+      "geocode_precision": "park4night pin, council site confirms the facility",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://park4night.com/en/place/577148"
     },
     {
       "name": "Grant Street Car Park, Cleethorpes",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 53.56276,
+      "lon": -0.03215,
       "instrument": "off_street_parking_order",
       "status": "in_force",
       "restricts": "sleeping",
       "last_verified": "2026-07-26",
       "confidence": "medium",
       "search_hint": "Grant Street car park, Cleethorpes",
-      "notes": "Daytime parking for motorhomes too large for a regular bay. Daytime only - no overnight stays."
+      "notes": "Daytime parking for motorhomes too large for a regular bay. Daytime only - no overnight stays.",
+      "postcode": "DN35 8AZ",
+      "geocoded_by": "web_research",
+      "geocode_precision": "postcode centroid from the council's parking list",
+      "geocode_band": "nearby",
+      "geocode_checked": false,
+      "geocode_source": "https://www.nelincs.gov.uk/wp-content/uploads/2019/03/NEL-Parking-Spaces.pdf"
     },
     {
       "name": "All other North East Lincolnshire council car parks",

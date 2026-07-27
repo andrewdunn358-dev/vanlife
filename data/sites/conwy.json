@@ -19,8 +19,8 @@
     {
       "name": "Morfa Bach Car Park, Conwy",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 53.27915,
+      "lon": -3.82867,
       "instrument": "policy_only",
       "status": "in_force",
       "restricts": "sleeping",
@@ -32,13 +32,19 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "search_hint": "Morfa Bach car park, Conwy",
-      "notes": "Designated campervan and motorhome bays, sized for larger vehicles. DAYTIME ONLY - overnight camping is prohibited here as everywhere else in Conwy. Useful if you want to visit Conwy in a van, useless if you want to sleep in it."
+      "notes": "Designated campervan and motorhome bays, sized for larger vehicles. DAYTIME ONLY - overnight camping is prohibited here as everywhere else in Conwy. Useful if you want to visit Conwy in a van, useless if you want to sleep in it.",
+      "postcode": "LL32 8FZ",
+      "geocoded_by": "web_research",
+      "geocode_precision": "parking directory listing for the car park itself",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://coparking.ch/en/UK/parking/3886"
     },
     {
       "name": "Maelgwyn Road Car Park, Llandudno",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 53.323,
+      "lon": -3.8367,
       "instrument": "policy_only",
       "status": "in_force",
       "restricts": "sleeping",
@@ -48,7 +54,13 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "search_hint": "Maelgwyn Road car park, Llandudno",
-      "notes": "Council describes it as having suitable space for campervans and motorhomes. Daytime only."
+      "notes": "Council describes it as having suitable space for campervans and motorhomes. Daytime only.",
+      "postcode": "LL30 2YN",
+      "geocoded_by": "web_research",
+      "geocode_precision": "park4night pin, cross-checked against postcode centroid",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://park4night.com/en/place/289803"
     },
     {
       "name": "All Conwy County Borough car parks",

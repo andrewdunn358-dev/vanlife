@@ -20,8 +20,8 @@
     {
       "name": "Arosfan Doc Fictoria, Caernarfon",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 53.14116,
+      "lon": -4.27361,
       "instrument": "off_street_parking_order",
       "status": "in_force",
       "price_per_night": 16.5,
@@ -39,13 +39,18 @@
       "confidence": "high",
       "search_hint": "Doc Fictoria car park, Caernarfon",
       "notes": "Doc Fictoria car park, the old Shell site. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00.",
-      "postcode": "LL55 1SQ"
+      "postcode": "LL55 1SQ",
+      "geocoded_by": "web_research",
+      "geocode_precision": "GPS from motorhome-aire guide, postcode from council page",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://campervancastaways.com/2024/01/26/motorhome-aires-around-snowdonia/"
     },
     {
       "name": "Arosfan Y Glyn, Llanberis",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 53.12623,
+      "lon": -4.13373,
       "instrument": "off_street_parking_order",
       "status": "in_force",
       "price_per_night": 16.5,
@@ -63,13 +68,19 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "search_hint": "Y Glyn car park, Llyn Padarn, Llanberis",
-      "notes": "Y Glyn car park beside Llyn Padarn, the area known locally as the lagoons. Nine bays were in the original planning application. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00."
+      "notes": "Y Glyn car park beside Llyn Padarn, the area known locally as the lagoons. Nine bays were in the original planning application. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00.",
+      "postcode": "LL55 4TY",
+      "geocoded_by": "web_research",
+      "geocode_precision": "Parc Padarn's official map link",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://parcpadarn.cymru/plan-your-visit/"
     },
     {
       "name": "Arosfan Maes, Criccieth",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 52.91976,
+      "lon": -4.23228,
       "instrument": "off_street_parking_order",
       "status": "in_force",
       "price_per_night": 16.5,
@@ -88,13 +99,19 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "search_hint": "Maes car park, Criccieth",
-      "notes": "The Maes car park. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00."
+      "notes": "The Maes car park. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00.",
+      "postcode": "LL52 0BT",
+      "geocoded_by": "web_research",
+      "geocode_precision": "GPS from motorhome-aire guide, agrees with postcode centroid",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://campervancastaways.com/2024/01/26/motorhome-aires-around-snowdonia/"
     },
     {
       "name": "Arosfan Cei'r Gogledd (North Quay), Pwllheli",
       "kind": "provision",
-      "lat": null,
-      "lon": null,
+      "lat": 52.88998,
+      "lon": -4.41597,
       "instrument": "off_street_parking_order",
       "status": "in_force",
       "price_per_night": 16.5,
@@ -113,7 +130,13 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "search_hint": "Cei'r Gogledd, North Quay, Pwllheli",
-      "notes": "North Quay. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00."
+      "notes": "North Quay. GBP16.50 covers 16:00-10:00 only; the normal car park tariff applies if you are in the bay between 10:00 and 16:00.",
+      "postcode": "LL53 5YR",
+      "geocoded_by": "web_research",
+      "geocode_precision": "GPS from motorhome-aire guide, agrees with postcode centroid",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://campervancastaways.com/2024/01/26/motorhome-aires-around-snowdonia/"
     },
     {
       "name": "All other Gwynedd council car parks",

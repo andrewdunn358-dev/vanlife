@@ -12,8 +12,8 @@
     {
       "name": "Betws-y-Coed long stay car park",
       "kind": "restriction",
-      "lat": null,
-      "lon": null,
+      "lat": 53.09247,
+      "lon": -3.80125,
       "instrument": "opening_hours",
       "applies_to": "all_vehicles",
       "restricts": "parking",
@@ -22,13 +22,18 @@
       "last_verified": "2026-07-26",
       "confidence": "medium",
       "search_hint": "Betws-y-Coed, Conwy",
-      "notes": "Restricted 22:00-03:00 from 1 April 2026, reversed 10 June. 24-hour access restored - but overnight stays are still not permitted."
+      "notes": "Restricted 22:00-03:00 from 1 April 2026, reversed 10 June. 24-hour access restored - but overnight stays are still not permitted.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "NPA's own parking page map link",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://eryri.gov.wales/visit/plan-your-visit/parking-in-snowdonia/"
     },
     {
       "name": "Llyn Tegid car park, Bala",
       "kind": "restriction",
-      "lat": null,
-      "lon": null,
+      "lat": 52.90622,
+      "lon": -3.60624,
       "instrument": "opening_hours",
       "applies_to": "all_vehicles",
       "restricts": "parking",
@@ -37,7 +42,12 @@
       "last_verified": "2026-07-26",
       "confidence": "low",
       "search_hint": "Llyn Tegid, Bala, Gwynedd",
-      "notes": "ANPR pilot still under consideration here and at Llangywer, after repeated concerns from Llangywer Community Council and Bala Town Council."
+      "notes": "ANPR pilot still under consideration here and at Llangywer, after repeated concerns from Llangywer Community Council and Bala Town Council.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "NPA's own parking page map link",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://eryri.gov.wales/visit/plan-your-visit/parking-in-snowdonia/"
     },
     {
       "name": "All Eryri National Park Authority car parks",
