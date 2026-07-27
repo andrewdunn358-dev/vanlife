@@ -1,0 +1,126 @@
+{
+  "authority": "Carmarthenshire County Council",
+  "authority_type": "unitary",
+  "nation": "Wales",
+  "researched_on": "2026-07-27",
+  "researched_by": "the council's own parking FAQs, car parks and charges page and 2016 parking strategy, plus the council-run Pembrey Country Park site for the country park and campsite rules",
+  "source_format": "html",
+  "sources": [
+    "https://www.carmarthenshire.gov.wales/council-services/highways-travel-parking/parking/parking-faqs/",
+    "https://www.carmarthenshire.gov.wales/council-services/highways-travel-parking/parking/",
+    "https://www.carmarthenshire.gov.wales/council-services/highways-travel-parking/parking/car-parks-charges/",
+    "https://www.carmarthenshire.gov.wales/media/1229648/parking-strategy.pdf",
+    "http://www.pembreycountrypark.wales/parking-annual-parking-permits/",
+    "https://www.pembreycountrypark.wales/campsite/",
+    "https://www.pembreycountrypark.wales/contact/"
+  ],
+  "policy_summary": "Carmarthenshire has no motorhome page. The prohibition is buried in the parking FAQs, and it is categorical: 'Unfortunately, we cannot accommodate overnight occupation of vehicles within our car parks. You are not permitted to occupy vehicles overnight.' The same answer explicitly extends the ban to lorries, buses, cars and caravans, so it is a rule about occupation rather than about motorhomes, and the council's advice is to ring a caravan park.\n\nThe country parks are separately and more tightly governed. Pembrey Country Park, Llyn Llech Owain and the Millennium Coastal Park car parks - which is where the coastal pressure actually is, taking in Burry Port Harbour, North Dock, Sandy Water Park, Festival Fields, Bynea, Marsh Road, Rotary Way and Woodlands - all carry 'overnight parking not permitted', reinforced by 'Unauthorised overnight camping is NOT permitted anywhere within the country parks or Millennium Coastal Park car parks'. Pembrey's gates are shut from 10pm to 6am, so at Cefn Sidan the rule is backed by a locked barrier rather than by signage. Annual permits at Llyn Llech Owain and the Millennium Coastal Park are restricted to vehicles under 3.5 tonnes and under 2 metres high, which excludes most motorhomes from holding one at all.\n\nThe one legal overnight option the council itself provides is the Pembrey Country Park campsite, and it is a campsite rather than an aire: pitches from GBP25 to GBP36 depending on season and services, camping pods GBP80-100, open 1 March to 31 October only, minimum two nights (three on bank holiday weekends), arrivals 2pm-8pm, and pre-booked organised rallies as the only other permitted form of camping in the park. One vehicle and one sleeping unit per pitch. Nothing about it suits a one-night touring stop, which is exactly the demand the Gwynedd Arosfan bays were built to absorb.\n\nDirection of travel: no movement toward provision. The council's own parking strategy - the only document that engages with the question at all, and it dates from 2016 - contemplated campervans and caravans only as a secondary use of park-and-ride and coach parking, and twice specified 'limited day time' stop-over facilities. Nothing found suggests Carmarthenshire has followed Gwynedd's Arosfan model or run an Anglesey-style trial.",
+  "notes": "Carmarthenshire and Swansea land in the same place from opposite directions. Swansea publishes a dedicated motorhome page that says no; Carmarthenshire says no in a parking FAQ that a van user would never think to open. Neither has a single designated overnight bay, on a coastline running from the Gower boundary through Burry Port and Cefn Sidan to Pendine and Llansteffan. Between them they are the counterexample to the north Wales story: same nation, same Welsh Government funding landscape that paid for Gwynedd's Arosfan network under Brilliant Basics, and no equivalent scheme in either.\n\nThe Pembrey height and weight rule is a permit condition rather than a barrier, and it is worth reading carefully: a vehicle over 3.5 tonnes or over 2 metres cannot hold an annual parking permit for Llyn Llech Owain or the Millennium Coastal Park. It does not by itself stop a motorhome paying the daily tariff at Pembrey, where buses are explicitly tariffed at GBP16 all day. Pembrey's daytime charges are the highest in the county - GBP8.80 all day in season - and the campsite is the only way to still be there at 10pm.\n\nThe gap in the record is the western coast. Pendine and Llansteffan are named van pressure points and neither appears anywhere in the council's published car park list, which is dominated by town-centre car parks in Carmarthen, Llanelli and Ammanford. That absence is itself a finding: whatever governs overnight parking at Pendine Sands is not in the council's published parking material.",
+  "open_questions": [
+    "Pendine. The beach and the Sands of Speed frontage are a major van draw and no council car park page, tariff or overnight rule for Pendine was found. Who operates that car park and under what order is unresolved.",
+    "Llansteffan. Same gap - the beach car park does not appear in the council's published list and its ownership was not established.",
+    "The legal instrument behind the FAQ prohibition. It reads as a statement of the off-street parking places order but no order text was found online, and the FAQs do not name a penalty for overnight occupation (they name PCNs only for tariff and bay-type offences).",
+    "Whether the country park overnight bans rest on byelaws, the parking order, or park conditions of entry. Recorded here as landowner policy.",
+    "Whether any on-street TRO covers overnight motorhome parking on the coast road at Pendine, Llansteffan, Ferryside or Burry Port.",
+    "Whether the 2016 parking strategy has been superseded. It is the only council document that engages with campervans and it is ten years old; its 'limited day time' stop-over idea was never traced to implementation.",
+    "Coordinates are ONS postcode centroids, not surveyed entrances. The Millennium Coastal Park and Llyn Llech Owain record has no pin because it spans a string of separate car parks."
+  ],
+  "sites": [
+    {
+      "name": "Pembrey Country Park campsite",
+      "kind": "provision",
+      "lat": 51.682841,
+      "lon": -4.303051,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 25.0,
+      "currency": "GBP",
+      "payment_methods": [
+        "online booking",
+        "telephone"
+      ],
+      "requires_self_contained": false,
+      "facilities": [
+        "electric hookup (pay-as-you-go and fully-serviced pitches)",
+        "camping pods",
+        "woodland pitches",
+        "walking distance to Cefn Sidan beach"
+      ],
+      "prohibits": [
+        "more than one sleeping unit per pitch",
+        "more than one vehicle per pitch",
+        "groups of more than three units together"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Pembrey Country Park campsite, Pembrey, Llanelli SA16 0EJ",
+      "notes": "The only overnight facility Carmarthenshire itself runs, and the only lawful way to be inside Pembrey Country Park after the 10pm gate closure. A conventional campsite, not an aire: non-electric GBP25-28, pay-as-you-go electric GBP27-30, fully serviced GBP32-36, pods GBP80-100, all varying by season. Open 1 March to 31 October, peak 1 April to 2 September. MINIMUM two nights, three over bank holiday weekends - single nights only by phoning 01554 742435 on the day. Arrivals 2pm-8pm, checkout by noon. One sleeping unit, one vehicle, two adults and four children, up to three dogs per pitch. price_per_night records the lowest advertised rate; the useful range is GBP25-36. Pre-booked organised rallies are the only other camping permitted anywhere in the park.",
+      "postcode": "SA16 0EJ",
+      "geocoded_by": "web_research",
+      "geocode_precision": "ONS centroid of the country park postcode published by the park; the campsite sits within the park, in the woodland behind Cefn Sidan",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://api.postcodes.io/postcodes/SA160EJ"
+    },
+    {
+      "name": "All Carmarthenshire County Council car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "off_street_parking_order",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "From the council's parking FAQs, under a motorhome heading: 'Unfortunately, we cannot accommodate overnight occupation of vehicles within our car parks. You are not permitted to occupy vehicles overnight.' The same answer extends the prohibition to lorries, buses, cars and caravans, so it bites on occupation rather than on vehicle type. The council's stated alternative is to contact local caravan parks. Long-stay car parks do allow stays over 24 hours if you buy the days (full day GBP2.50) - so leaving a vehicle is provided for, sleeping in it is not. No penalty is specified for the overnight offence; PCNs are named only for tariff and bay-type breaches. Instrument recorded as the off-street parking places order by inference; the order text was not located.",
+      "prohibits": [
+        "overnight occupation of any vehicle",
+        "sleeping overnight in lorries, buses, cars, motorhomes and caravans"
+      ]
+    },
+    {
+      "name": "Pembrey Country Park (including Cefn Sidan car parks)",
+      "kind": "restriction",
+      "lat": 51.682841,
+      "lon": -4.303051,
+      "instrument": "landowner_policy",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "time_from": "22:00",
+      "time_to": "06:00",
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Pembrey Country Park, off the A484 between Llanelli and Carmarthen",
+      "notes": "The council-run country park behind Cefn Sidan, and the single biggest van draw on the Carmarthenshire coast. Rules are explicit: 'Overnight parking not permitted', and 'Unauthorised overnight camping is NOT permitted anywhere within the country parks or Millennium Coastal Park car parks'. Enforcement is largely physical - park gates open 6am and close 10pm, so the ban is a locked barrier rather than a ticket. Daytime tariff is the highest in the county: GBP5.50 up to two hours or GBP8.80 all day April to September, GBP4.00/GBP5.00 October to March, buses GBP16, motorbikes GBP3. Annual permit GBP75-76, seven-day permit GBP32. Camping is lawful in the park only on the designated campsite between 1 March and 31 October, or on a pre-booked organised rally.",
+      "postcode": "SA16 0EJ",
+      "geocoded_by": "web_research",
+      "geocode_precision": "ONS centroid of the country park postcode published by the park",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://api.postcodes.io/postcodes/SA160EJ"
+    },
+    {
+      "name": "Millennium Coastal Park and Llyn Llech Owain Country Park car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "applies_to": "all_vehicles",
+      "restricts": "both",
+      "status": "in_force",
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "excludes_vehicle_types": [
+        "vehicles over 3.5 tonnes gross (permits only)",
+        "vehicles over 2 metres high (permits only)"
+      ],
+      "notes": "A string of separate car parks rather than one place, hence no pin: North Dock, Sandy Water Park, Rotary Way, Bynea, Burry Port Harbour, Burry Port, Woodlands, Festival Fields and Marsh Road along the Llanelli-Burry Port coast, plus the inland Llyn Llech Owain park. All carry 'Overnight parking not permitted' and all fall inside 'Unauthorised overnight camping is NOT permitted anywhere within the country parks or Millennium Coastal Park car parks'.\n\nThe annual permit conditions matter for vans: a permit vehicle 'must not exceed 3.5 tonnes gross weight', 'must be less than 2 metres (6 feet 8 inches) high' and must be built to carry no more than eight passengers. That is a permit eligibility rule, not a physical barrier, so a motorhome can still pay the daily tariff (GBP1.50 an hour up to GBP5.00 all day) - it simply cannot hold a season permit. Burry Port Harbour is the pressure point in this group."
+    }
+  ]
+}
