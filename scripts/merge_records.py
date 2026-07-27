@@ -12,6 +12,7 @@ name.
 
     python3 scripts/merge_records.py
     python3 scripts/merge_records.py --write
+    python3 scripts/merge_records.py --write --prune-stale
 
 Nothing is written without --write, and it reports every record it would
 add, every coordinate it would take from either side, and anything it
@@ -98,7 +99,7 @@ def fetch(dest):
     return d
 
 
-def merge_file(local_path, repo_path):
+def merge_file(local_path, repo_path, prune_stale=False):
     """Repo record content, local geometry. Returns (doc, notes)."""
     repo = json.load(open(repo_path, encoding="utf-8"))
     notes = []
@@ -135,19 +136,27 @@ def merge_file(local_path, repo_path):
     for n in orphans:
         o = have[n]
         if o.get("lat") is not None or o.get("geocode_checked"):
-            # local-only record with real work in it - do not discard
-            repo["sites"].append(o)
-            if placeholder_pin(o):
+            if placeholder_pin(o) and not o.get("geocode_checked"):
+                # A local-only record on a whole-number pin is a stub that
+                # was never finished, not work worth protecting. It draws a
+                # marker on the map in the wrong place, which is worse than
+                # having no marker at all.
+                if prune_stale:
+                    notes.append(f"REMOVED stale local-only record: {n}"
+                                 f"\n      {describe(o)} - placeholder pin, "
+                                 "no repo record of this name")
+                    continue
                 notes.append(
-                    f"STALE? local-only record on a placeholder pin: {n}"
+                    f"STALE local-only record on a placeholder pin: {n}"
                     f"\n      {describe(o)} - whole numbers are a stand-in, "
                     "not a location."
-                    "\n      Kept, because this tool never deletes your data. "
-                    "If the repo has since"
-                    "\n      split this into properly located records, delete "
+                    "\n      Re-run with --prune-stale to remove it, or delete "
                     "it from the local file.")
-            else:
-                notes.append(f"kept local-only record with geometry: {n}")
+                repo["sites"].append(o)
+                continue
+            # local-only record with real work in it - do not discard
+            repo["sites"].append(o)
+            notes.append(f"kept local-only record with geometry: {n}")
         else:
             notes.append(f"dropped local-only record: {n}")
 
@@ -164,6 +173,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", default="data/sites")
     ap.add_argument("--write", action="store_true")
+    ap.add_argument("--prune-stale", action="store_true",
+                    help="also remove local-only records sitting on a "
+                         "placeholder pin (whole numbers in both axes). "
+                         "Never touches a record you have marked "
+                         "geocode_checked.")
     args = ap.parse_args()
 
     tmp = tempfile.mkdtemp()
@@ -178,7 +192,7 @@ def main():
         for rp in sorted(glob.glob(os.path.join(repo_dir, "*.json"))):
             name = os.path.basename(rp)
             lp = os.path.join(args.dir, name)
-            doc, notes = merge_file(lp, rp)
+            doc, notes = merge_file(lp, rp, prune_stale=args.prune_stale)
             after += len(doc["sites"])
             if notes:
                 print(f"\n{name}")
