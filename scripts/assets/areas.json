@@ -84,6 +84,81 @@
   ],
   "Argyll and Bute Council": [
    "Argyll and Bute"
+  ],
+  "North Yorkshire Council": [
+   "North Yorkshire"
+  ],
+  "North York Moors National Park Authority": [
+   "North Yorkshire",
+   "Tees Valley"
+  ],
+  "Yorkshire Dales National Park Authority": [
+   "North Yorkshire",
+   "Cumbria"
+  ],
+  "Peak District National Park Authority": [
+   "Derbyshire",
+   "Staffordshire",
+   "Cheshire",
+   "South Yorkshire",
+   "West Yorkshire",
+   "Greater Manchester"
+  ],
+  "Cumberland Council": [
+   "Cumbria"
+  ],
+  "Dorset Council": [
+   "Dorset"
+  ],
+  "Bournemouth, Christchurch and Poole Council": [
+   "Dorset"
+  ],
+  "Somerset Council": [
+   "Somerset"
+  ],
+  "Exmoor National Park Authority": [
+   "Somerset",
+   "Devon"
+  ],
+  "North Devon District Council": [
+   "Devon"
+  ],
+  "Devon County Council": [
+   "Devon"
+  ],
+  "New Forest District Council": [
+   "Hampshire"
+  ],
+  "New Forest National Park Authority": [
+   "Hampshire",
+   "Wiltshire"
+  ],
+  "South Downs National Park Authority": [
+   "Hampshire",
+   "West Sussex",
+   "East Sussex"
+  ],
+  "Isle of Wight Council": [
+   "Isle of Wight"
+  ],
+  "Isle of Anglesey County Council": [
+   "Isle of Anglesey"
+  ],
+  "City and County of Swansea Council": [
+   "Swansea"
+  ],
+  "Carmarthenshire County Council": [
+   "Carmarthenshire"
+  ],
+  "Pembrokeshire Coast National Park Authority": [
+   "Pembrokeshire"
+  ],
+  "Cairngorms National Park Authority": [
+   "Highland",
+   "Aberdeenshire",
+   "Moray",
+   "Perth and Kinross",
+   "Angus"
   ]
  },
  "regions": {
@@ -396,6 +471,76 @@
    "Lay-bys and roads inside the Camping Management Zones": "all",
    "Camping Management Zones, off the road, without a permit": "all",
    "The rest of the National Park, and everywhere October to February": "all"
+  },
+  "North York Moors National Park Authority": {
+   "Sutton Bank National Park Centre Car Park": "North Yorkshire",
+   "Danby Lodge National Park Centre Car Park": "North Yorkshire",
+   "Goathland Car Park (Beck Hole Road)": "North Yorkshire",
+   "Hutton le Hole Car Park (Moor Lane)": "North Yorkshire",
+   "Hole of Horcum Car Park (Saltergate)": "North Yorkshire",
+   "Newton under Roseberry Car Park": "Tees Valley",
+   "Grosmont Car and Coach Park (Front Street)": "North Yorkshire",
+   "Chop Gate Car Park": "North Yorkshire",
+   "Cawthorn Roman Camps Car Park": "North Yorkshire",
+   "Low Mill Car Park, Farndale": "North Yorkshire",
+   "Thornton le Dale Car Park (Maltongate)": "North Yorkshire",
+   "Signed moorland stopping places: Rosedale Bank Top, Blakey Bank Top, Hutton Common and Danby Beacon": "North Yorkshire",
+   "Wild camping and sleeping out anywhere in the North York Moors National Park": "all"
+  },
+  "Yorkshire Dales National Park Authority": {
+   "Wild camping and fly camping across the Yorkshire Dales National Park": "all",
+   "Malham National Park Centre Car Park": "North Yorkshire",
+   "Aysgarth Falls National Park Centre Car Park": "North Yorkshire",
+   "Dales Countryside Museum Car Park, Hawes": "North Yorkshire",
+   "Grassington National Park Centre Car Park (Colvend)": "North Yorkshire",
+   "Buckden Car Park": "North Yorkshire",
+   "Clapham Car Park": "North Yorkshire",
+   "Horton-in-Ribblesdale Car Park": "North Yorkshire",
+   "Kettlewell Car Park": "North Yorkshire",
+   "Stainforth Car Park": "North Yorkshire",
+   "Linton Falls Car Park": "North Yorkshire"
+  },
+  "Peak District National Park Authority": {
+   "North Lees Campsite campervan bays, Hathersage": "Derbyshire",
+   "Road verges, laybys and passing places, North Lees Estate and Stanage": "Derbyshire",
+   "Bakewell Station Car Park (Monsal Trail)": "Derbyshire",
+   "Barber Booth Car Park, Edale": "Derbyshire",
+   "Millers Dale Car Park (Monsal Trail)": "Derbyshire",
+   "Tideswell Dale Car Park": "Derbyshire",
+   "Bowden Bridge Car Park, Hayfield": "Derbyshire",
+   "Hulme End Car Park (Manifold Trail)": "Staffordshire",
+   "Parsley Hay Car Park (High Peak and Tissington Trails)": "Derbyshire",
+   "Surprise View Car Park, Hathersage": "Derbyshire",
+   "Torside Car Park, Longdendale": "Derbyshire"
+  },
+  "South Downs National Park Authority": {
+   "Seven Sisters Country Park car parks (north and south), Exceat": "East Sussex",
+   "Seven Sisters Country Park land (280 hectares, Exceat to Cuckmere Haven)": "East Sussex",
+   "Wild camping across the South Downs National Park": "all",
+   "Planning control of campervan and motorhome sites (Local Plan Policy SD23)": "all"
+  },
+  "Cairngorms National Park Authority": {
+   "Cairngorm Motorhome Stopover, Coire na Ciste": "Highland",
+   "Kingussie Camping and Motorhome Aire, Croila Croft": "Highland",
+   "Glenshee Ski Centre, Cairnwell": [
+    "Aberdeenshire",
+    "Perth and Kinross"
+   ],
+   "Castle Roy, Nethy Bridge": "Highland",
+   "Ar-Dachaigh Croft Campers, Carrbridge": "Highland",
+   "Tomintoul Bowling Club Caravan Site": "Moray",
+   "Balmoral Estate car park, Crathie": "Aberdeenshire",
+   "The National Park as a whole - no camping management byelaws": "all",
+   "Off-road overnight parking, including car parks, without landowner permission": "all",
+   "Cairngorms National Park Fire Management Byelaw 2025 - park-wide fire and barbecue ban": "all"
+  },
+  "Exmoor National Park Authority": {
+   "Haddon Hill Car Park": "Somerset",
+   "Valley of Rocks Car Park, Lynton": "Devon",
+   "Tarr Steps Car Park (main car park)": "Somerset",
+   "Ashcombe Car Park, Simonsbath": "Somerset",
+   "Exmoor House Car Park, Dulverton": "Somerset",
+   "Open moorland, roadside and lay-bys throughout Exmoor National Park": "all"
   }
  }
 }
