@@ -227,6 +227,28 @@ python3 scripts/ofcom_to_geojsonl.py \
 ./scripts/build_tiles.sh data/interim/4g-2025.geojsonl data/out/signal-4g.pmtiles
 ```
 
+### Checking the pins
+
+```bash
+python3 scripts/check_locations.py            # all checks
+python3 scripts/check_locations.py --offline  # geometry only, no network
+```
+
+A pin 40km out looks exactly like a correct one until someone who knows
+the area opens the map, which does not scale. This flags the ones worth
+looking at and prints an OpenStreetMap link straight to each: pins
+outside the UK, pins a geocoder placed (Nominatim returns the middle of
+the reservoir for a car park beside it), two records sharing one point,
+pins that disagree with their own postcode, and pins far from every
+other pin the same body has.
+
+Network checks use postcodes.io — no key — and cache to
+`data/reference/geocache.json`, so re-runs are instant and work offline
+afterwards. `--fail-on high` exits non-zero, for wiring into a check.
+
+Nothing here proves a pin is right. It narrows 200-odd coordinates down
+to the handful worth a human minute each.
+
 ### Working on the site without Docker
 
 ```bash
