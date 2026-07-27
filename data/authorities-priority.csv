@@ -1,68 +1,68 @@
 authority,nation,type,two_tier_partner,priority,pressure_reason
-Cornwall Council,England,unitary,,1,"Off-Street Parking Order 2026; heaviest coastal van pressure in UK; 10 designated self-contained sites"
-Eryri National Park Authority,Wales,national_park,Gwynedd/Conwy,1,"11 car parks restricted Apr 2026 then U-turned Jun 2026; ANPR enforcement; the volatility case study"
-Cyngor Gwynedd,Wales,unitary,,1,"4 Arosfan aires GBP16.50/night; parking allowed but sleeping banned outside them; lay-by orders"
-Highland Council,Scotland,unitary,,1,"NC500; Sutherland committee motion for blanket car park ban; enormous area"
-North Yorkshire Council,England,unitary,,1,"ETRO plus PSPO in parallel with different penalties; Sandsend and Scarborough North Bay"
-Isle of Anglesey,Wales,unitary,,1,"Coastal; trialling new provision per North Wales reporting"
-Conwy County Borough,Wales,unitary,,1,"Non-provisioned bays but otherwise bans overnight parking; the restrictive end of the Welsh spectrum"
-Denbighshire,Wales,unitary,,1,"Trialling provision; useful contrast with Conwy"
-Pembrokeshire,Wales,unitary,,1,"Coast path; heavy summer pressure"
-Pembrokeshire Coast National Park,Wales,national_park,Pembrokeshire,1,"Own car parks; separate rules from county"
-Lake District National Park,England,national_park,Cumberland/Westmorland,1,"Highest visitor density of any UK NP; own car parks"
-Argyll and Bute,Scotland,unitary,,1,"West coast; NC500 adjacent; ferry ports"
-Dorset Council,England,unitary,,1,"Jurassic Coast; known enforcement"
-Devon County Council,England,county,"North Devon; Torridge; South Hams; Teignbridge; East Devon; West Devon; Mid Devon; Exeter",1,"Highways authority for on-street orders; districts own the car parks"
-North Devon,England,district,Devon CC,1,"Coastal; Woolacombe and Croyde pressure"
-Northumberland,England,unitary,,2,"Coast and NP; Northumberland NPA separate"
-Cumberland,England,unitary,,2,"West Cumbria coast plus Lake District overlap"
-Westmorland and Furness,England,unitary,,2,"Lake District overlap; created 2023"
-Dumfries and Galloway,Scotland,unitary,,2,"South west coast; quiet but real pressure"
-South Ayrshire,Scotland,unitary,,2,"Girvan and Ayr designated bays GBP5/night; provision-first example"
-North Ayrshire,Scotland,unitary,,2,Coastal and island ferry routes
-Moray,Scotland,unitary,,2,NC500 eastern leg
-Aberdeenshire,Scotland,unitary,,2,North east coast; NC500 adjacent
-Perth and Kinross,Scotland,unitary,,2,Highland gateway
-Stirling,Scotland,unitary,,2,Loch Lomond overlap
-Loch Lomond and Trossachs NP,Scotland,national_park,Stirling/Argyll,2,"Camping management byelaws already exist - important precedent"
-Cairngorms National Park,Scotland,national_park,Highland/Aberdeenshire/Moray,2,Largest UK NP
-Na h-Eileanan Siar,Scotland,unitary,,2,Western Isles; ferry-dependent
-Orkney Islands,Scotland,unitary,,3,Small but van-visited
-Shetland Islands,Scotland,unitary,,3,Small but van-visited
-Ceredigion,Wales,unitary,,2,Cardigan Bay coast
-Carmarthenshire,Wales,unitary,,2,Coastal
-Swansea,Wales,unitary,,2,Gower peninsula pressure
-Bannau Brycheiniog NP,Wales,national_park,Powys/Carmarthenshire,2,Own car parks
-Powys,Wales,unitary,,2,Mid Wales; Cambrian Mountains
-Somerset Council,England,unitary,,2,"Exmoor overlap; coast"
-Exmoor National Park,England,national_park,Somerset/North Devon,2,Own car parks
-Dartmoor National Park,England,national_park,Devon CC,2,"Camping byelaws precedent; own car parks"
-Torbay,England,unitary,,2,Dense coastal
-Plymouth,England,unitary,,3,Urban coastal
-BCP Council,England,unitary,,2,"Bournemouth Christchurch Poole; heavy beach pressure"
-Isle of Wight,England,unitary,,2,Island; ferry
-New Forest National Park,England,national_park,Hampshire CC,2,"Grazing byelaws; verge parking rules"
-Hampshire County Council,England,county,"New Forest DC; others",2,Highways authority
-South Downs National Park,England,national_park,multiple,2,Own car parks
-East Sussex County Council,England,county,"Rother; Wealden; Lewes; Eastbourne; Hastings",3,Coastal
-Kent County Council,England,county,"Thanet; Dover; Folkestone and Hythe; Canterbury",2,Coast plus port traffic
-Thanet,England,district,Kent CC,2,Coastal car parks
-Norfolk County Council,England,county,"North Norfolk; Great Yarmouth; King's Lynn and West Norfolk",2,Coast; Broads overlap
-North Norfolk,England,district,Norfolk CC,2,Coastal car parks
+Cornwall Council,England,unitary,,1,Off-Street Parking Order 2026; heaviest coastal van pressure in UK; 10 designated self-contained sites
+Eryri National Park Authority,Wales,national_park,Gwynedd/Conwy,1,11 car parks restricted Apr 2026 then U-turned Jun 2026; ANPR enforcement; the volatility case study
+Cyngor Gwynedd,Wales,unitary,,1,4 Arosfan aires GBP16.50/night; parking allowed but sleeping banned outside them; lay-by orders
+The Highland Council,Scotland,unitary,,1,NC500; Sutherland committee motion for blanket car park ban; enormous area
+North Yorkshire Council,England,unitary,,1,ETRO plus PSPO in parallel with different penalties; Sandsend and Scarborough North Bay
+Isle of Anglesey County Council,Wales,unitary,,1,Coastal; trialling new provision per North Wales reporting
+Conwy County Borough Council,Wales,unitary,,1,Non-provisioned bays but otherwise bans overnight parking; the restrictive end of the Welsh spectrum
+Denbighshire County Council,Wales,unitary,,1,Trialling provision; useful contrast with Conwy
+Pembrokeshire County Council,Wales,unitary,,1,Coast path; heavy summer pressure
+Pembrokeshire Coast National Park Authority,Wales,national_park,Pembrokeshire,1,Own car parks; separate rules from county
+Lake District National Park Authority,England,national_park,Cumberland/Westmorland,1,Highest visitor density of any UK NP; own car parks
+Argyll and Bute Council,Scotland,unitary,,1,West coast; NC500 adjacent; ferry ports
+Dorset Council,England,unitary,,1,Jurassic Coast; known enforcement
+Devon County Council,England,county,North Devon; Torridge; South Hams; Teignbridge; East Devon; West Devon; Mid Devon; Exeter,1,Highways authority for on-street orders; districts own the car parks
+North Devon District Council,England,district,Devon CC,1,Coastal; Woolacombe and Croyde pressure
+Northumberland County Council,England,unitary,,2,Coast and NP; Northumberland NPA separate
+Cumberland Council,England,unitary,,2,West Cumbria coast plus Lake District overlap
+Westmorland and Furness Council,England,unitary,,2,Lake District overlap; created 2023
+Dumfries and Galloway Council,Scotland,unitary,,2,South west coast; quiet but real pressure
+South Ayrshire Council,Scotland,unitary,,2,Girvan and Ayr designated bays GBP5/night; provision-first example
+North Ayrshire Council,Scotland,unitary,,2,Coastal and island ferry routes
+The Moray Council,Scotland,unitary,,2,NC500 eastern leg
+Aberdeenshire Council,Scotland,unitary,,2,North east coast; NC500 adjacent
+Perth and Kinross Council,Scotland,unitary,,2,Highland gateway
+Stirling Council,Scotland,unitary,,2,Loch Lomond overlap
+Loch Lomond and The Trossachs National Park Authority,Scotland,national_park,Stirling/Argyll,2,Camping management byelaws already exist - important precedent
+Cairngorms National Park Authority,Scotland,national_park,Highland/Aberdeenshire/Moray,2,Largest UK NP
+Comhairle nan Eilean Siar,Scotland,unitary,,2,Western Isles; ferry-dependent
+Orkney Islands Council,Scotland,unitary,,3,Small but van-visited
+Shetland Islands Council,Scotland,unitary,,3,Small but van-visited
+Ceredigion County Council,Wales,unitary,,2,Cardigan Bay coast
+Carmarthenshire County Council,Wales,unitary,,2,Coastal
+City and County of Swansea Council,Wales,unitary,,2,Gower peninsula pressure
+Bannau Brycheiniog National Park Authority,Wales,national_park,Powys/Carmarthenshire,2,Own car parks
+Powys County Council,Wales,unitary,,2,Mid Wales; Cambrian Mountains
+Somerset Council,England,unitary,,2,Exmoor overlap; coast
+Exmoor National Park Authority,England,national_park,Somerset/North Devon,2,Own car parks
+Dartmoor National Park Authority,England,national_park,Devon CC,2,Camping byelaws precedent; own car parks
+Torbay Council,England,unitary,,2,Dense coastal
+Plymouth City Council,England,unitary,,3,Urban coastal
+"Bournemouth, Christchurch and Poole Council",England,unitary,,2,Bournemouth Christchurch Poole; heavy beach pressure
+Isle of Wight Council,England,unitary,,2,Island; ferry
+New Forest National Park Authority,England,national_park,Hampshire CC,2,Grazing byelaws; verge parking rules
+Hampshire County Council,England,county,New Forest DC; others,2,Highways authority
+South Downs National Park Authority,England,national_park,multiple,2,Own car parks
+East Sussex County Council,England,county,Rother; Wealden; Lewes; Eastbourne; Hastings,3,Coastal
+Kent County Council,England,county,Thanet; Dover; Folkestone and Hythe; Canterbury,2,Coast plus port traffic
+Thanet District Council,England,district,Kent CC,2,Coastal car parks
+Norfolk County Council,England,county,North Norfolk; Great Yarmouth; King's Lynn and West Norfolk,2,Coast; Broads overlap
+North Norfolk District Council,England,district,Norfolk CC,2,Coastal car parks
 The Broads Authority,England,national_park,Norfolk/Suffolk,3,Special status authority
-East Suffolk,England,district,Suffolk CC,3,Coastal
-Lincolnshire County Council,England,county,"East Lindsey; Boston; South Holland",3,Coast
-East Lindsey,England,district,Lincolnshire CC,3,Coastal caravan heartland
-East Riding of Yorkshire,England,unitary,,3,Coast
-Redcar and Cleveland,England,unitary,,3,Coast plus NYM overlap
-North York Moors NP,England,national_park,North Yorkshire,2,Own car parks
-Yorkshire Dales NP,England,national_park,North Yorkshire/Westmorland,2,Own car parks
-Peak District NP,England,national_park,multiple,2,"Closest NP to major cities; heavy day pressure"
-Northumberland NP,England,national_park,Northumberland,3,Dark skies draw overnight stays
-Lancashire County Council,England,county,"Fylde; Wyre; Lancaster",3,Coast
-Blackpool,England,unitary,,3,Dense coastal
-Sefton,England,metropolitan,,3,Formby and Ainsdale pressure
-Wirral,England,metropolitan,,3,Coastal
-Causeway Coast and Glens,Northern Ireland,district,,2,"Giant's Causeway; Antrim coast road"
-Ards and North Down,Northern Ireland,district,,3,Coastal
-Newry Mourne and Down,Northern Ireland,district,,3,Mournes
+East Suffolk Council,England,district,Suffolk CC,3,Coastal
+Lincolnshire County Council,England,county,East Lindsey; Boston; South Holland,3,Coast
+East Lindsey District Council,England,district,Lincolnshire CC,3,Coastal caravan heartland
+East Riding of Yorkshire Council,England,unitary,,3,Coast
+Redcar and Cleveland Borough Council,England,unitary,,3,Coast plus NYM overlap
+North York Moors National Park Authority,England,national_park,North Yorkshire,2,Own car parks
+Yorkshire Dales National Park Authority,England,national_park,North Yorkshire/Westmorland,2,Own car parks
+Peak District National Park Authority,England,national_park,multiple,2,Closest NP to major cities; heavy day pressure
+Northumberland National Park Authority,England,national_park,Northumberland,3,Dark skies draw overnight stays
+Lancashire County Council,England,county,Fylde; Wyre; Lancaster,3,Coast
+Blackpool Borough Council,England,unitary,,3,Dense coastal
+Sefton Metropolitan Borough Council,England,metropolitan,,3,Formby and Ainsdale pressure
+Wirral Borough Council,England,metropolitan,,3,Coastal
+Causeway Coast and Glens Borough Council,Northern Ireland,district,,2,Giant's Causeway; Antrim coast road
+Ards and North Down Borough Council,Northern Ireland,district,,3,Coastal
+"Newry, Mourne and Down District Council",Northern Ireland,district,,3,Mournes

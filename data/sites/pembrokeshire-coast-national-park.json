@@ -1,0 +1,44 @@
+{
+  "authority": "Pembrokeshire Coast National Park Authority",
+  "authority_type": "national park",
+  "nation": "Wales",
+  "researched_on": "2026-07-27",
+  "researched_by": "the Authority's own parking page, news releases, byelaws page and LDP camping background paper, plus BBC and local press coverage",
+  "source_format": "html",
+  "sources": [
+    "https://www.pembrokeshirecoast.wales/plan-your-visit/travel-and-parking/parking/",
+    "https://www.pembrokeshirecoast.wales/news/fines-for-illegally-parked-campervans/",
+    "https://www.pembrokeshirecoast.wales/about-the-national-park/access-and-rights-of-way/byelaws/",
+    "https://www.pembrokeshirecoast.wales/wp-content/uploads/2025/01/APPENDIX-C-Camping-Background-Paper-with-tracked-changes-for-translation.pdf",
+    "https://feeds.bbci.co.uk/news/uk-wales-53681747",
+    "https://www.tenby-today.co.uk/news/pembrokeshire-coast-national-park-raises-parking-charges-844780",
+    "https://herald.wales/west-wales/pembrokeshire/trial-scheme-for-overnight-campervan-parking-to-come-under-further-scrutiny/"
+  ],
+  "policy_summary": "Zero provision, blanket prohibition, and no sign of movement. The Authority runs about 40 car parks and parking areas of its own - separate from Pembrokeshire County Council's estate - charging at 14 of them (1 March to 31 October, 9am-7pm, GBP8 all day from March 2026; free November to February). Its published position is a single sentence: sleeping overnight in a vehicle is not permitted in any Authority car park, enforceable with a fixed penalty notice. Parking a motorhome by day is fine at the daily rate; staying the night is not, anywhere on the estate.\n\nEnforcement is real, not just signage. In July 2020, at the peak of the staycation surge, the Authority issued 19 penalty notices for overnight camping in its car parks over a single weekend, running joint dawn patrols with the county council (from 5am, fines up to GBP70), and the chief executive's line was 'use designated campsites'. The county's 2026 Pembs Stop trial at Goodwick Moor is entirely a county council scheme on county land - the NPA has no part in it and has published nothing suggesting it would follow.\n\nEven on the planning side the Authority does not treat motorhomes as a category needing stopover provision: its January 2025 LDP camping background paper counts 60 campervan-only pitches and around 1,000 touring pitches in the park and handles campervans purely within conventional campsite policy. No aires policy, no trial, no consultation found.",
+  "notes": "The interesting split in Pembrokeshire is that two authorities own car parks side by side at the same beaches and both prohibit sleeping, but only the county has experimented with provision - and even that experiment shrank at every revision (see pembrokeshire.json). The NPA is the harder-line of the two: its wording bans sleeping estate-wide with no exceptions, and it demonstrated willingness to enforce at scale in 2020.\n\nInstrument ambiguity worth recording: the current parking page says the ban 'can be enforced with a fixed penalty notice', but the Authority's own July 2020 news release described issuing 'penalty charge notices'. FPN language points at byelaws, PCN language at a parking places order; the underlying instrument is not published on the website. The Authority's access-land byelaws (fires, vehicles restricted to parking areas, etc.) cover only the ~2% of the park it owns and do not name overnight sleeping in vehicles.\n\nDirection of travel: static. Charges were raised for 2026 (all-day GBP6 to GBP8, coach doubled) but nothing touched overnight rules in either direction.",
+  "open_questions": [
+    "Which legal instrument underpins the no-overnight-sleeping rule - a parking places order or car park byelaws? The website says FPN, the 2020 release said PCNs.",
+    "Are any of the 14 charged car parks (Freshwater East, Broad Haven North, Newport Sands, Poppit Sands, etc.) physically closed overnight by gates or height barriers?",
+    "Has the Authority taken any formal position on the county council's 2026 Pembs Stop trial, or on aires generally, in committee papers not surfaced by search?",
+    "Do the 2020-scale joint dawn patrols with the county council still run in summer 2026?"
+  ],
+  "sites": [
+    {
+      "name": "All Pembrokeshire Coast National Park Authority car parks",
+      "kind": "restriction",
+      "lat": null,
+      "lon": null,
+      "instrument": "unknown",
+      "applies_to": "all_vehicles",
+      "restricts": "sleeping",
+      "status": "in_force",
+      "enforcement": "fpn",
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "notes": "Estate-wide: roughly 40 NPA car parks and parking areas, including the 14 charged sites (Amroth, Saundersfoot Regency, Penally, Manorbier, Freshwater East, West Angle Bay, Little Haven, Broad Haven North, Nolton Haven, Newgale Pebbles, Solva, Oriel y Parc St Davids, Newport Sands, Poppit Sands). Published rule: 'Sleeping overnight in a vehicle is not permitted in the Authority's car parks. This can be enforced with a fixed penalty notice.' Daytime motorhome parking is allowed at normal rates; charging runs 9am-7pm, 1 March to 31 October. In July 2020 the Authority issued 19 penalty notices for overnight camping in one weekend, with joint 5am patrols alongside Pembrokeshire County Council. Underlying instrument unpublished - FPN wording suggests byelaws, but the 2020 release said penalty charge notices, which suggests a parking order."
+    }
+  ],
+  "areas": [
+    "Pembrokeshire Coast National Park"
+  ]
+}
