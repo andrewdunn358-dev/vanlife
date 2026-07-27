@@ -48,6 +48,32 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* ---- breadcrumbs ---- */
+/* Sits between the masthead and the state bar. Signage, not decoration:
+   small, quiet, and out of the way of the page's own heading. */
+.crumbs { margin: 1.5rem 0 0; }
+.crumbs ol {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0.15rem 0.55rem;
+  list-style: none; margin: 0; padding: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.82rem; letter-spacing: -0.01em;
+}
+.crumbs li { display: flex; align-items: baseline; gap: 0.55rem; }
+/* The separator is generated, so it never lands before the first item and
+   never gets read out as content by a screen reader. */
+.crumbs li + li::before {
+  content: "/"; color: var(--ink-3); opacity: 0.55;
+}
+.crumbs a {
+  color: var(--ink-3); text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.crumbs a:hover, .crumbs a:focus-visible {
+  color: var(--link); border-bottom-color: currentColor;
+}
+.crumbs [aria-current="page"] { color: var(--ink-2); font-weight: 500; }
+
 /* ---- state bar ---- */
 .state {
   display: flex; flex-wrap: wrap; gap: 0.4rem 2.25rem;

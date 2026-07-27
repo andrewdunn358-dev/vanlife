@@ -47,7 +47,7 @@ HEAD = """<!DOCTYPE html>
   <h1 class="wordmark"><a href="{root}index.html">Overnight</a></h1>
   <p class="standfirst">Where you can stay in a van, and who says so</p>
 </header>
-"""
+{crumbs}"""
 
 # MapLibre is vendored in site-assets/vendor and copied into site/vendor on
 # every build. It used to come from unpkg, and the map silently failed to
@@ -210,6 +210,29 @@ def slug(name):
     return keep.strip("-")
 
 
+def crumbs(trail, root):
+    """The trail back up, on every page.
+
+    A county page sits three levels down and the only ways out were the
+    browser's back button and the wordmark, which jumps to the top rather
+    than up one. Arriving from a search engine - which is the whole point
+    of the spot pages - there was no back button to use.
+
+    trail is (label, href) pairs from the top down, href relative to the
+    site root. The last pair carries href None: it is the page you are on,
+    so it is marked rather than linked.
+    """
+    out = ['<nav class="crumbs" aria-label="Breadcrumb"><ol>',
+           f'<li><a href="{root}index.html">Overnight</a></li>']
+    for label, href in trail:
+        if href:
+            out.append(f'<li><a href="{root}{href}">{esc(label)}</a></li>')
+        else:
+            out.append(f'<li><span aria-current="page">{esc(label)}</span></li>')
+    out.append("</ol></nav>")
+    return "\n".join(out)
+
+
 def money(v, cur="GBP"):
     if v is None:
         return None
@@ -305,6 +328,20 @@ def region_phrase(region):
     return f"the {region}" if region in THE_REGIONS else region
 
 
+def area_trail(area, region):
+    """Breadcrumb trail for a county page.
+
+    Region is not always known - a body can be placed in an area that no
+    region claims - so the trail degrades to just the county rather than
+    linking to a region page that was never written.
+    """
+    trail = []
+    if region:
+        trail.append((region_phrase(region), f"region/{slug(region)}.html"))
+    trail.append((area, None))
+    return trail
+
+
 def region_page(region, counties, out_dir, blurb="", all_counties=None):
     """Counties within a region.
 
@@ -327,7 +364,8 @@ def region_page(region, counties, out_dir, blurb="", all_counties=None):
                 f"{html.escape(region_phrase(region))}, county by county, from "
                 "councils, national parks and landowners.")
     body = [HEAD.format(title=title, desc=desc,
-                        css=asset("site.css"), root="../", mapassets="")]
+                        css=asset("site.css"), root="../", mapassets="",
+                        crumbs=crumbs([(region_phrase(region), None)], "../"))]
 
     total = len(counties) + len(todo)
     body.append('<div class="state">')
@@ -385,7 +423,8 @@ def empty_area_page(area, out_dir, region=None, others=None):
         title=f"Staying overnight in {html.escape(area)} in a van",
         desc=f"Overnight parking and sleeping rules in {html.escape(area)}. "
              "Not yet researched.",
-        css=asset("site.css"), root="../", mapassets="")]
+        css=asset("site.css"), root="../", mapassets="",
+        crumbs=crumbs(area_trail(area, region), "../"))]
 
     body.append('<div class="state">')
     body.append('<span class="warn"><b>0</b> records</span>')
@@ -472,7 +511,9 @@ def stub_authority_page(row, counties, out_dir):
         title=f"{html.escape(name)} - overnight parking rules (not researched)",
         desc=f"Overnight parking and sleeping rules for {html.escape(name)}. "
              "Not yet researched for this site.",
-        css=asset("site.css"), root="../", mapassets="")]
+        css=asset("site.css"), root="../", mapassets="",
+        crumbs=crumbs([("Every authority", "authorities.html"),
+                       (row.get("short_name") or name, None)], "../"))]
 
     body.append('<div class="state">')
     body.append('<span class="warn"><b>0</b> records</span>')
@@ -523,7 +564,8 @@ def authorities_index_page(records, reg, matched, out_dir):
         title="Every UK authority - the research register",
         desc="Every council, national park and landowner tracked for overnight "
              "parking rules, and whether anyone has researched it yet.",
-        css=asset("site.css"), root="", mapassets="")]
+        css=asset("site.css"), root="", mapassets="",
+        crumbs=crumbs([("Every authority", None)], ""))]
 
     body.append('<div class="state">')
     body.append(f"<span><b>{len(reg)}</b> bodies tracked</span>")
@@ -675,6 +717,7 @@ def area_page(area, docs, out_dir, region=None, others=None):
         desc=f"Overnight parking and sleeping rules across {html.escape(area)} - "
              "councils, national parks, water companies and landowners in one place.",
         css=asset("site.css"), root="../",
+        crumbs=crumbs(area_trail(area, region), "../"),
         mapassets=MAP_ASSETS.format(root="../") if has_map else "")]
 
     body.append('<div class="state">')
@@ -935,6 +978,7 @@ def authority_page(d, out_dir, root="../"):
         title=f"{html.escape(name)} - overnight parking rules",
         desc=f"Published overnight parking and sleeping rules for {html.escape(name)}, with sources and dates.",
         css=asset("site.css"), root=root,
+        crumbs=crumbs([("Every authority", "authorities.html"), (name, None)], root),
         mapassets=MAP_ASSETS.format(root=root) if has_map else "")]
 
     body.append('<div class="state">')
@@ -992,7 +1036,7 @@ def index_page(records, out_dir, reg=None):
         title="Overnight - where you can stay in a van in the UK",
         desc="Published overnight parking and sleeping rules for UK councils, "
              "national parks and landowners. Every record shows its source and date.",
-        css=asset("site.css"), root="",
+        css=asset("site.css"), root="", crumbs="",
         mapassets=MAP_ASSETS.format(root="") if has_map else "")]
 
     body.append('<div class="state">')
