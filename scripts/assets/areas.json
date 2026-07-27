@@ -185,6 +185,12 @@
   "Glasgow": "Scotland",
   "Dundee": "Scotland",
   "Aberdeen": "Scotland",
+  "East Dunbartonshire": "Scotland",
+  "West Dunbartonshire": "Scotland",
+  "East Renfrewshire": "Scotland",
+  "Renfrewshire": "Scotland",
+  "North Lanarkshire": "Scotland",
+  "South Lanarkshire": "Scotland",
   "Antrim": "Northern Ireland",
   "Down": "Northern Ireland",
   "Armagh": "Northern Ireland",
@@ -342,7 +348,13 @@
    "Edinburgh",
    "Glasgow",
    "Dundee",
-   "Aberdeen"
+   "Aberdeen",
+   "East Dunbartonshire",
+   "West Dunbartonshire",
+   "East Renfrewshire",
+   "Renfrewshire",
+   "North Lanarkshire",
+   "South Lanarkshire"
   ],
   "Northern Ireland": [
    "Antrim",
