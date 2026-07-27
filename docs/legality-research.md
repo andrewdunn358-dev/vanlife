@@ -2,6 +2,7 @@
 
 **Status:** method defined, research not started
 **Priority list:** [`../data/authorities-priority.csv`](../data/authorities-priority.csv) — 67 authorities, tiered
+**How to do one:** [research-protocol.md](research-protocol.md) — the working instructions
 
 ---
 
