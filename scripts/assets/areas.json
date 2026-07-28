@@ -46,7 +46,11 @@
    "Buckinghamshire",
    "Kent",
    "Suffolk",
-   "Lancashire"
+   "Lancashire",
+   "Nottinghamshire",
+   "Gloucestershire",
+   "Northamptonshire",
+   "Hampshire"
   ],
   "National Trust": [
    "England-wide"
@@ -539,7 +543,15 @@
    "Kielder Castle Car Park": "Northumberland",
    "Tower Knowe / Hawkhope / Elf Kirk (Kielder Water)": "Northumberland",
    "Elf Kirk Viewpoint, Kielder": "Northumberland",
-   "Anglers Arms rear car park, Kielder village": "Northumberland"
+   "Anglers Arms rear car park, Kielder village": "Northumberland",
+   "Forestry England Camping - national campsite network": "all",
+   "Sherwood Pines Campsite, Nottinghamshire": "Nottinghamshire",
+   "Bracelands Campsite, Forest of Dean": "Gloucestershire",
+   "Rendlesham Campsite, Suffolk": "Suffolk",
+   "Fineshade Wood Campsite, Northamptonshire": "Northamptonshire",
+   "Camping New Forest - ten Forestry England campsites in the New Forest": "Hampshire",
+   "Setthorns Campsite, New Forest": "Hampshire",
+   "Holmsley Campsite, New Forest": "Hampshire"
   },
   "Northumbrian Water": {
    "Fontburn Reservoir": "Northumberland",
@@ -551,7 +563,8 @@
    "Grassholme Reservoir": "County Durham",
    "Scaling Dam Reservoir": "North Yorkshire",
    "Hawkhope, South Abutment, Matthew's Linn, Bakethin and Skyspace Lower": "Northumberland",
-   "Kielder day parking (all car parks)": "Northumberland"
+   "Kielder day parking (all car parks)": "Northumberland",
+   "Kielder Waterside Caravan Park": "Northumberland"
   },
   "Eryri National Park Authority": {
    "Betws-y-Coed long stay car park": "Conwy",
@@ -561,7 +574,13 @@
    "Camping Management Zone permit areas (motorhome permits, where available)": "all",
    "Lay-bys and roads inside the Camping Management Zones": "all",
    "Camping Management Zones, off the road, without a permit": "all",
-   "The rest of the National Park, and everywhere October to February": "all"
+   "The rest of the National Park, and everywhere October to February": "all",
+   "Firkin Point motorhome permit area, west Loch Lomond": "Argyll and Bute",
+   "Inveruglas motorhome permit area, west Loch Lomond": "Argyll and Bute",
+   "Three Lochs Forest Drive motorhome permit area, north of Aberfoyle": "Stirling",
+   "Loch Chon Campsite (National Park Authority)": "Stirling",
+   "Loch Achray Campsite (National Park Authority)": "Stirling",
+   "Sallochy Campsite (National Park Authority)": "Stirling"
   },
   "North York Moors National Park Authority": {
    "Sutton Bank National Park Centre Car Park": "North Yorkshire",
@@ -608,7 +627,8 @@
    "Seven Sisters Country Park car parks (north and south), Exceat": "East Sussex",
    "Seven Sisters Country Park land (280 hectares, Exceat to Cuckmere Haven)": "East Sussex",
    "Wild camping across the South Downs National Park": "all",
-   "Planning control of campervan and motorhome sites (Local Plan Policy SD23)": "all"
+   "Planning control of campervan and motorhome sites (Local Plan Policy SD23)": "all",
+   "Foxhole campsite and camping barn, Seven Sisters Country Park": "East Sussex"
   },
   "Cairngorms National Park Authority": {
    "Cairngorm Motorhome Stopover, Coire na Ciste": "Highland",

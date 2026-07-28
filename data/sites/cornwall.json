@@ -8,15 +8,28 @@
   "sources": [
     "https://letstalk.cornwall.gov.uk/off-street-parking-order-2026",
     "https://www.cornwall.gov.uk/council-news/council-budgets-and-economy/have-your-say-on-overnight-motorhome-parking-and-car-park-tariff-changes",
-    "https://www.liskeard.gov.uk/wp-content/uploads/15.b.Off-Street-Parking_Press-Notice.pdf"
+    "https://www.liskeard.gov.uk/wp-content/uploads/15.b.Off-Street-Parking_Press-Notice.pdf",
+    "https://www.cornwall.gov.uk/parks-leisure-and-culture/parks-and-open-spaces/country-parks/",
+    "https://www.cornwall.gov.uk/parks-leisure-and-culture/parks-and-open-spaces/country-parks/tehidy-country-park/",
+    "https://www.cornwall.gov.uk/parks-leisure-and-culture/parks-and-open-spaces/country-parks/kit-hill-country-park/",
+    "https://www.cornwall.gov.uk/parks-leisure-and-culture/parks-and-open-spaces/country-parks/seaton-valley-countryside-park/",
+    "https://www.cornwall.gov.uk/parks-leisure-and-culture/parks-and-open-spaces/country-parks/mount-edgcumbe-house-and-country-park/",
+    "https://www.mountedgcumbe.gov.uk/stay/",
+    "https://www.cornwall.gov.uk/environment/land-and-property-for-sale-and-to-let/retail-and-other-lettings/",
+    "https://www.cornwallharbours.co.uk/about-cornwall-harbours/",
+    "https://www.cornwallhousing.org.uk/about-us/gypsy-and-traveller-sites",
+    "https://feeds.bbci.co.uk/news/uk-england-cornwall-67064210",
+    "https://api.getthedata.com/bng2latlong/165082/43279"
   ],
   "policy_summary": "The Cornwall Council (Off Street Parking Places) Order 2026, made under section 35(1) of the Road Traffic Regulation Act 1984, revoking and replacing the 2024 Order. Consultation closed 4 February 2026; revised proposals went to Cabinet on 18 March 2026.\n\nOvernight sleeping is prohibited in Cornwall Council car parks generally, with a ban on remaining in most affected car parks between 23:00 and 08:00. Against that, a trial at Bude was judged successful and designated sites were proposed where fully self-contained motorhomes may stay 18:00 to 09:00.\n\nThe proposal shrank during consultation. Ten designated car parks were floated in January; the revised order names four - Link Road Padstow, Watergate Bay, Trenwith in St Ives and Wheal Leisure in Perranporth. It also ADDS a new motorhome prohibition at Commercial Road, Hayle.\n\nSelf-contained here means an onboard toilet and sealed containers for waste water and sewage. A converted van with a portable loo does not qualify, and is also caught by the ban everywhere else - so Cornwall offers self-builds nothing.",
-  "notes": "Two things to carry forward.\n\nThe definition catches more than people expect: the draft order defines a motorhome or campervan as any vehicle adapted for sleeping, even if also used for other purposes. And the restriction bites on PRESENCE, not sleeping - a resident was fined GBP70 for leaving his motorhome overnight in a car park he had paid for, without sleeping in it. He argued the penalty should be void on that basis. It was not.\n\nSecond, the shrinking pattern. Ten sites became four, exactly as Pembrokeshire went from four to one. Two of the three biggest van destinations in England and Wales reduced their provision during consultation. Worth tracking as a trend rather than a coincidence.",
+  "notes": "Two things to carry forward.\n\nThe definition catches more than people expect: the draft order defines a motorhome or campervan as any vehicle adapted for sleeping, even if also used for other purposes. And the restriction bites on PRESENCE, not sleeping - a resident was fined GBP70 for leaving his motorhome overnight in a car park he had paid for, without sleeping in it. He argued the penalty should be void on that basis. It was not.\n\nSecond, the shrinking pattern. Ten sites became four, exactly as Pembrokeshire went from four to one. Two of the three biggest van destinations in England and Wales reduced their provision during consultation. Worth tracking as a trend rather than a coincidence.\n\nSTEP-2 SWEEP, 27 July 2026 - provision the parking pages never mention. Cornwall Council runs exactly one campsite and it is not for tourists: the Tehidy Country Park education field, group hire only, recorded above. Everything else checked came back negative or non-council.\n\nCouncil-owned but not visitor provision: Sandbanks Holiday Park, Hayle - Cornwall Council bought the freehold in January 2022 for GBP2.75m (19 units plus a Victorian house, about 20 families) and runs it as temporary emergency housing under the site's existing holiday-use planning permission. It is a council-owned holiday park and it is closed to visitors. Similarly the council's Gypsy and Traveller sites, managed by Cornwall Housing - Boscarn Parc (32 pitches), Wheal Jewel (24), Fordown Park (10) residential, and South Treviddo transit site off the A38 north of Liskeard (about 15 caravans, GBP100 refundable deposit plus weekly utilities). Council caravan provision, but a housing function, not supply for travelling vans.\n\nOther country parks: Kit Hill - no camping or caravanning. Seaton Valley Countryside Park - council-owned, managed by Cormac Solutions Ltd, and the answer to the ex-district question, since it IS a former caravan park: derelict, reclaimed by Caradon District Council and opened as countryside park in 1995. No camping today. Mount Edgcumbe House and Country Park is jointly owned by Cornwall Council and Plymouth City Council through a joint committee, and does let two glamping shepherd's huts and seven cottages - but through Classic Cottages as letting agent, with no caravan, motorhome or campervan pitches, so it is not vehicle provision.\n\nHarbours: all twelve Cornwall Council harbours (Bude, Downderry, Prince of Wales Pier, Newquay, Penryn, Penzance, Portreath, Porthscatho, Portwrinkle, Saltash, St Ives, Truro) were checked and none offers overnight vehicle, motorhome or camping stays. Coverack and Mullion are NOT council harbours. The council's land-and-property lettings list contains no caravan park, campsite, holiday park or touring site.\n\nPrivate supply, do not re-research as council: Tehidy Holiday Park - a private park with a confusingly similar name and no connection to Tehidy Country Park; Trenance Holiday Park, Newquay (Hoyte family, three generations); Maker Camp at Maker Heights, which is Rame Conservation Trust land, not council, despite adjoining Mount Edgcumbe.",
   "open_questions": [
     "What did Cabinet decide on 18 March 2026? The revised order is the live question and this record predates confirmation.",
     "Price for the designated sites - not published in the consultation material seen.",
     "Is the Bude trial site continuing, and on what terms?",
-    "Which car parks exactly are covered by the 23:00-08:00 ban? Reporting names around fifteen; the order will list them all."
+    "Which car parks exactly are covered by the 23:00-08:00 ban? Reporting names around fifteen; the order will list them all.",
+    "Tehidy education field: season, maximum nights, arrival and departure times and pitch count are all unpublished, as is the field's actual location. The pin is the park's grid reference, not the field.",
+    "The ex-district caravan site question is only half closed. Seaton Valley (Caradon) is accounted for; Penwith, Kerrier, Carrick, Restormel and North Cornwall were not. The council's asset register (the FOI attachment 'commercial-properties-owned-by-cornwall-council' spreadsheet and the 'Property Owned By CC' PDF) and democracy.cornwall.gov.uk cabinet and asset-disposal papers were not readable and are where a surviving leased-out site would be hiding."
   ],
   "sites": [
     {
@@ -190,6 +203,43 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "notes": "Overnight sleeping is prohibited in Cornwall Council car parks. Widely misunderstood - one resident said publicly they had 'no idea overnight sleeping was banned in all Cornwall Council car parks'."
+    },
+    {
+      "name": "Tehidy Country Park campsite and education field, Camborne",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 132.5,
+      "currency": "GBP",
+      "payment_methods": [
+        "booking with the council"
+      ],
+      "requires_self_contained": false,
+      "facilities": [
+        "enclosed sheltered field in woodland",
+        "several level areas of hard standing",
+        "wash block with ladies and gents toilets",
+        "separate accessible toilet",
+        "single shower",
+        "designated fire pit (prior consent only)",
+        "space for about 6 cars inside the field entrance"
+      ],
+      "excludes_vehicle_types": [
+        "coach",
+        "other large vehicles"
+      ],
+      "enforcement": "unknown",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Tehidy Country Park campsite education field Camborne",
+      "notes": "The one piece of Cornwall Council overnight provision that a parking-page search will never reach, and it is not a touring site. Booked through the council's Natural Environment Service (0300 1234 202, environmentservice@cornwall.gov.uk), not leased to an operator. GROUP HIRE ONLY - 'available for hire by educational and community groups'; individual campers and touring vans cannot book it. GBP132.50 per 24 hours for educational and community groups, GBP159.00 per 24 hours for any other group; refundable deposit required. Day-only variants: education field plus toilets GBP53.00, toilet block alone GBP31.80, extra parking GBP42.40 per 24 hours. Vehicle access is via the Rangers office entrance about 500m west of the North Cliffs car park; coaches cannot get in. Caravans and motorhomes are not mentioned anywhere in the terms, so treat the field as tents-and-minibuses rather than as motorhome capacity. Season, maximum nights, arrival and departure times and pitch count are not published. NOT LOCATED: no coordinates are recorded because none could be verified for the field itself. Cornwall Council publishes SW 65082 43279 as the grid reference for TEHIDY COUNTRY PARK AS A WHOLE, which converts to 50.24271, -5.29611 - use that as a starting point, not as the campsite pin. Access is off the Rangers office entrance, roughly 500m west of the North Cliffs car park on the park's northern edge; the other car parks are South Drive TR14 0EZ and East Lodge TR16 4PX.",
+      "geocoded_by": "web_research",
+      "geocode_precision": "not located - the campsite field's position is only described as about 500m west of the North Cliffs car park, and no map, postcode or grid reference is published for it",
+      "geocode_band": "area",
+      "geocode_checked": false,
+      "geocode_source": "https://www.cornwall.gov.uk/parks-leisure-and-culture/parks-and-open-spaces/country-parks/tehidy-country-park/"
     }
   ]
 }

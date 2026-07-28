@@ -9,14 +9,26 @@
     "https://www.kielderwaterside.com/whats-on/car-parking-options/",
     "https://www.kielderwaterside.com/northumbrian-water-and-kielder-waterside/",
     "https://www.visitkielder.com/visit/plan-your-visit/",
-    "https://www.visitkielder.com/faqs"
+    "https://www.visitkielder.com/faqs",
+    "https://www.visitkielder.com/",
+    "https://www.visitkielder.com/stay/camping-and-caravanning/kielder-caravan-park/",
+    "https://www.visitkielder.com/stay/camping-and-caravanning/motorhomes/",
+    "https://www.visitkielder.com/stay/lodges/kielder-lodges-at-kielder-waterside/",
+    "https://www.watersideparksuk.com/",
+    "https://www.watersideparksuk.com/park/kielder/",
+    "https://api.postcodes.io/postcodes/NE481BT"
   ],
   "policy_summary": "A company-wide scheme, not a site arrangement. Overnight parking is permitted and charged at reservoirs across the north east, with a shared booking system covering Balderhead, Derwent, Fontburn, Selset, Grassholme, Scaling Dam and Kielder. Typically GBP10 a night with no facilities - no hook-up, no waste disposal - and rangers check tickets in the evening.\n\nThis is the answer to whether water companies are a per-site or per-company research job. Per company. One operator, one scheme, seven reservoirs. If United Utilities and Yorkshire Water work the same way, the landowner tier is far smaller work than the councils.",
   "notes": "Kielder is the exception and needs care - see the Kielder note below. Elsewhere the pattern looks consistent: pay at the visitor centre or online, ranger checks in the evening, gates close overnight.",
   "open_questions": [
     "Confirm the current price at each reservoir - GBP10 is reported at Fontburn and Derwent.",
     "Which reservoirs have gates that lock, and at what time? Derwent reported as closing with reopening at 08:00.",
-    "Do other water companies run equivalent schemes? That decides the size of the whole landowner tier."
+    "Do other water companies run equivalent schemes? That decides the size of the whole landowner tier.",
+    "CONFLICT WITH THE EXISTING KIELDER RECORDS, found 2026-07-27 and deliberately not merged into them. The Kielder Water and Forest Park motorhome page now states that overnight motorhome parking is permitted at SIX car parks - Kielder Castle, Tower Knowe upper and lower, Hawkhope, Elf Kirk, Lower Skyspace and Blakehopeburnhaugh, the last added from April 2025 - at GBP15 a night payable by coin in the machine at each location or at Kielder Waterside reception, tickets transferable between locations, motorhomes only and no tents. The existing records in this file say Hawkhope and Skyspace Lower are NOT approved and that Tower Knowe is GBP10. Either the policy widened and the price rose after those records were written, or one of the two sources is wrong. Somebody needs to re-verify the whole Kielder overnight set on the ground or with Northumbrian Water before the existing records are trusted. Source: https://www.visitkielder.com/stay/camping-and-caravanning/motorhomes/",
+    "Season and pitch count for Kielder Waterside Caravan Park. The page showed the park closed for the season and gave neither opening dates nor a number of touring pitches.",
+    "Who actually holds the caravan park operation - Northumbrian Water directly, or the Kielder Water and Forest Park Development Trust, or a contractor? The booking route says Northumbrian Water, the publishing body says the Trust.",
+    "Waterside Parks, the leisure brand shared by Northumbrian Water and Essex and Suffolk Water, was checked in this sweep and covers thirteen sites: Derwent, Hanningfield, Fontburn, Kielder, Grassholme, Scaling Dam, Whittle Dene, Lockwood Beck, Balderhead, Selset, Cow Green, Blackton and Hury. It offers NO camping, caravan or lodge accommodation anywhere - day activities, fishing and cafes only. That is a clean negative for the Essex and Suffolk half of the company. But six of those thirteen sites - Whittle Dene, Lockwood Beck, Cow Green, Blackton, Hury and Hanningfield - are not in this file at all, and whether the overnight parking scheme now extends to them is unresolved.",
+    "Kielder Waterside also lets about fifty self-catering lodges, some with hot tubs, booked through kielderwaterside.com and Hoseasons. Out of scope as vehicle provision, recorded here so nobody researches it again."
   ],
   "sites": [
     {
@@ -195,6 +207,37 @@
       "last_verified": "2026-07-26",
       "confidence": "high",
       "notes": "Included because the day ticket is the single most misleading thing at Kielder. It lasts until 3am for stargazing and works in every car park, which reads like permission to stay the night. It is not. Only four car parks are approved for overnight: Tower Knowe, Kielder Castle, Elf Kirk and the Anglers Arms rear car park."
+    },
+    {
+      "name": "Kielder Waterside Caravan Park",
+      "kind": "provision",
+      "lat": 55.183156,
+      "lon": -2.534602,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "price_per_night": 19.5,
+      "currency": "GBP",
+      "price_note": "GBP19.50 for a self-sufficient pitch with no hook-up; from GBP43.50 with electric hook-up. Published as 2025 pricing with a note that prices may change for 2026. The gap between the two tiers is the largest of any site in this dataset and is worth checking before assuming a hook-up pitch is affordable.",
+      "facilities": [
+        "electric hook-up",
+        "motor caravan waste point",
+        "TV aerial points",
+        "laundry with washing machines, dryers and irons",
+        "accessible toilet and shower",
+        "toilets",
+        "showers"
+      ],
+      "booking": "online_or_by_phone",
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "notes": "THE GAP THE FIRST PASS MISSED. Northumbrian Water does not only sell overnight car parking at its reservoirs - at Kielder Waterside, the part of the Kielder estate it owns and operates, there is a full touring caravan park with pitches for caravans and motorhomes, alongside a fleet of about fifty self-catering lodges. None of it is reachable from the car parking pages the first pass used, and the caravan park is not mentioned on the reservoir overnight-parking scheme at all.\n\nOPERATING RELATIONSHIP, and it is not clean. The park sits at Kielder Waterside, which the existing kielder_note in this file establishes as owned and operated by Northumbrian Water. Booking goes through bookwhen.com/kielderwatersidecaravanpark and the Kielder Waterside reception number, which points at Northumbrian Water. But the page describing it is published by the Kielder Water and Forest Park Development Trust, the charity whose members include Northumbrian Water, Forestry England, Calvert Kielder, Northumberland County Council, Kielder Observatory Astronomical Society and Northumberland Wildlife Trust, and the Trust's site presents itself as the operator of the destination. Recorded here under Northumbrian Water as landowner and site operator, with the Trust named as the marketing and destination body - but this is the one relationship in the sweep that a phone call would settle better than any web page.\n\nThe motor caravan waste point matters: it is the only published chemical and grey waste disposal in the Northumbrian Water estate, everything else in this file being car parking with no facilities at all. Season not published; the page was showing as closed for the season when read.",
+      "search_hint": "Kielder Waterside Caravan Park, Leaplish, Kielder",
+      "postcode": "NE48 1BT",
+      "geocoded_by": "web_research",
+      "geocode_precision": "Kielder Waterside address postcode centroid at Leaplish on the south shore of Kielder Water; single-source, and the caravan park is one part of a large site that also holds the lodges, so the pin is the site rather than the touring field",
+      "geocode_band": "approximate",
+      "geocode_checked": false,
+      "geocode_source": "https://api.postcodes.io/postcodes/NE481BT"
     }
   ],
   "kielder_note": "RESOLVED. Kielder Waterside is owned and operated by Northumbrian Water. The wider park is run by the Kielder Water & Forest Park Development Trust, whose members include Northumbrian Water, the Forestry Commission, Northumberland County Council, Calvert Trust Kielder and Kielder Observatory.\n\nThe contradiction in visitor reports is explained. Overnight stays are approved at FOUR places only: Tower Knowe (Northumbrian Water, GBP10), Kielder Castle (Forestry England, GBP15), Elf Kirk viewpoint, and the Anglers Arms rear car park in Kielder village. Hawkhope is NOT one of them.\n\nThe trap is the day ticket. GBP6.50 buys a full day until 03:00 for stargazing and is transferable across every car park in the park - Hawkhope, South Abutment, Tower Knowe, Kielder Waterside, Matthew's Linn, Bakethin, Kielder Castle, Skyspace Lower and Elf Kirk. Being transferable, and running until 3am, it reads like it covers staying the night. It does not. The party who paid GBP5 for the day and GBP10 for the night at Hawkhope had bought something that does not apply there, and were moved on at 21:00. Correctly, as it turns out.",
@@ -202,5 +245,6 @@
     "Northumberland",
     "County Durham",
     "North Yorkshire"
-  ]
+  ],
+  "provision_sweep_2026_07_27": "Gap-filling sweep for provision the car park pages do not mention (research protocol step 2). Result: one real hit and one clean negative. The hit is Kielder Waterside Caravan Park, a full touring caravan park with a motor caravan waste point on the part of the Kielder estate Northumbrian Water owns and operates, invisible from the car parking pages. The negative is Waterside Parks, the company's own leisure brand across thirteen reservoirs in the north east, north Yorkshire and Essex, which sells fishing, boats and cafes and no accommodation of any kind. Also surfaced, and flagged rather than merged: the destination's 2026 motorhome page contradicts the existing Kielder records in this file on which car parks are approved and at what price."
 }

@@ -7,7 +7,22 @@
   "source_format": "html",
   "sources": [
     "https://www.highland.gov.uk/news/article/16130/the_highland_campervan_and_motorhome_scheme",
-    "https://www.highland.gov.uk/news/article/14590/overnight_short_stay_parking_for_motorhomes_in_designated_highland_council_carparks_to_be_piloted"
+    "https://www.highland.gov.uk/news/article/14590/overnight_short_stay_parking_for_motorhomes_in_designated_highland_council_carparks_to_be_piloted",
+    "https://www.highland.gov.uk/download/meetings/id/74940/item_7_dornoch_common_good_assignation_of_dornoch_caravan_park_lease",
+    "https://www.highland.gov.uk/download/meetings/id/75275/item_8_dornoch_common_good_leases_-_dornoch_caravan_parksutherland_agricultural_society",
+    "https://www.highland.gov.uk/news/article/15130/highland-council-to-consult-on-common-good-property-list-for-thurso",
+    "https://www.highland.gov.uk/downloads/download/2208/thurso_common_good_fund",
+    "https://www.johnogroat-journal.co.uk/news/development-trust-poised-to-take-over-running-of-wick-carava-274766/",
+    "https://www.johnogroat-journal.co.uk/news/highland-council-hoping-to-arrange-new-lease-after-retiral-o-263336/",
+    "https://www.johnogroat-journal.co.uk/news/thurso-caravan-and-camp-site-closes-permanently-due-to-exte-428397/",
+    "https://www.pressandjournal.co.uk/fp/news/highlands-islands/4412970/wick-caravan-park-campsite-ready-to-reopen/",
+    "https://www.wickcampsite.co.uk/",
+    "https://www.pitchup.com/campsites/Scotland/Scotland/caithness/Wick/wick-river-campsite/",
+    "https://www.campsites.co.uk/search/campsites-in-scotland/highlands/wick/wick-river-campsite",
+    "https://mapcarta.com/W293097965",
+    "https://www.ukcampsite.co.uk/sites/details.asp?revid=3293",
+    "https://www.pincamp.com/campings/thurso-bay-caravan-and-camping-park",
+    "https://www.campsites.co.uk/search/campsites-in-scotland/highlands/dornoch/dornoch-caravan-and-camping-park"
   ],
   "policy_summary": "The Highland Campervan and Motorhome Scheme. A voluntary GBP40 seven-day pass covering overnight parking in designated council car parks, rather than a per-night charge. Began as a 2022 pilot at 12 car parks charging around GBP10 a night; now a regional pass. Marked Overnight Stay Bays are being painted, starting at Ullapool.\n\nThe council's own framing is notable: lay-by overnight parking is 'not illegal' but restricts access for safety-related use, so the scheme exists to draw people into car parks rather than to punish them for stopping. That is the opposite posture from Cornwall's GBP70 PCN.",
   "scheme": {
@@ -36,7 +51,12 @@
     "Full list of car parks in the current scheme - eight are named below, twelve were in the pilot.",
     "Does the GBP10 per night option still exist alongside the pass, or has the pass replaced it?",
     "Sutherland Area Committee separately moved for a blanket ban in council car parks. What became of that?",
-    "The British Holiday and Home Parks Association objected on competition grounds. Any change since?"
+    "The British Holiday and Home Parks Association objected on competition grounds. Any change since?",
+    "Common Good asset registers for Wick, Cromarty, Dingwall, Fortrose, Invergordon, Tain, Kingussie, Fort William, Inverness and Nairn have not been read. Two out of two registers that were read turned up a council-owned caravan park, so expect more.",
+    "Do any Highland Council harbours (Nairn, Wick, Kyle, Uig, Portree, Scrabster, Lochinver, Helmsdale) offer overnight motorhome stays as a harbour service, separate from the car park scheme?",
+    "Dornoch Caravan and Camping Park could not be geolocated to the two-source standard and is recorded with null coordinates. It is on Shore Road, Dornoch, between the road and the beach.",
+    "Thurso Bay closed permanently in February 2026 with a lease that nominally ran to 2034. Will the council relet the Glebe site, and does the Common Good hold it for camping use?",
+    "Was there a council or former district council caravan site in Skye, Lochalsh, Lochaber or Badenoch and Strathspey that survives? Not checked."
   ],
   "sites": [
     {
@@ -330,9 +350,117 @@
       "last_verified": "2026-07-26",
       "confidence": "low",
       "notes": "The council states overnight lay-by parking is NOT illegal, but discourages it and reports many lay-bys carrying 'No Overnight Parking' signs. Signs may or may not be backed by an order - that distinction matters and is not yet established."
+    },
+    {
+      "name": "Wick River Campsite, Riverside Drive, Wick",
+      "kind": "provision",
+      "lat": 58.44329,
+      "lon": -3.10504,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "bays": 89,
+      "price_per_night": 17.0,
+      "currency": "GBP",
+      "price_note": "from GBP17 a night for a basic tent pitch to GBP38.50 and up for a fully serviced hardstanding; campsites.co.uk quotes from GBP27 for two people",
+      "arrival_from": "14:00",
+      "departure_by": "11:00",
+      "booking": "online_or_phone",
+      "facilities": [
+        "toilets",
+        "showers",
+        "motorhome service point",
+        "electric hook-up 16A",
+        "hardstandings",
+        "drinking water",
+        "laundry",
+        "shop",
+        "wifi",
+        "accessible bathroom",
+        "communal lounge",
+        "play area"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "high",
+      "search_hint": "Wick River Campsite, Riverside Drive, Janetstown, Wick KW1 5SP",
+      "notes": "OWNED BY HIGHLAND COUNCIL, RUN BY WICK DEVELOPMENT TRUST. The best-equipped council-owned overnight site in the Highlands and invisible from every council parking page. 89 pitches of which 46 are motorhome, plus 24 electric hardstandings and 5 fully serviced, and a motorhome service point - which makes it the most useful waste and water stop in Caithness whether or not you stay. The previous 15-year private lease expired 28 May 2022; the council put it back on the market and let it to Wick Development Trust, a community body that runs it as an enterprise with profits going to Wick regeneration, and the council has since voted a GBP90,000 phase and a GBP435,000 final phase of capital. Season 23 March to 31 October in 2026, though one listing says 1 April. No maximum stay is published. Check-in 14:00 to 19:00, later by arrangement to 22:00; reception unstaffed after 20:00; quiet hours 23:00 to 07:00.",
+      "postcode": "KW1 5SP",
+      "geocoded_by": "web_research",
+      "geocode_precision": "the campsite on Riverside Drive by the Wick river, from OpenStreetMap way 293097965",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://mapcarta.com/W293097965"
+    },
+    {
+      "name": "Thurso Bay Caravan and Camping Park, Scrabster Road, Thurso",
+      "kind": "provision",
+      "lat": 58.5979,
+      "lon": -3.5296,
+      "instrument": "landowner_policy",
+      "status": "revoked",
+      "bays": 70,
+      "price_per_night": 17.0,
+      "currency": "GBP",
+      "price_note": "April 2026 tariff as last advertised: GBP17.00 caravan or motorhome basic pitch, GBP13.00 tent, GBP5.00 per occupant, electric hook-up GBP7.00 to GBP8.00",
+      "facilities": [
+        "hardstandings",
+        "electric hook-up 10A",
+        "toilets",
+        "showers",
+        "washing-up",
+        "laundry",
+        "chemical disposal",
+        "drinking water",
+        "recycling",
+        "disabled access"
+      ],
+      "excludes_vehicle_types": [
+        "large campervans - the site advertised 'small campervans' only"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Thurso Bay Caravan and Camping Park, Smith Terrace, Scrabster Road, Thurso KW14 7JY",
+      "notes": "CLOSED - RECORDED BECAUSE THE LAND IS STILL THE COUNCIL'S AND THE CLOSURE IS THE FINDING. The site sits on The Glebe, Thurso Common Good land owned by Highland Council and listed in the council's own Common Good property consultation for Thurso. The operator, Thurso Bay Holidays, told the council it was ceasing its tenancy with immediate effect and permanent closure was announced on 26 February 2026, despite a lease that nominally ran to 30 March 2034. Anyone planning Caithness on an old guidebook will drive to a shut site; Wick, 20 miles away, is the council-owned alternative and is open. Status is recorded as revoked to mean the provision has ceased, not that any legal instrument was repealed. Season and tariff above are as last advertised for 2026.",
+      "postcode": "KW14 7JY",
+      "geocoded_by": "web_research",
+      "geocode_precision": "the caravan park on the Thurso Bay seafront off Scrabster Road",
+      "geocode_band": "precise",
+      "geocode_checked": false,
+      "geocode_source": "https://www.pincamp.com/campings/thurso-bay-caravan-and-camping-park"
+    },
+    {
+      "name": "Dornoch Caravan and Camping Park, Shore Road, Dornoch",
+      "kind": "provision",
+      "lat": null,
+      "lon": null,
+      "instrument": "landowner_policy",
+      "status": "in_force",
+      "bays": 120,
+      "price_per_night": 12.0,
+      "currency": "GBP",
+      "price_note": "from GBP12 a night for a non-electric grass pitch; no full tariff is published online",
+      "price_confidence": "low",
+      "booking": "phone",
+      "facilities": [
+        "free showers",
+        "toilets",
+        "launderette",
+        "shop",
+        "chemical disposal",
+        "wifi",
+        "electric hook-up",
+        "putting green",
+        "games room",
+        "TV room",
+        "play park"
+      ],
+      "last_verified": "2026-07-27",
+      "confidence": "medium",
+      "search_hint": "Dornoch Caravan and Camping Park, Shore Road, Dornoch, Sutherland",
+      "notes": "COMMON GOOD LAND, PRIVATE OPERATOR ON A LEASE TO 2038. The council's own report says it plainly: the caravan park 'is located on Common Good land between Shore Road and the beach', and the rent is roughly three quarters of the entire Dornoch Common Good Fund's income - so this is the clearest example in the dataset of a council-held site that no parking page will ever mention. Original lease 1 April 1992, extended in 2011 to expire 31 March 2038, assigned with council consent to Dornoch Caravan and Camping Park Ltd in 2019 after the original tenant's death. 120 pitches for tents and tourers plus three yurts, motorhomes and campervans accepted, open 30 March to 24 October. NOT the same place as Grannie's Heilan' Hame at Embo, which is Parkdean and private. COORDINATES ARE NULL DELIBERATELY: the site is on Shore Road between the road and the beach, but no two independent geocoded sources could be obtained, so no pin has been invented."
     }
   ],
   "areas": [
     "Highland"
-  ]
+  ],
+  "notes": "OWN-PROVISION SWEEP, 27 July 2026. The campervan scheme is only half of what this council has. Highland also owns three touring caravan and camping sites, and NOT ONE OF THEM IS REACHABLE FROM ANY PARKING PAGE. They arrive through a different door entirely: two of the three are held by COMMON GOOD FUNDS, the pre-1975 burgh estates the council administers as trustee rather than owns outright, and all three are operated by somebody else under a lease.\n\nThat is the pattern to carry to the rest of Scotland. The council does not run a campsite. It is the landlord of one. Wick is let to a community development trust, Dornoch to a private company on a lease to 2038, Thurso to a private operator whose tenancy has just collapsed. The council's name appears on none of the three websites, which is exactly why a search of council pages never finds them - and why the Common Good asset registers, not the leisure pages, are the route in. Thurso's register turned up its caravan park in a single line; Dornoch's caravan park rent is roughly three quarters of the whole Dornoch Common Good Fund's income. The registers for Wick, Cromarty, Dingwall, Fortrose, Invergordon, Tain, Kingussie, Fort William, Inverness and Nairn have NOT been worked, and on this hit rate they should be.\n\nSecond finding, negative and useful: HIGH LIFE HIGHLAND RUNS NO CAMPING. The council's arm's-length leisure trust delivers leisure centres, libraries and outdoor activity, and no caravan or camping site was found under it. That distinguishes Highland from the leisure-trust pattern seen elsewhere in Scotland.\n\nThird, and worth knowing before driving: TORVEAN CARAVAN PARK IN INVERNESS IS NOT THE COUNCIL'S. It sits next to Torvean Car Park, which IS in the campervan scheme and is recorded above, and the two are constantly conflated. The council's own planning report for the adjacent former golf course treats the caravan park as a neighbour, not as its land. Also excluded and named so nobody re-researches them: Grannie's Heilan' Hame at Embo is Parkdean; Nairn Lochloy is Parkdean; Dunnet Bay and Nairn are Camping and Caravanning Club sites; Delnies Wood is private.\n\nNot checked and open: the harbours estate (Nairn, Wick, Kyle, Uig, Portree, Scrabster, Lochinver, Helmsdale) for overnight vehicle stays, and the Skye and Lochalsh, Lochaber, Badenoch and Strathspey and Ross and Cromarty sites inherited at 1996 reorganisation. Broomfield Holiday Park in Ullapool is of unresolved ownership."
 }

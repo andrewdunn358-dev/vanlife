@@ -28,7 +28,11 @@
     "How hard byelaw 4 is actually enforced overnight. 'Patrols and enforcement action' is asserted, but no prosecution numbers were found, and a magistrates' court route is expensive to run at scale.",
     "Whether the five North Lees campervan bays have a maximum stay. None is published.",
     "Whether the Authority is negotiating with Derbyshire County Council to extend verge restrictions onto highway verges that are not access land - the January 2026 report says talks are under way but gives no outcome.",
-    "The published 2024 schedule shows Wyedale (Buxton) and White Lodge (Ashford) with what appears to be the same grid reference; one is likely a transcription error in the PDF. Neither is mapped here as a result."
+    "The published 2024 schedule shows Wyedale (Buxton) and White Lodge (Ashford) with what appears to be the same grid reference; one is likely a transcription error in the PDF. Neither is mapped here as a result.",
+    "Checked 2026-07-27 for Authority-run provision away from the parking pages, and the answer is no. North Lees is the only campsite the Peak District National Park Authority runs, and its five campervan bays with optional electric hook-up are already recorded. The Authority's camping page names nothing else - no camping barns, no bunkhouses, no hostels - and directs everything else to Visit Peak District's commercial guide. The only other Authority accommodation found is Cattiside Cottage, a two-bedroom self-catering cottage on the North Lees Estate, which is not vehicle provision.",
+    "The Peak District camping barn network was historically associated with the National Park. Nothing on the Authority's 2026 site mentions camping barns at all. Whether they were transferred to YHA or to the barn owners, and when, was not established - it would be worth knowing only because a barn with vehicle parking would be a stopping place.",
+    "North Lees now closes from the afternoon of 23 December 2026 until 4 January 2027; otherwise it is open all year. The existing campervan bay record does not carry that closure.",
+    "Does the Authority own or let any land on the Warslow Moors Estate that carries a camping or caravan operation? Nothing was found, but the estate was not searched systematically."
   ],
   "sites": [
     {
@@ -390,5 +394,6 @@
       "confidence": "high",
       "notes": "The Authority operates 44 car parks with roughly 2,000 spaces and all are named in the schedule to the byelaws, each with a six-figure grid reference. The ones not individually recorded here carry exactly the same regime: Alsop-en-le-Dale, Alstonefield, Aldern House, Blore Pastures, Brookside, Carr Lane (Thornhill), Clough House, Crowden, Dennis Knoll, Derbyshire Bridge, Derwent Overlook, Friden, Hartington Station, Hollin Bank, Hooks Carr, Hurdlow, Hurst Clough, Ilam Coach Lay-by, Mapleton Lane, Milldale, Minninglow, Moor Lane, Nab Quarry, Narlows Lane, Ravensdale, The Street, Thorpe Station, Tissington, Trentabank, Upper Burbage Bridge, Upperdale, Vicarage Quarry, Waterhouses, White Lodge, Wyedale. Two are free (The Street in the Goyt Valley, and Crowden); the rest are pay and display, 9am to 6pm, GBP 4.75 all day, GBP 40 for an annual permit. Ilam Coach Lay-by takes coaches and minibuses only - no cars, vans or motorhomes at any time. Fourteen sites allow late payment within 24 hours because of poor mobile signal, which is a payment concession and not permission to remain overnight."
     }
-  ]
+  ],
+  "provision_sweep_2026_07_27": "Gap-filling sweep for provision the car park pages do not mention (research protocol step 2). Result: nothing new. The Authority runs exactly one campsite, North Lees, whose five campervan bays are already in this file. No camping barns, bunkhouses or hostels are run by the Authority in 2026, and the only other Authority accommodation is a self-catering cottage on the North Lees Estate. This is a genuine negative rather than an unsearched gap: the Authority's own camping page was read and lists nothing else."
 }
