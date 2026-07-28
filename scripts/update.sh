@@ -71,4 +71,42 @@ echo
 echo "Your data was not touched. If you want the repo's version of a data"
 echo "file, delete your local copy and run this again."
 
+# "0 new files" reads as "nothing to do", and it is not. Research is
+# usually ADDED to a file that already exists here - a campsite found in
+# a council that was already researched - so the records land in a file
+# this script deliberately will not overwrite. Count them and say so,
+# rather than letting a whole sweep sit behind a step nobody knew to run.
+if [ -d "$TMP/data/sites" ] && command -v python3 >/dev/null 2>&1; then
+    python3 - "$TMP/data/sites" "$ROOT/data/sites" <<'PY' || true
+import glob, json, os, sys
+repo_dir, local_dir = sys.argv[1], sys.argv[2]
+behind, missing = [], 0
+for rp in sorted(glob.glob(os.path.join(repo_dir, "*.json"))):
+    lp = os.path.join(local_dir, os.path.basename(rp))
+    if not os.path.exists(lp):
+        continue
+    try:
+        repo = {s.get("name") for s in json.load(open(rp, encoding="utf-8"))["sites"]}
+        mine = {s.get("name") for s in json.load(open(lp, encoding="utf-8"))["sites"]}
+    except (json.JSONDecodeError, KeyError, OSError):
+        continue
+    new = repo - mine
+    if new:
+        behind.append((os.path.basename(rp), len(new)))
+        missing += len(new)
+if behind:
+    print()
+    print(f"  BUT: {missing} record(s) in the repo are not in your files yet,")
+    print(f"  across {len(behind)} file(s) this script left alone:")
+    for name, n in sorted(behind, key=lambda x: -x[1])[:8]:
+        print(f"    {n:>3}  {name}")
+    if len(behind) > 8:
+        print(f"    ... and {len(behind) - 8} more")
+    print()
+    print("  Bring them in without losing your coordinates:")
+    print("    python3 scripts/merge_records.py            # dry run")
+    print("    python3 scripts/merge_records.py --write")
+PY
+fi
+
 chmod +x "$ROOT"/scripts/*.sh 2>/dev/null || true
